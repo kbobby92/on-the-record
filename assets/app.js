@@ -1,0 +1,263 @@
+(() => {
+  "use strict";
+  const app = document.getElementById("app");
+  const cache = {};
+  const ui = { q: "", state: "", party: "", ballot: false, sort: "state" };
+
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const pc = (p) => (p || "?")[0];
+  const fmtPct = (v) => (v == null ? "—" : `${v}%`);
+  const fmtMoney = (v) => (v == null ? "—" : v >= 1e6 ? `$${(v / 1e6).toFixed(1)}M` : v >= 1e3 ? `$${Math.round(v / 1e3)}K` : `$${Math.round(v)}`);
+  const fmtDate = (d) => { if (!d) return "—"; const t = new Date(d + "T12:00:00"); return isNaN(t) ? esc(d) : t.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); };
+  const year = new Date().getFullYear();
+  const ELECTION_YEAR = year % 2 === 0 ? year : year + 1;
+
+  async function get(path) {
+    if (!cache[path]) cache[path] = fetch(path, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(path); return r.json(); });
+    return cache[path];
+  }
+
+  function nav(which) {
+    document.querySelectorAll("nav a").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
+    window.scrollTo(0, 0);
+  }
+
+  function photo(s, cls = "") {
+    return `<img class="${cls}" src="${esc(s.photo)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph'}))">`;
+  }
+
+  /* ---------- Home: all senators ---------- */
+  async function home() {
+    nav("home");
+    const data = await get("data/index.json");
+    document.getElementById("updated").textContent = `Data updated ${new Date(data.updated).toLocaleString()}.`;
+    const ss = data.senators;
+    const states = [...new Set(ss.map((s) => s.state))].sort();
+    const onBallot = ss.filter((s) => s.next_election === ELECTION_YEAR).length;
+    const noData = !data.totals.votes && !data.totals.trade_reports;
+
+    app.innerHTML = `
+      <h1>Your senators, in one place</h1>
+      <p class="lede">What each U.S. senator votes for, trades, raises and has promised, pulled from official public records and linked back to the source. No party scores, no spin: just the record, so you can decide.</p>
+      <div class="banner">
+        <div><strong>${ELECTION_YEAR} election:</strong> ${onBallot} of these seats are on the ballot. Winners take office in January; their campaign promises will be tracked from day one.</div>
+        <button class="btn ${ui.ballot ? "on" : ""}" id="ballot">Show only seats on the ${ELECTION_YEAR} ballot</button>
+      </div>
+      ${noData ? `<div class="notice">Votes, trades and campaign money load after the daily update job first runs. Until then you'll see each senator's basic profile and committees.</div>` : ""}
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search by name or committee" value="${esc(ui.q)}" aria-label="Search">
+        <select id="st" aria-label="State"><option value="">All states</option>${states.map((s) => `<option ${s === ui.state ? "selected" : ""}>${s}</option>`).join("")}</select>
+        <select id="pt" aria-label="Party"><option value="">All parties</option>${["Democrat", "Republican", "Independent"].map((p) => `<option ${p === ui.party ? "selected" : ""}>${p}</option>`).join("")}</select>
+        <select id="so" aria-label="Sort">
+          ${[["state", "Sort: state"], ["name", "Sort: name"], ["attendance", "Lowest attendance"], ["late", "Most late trade reports"], ["overlap", "Most committee-overlap trades"], ["trades", "Most trades"], ["raised", "Most money raised"]]
+            .map(([v, l]) => `<option value="${v}" ${v === ui.sort ? "selected" : ""}>${l}</option>`).join("")}
+        </select>
+      </div>
+      <p class="muted small" id="count"></p>
+      <div class="grid" id="grid"></div>`;
+
+    const render = () => {
+      const q = ui.q.toLowerCase();
+      let list = ss.filter((s) =>
+        (!ui.state || s.state === ui.state) && (!ui.party || s.party === ui.party) &&
+        (!ui.ballot || s.next_election === ELECTION_YEAR) &&
+        (!q || s.name.toLowerCase().includes(q) || s.committees.join(" ").toLowerCase().includes(q)));
+      const m = (s, k) => s.metrics[k] ?? -1;
+      const sorters = {
+        state: (a, b) => a.state.localeCompare(b.state) || a.last.localeCompare(b.last),
+        name: (a, b) => a.last.localeCompare(b.last),
+        attendance: (a, b) => (a.metrics.attendance ?? 101) - (b.metrics.attendance ?? 101),
+        late: (a, b) => m(b, "late_trades") - m(a, "late_trades"),
+        overlap: (a, b) => m(b, "committee_overlap_trades") - m(a, "committee_overlap_trades"),
+        trades: (a, b) => m(b, "trades") - m(a, "trades"),
+        raised: (a, b) => m(b, "raised") - m(a, "raised"),
+      };
+      list.sort(sorters[ui.sort]);
+      document.getElementById("count").textContent = `${list.length} senator${list.length === 1 ? "" : "s"}`;
+      document.getElementById("grid").innerHTML = list.map((s) => `
+        <a class="card" href="#/s/${s.bioguide}">
+          <div class="who">${photo(s)}<div>
+            <div class="name">${esc(s.name)}</div>
+            <div><span class="party ${pc(s.party)}">${pc(s.party)}</span> ${esc(s.state)}
+            ${s.next_election === ELECTION_YEAR ? ` <span class="tag">On ${ELECTION_YEAR} ballot</span>` : ""}</div>
+          </div></div>
+          <div class="stats">
+            <div class="stat"><b>${fmtPct(s.metrics.attendance)}</b><span>votes cast</span></div>
+            <div class="stat"><b>${s.metrics.trades}</b><span>stock trades</span></div>
+            <div class="stat"><b>${s.metrics.late_trades}</b><span>reported late</span></div>
+          </div>
+        </a>`).join("") || `<div class="empty">No senators match those filters.</div>`;
+    };
+    const bind = (id, key, ev = "change") => document.getElementById(id).addEventListener(ev, (e) => { ui[key] = e.target.value; render(); });
+    bind("q", "q", "input"); bind("st", "state"); bind("pt", "party"); bind("so", "sort");
+    document.getElementById("ballot").addEventListener("click", (e) => { ui.ballot = !ui.ballot; e.target.classList.toggle("on", ui.ballot); render(); });
+    render();
+  }
+
+  /* ---------- Senator profile ---------- */
+  async function profile(id) {
+    nav("home");
+    let s;
+    try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/">Back to all senators</a></div>`; return; }
+    const m = s.metrics;
+    const metric = (lbl, val, how) => `<div class="metric ${val === "—" ? "na" : ""}"><div class="lbl">${lbl}</div><div class="val">${val === "—" ? "Not enough data yet" : val}</div><div class="how">${how}</div></div>`;
+    const links = [s.website && `<a href="${esc(s.website)}">Official site</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact</a>`,
+      s.phone && `<a href="tel:${esc(s.phone)}">${esc(s.phone)}</a>`, s.x_handle && `<a href="https://x.com/${esc(s.x_handle)}">@${esc(s.x_handle)} on X</a>`].filter(Boolean).join(" · ");
+
+    app.innerHTML = `
+      <p class="small"><a href="#/">← All senators</a></p>
+      <div class="profile-head">
+        ${photo(s)}
+        <div>
+          <h1>${esc(s.name)}</h1>
+          <div><span class="party ${pc(s.party)}">${esc(s.party)}${s.caucus && s.caucus !== s.party ? `, caucuses with ${esc(s.caucus)}s` : ""}</span>
+            ${s.next_election === ELECTION_YEAR ? `<span class="tag">Seat on the ${ELECTION_YEAR} ballot</span>` : ""}</div>
+          <div class="facts">
+            <span>${esc(s.state)} · ${esc(s.rank || "")} senator</span>
+            <span>In the Senate since ${fmtDate(s.serving_since)}</span>
+            <span>Current term ends ${fmtDate(s.term_end)}</span>
+            <span>Next election: ${s.next_election}</span>
+          </div>
+          <div class="small">${links}</div>
+        </div>
+      </div>
+      <div class="metrics">
+        ${metric("Attendance", fmtPct(m.attendance), `Share of ${m.votes_eligible} roll-call votes this Congress where they voted.`)}
+        ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
+        ${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
+        ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}
+        ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_tracked} verified promise${m.promises_tracked === 1 ? "" : "s"} tracked. Shown once at least 3 are resolved.`)}
+      </div>
+      <div class="tabs" role="tablist">
+        ${["Votes", "Stock trades", "Campaign money", "Promises", "Statements", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
+      </div>
+      <div id="tab"></div>`;
+
+    const tabs = [votesTab, tradesTab, moneyTab, promisesTab, statementsTab, committeesTab];
+    const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); };
+    document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => show(+b.dataset.tab)));
+    show(0);
+  }
+
+  const POS = { Y: "Yes", N: "No", P: "Present", NV: "Didn't vote" };
+  function votesTab(s) {
+    if (!s.votes.length) return `<div class="empty">No votes loaded yet. They arrive with the first daily update.</div>`;
+    return `<p class="muted small">Most recent ${s.votes.length} roll-call votes. Where available, the summary is the Congressional Research Service's neutral description of the bill.</p>
+      <div class="table-wrap"><table><thead><tr><th>Date</th><th>What was voted on</th><th>Their vote</th><th>Result</th></tr></thead><tbody>
+      ${s.votes.map((v) => `<tr>
+        <td>${fmtDate(v.date)}</td>
+        <td>${v.bill ? `<b>${esc(v.bill)}</b> ` : ""}${esc(v.title || "")}<div class="muted small">${esc(v.question)}</div>
+          ${v.summary ? `<details class="sum"><summary>What the bill does</summary><p>${esc(v.summary.text)} ${v.summary.url ? `<a href="${esc(v.summary.url)}">Congress.gov</a>` : ""}</p></details>` : ""}
+          ${v.broke_with_party ? `<span class="flag break">Voted against most of party</span>` : ""}</td>
+        <td class="pos ${v.position}">${POS[v.position] || esc(v.position)}</td>
+        <td>${esc(v.result)} <a class="small" href="${esc(v.source)}">source</a></td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  function tradesTab(s) {
+    const paper = s.paper_reports.length ? `<p class="muted small">${s.paper_reports.length} report(s) were filed on paper and can't be read automatically: ${s.paper_reports.slice(0, 10).map((r) => `<a href="${esc(r.url)}">${fmtDate(r.received)}</a>`).join(", ")}</p>` : "";
+    if (!s.trades.length) return `<div class="empty">No electronically filed stock trades on record since 2023${s.metrics.trades === 0 && !s.paper_reports.length ? " (or trade data hasn't loaded yet)" : ""}.</div>${paper}`;
+    return `<p class="muted small">Trades by the senator, spouse or dependents, from STOCK Act reports. Amounts are the ranges the law requires, not exact figures.</p>${paper}
+      <div class="table-wrap"><table><thead><tr><th>Traded</th><th>Asset</th><th>Type</th><th>Amount</th><th>Owner</th><th>Reported</th></tr></thead><tbody>
+      ${s.trades.map((t) => `<tr>
+        <td>${fmtDate(t.date)}</td>
+        <td>${t.ticker ? `<b>${esc(t.ticker)}</b> ` : ""}${esc(t.asset)}${t.industry ? `<div class="muted small">${esc(t.industry)}</div>` : ""}
+          ${t.committee_overlap.map((c) => `<span class="flag overlap">Industry overseen by ${esc(c)}</span>`).join("")}</td>
+        <td>${esc(t.type)}</td><td>${esc(t.amount)}</td><td>${esc(t.owner)}</td>
+        <td>${fmtDate(t.received)}${t.late ? ` <span class="flag late">Late: ${t.days_to_report} days</span>` : ""} <a class="small" href="${esc(t.url)}">filing</a></td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  function moneyTab(s) {
+    const m = s.money;
+    if (!m) return `<div class="empty">Campaign finance data hasn't loaded for this senator yet.</div>`;
+    const rows = [["Total raised", m.receipts], ["From individuals", m.individual], ["From PACs and other committees", m.pacs], ["From party committees", m.party], ["Self-funded (incl. loans)", m.self_funded], ["Spent", m.disbursements], ["Cash on hand", m.cash_on_hand]];
+    return `<p class="muted small">Campaign committee totals for the ${m.cycle} election cycle (${esc(m.period)}). <a href="${esc(m.source)}">Full FEC record</a></p>
+      <div class="grid"><div class="card">${rows.map(([l, v]) => `<div class="money-row"><span>${l}</span><b>${fmtMoney(v)}</b></div>`).join("")}</div>
+      <div class="card"><h3>Top donor employers</h3><p class="muted small">Itemized donations grouped by the employer donors listed. Reflects employees, not the companies themselves.</p>
+      ${m.top_employers.length ? m.top_employers.map((e) => `<div class="money-row"><span>${esc(e.employer)}</span><b>${fmtMoney(e.total)}</b></div>`).join("") : `<p class="muted">None reported.</p>`}</div></div>`;
+  }
+
+  const STATUS_LABEL = { kept: "Kept", compromise: "Compromise", in_progress: "In progress", not_started: "Not started", stalled: "Stalled", broken: "Broken" };
+  function promisesTab(s) {
+    if (!s.promises.length) return `<div class="empty">No verified promises tracked yet for ${esc(s.name)}. Promises are added by hand, each with its original source.</div>`;
+    const total = s.promises.length, by = s.metrics.promises_by_status;
+    const colors = { kept: "var(--good)", compromise: "var(--accent)", in_progress: "var(--accent-soft)", not_started: "var(--line)", stalled: "var(--muted)", broken: "var(--bad)" };
+    return `<div class="bar">${Object.entries(by).filter(([, n]) => n).map(([k, n]) => `<span title="${STATUS_LABEL[k]}: ${n}" style="width:${(100 * n) / total}%;background:${colors[k]}"></span>`).join("")}</div>
+      <p class="muted small">${Object.entries(by).filter(([, n]) => n).map(([k, n]) => `${STATUS_LABEL[k]}: ${n}`).join(" · ")}. Senators are judged on their own actions (votes, bills, public pressure), not on whether Congress as a whole passed something.</p>
+      ${s.promises.map((p) => `<div class="item">
+        <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> <span class="tag">${esc(p.topic)}</span>
+        <h3 style="margin-top:8px">${esc(p.promise)}</h3>
+        <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)} · <a href="${esc(p.source_url)}">source</a>${p.archive_url ? ` · <a href="${esc(p.archive_url)}">archived copy</a>` : ""}</div></blockquote>
+        ${(p.evidence || []).length ? `<p class="small"><b>Record since:</b></p><ul class="small">${p.evidence.map((e) => `<li>${fmtDate(e.date)}: ${esc(e.description)} <a href="${esc(e.url)}">source</a></li>`).join("")}</ul>` : ""}
+        ${p.notes ? `<p class="muted small">${esc(p.notes)}</p>` : ""}</div>`).join("")}`;
+  }
+
+  function statementsTab(s) {
+    if (!s.statements.length) return `<div class="empty">No verified statements on file yet.</div>`;
+    return s.statements.map((x) => `<div class="item"><span class="tag">${esc(x.platform)}</span> <span class="tag">${esc(x.topic)}</span>
+      <blockquote>“${esc(x.quote)}”<div class="muted small">${fmtDate(x.source_date)} · <a href="${esc(x.source_url)}">source</a>${x.archive_url ? ` · <a href="${esc(x.archive_url)}">archived copy</a>` : ""}</div></blockquote>
+      ${x.related_bill ? `<p class="small">Related: ${esc(x.related_bill)}</p>` : ""}</div>`).join("");
+  }
+
+  function committeesTab(s) {
+    const sub = {};
+    s.subcommittees.forEach((c) => (sub[c.parent] = sub[c.parent] || []).push(c));
+    return s.committees.length ? s.committees.map((c) => `<div class="item"><h3>${esc(c.name)}${c.title ? ` <span class="tag">${esc(c.title)}</span>` : ""}</h3>
+      ${(sub[c.name] || []).length ? `<p class="small muted">Subcommittees: ${sub[c.name].map((x) => esc(x.name) + (x.title ? ` (${esc(x.title)})` : "")).join("; ")}</p>` : ""}</div>`).join("")
+      : `<div class="empty">No committee assignments listed.</div>`;
+  }
+
+  /* ---------- Recent votes ---------- */
+  async function votes() {
+    nav("votes");
+    const d = await get("data/votes_recent.json").catch(() => ({ votes: [] }));
+    app.innerHTML = `<h1>Recent Senate votes</h1><p class="lede">The latest roll-call votes. Open a senator's page to see how they voted.</p>
+      ${d.votes.length ? `<div class="table-wrap"><table><thead><tr><th>Date</th><th>What was voted on</th><th>Yes</th><th>No</th><th>Result</th></tr></thead><tbody>
+      ${d.votes.map((v) => `<tr><td>${fmtDate(v.date)}</td><td>${v.bill ? `<b>${esc(v.bill)}</b> ` : ""}${esc(v.title || "")}<div class="muted small">${esc(v.question)}</div></td>
+        <td>${esc(v.counts.yeas)}</td><td>${esc(v.counts.nays)}</td><td>${esc(v.result)} <a class="small" href="${esc(v.source)}">source</a></td></tr>`).join("")}
+      </tbody></table></div>` : `<div class="empty">Votes load after the first daily update.</div>`}`;
+  }
+
+  /* ---------- About ---------- */
+  function about() {
+    nav("about");
+    app.innerHTML = `<div class="prose">
+      <h1>How it works</h1>
+      <p class="lede">The goal is to put scattered public information in one readable place. The site reports what senators did; it doesn't tell you whether that was good.</p>
+      <h2>Where the data comes from</h2>
+      <ul>
+        <li><b>Senators and committees:</b> the open <a href="https://github.com/unitedstates/congress-legislators">congress-legislators</a> dataset.</li>
+        <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
+        <li><b>Stock trades:</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Company industries come from SEC filings.</li>
+        <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
+        <li><b>Promises and statements:</b> collected by hand. Every entry quotes the original words, links the original source, and is checked by a person before it appears.</li>
+      </ul>
+      <h2>What each number means</h2>
+      <ul>
+        <li><b>Attendance:</b> roll-call votes they cast (yes, no or present) divided by votes held while they were in office this Congress.</li>
+        <li><b>Votes with own party:</b> how often their yes/no matched the majority of their party (independents counted with the party they caucus with). Context only: neither high nor low is "better."</li>
+        <li><b>Trades reported on time:</b> the STOCK Act requires reporting a trade within 45 days. We count days between the trade and the date the report was received.</li>
+        <li><b>Trades in their committees' industries:</b> trades in companies whose industry falls under a committee the senator sits on. The committee-to-industry list is public in <code>data/committee_sectors.json</code>. A flag isn't proof of wrongdoing; it marks where a conflict of interest is possible.</li>
+        <li><b>Promise follow-through:</b> among resolved promises, kept counts 1, compromise counts ½, stalled or broken count 0. Only specific, checkable promises are graded, and only once at least 3 are resolved. Senators are judged on their own actions, since no single senator can pass a law alone.</li>
+      </ul>
+      <h2>What we don't do</h2>
+      <ul>
+        <li>No overall score that mixes these together. Any weighting would bake in someone's values.</li>
+        <li>No ratings of whether a vote was good or bad for you. The record is here so you can judge.</li>
+        <li>Nothing appears without a link to its original source.</li>
+      </ul>
+      <h2>Spot an error?</h2>
+      <p>Open an issue on the project's GitHub page with a link to the correct source.</p>
+    </div>`;
+  }
+
+  function route() {
+    const h = location.hash.replace(/^#\/?/, "");
+    const [page, arg] = h.split("/");
+    const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "about" ? about() : home();
+    Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
+  }
+  window.addEventListener("hashchange", route);
+  route();
+})();

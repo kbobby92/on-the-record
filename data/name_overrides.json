@@ -1,0 +1,4 @@
+{
+  "_about": "If a trade filer's name on efdsearch.senate.gov doesn't match the roster automatically, map \"First Last\" exactly as the filing shows it to the senator's bioguide ID. The build prints any unmatched names.",
+  "Example Filer": "X000000"
+}

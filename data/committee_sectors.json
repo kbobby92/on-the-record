@@ -1,0 +1,15 @@
+{
+  "_about": "Which industries each Senate committee oversees, as SEC Standard Industrial Classification (SIC) code ranges. A trade is flagged when a senator trades a company in an industry their own committee oversees. This mapping is a judgment call kept deliberately narrow; edit it openly and note changes in the changelog.",
+  "_sic_reference": "https://www.sec.gov/search-filings/standard-industrial-classification-sic-code-list",
+  "committees": {
+    "SSAS": {"label": "Armed Services", "ranges": [[3480, 3489], [3720, 3729], [3760, 3769], [3795, 3795], [3812, 3812]], "industries": "Defense: aircraft, missiles, ordnance, defense electronics"},
+    "SLIN": {"label": "Intelligence", "ranges": [[3760, 3769], [3812, 3812]], "industries": "Defense electronics and missiles"},
+    "SSBK": {"label": "Banking, Housing, and Urban Affairs", "ranges": [[6000, 6299], [6500, 6799]], "industries": "Banks, lenders, brokers, real estate, investment firms"},
+    "SSCM": {"label": "Commerce, Science, and Transportation", "ranges": [[4000, 4799], [4800, 4899], [3711, 3716], [3720, 3729]], "industries": "Transportation, airlines, telecom, broadcasting, automakers"},
+    "SSEG": {"label": "Energy and Natural Resources", "ranges": [[1000, 1099], [1200, 1399], [2910, 2919], [4900, 4949]], "industries": "Oil and gas, mining, coal, refining, utilities"},
+    "SSEV": {"label": "Environment and Public Works", "ranges": [[1600, 1699], [4950, 4959]], "industries": "Heavy construction, waste and environmental services"},
+    "SSFI": {"label": "Finance", "ranges": [[6300, 6399], [8000, 8099]], "industries": "Insurers, health care providers (Medicare/Medicaid jurisdiction)"},
+    "SSHR": {"label": "Health, Education, Labor, and Pensions", "ranges": [[2830, 2836], [3841, 3851], [8000, 8099], [8200, 8299]], "industries": "Pharmaceuticals, medical devices, health services, education companies"},
+    "SSAF": {"label": "Agriculture, Nutrition, and Forestry", "ranges": [[100, 999], [2000, 2099], [2870, 2879]], "industries": "Farming, food processing, agricultural chemicals"}
+  }
+}
