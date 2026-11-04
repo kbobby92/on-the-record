@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T03:42+00:00",
+ "updated": "2026-11-04T19:46+00:00",
  "source": "github.com/unitedstates/congress-legislators",
  "senators": [
   {
@@ -5035,21 +5035,21 @@
      "name": "Departments of Labor, Health and Human Services, and Education, and Related Agencies",
      "parent": "Senate Committee on Appropriations",
      "title": "Ex Officio",
-     "rank": 9
+     "rank": 10
     },
     {
      "id": "SSAP22",
      "name": "Energy and Water Development",
      "parent": "Senate Committee on Appropriations",
      "title": "Ex Officio",
-     "rank": 9
+     "rank": 10
     },
     {
      "id": "SSAP23",
      "name": "Financial Services and General Government",
      "parent": "Senate Committee on Appropriations",
      "title": "Ex Officio",
-     "rank": 5
+     "rank": 6
     },
     {
      "id": "SSAP08",
@@ -9675,8 +9675,129 @@
    "office": "211 Russell Senate Office Building Washington DC 20510",
    "x_handle": null,
    "photo": "https://unitedstates.github.io/images/congress/225x275/G000608.jpg",
-   "committees": [],
-   "subcommittees": []
+   "committees": [
+    {
+     "id": "SSAP",
+     "name": "Senate Committee on Appropriations",
+     "parent": null,
+     "title": null,
+     "rank": 15
+    },
+    {
+     "id": "SSEV",
+     "name": "Senate Committee on Environment and Public Works",
+     "parent": null,
+     "title": null,
+     "rank": 10
+    },
+    {
+     "id": "SSBU",
+     "name": "Senate Committee on the Budget",
+     "parent": null,
+     "title": null,
+     "rank": 11
+    },
+    {
+     "id": "SSJU",
+     "name": "Senate Committee on the Judiciary",
+     "parent": null,
+     "title": null,
+     "rank": 12
+    }
+   ],
+   "subcommittees": [
+    {
+     "id": "SSAP16",
+     "name": "Commerce, Justice, Science, and Related Agencies",
+     "parent": "Senate Committee on Appropriations",
+     "title": null,
+     "rank": 9
+    },
+    {
+     "id": "SSAP18",
+     "name": "Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+     "parent": "Senate Committee on Appropriations",
+     "title": null,
+     "rank": 9
+    },
+    {
+     "id": "SSAP22",
+     "name": "Energy and Water Development",
+     "parent": "Senate Committee on Appropriations",
+     "title": null,
+     "rank": 9
+    },
+    {
+     "id": "SSAP23",
+     "name": "Financial Services and General Government",
+     "parent": "Senate Committee on Appropriations",
+     "title": null,
+     "rank": 5
+    },
+    {
+     "id": "SSAP19",
+     "name": "Military Construction, Veterans Affairs, and Related Agencies",
+     "parent": "Senate Committee on Appropriations",
+     "title": null,
+     "rank": 9
+    },
+    {
+     "id": "SSAP24",
+     "name": "Transportation, Housing and Urban Development, and Related Agencies",
+     "parent": "Senate Committee on Appropriations",
+     "title": null,
+     "rank": 9
+    },
+    {
+     "id": "SSEV09",
+     "name": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight",
+     "parent": "Senate Committee on Environment and Public Works",
+     "title": null,
+     "rank": 5
+    },
+    {
+     "id": "SSEV10",
+     "name": "Clean Air, Climate, and Nuclear Innovation and Safety",
+     "parent": "Senate Committee on Environment and Public Works",
+     "title": null,
+     "rank": 8
+    },
+    {
+     "id": "SSEV08",
+     "name": "Transportation and Infrastructure",
+     "parent": "Senate Committee on Environment and Public Works",
+     "title": null,
+     "rank": 8
+    },
+    {
+     "id": "SSJU04",
+     "name": "Border Security and Immigration",
+     "parent": "Senate Committee on the Judiciary",
+     "title": null,
+     "rank": 7
+    },
+    {
+     "id": "SSJU22",
+     "name": "Crime and Counterterrorism",
+     "parent": "Senate Committee on the Judiciary",
+     "title": null,
+     "rank": 6
+    },
+    {
+     "id": "SSJU25",
+     "name": "Federal Courts, Oversight, Agency Action, and Federal Rights",
+     "parent": "Senate Committee on the Judiciary",
+     "title": null,
+     "rank": 6
+    },
+    {
+     "id": "SSJU28",
+     "name": "Privacy, Technology, and the Law",
+     "parent": "Senate Committee on the Judiciary",
+     "title": null,
+     "rank": 6
+    }
+   ]
   },
   {
    "bioguide": "S001184",
@@ -11999,14 +12120,14 @@
      "name": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight",
      "parent": "Senate Committee on Environment and Public Works",
      "title": "Ex Officio",
-     "rank": 5
+     "rank": 6
     },
     {
      "id": "SSEV10",
      "name": "Clean Air, Climate, and Nuclear Innovation and Safety",
      "parent": "Senate Committee on Environment and Public Works",
      "title": "Ex Officio",
-     "rank": 8
+     "rank": 9
     },
     {
      "id": "SSEV15",
@@ -12020,7 +12141,7 @@
      "name": "Transportation and Infrastructure",
      "parent": "Senate Committee on Environment and Public Works",
      "title": "Ex Officio",
-     "rank": 8
+     "rank": 9
     }
    ]
   },
