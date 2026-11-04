@@ -201,6 +201,35 @@ def main():
           f"{len(money)} money records, {len(promises)} verified promises, {len(statements)} verified statements")
 
 
+SUFFIXES = {"JR", "SR", "II", "III", "IV", "JR.", "SR."}
+
+
+def fec_name(raw):
+    """'OSSOFF, T. JONATHAN' -> 'T. Jonathan Ossoff'; 'COLLINS, MICHAEL A JR' -> 'Michael A Collins Jr.'"""
+    if not raw or "," not in raw:
+        return (raw or "").title()
+    last, rest = [x.strip() for x in raw.split(",", 1)]
+    words = rest.replace(",", " ").split()
+    suffix = [w for w in words if w.upper().rstrip(".") in {x.rstrip(".") for x in SUFFIXES}]
+    words = [w for w in words if w not in suffix and w.upper() not in ("MR", "MR.", "MS", "MS.", "DR", "DR.", "MRS", "MRS.", "SEN", "SEN.", "SENATOR", "HON", "HON.", "REP", "REP.")]
+
+    def cap(w):
+        w = w.lower().title()
+        if w.startswith("Mc") and len(w) > 2:
+            w = "Mc" + w[2].upper() + w[3:]
+        return w
+    name = " ".join([cap(w) for w in words] + ["-".join(cap(x) for x in last.split("-")).replace(" ", " ")])
+    if suffix:
+        sfx = suffix[0].upper().rstrip(".")
+        name += " " + (sfx if sfx in ("II", "III", "IV") else sfx.title() + ".")
+    return name
+
+
+def last_name(name):
+    parts = [p for p in name.replace(",", " ").split() if p.upper().rstrip(".") not in {"JR", "SR", "II", "III", "IV"}]
+    return parts[-1].lower() if parts else ""
+
+
 RACE_STATUSES = {"counting", "called", "certified", "runoff", "recount"}
 
 
@@ -221,11 +250,14 @@ def build_elections(roster, now):
         nominees = []
         for n in r.get("nominees") or []:
             c = by_id.get(n.get("candidate_id") or "")
-            nominees.append({"name": n.get("name") or (c or {}).get("name"), "party": n.get("party") or (c or {}).get("party"),
+            nominees.append({"name": n.get("name") or fec_name((c or {}).get("name")), "party": n.get("party") or (c or {}).get("party"),
                              "incumbent": bool(n.get("incumbent")), "bioguide": n.get("bioguide"),
                              "receipts": (c or {}).get("receipts"), "cash_on_hand": (c or {}).get("cash_on_hand"),
                              "through": (c or {}).get("through"), "fec": (c or {}).get("source")})
         nominees.sort(key=lambda n: -(n["receipts"] or 0))
+        if status in ("called", "certified") and r.get("winner"):
+            for n in nominees:
+                n["won"] = last_name(n["name"] or "") == last_name(r["winner"])
         filers = sorted([c for c in cands["candidates"] if c["state"] == st and (c.get("receipts") or 0) >= 5000],
                         key=lambda c: -(c["receipts"] or 0))
         holder = by_bio.get(r.get("seat_holder"))
@@ -237,8 +269,8 @@ def build_elections(roster, now):
             "called_at": r.get("called_at"), "source_url": r.get("source_url"),
             "notes": r.get("notes"), "updated": r.get("updated"),
             "nominees": nominees,
-            "filers": [{k: c[k] for k in ("name", "party", "status", "receipts", "cash_on_hand", "through", "source")}
-                       for c in filers[:10]],
+            "filers": [{k: c[k] for k in ("party", "status", "receipts", "cash_on_hand", "through", "source")}
+                       | {"name": fec_name(c["name"])} for c in filers[:10]],
         })
     with open(D("elections.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "year": races.get("year"), "election_day": races.get("election_day"),

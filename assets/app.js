@@ -261,7 +261,7 @@
       <p class="muted small" style="margin-top:16px">Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
 
     const render = () => {
-      const list = d.races.filter((r) => filt.v === "all" || r.status === filt.v ||
+      const list = d.races.slice().sort((a, b) => (STATES[a.state] || a.state).localeCompare(STATES[b.state] || b.state)).filter((r) => filt.v === "all" || r.status === filt.v ||
         (filt.v === "called" && r.status === "certified") || (filt.v === "runoff" && r.status === "recount"));
       document.getElementById("races").innerHTML = list.map(raceCard).join("") || `<div class="empty">No races in this group yet.</div>`;
     };
@@ -274,7 +274,7 @@
   function raceCard(r) {
     const h = r.seat_holder;
     const people = r.nominees.length ? r.nominees : r.filers.map((c) => ({ name: c.name, party: c.party, incumbent: c.status === "I", receipts: c.receipts, fec: c.source }));
-    const won = (n) => r.winner && n.name && r.winner.toLowerCase().split(" ").pop() === n.name.toLowerCase().replace(/,.*$/, "").split(" ").pop();
+    const won = (n) => !!n.won;
     return `<div class="card race ${r.status}">
       <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3><span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></div>
       <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
