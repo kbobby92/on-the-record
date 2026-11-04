@@ -10,6 +10,7 @@ on:
       - "data/statements.json"
       - "data/committee_sectors.json"
       - "data/name_overrides.json"
+      - "inbox/**"
 
 permissions:
   contents: write
@@ -30,6 +31,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+
+      - name: Import Grok research from inbox/
+        run: python scripts/import_grok.py
 
       - name: Check promises and statements
         run: python scripts/validate_entries.py
@@ -67,7 +71,7 @@ jobs:
         run: |
           git config user.name "on-the-record-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add data inbox
           git diff --cached --quiet && exit 0
           git commit -m "Data update $(date -u +%Y-%m-%d)"
           # Another run may have pushed meanwhile: rebuild on top of it rather than fail.
