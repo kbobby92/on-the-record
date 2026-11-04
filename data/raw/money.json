@@ -129,5 +129,111 @@
   "committee_id": "C00701672",
   "source": "https://www.fec.gov/data/candidate/S0AL00230/?cycle=2026&election_full=true",
   "fetched": "2026-11-04T00:02+00:00"
+ },
+ "B001236": {
+  "candidate_id": "S0AR00150",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 1306075.65,
+  "disbursements": 810352.18,
+  "cash_on_hand": 1387943.15,
+  "individual": 399255.43,
+  "pacs": 743100.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0AR00150/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:06+00:00"
+ },
+ "C001095": {
+  "candidate_id": "S4AR00103",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 14517576.18,
+  "disbursements": 15784601.36,
+  "cash_on_hand": 5129927.81,
+  "individual": 8484154.86,
+  "pacs": 1628000.0,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 97769.25,
+    "count": 255
+   },
+   {
+    "employer": "GOLDMAN SACHS",
+    "total": 97500.0,
+    "count": 34
+   },
+   {
+    "employer": "SELF",
+    "total": 86058.2,
+    "count": 68
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 41200.0,
+    "count": 23
+   },
+   {
+    "employer": "STEPHENS INC.",
+    "total": 40308.0,
+    "count": 24
+   }
+  ],
+  "committee_id": "C00499988",
+  "source": "https://www.fec.gov/data/candidate/S4AR00103/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:06+00:00"
+ },
+ "G000574": {
+  "candidate_id": "S4AZ00139",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 4841014.45,
+  "disbursements": 2808751.97,
+  "cash_on_hand": 2243415.18,
+  "individual": 3893440.24,
+  "pacs": 503162.83,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4AZ00139/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:06+00:00"
+ },
+ "K000377": {
+  "candidate_id": "S0AZ00350",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 58403855.56,
+  "disbursements": 33363582.15,
+  "cash_on_hand": 26498148.59,
+  "individual": 57663094.64,
+  "pacs": 89846.92,
+  "party": 0.0,
+  "self_funded": 23.41,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0AZ00350/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:06+00:00"
+ },
+ "P000145": {
+  "candidate_id": "S2CA00955",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 2378141.03,
+  "disbursements": 2518900.15,
+  "cash_on_hand": 7312467.54,
+  "individual": 1332756.91,
+  "pacs": 417055.0,
+  "party": 3500.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2CA00955/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:06+00:00"
  }
 }
