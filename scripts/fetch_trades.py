@@ -22,28 +22,33 @@ SEC_UA = os.environ.get("SEC_USER_AGENT")
 
 
 def session():
+    """Accept the site's usage agreement and return (session, csrf token)."""
     s = requests.Session()
-    s.headers["User-Agent"] = "Mozilla/5.0 (compatible; on-the-record open-data project)"
+    s.headers["User-Agent"] = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                               "Chrome/126.0 Safari/537.36")
     home = s.get(BASE + "/search/home/", timeout=60)
-    token = BeautifulSoup(home.text, "html.parser").find(
+    home.raise_for_status()
+    form_token = BeautifulSoup(home.text, "html.parser").find(
         attrs={"name": "csrfmiddlewaretoken"})["value"]
-    s.post(BASE + "/search/home/", timeout=60,
-           data={"csrfmiddlewaretoken": token, "prohibition_agreement": "1"},
-           headers={"Referer": BASE + "/search/home/"})
-    return s
+    r = s.post(BASE + "/search/home/", timeout=60,
+               data={"csrfmiddlewaretoken": form_token, "prohibition_agreement": "1"},
+               headers={"Referer": BASE + "/search/home/"})
+    r.raise_for_status()
+    token = s.cookies.get("csrftoken") or s.cookies.get("csrf") or form_token
+    return s, token
 
 
-def list_reports(s):
+def list_reports(s, token):
     rows, start = [], 0
     while True:
         r = s.post(BASE + "/search/report/data/", timeout=60,
-                   headers={"Referer": BASE + "/search/",
-                            "X-CSRFToken": s.cookies.get("csrftoken", "")},
+                   headers={"Referer": BASE + "/search/", "X-CSRFToken": token,
+                            "X-Requested-With": "XMLHttpRequest"},
                    data={"start": str(start), "length": "100", "report_types": "[11]",
                          "filer_types": "[1]", "submitted_start_date": START_DATE,
                          "submitted_end_date": "", "candidate_state": "",
                          "senator_state": "", "office_id": "", "first_name": "",
-                         "last_name": "", "draw": "1"})
+                         "last_name": "", "draw": "1", "csrfmiddlewaretoken": token})
         r.raise_for_status()
         data = r.json().get("data", [])
         rows += data
@@ -102,8 +107,8 @@ def main():
     if os.path.exists(OUT):
         with open(OUT, encoding="utf-8") as f:
             store = json.load(f)
-    s = session()
-    rows = list_reports(s)
+    s, token = session()
+    rows = list_reports(s, token)
     print(f"{len(rows)} periodic transaction reports listed")
     new = 0
     for first, last, office, link, received in rows:

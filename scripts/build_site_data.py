@@ -3,7 +3,7 @@
   data/senators/<bioguide>.json  everything about one senator
   data/votes_recent.json        the latest roll-call votes
 
-Every metric here is a plain count or percentage with a published rule (see METHODOLOGY.md).
+Every metric here is a plain count or percentage with a published rule (see the "How it works" page).
 There is deliberately no combined "overall" score.
 """
 import json, os, re, unicodedata
@@ -63,7 +63,7 @@ def main():
     overrides = load(D("name_overrides.json"), {})
     overrides.pop("_about", None)
 
-    by_lis = {s["lis"]: s for s in roster}
+    by_bio = {s["bioguide"]: s for s in roster}
     vote_list = sorted(votes["votes"].values(), key=lambda v: (v["date"], v["number"]))
     summaries = votes.get("summaries", {})
 
@@ -73,9 +73,9 @@ def main():
     majority = {}
     for v in vote_list:
         tally = defaultdict(Counter)
-        for lis, pos in v["positions"].items():
-            if lis in by_lis and pos in ("Y", "N"):
-                tally[bloc(by_lis[lis])][pos] += 1
+        for bio, pos in v["positions"].items():
+            if bio in by_bio and pos in ("Y", "N"):
+                tally[bloc(by_bio[bio])][pos] += 1
         majority[v["id"]] = {p: (c.most_common(1)[0][0] if c["Y"] != c["N"] else None)
                              for p, c in tally.items()}
 
@@ -107,16 +107,16 @@ def main():
     os.makedirs(D("senators"), exist_ok=True)
     index = []
     for s in roster:
-        bid, lis = s["bioguide"], s["lis"]
+        bid = s["bioguide"]
         my_comms = {c["id"] for c in s["committees"]}
 
         # --- Votes ---
-        eligible = [v for v in vote_list if lis in v["positions"]]
-        cast = [v for v in eligible if v["positions"][lis] in ("Y", "N", "P")]
+        eligible = [v for v in vote_list if bid in v["positions"]]
+        cast = [v for v in eligible if v["positions"][bid] in ("Y", "N", "P")]
         with_party = against_party = 0
         breaks = []
         for v in eligible:
-            pos = v["positions"][lis]
+            pos = v["positions"][bid]
             m = majority[v["id"]].get(bloc(s))
             if pos in ("Y", "N") and m:
                 if pos == m:
@@ -130,7 +130,7 @@ def main():
             summ = summaries.get(f'{v["congress"]}-{doc["type"]}-{doc["number"]}')
             recent.append({"id": v["id"], "date": v["date"], "question": v["question"],
                            "title": v["title"] or doc.get("title"), "result": v["result"],
-                           "bill": doc.get("name"), "position": v["positions"][lis],
+                           "bill": doc.get("name"), "position": v["positions"][bid],
                            "broke_with_party": v["id"] in breaks, "source": v["source"],
                            "summary": summ})
 
