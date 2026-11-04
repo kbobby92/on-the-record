@@ -11,6 +11,7 @@ on:
       - "data/committee_sectors.json"
       - "data/name_overrides.json"
       - "inbox/**"
+      - "data/races.json"
 
 permissions:
   contents: write
@@ -63,6 +64,13 @@ jobs:
         env:
           FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
         run: python scripts/fetch_money.py
+
+      - name: Election candidates
+        if: github.event_name != 'push'
+        continue-on-error: true
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+        run: python scripts/fetch_candidates.py
 
       - name: Build site data
         run: python scripts/build_site_data.py

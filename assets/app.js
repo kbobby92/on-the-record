@@ -48,7 +48,8 @@
       <p class="lede">What each U.S. senator votes for, raises and has promised, pulled from official public records and linked back to the source. No party scores, no spin: just the record, so you can decide.</p>
       <div class="banner">
         <div><strong>${ELECTION_YEAR} election:</strong> ${onBallot} of these seats are on the ballot. Winners take office in January; their campaign promises will be tracked from day one.</div>
-        <button class="btn ${ui.ballot ? "on" : ""}" id="ballot">Show only seats on the ${ELECTION_YEAR} ballot</button>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="#/elections" style="text-decoration:none;color:inherit">See races and results</a>
+        <button class="btn ${ui.ballot ? "on" : ""}" id="ballot">Show only seats on the ${ELECTION_YEAR} ballot</button></div>
       </div>
       ${noData ? `<div class="notice">Votes and campaign money load after the daily update job first runs. Until then you'll see each senator's basic profile and committees.</div>` : ""}
       <div class="controls">
@@ -233,6 +234,62 @@
       </tbody></table></div>` : `<div class="empty">Votes load after the first daily update.</div>`}`;
   }
 
+
+  /* ---------- Elections ---------- */
+  const STATES = { AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming" };
+  const RACE_LABEL = { counting: "Counting", called: "Called", certified: "Certified", runoff: "Runoff", recount: "Recount" };
+  const fecParty = (p) => ({ DEM: "D", REP: "R", IND: "I", DFL: "D" }[p] || (p ? "O" : "?"));
+  const fmtWhen = (t) => { if (!t) return ""; const d = new Date(t); return isNaN(d) ? esc(t) : d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
+
+  async function elections() {
+    nav("elections");
+    const d = await get("data/elections.json");
+    const counts = d.races.reduce((a, r) => ((a[r.status] = (a[r.status] || 0) + 1), a), {});
+    const filt = { v: "all" };
+    app.innerHTML = `
+      <h1>${d.year} Senate elections</h1>
+      <p class="lede">Every Senate race on the ballot, who's running and what they've raised. A race is only marked called once a named news organization projects a winner, with a link to that call.</p>
+      <div class="metrics">
+        <div class="metric"><div class="lbl">Races</div><div class="val">${d.races.length}</div><div class="how">Seats on the ${d.year} ballot</div></div>
+        <div class="metric"><div class="lbl">Called</div><div class="val">${(counts.called || 0) + (counts.certified || 0)}</div><div class="how">${counts.certified || 0} certified by the state</div></div>
+        <div class="metric"><div class="lbl">Still counting</div><div class="val">${counts.counting || 0}</div><div class="how">${(counts.runoff || 0) + (counts.recount || 0)} in a runoff or recount</div></div>
+      </div>
+      <div class="controls" id="rf">
+        ${[["all", "All races"], ["counting", "Still counting"], ["called", "Called"], ["runoff", "Runoff or recount"]].map(([v, l]) => `<button class="btn ${v === "all" ? "on" : ""}" data-v="${v}">${l}</button>`).join("")}
+      </div>
+      <div class="grid race-grid" id="races"></div>
+      <p class="muted small" style="margin-top:16px">Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
+
+    const render = () => {
+      const list = d.races.filter((r) => filt.v === "all" || r.status === filt.v ||
+        (filt.v === "called" && r.status === "certified") || (filt.v === "runoff" && r.status === "recount"));
+      document.getElementById("races").innerHTML = list.map(raceCard).join("") || `<div class="empty">No races in this group yet.</div>`;
+    };
+    document.querySelectorAll("#rf button").forEach((b) => b.addEventListener("click", () => {
+      filt.v = b.dataset.v; document.querySelectorAll("#rf button").forEach((x) => x.classList.toggle("on", x === b)); render();
+    }));
+    render();
+  }
+
+  function raceCard(r) {
+    const h = r.seat_holder;
+    const people = r.nominees.length ? r.nominees : r.filers.map((c) => ({ name: c.name, party: c.party, incumbent: c.status === "I", receipts: c.receipts, fec: c.source }));
+    const won = (n) => r.winner && n.name && r.winner.toLowerCase().split(" ").pop() === n.name.toLowerCase().replace(/,.*$/, "").split(" ").pop();
+    return `<div class="card race ${r.status}">
+      <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3><span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></div>
+      <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
+      ${r.winner ? `<div class="called">Called for <b>${esc(r.winner)}</b> by ${esc(r.called_by)}${r.called_at ? `, ${fmtWhen(r.called_at)}` : ""} · <a href="${esc(r.source_url)}">source</a></div>` : ""}
+      ${r.notes ? `<p class="small muted">${esc(r.notes)}</p>` : ""}
+      <div class="cands">
+        ${people.length ? people.map((n) => `<div class="cand p-${fecParty(n.party).replace("O", "X").replace("?", "X")} ${won(n) ? "won" : ""}">
+          <span class="dot"></span><span class="cname">${n.bioguide ? `<a href="#/s/${esc(n.bioguide)}">${esc(n.name)}</a>` : esc(n.name)}${n.incumbent ? ` <span class="tag">Incumbent</span>` : ""}${won(n) ? ` <span class="tag win">Winner</span>` : ""}</span>
+          <span class="raised">${n.receipts != null ? (n.fec ? `<a href="${esc(n.fec)}">${fmtMoney(n.receipts)}</a>` : fmtMoney(n.receipts)) : ""}</span></div>`).join("")
+          : `<p class="muted small">Candidate list loads with the next update.</p>`}
+      </div>
+      ${!r.nominees.length && people.length ? `<p class="muted small" style="margin:8px 0 0">Candidates who raised money for this seat, per the FEC. May include people who lost the primary; the final ballot lineup is added as results come in.</p>` : ""}
+    </div>`;
+  }
+
   /* ---------- About ---------- */
   function about() {
     nav("about");
@@ -269,7 +326,7 @@
   function route() {
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
-    const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "about" ? about() : home();
+    const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections() : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
   }
   window.addEventListener("hashchange", route);

@@ -117,3 +117,25 @@ details.sum p { margin: 6px 0 0; color: var(--muted); font-size: .86rem; }
 .money-row:last-child { border-bottom: 0; }
 .prose { max-width: 760px; } .prose li { margin-bottom: 8px; }
 @media (max-width: 560px) { h1 { font-size: 1.85rem; } .profile-head .av { width: 88px; height: 88px; } .metric .val { font-size: 1.8rem; } }
+
+/* Elections */
+a.btn { display: inline-block; font: inherit; font-size: .92rem; font-weight: 500; padding: 9px 12px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--surface); }
+a.btn:hover { border-color: var(--gold); }
+.race-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.card.race { padding-left: 16px; }
+.card.race::before { display: none; }
+.race-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.race-top h3 { margin: 0; font-size: 1.25rem; }
+.rstatus { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 9px; border-radius: 6px; background: var(--surface-2); color: var(--muted); }
+.rstatus.called { background: var(--gold-soft); color: var(--gold); }
+.rstatus.certified { background: var(--good-soft); color: var(--good); }
+.rstatus.runoff, .rstatus.recount { background: var(--warn-soft); color: var(--warn); }
+.called { margin: 10px 0 2px; padding: 8px 10px; border-radius: 8px; background: var(--gold-soft); font-size: .88rem; }
+.cands { margin-top: 12px; border-top: 1px solid var(--line); }
+.cand { display: grid; grid-template-columns: 10px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .92rem; }
+.cand:last-child { border-bottom: 0; }
+.cand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--pcolor, var(--faint)); }
+.cand .raised { font-variant-numeric: tabular-nums; font-weight: 600; }
+.cand.won .cname { font-weight: 700; }
+.p-X { --pcolor: var(--faint); --pink: var(--muted); }
+.tag.win { background: var(--good-soft); color: var(--good); }

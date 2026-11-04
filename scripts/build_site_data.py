@@ -196,8 +196,54 @@ def main():
                               "statements": len(statements)}}, f, separators=(",", ":"))
     with open(D("votes_recent.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
+    build_elections(roster, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
           f"{len(money)} money records, {len(promises)} verified promises, {len(statements)} verified statements")
+
+
+RACE_STATUSES = {"counting", "called", "certified", "runoff", "recount"}
+
+
+def build_elections(roster, now):
+    """data/elections.json: each race with its status, nominees and campaign money."""
+    races = load(D("races.json"), None)
+    if not races:
+        return
+    cands = load(D("raw", "candidates.json"), {"candidates": []})
+    by_id = {c["candidate_id"]: c for c in cands["candidates"]}
+    by_bio = {s["bioguide"]: s for s in roster}
+    out = []
+    for st, r in sorted(races["races"].items()):
+        status = r.get("status") if r.get("status") in RACE_STATUSES else "counting"
+        if status in ("called", "certified") and not (r.get("winner") and r.get("called_by") and r.get("source_url")):
+            print(f"{st}: '{status}' needs winner, called_by and source_url; showing as counting")
+            status = "counting"
+        nominees = []
+        for n in r.get("nominees") or []:
+            c = by_id.get(n.get("candidate_id") or "")
+            nominees.append({"name": n.get("name") or (c or {}).get("name"), "party": n.get("party") or (c or {}).get("party"),
+                             "incumbent": bool(n.get("incumbent")), "bioguide": n.get("bioguide"),
+                             "receipts": (c or {}).get("receipts"), "cash_on_hand": (c or {}).get("cash_on_hand"),
+                             "through": (c or {}).get("through"), "fec": (c or {}).get("source")})
+        nominees.sort(key=lambda n: -(n["receipts"] or 0))
+        filers = sorted([c for c in cands["candidates"] if c["state"] == st and (c.get("receipts") or 0) >= 5000],
+                        key=lambda c: -(c["receipts"] or 0))
+        holder = by_bio.get(r.get("seat_holder"))
+        out.append({
+            "state": st, "status": status,
+            "seat_holder": {k: holder[k] for k in ("bioguide", "name", "party")} if holder else None,
+            "winner": r.get("winner") if status in ("called", "certified") else None,
+            "called_by": r.get("called_by") if status in ("called", "certified") else None,
+            "called_at": r.get("called_at"), "source_url": r.get("source_url"),
+            "notes": r.get("notes"), "updated": r.get("updated"),
+            "nominees": nominees,
+            "filers": [{k: c[k] for k in ("name", "party", "status", "receipts", "cash_on_hand", "through", "source")}
+                       for c in filers[:10]],
+        })
+    with open(D("elections.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "year": races.get("year"), "election_day": races.get("election_day"),
+                   "money_through": cands.get("fetched"), "races": out}, f, separators=(",", ":"))
+    print(f"Elections: {len(out)} races, {sum(1 for r in out if r['status'] in ('called', 'certified'))} called")
 
 
 if __name__ == "__main__":
