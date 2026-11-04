@@ -3,6 +3,10 @@
   const app = document.getElementById("app");
   const cache = {};
   const ui = { q: "", state: "", party: "", ballot: false, sort: "state" };
+  // Stock trades are paused: the Senate disclosure site blocks automated downloads from cloud servers.
+  // Flip to true once trade data is loading again; all the trade views below are kept for that.
+  const TRADES_ENABLED = false;
+  const EFD = "https://efdsearch.senate.gov/search/";
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const pc = (p) => (p || "?")[0];
@@ -38,18 +42,19 @@
 
     app.innerHTML = `
       <h1>Your senators, in one place</h1>
-      <p class="lede">What each U.S. senator votes for, trades, raises and has promised, pulled from official public records and linked back to the source. No party scores, no spin: just the record, so you can decide.</p>
+      <p class="lede">What each U.S. senator votes for, raises and has promised, pulled from official public records and linked back to the source. No party scores, no spin: just the record, so you can decide.</p>
       <div class="banner">
         <div><strong>${ELECTION_YEAR} election:</strong> ${onBallot} of these seats are on the ballot. Winners take office in January; their campaign promises will be tracked from day one.</div>
         <button class="btn ${ui.ballot ? "on" : ""}" id="ballot">Show only seats on the ${ELECTION_YEAR} ballot</button>
       </div>
-      ${noData ? `<div class="notice">Votes, trades and campaign money load after the daily update job first runs. Until then you'll see each senator's basic profile and committees.</div>` : ""}
+      ${noData ? `<div class="notice">Votes and campaign money load after the daily update job first runs. Until then you'll see each senator's basic profile and committees.</div>` : ""}
       <div class="controls">
         <input id="q" type="search" placeholder="Search by name or committee" value="${esc(ui.q)}" aria-label="Search">
         <select id="st" aria-label="State"><option value="">All states</option>${states.map((s) => `<option ${s === ui.state ? "selected" : ""}>${s}</option>`).join("")}</select>
         <select id="pt" aria-label="Party"><option value="">All parties</option>${["Democrat", "Republican", "Independent"].map((p) => `<option ${p === ui.party ? "selected" : ""}>${p}</option>`).join("")}</select>
         <select id="so" aria-label="Sort">
-          ${[["state", "Sort: state"], ["name", "Sort: name"], ["attendance", "Lowest attendance"], ["late", "Most late trade reports"], ["overlap", "Most committee-overlap trades"], ["trades", "Most trades"], ["raised", "Most money raised"]]
+          ${[["state", "Sort: state"], ["name", "Sort: name"], ["attendance", "Lowest attendance"], ["unity_low", "Most often votes against own party"], ["raised", "Most money raised"]]
+            .concat(TRADES_ENABLED ? [["late", "Most late trade reports"], ["overlap", "Most committee-overlap trades"], ["trades", "Most trades"]] : [])
             .map(([v, l]) => `<option value="${v}" ${v === ui.sort ? "selected" : ""}>${l}</option>`).join("")}
         </select>
       </div>
@@ -71,6 +76,7 @@
         overlap: (a, b) => m(b, "committee_overlap_trades") - m(a, "committee_overlap_trades"),
         trades: (a, b) => m(b, "trades") - m(a, "trades"),
         raised: (a, b) => m(b, "raised") - m(a, "raised"),
+        unity_low: (a, b) => (a.metrics.party_unity ?? 101) - (b.metrics.party_unity ?? 101),
       };
       list.sort(sorters[ui.sort]);
       document.getElementById("count").textContent = `${list.length} senator${list.length === 1 ? "" : "s"}`;
@@ -83,8 +89,9 @@
           </div></div>
           <div class="stats">
             <div class="stat"><b>${fmtPct(s.metrics.attendance)}</b><span>votes cast</span></div>
-            <div class="stat"><b>${s.metrics.trades}</b><span>stock trades</span></div>
-            <div class="stat"><b>${s.metrics.late_trades}</b><span>reported late</span></div>
+            ${TRADES_ENABLED ? `<div class="stat"><b>${s.metrics.trades}</b><span>stock trades</span></div>
+            <div class="stat"><b>${s.metrics.late_trades}</b><span>reported late</span></div>` : `<div class="stat"><b>${fmtPct(s.metrics.party_unity)}</b><span>votes with party</span></div>
+            <div class="stat"><b>${fmtMoney(s.metrics.raised)}</b><span>raised this cycle</span></div>`}
           </div>
         </a>`).join("") || `<div class="empty">No senators match those filters.</div>`;
     };
@@ -124,8 +131,8 @@
       <div class="metrics">
         ${metric("Attendance", fmtPct(m.attendance), `Share of ${m.votes_eligible} roll-call votes this Congress where they voted.`)}
         ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
-        ${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
-        ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}
+        ${TRADES_ENABLED ? `${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
+        ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}` : ""}
         ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_tracked} verified promise${m.promises_tracked === 1 ? "" : "s"} tracked. Shown once at least 3 are resolved.`)}
       </div>
       <div class="tabs" role="tablist">
@@ -155,6 +162,10 @@
   }
 
   function tradesTab(s) {
+    if (!TRADES_ENABLED) return `<div class="empty">Stock trades aren't loaded into this site yet.<br>
+      In the meantime, you can read ${esc(s.name)}'s filings directly on the Senate's official
+      <a href="${EFD}">financial disclosure search</a>: accept the terms, enter the last name <b>${esc(s.last)}</b>,
+      and pick "Periodic Transactions" as the report type.</div>`;
     const paper = s.paper_reports.length ? `<p class="muted small">${s.paper_reports.length} report(s) were filed on paper and can't be read automatically: ${s.paper_reports.slice(0, 10).map((r) => `<a href="${esc(r.url)}">${fmtDate(r.received)}</a>`).join(", ")}</p>` : "";
     if (!s.trades.length) return `<div class="empty">No electronically filed stock trades on record since 2023${s.metrics.trades === 0 && !s.paper_reports.length ? " (or trade data hasn't loaded yet)" : ""}.</div>${paper}`;
     return `<p class="muted small">Trades by the senator, spouse or dependents, from STOCK Act reports. Amounts are the ranges the law requires, not exact figures.</p>${paper}
@@ -229,7 +240,7 @@
       <ul>
         <li><b>Senators and committees:</b> the open <a href="https://github.com/unitedstates/congress-legislators">congress-legislators</a> dataset.</li>
         <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
-        <li><b>Stock trades:</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Company industries come from SEC filings.</li>
+        <li><b>Stock trades (coming soon):</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Until they're added, each senator's page explains how to look up their filings there.</li>
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
         <li><b>Promises and statements:</b> collected by hand. Every entry quotes the original words, links the original source, and is checked by a person before it appears.</li>
       </ul>
@@ -237,7 +248,7 @@
       <ul>
         <li><b>Attendance:</b> roll-call votes they cast (yes, no or present) divided by votes held while they were in office this Congress.</li>
         <li><b>Votes with own party:</b> how often their yes/no matched the majority of their party (independents counted with the party they caucus with). Context only: neither high nor low is "better."</li>
-        <li><b>Trades reported on time:</b> the STOCK Act requires reporting a trade within 45 days. We count days between the trade and the date the report was received.</li>
+        <li><i>When stock trades are added:</i> <b>Trades reported on time:</b> the STOCK Act requires reporting a trade within 45 days. We count days between the trade and the date the report was received.</li>
         <li><b>Trades in their committees' industries:</b> trades in companies whose industry falls under a committee the senator sits on. The committee-to-industry list is public in <code>data/committee_sectors.json</code>. A flag isn't proof of wrongdoing; it marks where a conflict of interest is possible.</li>
         <li><b>Promise follow-through:</b> among resolved promises, kept counts 1, compromise counts ½, stalled or broken count 0. Only specific, checkable promises are graded, and only once at least 3 are resolved. Senators are judged on their own actions, since no single senator can pass a law alone.</li>
       </ul>

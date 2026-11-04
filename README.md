@@ -62,6 +62,12 @@ python -m http.server 8000         # then open http://localhost:8000
 
 ## Notes and known limits
 
+- **Stock trades are paused.** The Senate's disclosure site (efdsearch.senate.gov) blocks automated
+  downloads from GitHub's servers. The trade code is kept: set `TRADES_ENABLED = true` in `assets/app.js`
+  and re-enable the "Stock trades" step in the workflow once trade data has a working source.
+- Senate votes come from senate.gov when it allows the download, otherwise from Voteview (voteview.com),
+  which can lag a few days behind.
+
 - Stock trade amounts are the ranges the law requires (e.g. "$1,001 - $15,000"), not exact values.
 - Reports filed on paper are scanned images and are linked but not itemized.
 - The "late" flag uses the STOCK Act's 45-day outer limit, counted from the trade date to the

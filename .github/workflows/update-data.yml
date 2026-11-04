@@ -45,8 +45,9 @@ jobs:
           CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
         run: python scripts/fetch_votes.py
 
+      # Paused: efdsearch.senate.gov blocks automated downloads from GitHub's servers.
       - name: Stock trades
-        if: github.event_name != 'push'
+        if: false
         continue-on-error: true
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
