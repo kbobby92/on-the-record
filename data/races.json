@@ -6,387 +6,814 @@
     "AK": {
       "seat_holder": "S001198",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Mary Peltola",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "Dan Sullivan",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "S001198"
+        },
+        {
+          "name": "Daniel J. Sullivan Jr.",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Gerald Heikes",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "Top-four ballot with ranked-choice voting; two candidates named Sullivan appear on it.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "AL": {
       "seat_holder": "T000278",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Barry Moore",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Everett Wess",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "AR": {
       "seat_holder": "C001095",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Tom Cotton",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "C001095"
+        },
+        {
+          "name": "Hallie Shoffner",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "CO": {
       "seat_holder": "H000273",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "John Hickenlooper",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "H000273"
+        },
+        {
+          "name": "Mark Baisley",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "DE": {
       "seat_holder": "C001088",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Chris Coons",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "C001088"
+        },
+        {
+          "name": "Michael Katz",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Chris Coons",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T01:00Z",
+      "source_url": "https://www.ckom.com/2026/11/03/democrat-chris-coons-wins-reelection-to-u-s-senate-from-delaware/",
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "FL": {
       "seat_holder": "M001244",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Ashley Moody",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "M001244"
+        },
+        {
+          "name": "Angie Nixon",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
+      "winner": "Ashley Moody",
+      "called_by": "Decision Desk HQ",
+      "called_at": "2026-11-04T01:00Z",
+      "source_url": "https://townhall.com/news/dmitri-bolt/2026/11/03/florida-senate-race-n2685851",
+      "notes": "Special election. Source page embeds the DDHQ call post.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "GA": {
       "seat_holder": "O000174",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Jon Ossoff",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "O000174"
+        },
+        {
+          "name": "Mike Collins",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Jon Ossoff",
+      "called_by": "Decision Desk HQ",
+      "called_at": "2026-11-04T00:18Z",
+      "source_url": "https://x.com/DecisionDeskHQ/status/2117773436718137533",
+      "notes": "CBS News also projected Ossoff.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "IA": {
       "seat_holder": "E000295",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Ashley Hinson",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Josh Turek",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "ID": {
       "seat_holder": "R000584",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Jim Risch",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "R000584"
+        },
+        {
+          "name": "Todd Achilles",
+          "party": "IND",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "No Democratic nominee; minor-party candidates also on the ballot.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "IL": {
       "seat_holder": "D000563",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Juliana Stratton",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "Don Tracy",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Juliana Stratton",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04",
+      "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
+      "notes": "NBC News also projected Stratton. Exact call time not reported.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "KS": {
       "seat_holder": "M001198",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Roger Marshall",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "M001198"
+        },
+        {
+          "name": "Adam Hamilton",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "KY": {
       "seat_holder": "M000355",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Andy Barr",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Charles Booker",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
+      "winner": "Andy Barr",
+      "called_by": "Decision Desk HQ",
+      "called_at": "2026-11-04",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-11-04/republican-barr-wins-kentucky-senate-race-ddhq-projects",
+      "notes": "Exact call time not reported.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "LA": {
       "seat_holder": "C001075",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Julia Letlow",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Jamie Davis",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "MA": {
       "seat_holder": "M000133",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Ed Markey",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "M000133"
+        },
+        {
+          "name": "John Deaton",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Ed Markey",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T01:01Z",
+      "source_url": "https://www.ckom.com/2026/11/03/democrat-edward-markey-wins-reelection-to-u-s-senate-from-massachusetts/",
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "ME": {
       "seat_holder": "C001035",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Susan Collins",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "C001035"
+        },
+        {
+          "name": "Troy Jackson",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "Ranked-choice voting.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "MI": {
       "seat_holder": "P000595",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Mike Rogers",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Abdul El-Sayed",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "MN": {
       "seat_holder": "S001203",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Peggy Flanagan",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "Michele Tafoya",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "MS": {
       "seat_holder": "H001079",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Cindy Hyde-Smith",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "H001079"
+        },
+        {
+          "name": "Scott Colom",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "Ty Pinkins",
+          "party": "IND",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "MT": {
       "seat_holder": "D000618",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Kurt Alme",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "Alani Bankhead",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "Seth Bodnar",
+          "party": "IND",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "Sen. Steve Daines is not seeking reelection.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "NC": {
       "seat_holder": "T000476",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Roy Cooper",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "Michael Whatley",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Roy Cooper",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T01:23Z",
+      "source_url": "https://www.wbtv.com/2026/11/04/roy-cooper-wins-2026-us-senate-race-north-carolina-ap-projects/",
+      "notes": "Decision Desk HQ also called it at the same time.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "NE": {
       "seat_holder": "R000618",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Pete Ricketts",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "R000618"
+        },
+        {
+          "name": "Dan Osborn",
+          "party": "IND",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "No Democratic nominee; minor-party candidates also on the ballot.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "NH": {
       "seat_holder": "S001181",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Chris Pappas",
+          "party": "DEM",
+          "incumbent": false
+        },
+        {
+          "name": "John E. Sununu",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Chris Pappas",
+      "called_by": "Decision Desk HQ",
+      "called_at": "2026-11-04T01:00Z",
+      "source_url": "https://x.com/DecisionDeskHQ/status/2117784016719954261",
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "NJ": {
       "seat_holder": "B001288",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Cory Booker",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "B001288"
+        },
+        {
+          "name": "Justin Murphy",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Cory Booker",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T01:00Z",
+      "source_url": "https://www.cjme.com/2026/11/03/democrat-cory-booker-wins-reelection-to-u-s-senate-from-new-jersey/",
+      "notes": "ABC News also projected Booker.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "NM": {
       "seat_holder": "L000570",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Ben Ray Luján",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "L000570"
+        },
+        {
+          "name": "Larry Marker",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "OH": {
       "seat_holder": "H001104",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Jon Husted",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "H001104"
+        },
+        {
+          "name": "Sherrod Brown",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "OK": {
       "seat_holder": "A000383",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Kevin Hern",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "N'Kiyla Thomas",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "Appointed Sen. Alan Armstrong is not on the ballot. No confirmed call found yet.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "OR": {
       "seat_holder": "M001176",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Jeff Merkley",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "M001176"
+        },
+        {
+          "name": "David Brock Smith",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "RI": {
       "seat_holder": "R000122",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Jack Reed",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "R000122"
+        },
+        {
+          "name": "Raymond McKay",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Jack Reed",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T01:01Z",
+      "source_url": "https://www.cjme.com/2026/11/03/democrat-john-reed-wins-reelection-to-u-s-senate-from-rhode-island/",
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "SC": {
       "seat_holder": "G000608",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Darline Graham",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "G000608"
+        },
+        {
+          "name": "Annie Andrews",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "Darline Graham was appointed to the seat in 2026.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "SD": {
       "seat_holder": "R000605",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Mike Rounds",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "R000605"
+        },
+        {
+          "name": "Brian Bengs",
+          "party": "IND",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "TN": {
       "seat_holder": "H000601",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Bill Hagerty",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "H000601"
+        },
+        {
+          "name": "Marquita Bradshaw",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": null
+      "notes": "No confirmed call by a listed organization found yet.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "TX": {
       "seat_holder": "C001056",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Ken Paxton",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "James Talarico",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     },
     "VA": {
       "seat_holder": "W000805",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Mark Warner",
+          "party": "DEM",
+          "incumbent": true,
+          "bioguide": "W000805"
+        },
+        {
+          "name": "Bert Mizusawa",
+          "party": "REP",
+          "incumbent": false
+        }
+      ],
+      "winner": "Mark Warner",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T00:00Z",
+      "source_url": "https://www.fox5dc.com/news/va-senate-election-mark-warner-fourth-term",
+      "notes": "Also projected by DDHQ, NBC News and CNN.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "WV": {
       "seat_holder": "C001047",
-      "status": "counting",
-      "nominees": [],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": null
+      "status": "called",
+      "nominees": [
+        {
+          "name": "Shelley Moore Capito",
+          "party": "REP",
+          "incumbent": true,
+          "bioguide": "C001047"
+        },
+        {
+          "name": "Rachel Fetty Anderson",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
+      "winner": "Shelley Moore Capito",
+      "called_by": "NBC News",
+      "called_at": "2026-11-04",
+      "source_url": "https://www.wsaz.com/2026/11/04/us-sen-shelley-moore-capito-wins-reelection/",
+      "notes": "Decision Desk HQ also called it. Exact call time not reported.",
+      "updated": "2026-11-04T01:52:49Z"
     },
     "WY": {
       "seat_holder": "L000571",
       "status": "counting",
-      "nominees": [],
+      "nominees": [
+        {
+          "name": "Harriet Hageman",
+          "party": "REP",
+          "incumbent": false
+        },
+        {
+          "name": "James Byrd",
+          "party": "DEM",
+          "incumbent": false
+        }
+      ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
       "notes": "",
-      "updated": null
+      "updated": "2026-11-04T01:52:49Z"
     }
   }
 }
