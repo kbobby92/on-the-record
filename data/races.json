@@ -37,8 +37,8 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Top-four ballot with ranked-choice voting; two candidates named Sullivan appear on it.",
-      "updated": "2026-11-04T03:46:41Z"
+      "notes": "Top-four ballot with ranked-choice voting; two candidates named Sullivan appear on it. Mailed ballots accepted for 10 days (15 from overseas); ranked-choice tabulation, if needed, scheduled for Nov. 18.",
+      "updated": "2026-11-04T09:45:23Z"
     },
     "AL": {
       "seat_holder": "T000278",
@@ -457,12 +457,12 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Too close to call; margin under 100 votes with most of the vote counted. Plurality wins; no runoff in this regular election.",
-      "updated": "2026-11-04T06:48:34Z"
+      "notes": "Too close to call; Colom led by 28 votes with more than 96% counted early Nov. 4. Plurality wins; no runoff in this regular election.",
+      "updated": "2026-11-04T09:45:23Z"
     },
     "MT": {
       "seat_holder": "D000618",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Kurt Alme",
@@ -483,12 +483,12 @@
           "candidate_id": "S6MT00287"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "Sen. Steve Daines is not seeking reelection.",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Kurt Alme",
+      "called_by": "Decision Desk HQ",
+      "called_at": "2026-11-04",
+      "source_url": "https://www.aol.com/articles/gop-alme-wins-montana-senate-061635000.html",
+      "notes": "Sen. Steve Daines did not seek reelection. Bodnar conceded. AP had not called the race as of early Nov. 4. Exact call time not reported.",
+      "updated": "2026-11-04T09:45:23Z"
     },
     "NC": {
       "seat_holder": "T000476",
@@ -516,7 +516,7 @@
     },
     "NE": {
       "seat_holder": "R000618",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Pete Ricketts",
@@ -532,12 +532,12 @@
           "candidate_id": "S4NE00207"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "No Democratic nominee; minor-party candidates also on the ballot.",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Pete Ricketts",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T08:27Z",
+      "source_url": "https://www.kjct8.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
+      "notes": "No Democratic nominee; minor-party candidates also on the ballot. CBS News and NBC News also projected Ricketts.",
+      "updated": "2026-11-04T09:45:23Z"
     },
     "NH": {
       "seat_holder": "S001181",
