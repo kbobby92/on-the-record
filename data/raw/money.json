@@ -13,7 +13,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4AK00099/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T00:02+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "S001198": {
   "candidate_id": "S4AK00214",
@@ -60,7 +60,7 @@
   ],
   "committee_id": "C00570994",
   "source": "https://www.fec.gov/data/candidate/S4AK00214/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T00:02+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "B001319": {
   "candidate_id": "S2AL00145",
@@ -76,7 +76,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2AL00145/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T00:02+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "T000278": {
   "candidate_id": "S0AL00230",
@@ -128,7 +128,7 @@
   ],
   "committee_id": "C00701672",
   "source": "https://www.fec.gov/data/candidate/S0AL00230/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T00:02+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "B001236": {
   "candidate_id": "S0AR00150",
@@ -144,7 +144,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0AR00150/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T00:06+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "C001095": {
   "candidate_id": "S4AR00103",
@@ -186,7 +186,7 @@
   ],
   "committee_id": "C00499988",
   "source": "https://www.fec.gov/data/candidate/S4AR00103/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T00:06+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "G000574": {
   "candidate_id": "S4AZ00139",
@@ -202,7 +202,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4AZ00139/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T00:06+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "K000377": {
   "candidate_id": "S0AZ00350",
@@ -218,7 +218,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0AZ00350/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T00:06+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
  },
  "P000145": {
   "candidate_id": "S2CA00955",
@@ -234,6 +234,2440 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2CA00955/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T00:06+00:00"
+  "fetched": "2026-11-04T00:30+00:00"
+ },
+ "S001150": {
+  "candidate_id": "S4CA00555",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 10403471.65,
+  "disbursements": 5656909.51,
+  "cash_on_hand": 11127588.76,
+  "individual": 8455437.56,
+  "pacs": 79401.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4CA00555/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "B001267": {
+  "candidate_id": "S0CO00211",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 1407776.36,
+  "disbursements": 1955857.4,
+  "cash_on_hand": 192712.12,
+  "individual": 1101723.81,
+  "pacs": 83096.92,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0CO00211/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "H000273": {
+  "candidate_id": "S0CO00575",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 11695273.06,
+  "disbursements": 11778528.18,
+  "cash_on_hand": 1558827.9,
+  "individual": 8439766.64,
+  "pacs": 1251005.27,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "CHARTER COMMUNICATIONS",
+    "total": 47850.0,
+    "count": 22
+   },
+   {
+    "employer": "NEXTERA ENERGY",
+    "total": 25000.0,
+    "count": 15
+   },
+   {
+    "employer": "APOLLO GLOBAL MANAGEMENT",
+    "total": 24500.0,
+    "count": 9
+   },
+   {
+    "employer": "MICROSOFT CORPORATION",
+    "total": 20800.0,
+    "count": 18
+   },
+   {
+    "employer": "XCEL ENERGY",
+    "total": 20425.0,
+    "count": 28
+   },
+   {
+    "employer": "COMCAST",
+    "total": 20050.0,
+    "count": 18
+   },
+   {
+    "employer": "APOLLO",
+    "total": 16500.0,
+    "count": 6
+   },
+   {
+    "employer": "BROWNSTEIN HYATT FARBER SCHRECK, LLP",
+    "total": 15250.0,
+    "count": 20
+   }
+  ],
+  "committee_id": "C00716720",
+  "source": "https://www.fec.gov/data/candidate/S0CO00575/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "B001277": {
+  "candidate_id": "S0CT00177",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 1170004.6,
+  "disbursements": 886525.06,
+  "cash_on_hand": 1533368.3,
+  "individual": 480762.82,
+  "pacs": 185054.24,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0CT00177/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "M001169": {
+  "candidate_id": "S2CT00132",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 14020487.66,
+  "disbursements": 8029358.26,
+  "cash_on_hand": 11517904.26,
+  "individual": 12616135.2,
+  "pacs": 0.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2CT00132/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "B001303": {
+  "candidate_id": "S4DE00060",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1225181.85,
+  "disbursements": 1265538.93,
+  "cash_on_hand": 104100.1,
+  "individual": 666351.75,
+  "pacs": 354000.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4DE00060/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "C001088": {
+  "candidate_id": "S0DE00092",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 7685072.14,
+  "disbursements": 4493874.19,
+  "cash_on_hand": 5031711.21,
+  "individual": 3937941.28,
+  "pacs": 2474586.74,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "YOUNG CONAWAY STARGATT & TAYLOR LLP",
+    "total": 129125.0,
+    "count": 65
+   },
+   {
+    "employer": "APOLLO GLOBAL MANAGEMENT",
+    "total": 50000.0,
+    "count": 23
+   },
+   {
+    "employer": "LOCKHEED MARTIN",
+    "total": 32500.0,
+    "count": 31
+   },
+   {
+    "employer": "CAPITAL GROUP",
+    "total": 23750.0,
+    "count": 9
+   },
+   {
+    "employer": "QUINN EMANUEL URQUHART & SULLIVAN",
+    "total": 22000.0,
+    "count": 7
+   },
+   {
+    "employer": "LEIDOS",
+    "total": 20750.0,
+    "count": 35
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 20000.0,
+    "count": 7
+   },
+   {
+    "employer": "AMAZON",
+    "total": 18000.0,
+    "count": 11
+   }
+  ],
+  "committee_id": "C00475392",
+  "source": "https://www.fec.gov/data/candidate/S0DE00092/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "M001244": {
+  "candidate_id": "S6FL00640",
+  "cycle": 2026,
+  "period": "2025-01-13 to 2026-10-14",
+  "receipts": 14524031.96,
+  "disbursements": 13707676.85,
+  "cash_on_hand": 816355.11,
+  "individual": 6832682.27,
+  "pacs": 2404500.0,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 125503.75,
+    "count": 137
+   },
+   {
+    "employer": "THE VILLAGES",
+    "total": 79589.66,
+    "count": 29
+   },
+   {
+    "employer": "RDV CORPORATION",
+    "total": 46200.0,
+    "count": 14
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 41000.0,
+    "count": 14
+   }
+  ],
+  "committee_id": "C00895763",
+  "source": "https://www.fec.gov/data/candidate/S6FL00640/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "S001217": {
+  "candidate_id": "S8FL00273",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1816461.9,
+  "disbursements": 1967735.29,
+  "cash_on_hand": 647090.18,
+  "individual": 423105.6,
+  "pacs": 108687.18,
+  "party": 0.0,
+  "self_funded": 786474.84,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8FL00273/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "O000174": {
+  "candidate_id": "S8GA00180",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 136610982.33,
+  "disbursements": 125808379.9,
+  "cash_on_hand": 15134335.92,
+  "individual": 121010045.25,
+  "pacs": 1211678.04,
+  "party": 13318.85,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "DELTA AIR LINES",
+    "total": 77247.0,
+    "count": 193
+   },
+   {
+    "employer": "GOOGLE",
+    "total": 75432.43,
+    "count": 161
+   },
+   {
+    "employer": "EMORY UNIVERSITY",
+    "total": 48574.66,
+    "count": 421
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 41500.0,
+    "count": 14
+   },
+   {
+    "employer": "COX ENTERPRISES",
+    "total": 38220.0,
+    "count": 47
+   },
+   {
+    "employer": "NULL",
+    "total": 37335.57,
+    "count": 19
+   },
+   {
+    "employer": "KAISER PERMANENTE",
+    "total": 32071.5,
+    "count": 104
+   },
+   {
+    "employer": "WILMERHALE",
+    "total": 30250.0,
+    "count": 30
+   }
+  ],
+  "committee_id": "C00718866",
+  "source": "https://www.fec.gov/data/candidate/S8GA00180/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "W000790": {
+  "candidate_id": "S0GA00559",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 8379240.06,
+  "disbursements": 10128185.92,
+  "cash_on_hand": 4104890.59,
+  "individual": 7141935.53,
+  "pacs": 178816.93,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0GA00559/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "H001042": {
+  "candidate_id": "S2HI00106",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 616935.38,
+  "disbursements": 659956.74,
+  "cash_on_hand": 1362853.49,
+  "individual": 548328.72,
+  "pacs": 54500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2HI00106/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:25+00:00"
+ },
+ "S001194": {
+  "candidate_id": "S4HI00136",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 2319782.8,
+  "disbursements": 1703175.37,
+  "cash_on_hand": 2727357.78,
+  "individual": 1548991.13,
+  "pacs": 582047.21,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4HI00136/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "E000295": {
+  "candidate_id": "S4IA00129",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 6964047.1,
+  "disbursements": 5690659.94,
+  "cash_on_hand": 1801802.09,
+  "individual": 4448857.25,
+  "pacs": 1526258.88,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 127522.85,
+    "count": 137
+   },
+   {
+    "employer": "US AI",
+    "total": 13200.0,
+    "count": 5
+   },
+   {
+    "employer": "APOLLO",
+    "total": 11000.0,
+    "count": 5
+   },
+   {
+    "employer": "EDWARD C. LEVY CO.",
+    "total": 7292.21,
+    "count": 26
+   },
+   {
+    "employer": "BARTLETT AND COMPANY INC.",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "APOLLO MANAGEMENT",
+    "total": 7000.0,
+    "count": 3
+   },
+   {
+    "employer": "CRESTVIEW PARTNERS",
+    "total": 7000.0,
+    "count": 2
+   }
+  ],
+  "committee_id": "C00546788",
+  "source": "https://www.fec.gov/data/candidate/S4IA00129/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "G000386": {
+  "candidate_id": "S0IA00028",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 1298098.57,
+  "disbursements": 1252122.26,
+  "cash_on_hand": 487400.19,
+  "individual": 774173.46,
+  "pacs": 180500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0IA00028/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "C000880": {
+  "candidate_id": "S8ID00027",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 2438411.51,
+  "disbursements": 1761655.21,
+  "cash_on_hand": 3063123.96,
+  "individual": 620674.82,
+  "pacs": 942025.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8ID00027/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "R000584": {
+  "candidate_id": "S8ID00092",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 5009089.21,
+  "disbursements": 5081713.54,
+  "cash_on_hand": 2122234.76,
+  "individual": 2886103.01,
+  "pacs": 1525530.6,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 198920.09,
+    "count": 180
+   },
+   {
+    "employer": "NULL",
+    "total": 35500.0,
+    "count": 42
+   },
+   {
+    "employer": "BGR GROUP",
+    "total": 15000.0,
+    "count": 13
+   },
+   {
+    "employer": "ACCESS INDUSTRIES",
+    "total": 14000.0,
+    "count": 4
+   },
+   {
+    "employer": "ALLIANTGROUP",
+    "total": 13500.0,
+    "count": 2
+   },
+   {
+    "employer": "APOLLO GLOBAL MANAGEMENT",
+    "total": 12500.0,
+    "count": 4
+   },
+   {
+    "employer": "WILMERHALE",
+    "total": 12500.0,
+    "count": 7
+   }
+  ],
+  "committee_id": "C00440362",
+  "source": "https://www.fec.gov/data/candidate/S8ID00092/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "D000622": {
+  "candidate_id": "S6IL00292",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 10626288.52,
+  "disbursements": 7979303.94,
+  "cash_on_hand": 4229806.34,
+  "individual": 8972447.98,
+  "pacs": 431003.03,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6IL00292/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "D000563": {
+  "candidate_id": "S6IL00151",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 2381002.36,
+  "disbursements": 2616837.31,
+  "cash_on_hand": 840651.61,
+  "individual": 1118235.88,
+  "pacs": 364025.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "W2E GROUP",
+    "total": 2000.0,
+    "count": 1
+   },
+   {
+    "employer": "SMITH DAWSON & ANDREWS",
+    "total": 1000.0,
+    "count": 1
+   },
+   {
+    "employer": "CORNERSTONE GOVERNMENT AFFAIRS",
+    "total": 1000.0,
+    "count": 1
+   },
+   {
+    "employer": "NORTHWESTERN UNIVERSITY",
+    "total": 325.0,
+    "count": 3
+   },
+   {
+    "employer": "UCHICAGO ARGONNE LLC",
+    "total": 250.0,
+    "count": 1
+   },
+   {
+    "employer": "REGO CONSULTING",
+    "total": 225.0,
+    "count": 9
+   },
+   {
+    "employer": "DEVELOPMENT SERVICES CORP",
+    "total": 200.0,
+    "count": 2
+   },
+   {
+    "employer": "SANDBOX INDUSTRIES LLC",
+    "total": 200.0,
+    "count": 4
+   }
+  ],
+  "committee_id": "C00148999",
+  "source": "https://www.fec.gov/data/candidate/S6IL00151/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "B001299": {
+  "candidate_id": "S4IN00196",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 2683209.62,
+  "disbursements": 1942465.43,
+  "cash_on_hand": 3354100.91,
+  "individual": 1135451.66,
+  "pacs": 593769.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4IN00196/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "Y000064": {
+  "candidate_id": "S6IN00191",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 6833127.47,
+  "disbursements": 3153392.28,
+  "cash_on_hand": 7416630.15,
+  "individual": 2026654.31,
+  "pacs": 1079135.0,
+  "party": 1000.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6IN00191/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "M001198": {
+  "candidate_id": "S0KS00315",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 7546611.06,
+  "disbursements": 6946763.46,
+  "cash_on_hand": 809806.46,
+  "individual": 3298319.55,
+  "pacs": 2910494.62,
+  "party": 72000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 213491.26,
+    "count": 205
+   },
+   {
+    "employer": "NULL",
+    "total": 59801.0,
+    "count": 34
+   },
+   {
+    "employer": "FORTRESS INVESTMENT GROUP",
+    "total": 40000.0,
+    "count": 11
+   },
+   {
+    "employer": "SPRINKLER WORKS",
+    "total": 21000.0,
+    "count": 5
+   }
+  ],
+  "committee_id": "C00576173",
+  "source": "https://www.fec.gov/data/candidate/S0KS00315/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "M000934": {
+  "candidate_id": "S0KS00091",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 3364862.72,
+  "disbursements": 782802.52,
+  "cash_on_hand": 5960785.54,
+  "individual": 414139.83,
+  "pacs": 904300.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0KS00091/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "M000355": {
+  "candidate_id": "S2KY00012",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 7982685.92,
+  "disbursements": 7408455.68,
+  "cash_on_hand": 7385931.53,
+  "individual": 6095915.41,
+  "pacs": 760552.37,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 1070.84,
+    "count": 97
+   },
+   {
+    "employer": "STAPLETON  ASSOCIATES",
+    "total": 1000.0,
+    "count": 1
+   },
+   {
+    "employer": "BABBAGE STRATEGY",
+    "total": 500.0,
+    "count": 1
+   },
+   {
+    "employer": "BRAMER GROUP",
+    "total": 250.0,
+    "count": 3
+   },
+   {
+    "employer": "MILLER OK TIRE",
+    "total": 200.0,
+    "count": 5
+   },
+   {
+    "employer": "CHEMSTONE",
+    "total": 200.0,
+    "count": 4
+   },
+   {
+    "employer": "LEONARDO DRS",
+    "total": 150.0,
+    "count": 7
+   },
+   {
+    "employer": "ALVAREZ AND MARSAL",
+    "total": 140.0,
+    "count": 8
+   }
+  ],
+  "committee_id": "C00193342",
+  "source": "https://www.fec.gov/data/candidate/S2KY00012/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "P000603": {
+  "candidate_id": "S0KY00156",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 13061462.55,
+  "disbursements": 11651564.47,
+  "cash_on_hand": 6775333.25,
+  "individual": 11575691.25,
+  "pacs": 198446.15,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0KY00156/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "C001075": {
+  "candidate_id": "S4LA00107",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 13298956.78,
+  "disbursements": 14251437.55,
+  "cash_on_hand": 685196.15,
+  "individual": 5159035.6,
+  "pacs": 3268720.0,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 145064.11,
+    "count": 43
+   },
+   {
+    "employer": "GALLIANO MARINE SERVICE LLC",
+    "total": 33000.0,
+    "count": 14
+   },
+   {
+    "employer": "APOLLO",
+    "total": 32500.0,
+    "count": 19
+   },
+   {
+    "employer": "NEW YORK CANCER & BLOOD SPECIALISTS",
+    "total": 28500.0,
+    "count": 29
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 28000.0,
+    "count": 9
+   },
+   {
+    "employer": "WELSH CARSON ANDERSON & STOWE",
+    "total": 27700.0,
+    "count": 36
+   }
+  ],
+  "committee_id": "C00543983",
+  "source": "https://www.fec.gov/data/candidate/S4LA00107/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "K000393": {
+  "candidate_id": "S4LA00065",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 27509059.08,
+  "disbursements": 17887373.77,
+  "cash_on_hand": 19528264.98,
+  "individual": 24099414.17,
+  "pacs": 216275.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4LA00065/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "M000133": {
+  "candidate_id": "S4MA00028",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 8685207.01,
+  "disbursements": 9537270.87,
+  "cash_on_hand": 799912.74,
+  "individual": 4407565.19,
+  "pacs": 820940.0,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 21113.84,
+    "count": 34
+   },
+   {
+    "employer": "KECHES LAW GROUP",
+    "total": 16350.0,
+    "count": 19
+   },
+   {
+    "employer": "CENTERVIEW PARTNERS",
+    "total": 15000.0,
+    "count": 4
+   },
+   {
+    "employer": "CLIFFORD LAW OFFICES",
+    "total": 14250.0,
+    "count": 5
+   }
+  ],
+  "committee_id": "C00196774",
+  "source": "https://www.fec.gov/data/candidate/S4MA00028/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "W000817": {
+  "candidate_id": "S2MA00170",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 4965731.1,
+  "disbursements": 5387108.74,
+  "cash_on_hand": 3028669.03,
+  "individual": 4770772.73,
+  "pacs": 25000.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2MA00170/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "A000382": {
+  "candidate_id": "S4MD00327",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 2045994.33,
+  "disbursements": 1295629.09,
+  "cash_on_hand": 800210.62,
+  "individual": 939223.1,
+  "pacs": 519750.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4MD00327/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "V000128": {
+  "candidate_id": "S6MD03441",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 2833694.92,
+  "disbursements": 1421848.87,
+  "cash_on_hand": 3641970.0,
+  "individual": 2190058.63,
+  "pacs": 128240.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6MD03441/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "C001035": {
+  "candidate_id": "S6ME00159",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 25225468.39,
+  "disbursements": 23830778.33,
+  "cash_on_hand": 2689882.54,
+  "individual": 16915533.27,
+  "pacs": 2143873.0,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 822627.48,
+    "count": 659
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 74500.0,
+    "count": 22
+   },
+   {
+    "employer": "KKR",
+    "total": 70000.0,
+    "count": 20
+   },
+   {
+    "employer": "AMERICAN AIRLINES",
+    "total": 37720.0,
+    "count": 31
+   },
+   {
+    "employer": "APOLLO",
+    "total": 32000.0,
+    "count": 12
+   },
+   {
+    "employer": "KPS CAPITAL PARTNERS",
+    "total": 28000.0,
+    "count": 9
+   }
+  ],
+  "committee_id": "C00314575",
+  "source": "https://www.fec.gov/data/candidate/S6ME00159/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "K000383": {
+  "candidate_id": "S2ME00109",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 72269.42,
+  "disbursements": 251713.74,
+  "cash_on_hand": 59272.45,
+  "individual": 32106.64,
+  "pacs": 34500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2ME00109/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "P000595": {
+  "candidate_id": "S4MI00355",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 7894114.6,
+  "disbursements": 3104918.57,
+  "cash_on_hand": 6559468.71,
+  "individual": 5531148.53,
+  "pacs": 1447829.14,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "PRESIDENT",
+    "total": 1200.0,
+    "count": 1
+   },
+   {
+    "employer": "BGR GOVERNMENT AFFAIRS, LLC",
+    "total": 1000.0,
+    "count": 2
+   },
+   {
+    "employer": "NYC DEPARTMENT OF EDUCATION",
+    "total": 1000.0,
+    "count": 1
+   },
+   {
+    "employer": "CLEARY GOTTLIEB",
+    "total": 1000.0,
+    "count": 1
+   },
+   {
+    "employer": "NATIONAL ASSOCIATION OF BROADCASTERS",
+    "total": 500.0,
+    "count": 1
+   },
+   {
+    "employer": "POTOMAC STRATEGIC",
+    "total": 500.0,
+    "count": 1
+   },
+   {
+    "employer": "MANGO LANGUAGES",
+    "total": 120.0,
+    "count": 6
+   },
+   {
+    "employer": "OAKLAND UNIVERSITY",
+    "total": 110.0,
+    "count": 3
+   }
+  ],
+  "committee_id": "C00437889",
+  "source": "https://www.fec.gov/data/candidate/S4MI00355/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "S001208": {
+  "candidate_id": "S4MI00470",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 6023063.09,
+  "disbursements": 3367551.47,
+  "cash_on_hand": 2938227.0,
+  "individual": 5645888.92,
+  "pacs": 37500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4MI00470/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:26+00:00"
+ },
+ "K000367": {
+  "candidate_id": "S6MN00267",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 2519524.84,
+  "disbursements": 3151537.87,
+  "cash_on_hand": 1153299.47,
+  "individual": 1578205.83,
+  "pacs": 159000.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6MN00267/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:27+00:00"
+ },
+ "S001203": {
+  "candidate_id": "S8MN00578",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 3057267.33,
+  "disbursements": 3740152.52,
+  "cash_on_hand": 118870.17,
+  "individual": 2506132.26,
+  "pacs": 492249.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 3945.0,
+    "count": 48
+   },
+   {
+    "employer": "ALBRIGHT STONEBRIDGE GROUP LLC",
+    "total": 1000.0,
+    "count": 1
+   },
+   {
+    "employer": "EDINA REALTY, INC.",
+    "total": 500.0,
+    "count": 1
+   },
+   {
+    "employer": "MAYO CLINIC",
+    "total": 160.0,
+    "count": 7
+   },
+   {
+    "employer": "MISSISSIPPI STATE UNIV",
+    "total": 75.0,
+    "count": 2
+   },
+   {
+    "employer": "STATE OF MINNESOTA",
+    "total": 70.0,
+    "count": 3
+   }
+  ],
+  "committee_id": "C00663781",
+  "source": "https://www.fec.gov/data/candidate/S8MN00578/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:27+00:00"
+ },
+ "H001089": {
+  "candidate_id": "S8MO00160",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1905255.26,
+  "disbursements": 1382182.4,
+  "cash_on_hand": 821335.74,
+  "individual": 334270.25,
+  "pacs": 31450.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8MO00160/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:27+00:00"
+ },
+ "S001227": {
+  "candidate_id": "S2MO00544",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 6138586.91,
+  "disbursements": 4459011.25,
+  "cash_on_hand": 1811713.22,
+  "individual": 4245716.31,
+  "pacs": 712316.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2MO00544/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:27+00:00"
+ },
+ "H001079": {
+  "candidate_id": "S8MS00261",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 6279659.29,
+  "disbursements": 5045478.02,
+  "cash_on_hand": 1395723.78,
+  "individual": 3687126.94,
+  "pacs": 1635100.0,
+  "party": 63043.65,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 492618.95,
+    "count": 394
+   },
+   {
+    "employer": "SELF",
+    "total": 111232.44,
+    "count": 159
+   },
+   {
+    "employer": "CORNERSTONE GOVERNMENT AFFAIRS",
+    "total": 24500.0,
+    "count": 16
+   },
+   {
+    "employer": "TENAX AEROSPACE",
+    "total": 22500.0,
+    "count": 16
+   },
+   {
+    "employer": "HORNE",
+    "total": 19034.51,
+    "count": 23
+   },
+   {
+    "employer": "OCEAN AERO",
+    "total": 17700.0,
+    "count": 10
+   }
+  ],
+  "committee_id": "C00675348",
+  "source": "https://www.fec.gov/data/candidate/S8MS00261/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:27+00:00"
+ },
+ "W000437": {
+  "candidate_id": "S8MS00196",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 306823.35,
+  "disbursements": 651342.22,
+  "cash_on_hand": 2650229.94,
+  "individual": 129463.32,
+  "pacs": 138500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8MS00196/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "D000618": {
+  "candidate_id": "S2MT00096",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 8405689.47,
+  "disbursements": 5934203.95,
+  "cash_on_hand": 2579268.49,
+  "individual": 2971221.47,
+  "pacs": 2444875.0,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 185767.67,
+    "count": 124
+   },
+   {
+    "employer": "SELF",
+    "total": 105865.42,
+    "count": 508
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 57000.0,
+    "count": 17
+   },
+   {
+    "employer": "YELLOWSTONE BANK",
+    "total": 35000.0,
+    "count": 15
+   }
+  ],
+  "committee_id": "C00491357",
+  "source": "https://www.fec.gov/data/candidate/S2MT00096/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "S001232": {
+  "candidate_id": "S4MT00183",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1921040.01,
+  "disbursements": 2273725.55,
+  "cash_on_hand": 1036322.4,
+  "individual": 1204002.38,
+  "pacs": 502125.0,
+  "party": 7600.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4MT00183/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "B001305": {
+  "candidate_id": "S2NC00505",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 3939076.26,
+  "disbursements": 3483075.31,
+  "cash_on_hand": 728188.68,
+  "individual": 2328741.41,
+  "pacs": 844871.72,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2NC00505/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "T000476": {
+  "candidate_id": "S4NC00162",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 8113422.14,
+  "disbursements": 5369128.14,
+  "cash_on_hand": 3579202.56,
+  "individual": 4599628.76,
+  "pacs": 2847324.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "CLEAN ENERGY",
+    "total": 21500.0,
+    "count": 17
+   },
+   {
+    "employer": "CORNING",
+    "total": 19500.0,
+    "count": 19
+   },
+   {
+    "employer": "SOUTHERN ENERGY MANAGEMENT",
+    "total": 17500.0,
+    "count": 6
+   },
+   {
+    "employer": "MOBLEY HOLDINGS",
+    "total": 16667.0,
+    "count": 2
+   },
+   {
+    "employer": "WEBB CREEK",
+    "total": 16666.67,
+    "count": 4
+   },
+   {
+    "employer": "HENDRICK AUTOMOTIVE GROUP",
+    "total": 15000.0,
+    "count": 6
+   }
+  ],
+  "committee_id": "C00545772",
+  "source": "https://www.fec.gov/data/candidate/S4NC00162/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "C001096": {
+  "candidate_id": "S8ND00120",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1331451.93,
+  "disbursements": 1421205.82,
+  "cash_on_hand": 2265135.48,
+  "individual": 1013668.83,
+  "pacs": 234000.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8ND00120/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "H001061": {
+  "candidate_id": "S0ND00093",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 1053944.8,
+  "disbursements": 849107.16,
+  "cash_on_hand": 725400.84,
+  "individual": 459002.42,
+  "pacs": 420600.0,
+  "party": 2020.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0ND00093/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "F000463": {
+  "candidate_id": "S2NE00094",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 976128.89,
+  "disbursements": 495867.0,
+  "cash_on_hand": 505473.72,
+  "individual": 368976.68,
+  "pacs": 399154.16,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2NE00094/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "R000618": {
+  "candidate_id": "S6NE00129",
+  "cycle": 2026,
+  "period": "2025-01-01 to 2026-10-14",
+  "receipts": 14546959.4,
+  "disbursements": 13815789.54,
+  "cash_on_hand": 1218138.97,
+  "individual": 2861507.24,
+  "pacs": 1912380.93,
+  "party": 62000.0,
+  "self_funded": 7296347.74,
+  "top_employers": [
+   {
+    "employer": "PEARSON & ASSOCIATES",
+    "total": 236360.47,
+    "count": 228
+   },
+   {
+    "employer": "HOLTZMAN VOGEL, PLLC",
+    "total": 80400.0,
+    "count": 27
+   },
+   {
+    "employer": "BP",
+    "total": 65700.0,
+    "count": 27
+   },
+   {
+    "employer": "SELF",
+    "total": 46665.29,
+    "count": 22
+   },
+   {
+    "employer": "GREENAMERICAN BIOFUELS",
+    "total": 39000.0,
+    "count": 13
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 35000.0,
+    "count": 10
+   },
+   {
+    "employer": "S-3 GROUP",
+    "total": 34885.0,
+    "count": 35
+   }
+  ],
+  "committee_id": "C00832436",
+  "source": "https://www.fec.gov/data/candidate/S6NE00129/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "H001076": {
+  "candidate_id": "S6NH00091",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 6079447.88,
+  "disbursements": 4200533.53,
+  "cash_on_hand": 2003014.48,
+  "individual": 4463674.82,
+  "pacs": 1243313.77,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6NH00091/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "S001181": {
+  "candidate_id": "S0NH00219",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 2672180.71,
+  "disbursements": 2982638.8,
+  "cash_on_hand": 808003.84,
+  "individual": 1899914.6,
+  "pacs": 584651.58,
+  "party": 250.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "THORN RUN PARTNERS",
+    "total": 5500.0,
+    "count": 7
+   },
+   {
+    "employer": "KELLEY DRYE & WARREN",
+    "total": 3500.0,
+    "count": 1
+   },
+   {
+    "employer": "PARKER MEGGITT",
+    "total": 3500.0,
+    "count": 3
+   },
+   {
+    "employer": "DOUGLAS MANAGEMENT AND REALTY",
+    "total": 3500.0,
+    "count": 1
+   },
+   {
+    "employer": "AUTONODYNE",
+    "total": 2500.0,
+    "count": 1
+   },
+   {
+    "employer": "VALLEY MEDICAL CENTER OF SAN JOSE",
+    "total": 2000.0,
+    "count": 1
+   },
+   {
+    "employer": "ALMORIDI REAL ESTATE",
+    "total": 1800.0,
+    "count": 1
+   },
+   {
+    "employer": "SOLTANI CONSTRUCTION",
+    "total": 1500.0,
+    "count": 1
+   }
+  ],
+  "committee_id": "C00457325",
+  "source": "https://www.fec.gov/data/candidate/S0NH00219/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "B001288": {
+  "candidate_id": "S4NJ00185",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 35910076.13,
+  "disbursements": 18897771.7,
+  "cash_on_hand": 22899410.72,
+  "individual": 24251873.1,
+  "pacs": 569540.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 55630.0,
+    "count": 109
+   },
+   {
+    "employer": "APOLLO GLOBAL MANAGEMENT",
+    "total": 30800.0,
+    "count": 11
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 26750.0,
+    "count": 9
+   },
+   {
+    "employer": "WINSTON & STRAWN LLP",
+    "total": 26055.4,
+    "count": 22
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 21000.0,
+    "count": 6
+   },
+   {
+    "employer": "KESSLER TOPAZ MELTZER & CHECK, LLP",
+    "total": 20400.0,
+    "count": 11
+   },
+   {
+    "employer": "GOOGLE",
+    "total": 19696.9,
+    "count": 37
+   }
+  ],
+  "committee_id": "C00540500",
+  "source": "https://www.fec.gov/data/candidate/S4NJ00185/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "K000394": {
+  "candidate_id": "S4NJ00466",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1897774.63,
+  "disbursements": 1257419.73,
+  "cash_on_hand": 1262054.98,
+  "individual": 1571170.46,
+  "pacs": 77505.01,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4NJ00466/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "H001046": {
+  "candidate_id": "S2NM00088",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1707571.31,
+  "disbursements": 1442059.2,
+  "cash_on_hand": 585063.26,
+  "individual": 1182401.34,
+  "pacs": 506421.39,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2NM00088/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "L000570": {
+  "candidate_id": "S0NM00058",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 9111370.87,
+  "disbursements": 6347417.97,
+  "cash_on_hand": 2843276.35,
+  "individual": 5510047.8,
+  "pacs": 2495680.19,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 117000.0,
+    "count": 57
+   },
+   {
+    "employer": "CAPITAL GROUP",
+    "total": 47500.0,
+    "count": 19
+   },
+   {
+    "employer": "OPENAI",
+    "total": 19000.0,
+    "count": 8
+   },
+   {
+    "employer": "CORNERSTONE GOVERNMENT AFFAIRS",
+    "total": 17750.0,
+    "count": 15
+   },
+   {
+    "employer": "MICROSOFT CORPORATION",
+    "total": 17750.0,
+    "count": 10
+   },
+   {
+    "employer": "THE DASCHLE GROUP",
+    "total": 15500.0,
+    "count": 10
+   },
+   {
+    "employer": "BGR GROUP",
+    "total": 14500.0,
+    "count": 16
+   },
+   {
+    "employer": "PATTERN ENERGY",
+    "total": 14000.0,
+    "count": 8
+   }
+  ],
+  "committee_id": "C00443689",
+  "source": "https://www.fec.gov/data/candidate/S0NM00058/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "C001113": {
+  "candidate_id": "S6NV00200",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 5907386.58,
+  "disbursements": 5425072.33,
+  "cash_on_hand": 3483496.23,
+  "individual": 4780229.64,
+  "pacs": 431155.34,
+  "party": 1500.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6NV00200/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "R000608": {
+  "candidate_id": "S8NV00156",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1799602.24,
+  "disbursements": 2326120.44,
+  "cash_on_hand": 1253577.6,
+  "individual": 1268623.25,
+  "pacs": 263500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8NV00156/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "G000555": {
+  "candidate_id": "S0NY00410",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 3526563.67,
+  "disbursements": 1528760.98,
+  "cash_on_hand": 2713529.6,
+  "individual": 1566007.21,
+  "pacs": 198193.49,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0NY00410/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "S000148": {
+  "candidate_id": "S8NY00082",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 3950604.4,
+  "disbursements": 5979218.02,
+  "cash_on_hand": 7853430.04,
+  "individual": 3025733.34,
+  "pacs": 365675.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8NY00082/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "H001104": {
+  "candidate_id": "S6OH00304",
+  "cycle": 2026,
+  "period": "2025-01-01 to 2026-10-22",
+  "receipts": 19894785.94,
+  "disbursements": 15655689.37,
+  "cash_on_hand": 4239096.57,
+  "individual": 9843192.51,
+  "pacs": 2733610.0,
+  "party": 65450.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "MARATHON PETROLEUM",
+    "total": 44000.0,
+    "count": 25
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 41000.0,
+    "count": 17
+   },
+   {
+    "employer": "KKR",
+    "total": 27340.91,
+    "count": 10
+   },
+   {
+    "employer": "EMBASSY HEALTHCARE",
+    "total": 26800.0,
+    "count": 12
+   },
+   {
+    "employer": "CINCINNATI BENGALS",
+    "total": 26500.0,
+    "count": 11
+   },
+   {
+    "employer": "RDV CORPORATION",
+    "total": 26400.0,
+    "count": 12
+   },
+   {
+    "employer": "SQUIRE PATTON BOGGS",
+    "total": 25000.0,
+    "count": 13
+   }
+  ],
+  "committee_id": "C00896019",
+  "source": "https://www.fec.gov/data/candidate/S6OH00304/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "M001242": {
+  "candidate_id": "S4OH00192",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 3244299.27,
+  "disbursements": 2838847.24,
+  "cash_on_hand": 783771.74,
+  "individual": 876988.31,
+  "pacs": 307871.32,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4OH00192/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "L000575": {
+  "candidate_id": "S4OK00232",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 2083214.79,
+  "disbursements": 1313312.02,
+  "cash_on_hand": 2844001.87,
+  "individual": 862038.44,
+  "pacs": 748800.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4OK00232/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "M001176": {
+  "candidate_id": "S8OR00207",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 8729810.49,
+  "disbursements": 5914121.4,
+  "cash_on_hand": 6621250.26,
+  "individual": 6923270.47,
+  "pacs": 632370.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 81804.49,
+    "count": 311
+   },
+   {
+    "employer": "PAULSON COLETTI",
+    "total": 14000.0,
+    "count": 5
+   },
+   {
+    "employer": "CORSON & JOHNSON",
+    "total": 14000.0,
+    "count": 7
+   },
+   {
+    "employer": "KAFOURY & MCDOUGAL",
+    "total": 11500.0,
+    "count": 4
+   },
+   {
+    "employer": "INTEL",
+    "total": 7608.0,
+    "count": 30
+   },
+   {
+    "employer": "OHSU",
+    "total": 7007.5,
+    "count": 39
+   },
+   {
+    "employer": "RUBICON GLOBAL ADVISORS",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "TEACHING STRATEGIES, INC.",
+    "total": 7000.0,
+    "count": 2
+   }
+  ],
+  "committee_id": "C00437277",
+  "source": "https://www.fec.gov/data/candidate/S8OR00207/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "W000779": {
+  "candidate_id": "S6OR00110",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 3457176.63,
+  "disbursements": 5280543.04,
+  "cash_on_hand": 1522558.58,
+  "individual": 1775618.34,
+  "pacs": 681850.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6OR00110/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "F000479": {
+  "candidate_id": "S6PA00274",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 10403670.23,
+  "disbursements": 8776622.45,
+  "cash_on_hand": 2254397.6,
+  "individual": 9097958.68,
+  "pacs": 76588.01,
+  "party": 622.7,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6PA00274/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:28+00:00"
+ },
+ "M001243": {
+  "candidate_id": "S2PA00661",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 6695301.67,
+  "disbursements": 5402397.06,
+  "cash_on_hand": 1898382.49,
+  "individual": 3607263.67,
+  "pacs": 779750.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2PA00661/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "R000122": {
+  "candidate_id": "S6RI00163",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 4814652.66,
+  "disbursements": 4940507.75,
+  "cash_on_hand": 1883532.16,
+  "individual": 2937020.81,
+  "pacs": 1673985.38,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "EO SOLUTIONS",
+    "total": 28000.0,
+    "count": 8
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 26500.0,
+    "count": 8
+   },
+   {
+    "employer": "OCEAN STATE INNOVATIONS",
+    "total": 23500.0,
+    "count": 12
+   },
+   {
+    "employer": "ANTHROPIC PBC",
+    "total": 20500.0,
+    "count": 6
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 20500.0,
+    "count": 7
+   },
+   {
+    "employer": "BROWNSTEIN HYATT FARBER SCHRECK",
+    "total": 17750.0,
+    "count": 15
+   },
+   {
+    "employer": "CLIFFORD LAW OFFICES",
+    "total": 17500.0,
+    "count": 5
+   },
+   {
+    "employer": "PICERNE REAL ESTATE GROUP",
+    "total": 11500.0,
+    "count": 10
+   }
+  ],
+  "committee_id": "C00238907",
+  "source": "https://www.fec.gov/data/candidate/S6RI00163/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "W000802": {
+  "candidate_id": "S6RI00221",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 652855.86,
+  "disbursements": 801720.3,
+  "cash_on_hand": 1116523.28,
+  "individual": 504824.19,
+  "pacs": 60440.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6RI00221/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "S001184": {
+  "candidate_id": "S4SC00240",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 25539977.99,
+  "disbursements": 42463217.39,
+  "cash_on_hand": 4855184.01,
+  "individual": 21870052.3,
+  "pacs": 972200.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4SC00240/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "R000605": {
+  "candidate_id": "S4SD00049",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 5148217.38,
+  "disbursements": 5535196.42,
+  "cash_on_hand": 1295542.92,
+  "individual": 2023119.97,
+  "pacs": 2387750.01,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 64399.35,
+    "count": 54
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 47600.0,
+    "count": 15
+   },
+   {
+    "employer": "GOOGLE",
+    "total": 42200.0,
+    "count": 17
+   },
+   {
+    "employer": "MARQUIS MANAGEMENT, INC.",
+    "total": 30000.0,
+    "count": 12
+   },
+   {
+    "employer": "NULL",
+    "total": 26201.0,
+    "count": 15
+   },
+   {
+    "employer": "ARES MANAGEMENT",
+    "total": 21000.0,
+    "count": 6
+   },
+   {
+    "employer": "BURWELL ENTERPRISE",
+    "total": 21000.0,
+    "count": 6
+   }
+  ],
+  "committee_id": "C00532465",
+  "source": "https://www.fec.gov/data/candidate/S4SD00049/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "T000250": {
+  "candidate_id": "S2SD00068",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 8843018.94,
+  "disbursements": 7868097.07,
+  "cash_on_hand": 17917154.51,
+  "individual": 2869701.17,
+  "pacs": 1404700.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2SD00068/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "B001243": {
+  "candidate_id": "S8TN00337",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 3215323.74,
+  "disbursements": 7976154.2,
+  "cash_on_hand": 377784.32,
+  "individual": 254699.4,
+  "pacs": 132500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8TN00337/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "H000601": {
+  "candidate_id": "S0TN00169",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 17226961.19,
+  "disbursements": 12325564.81,
+  "cash_on_hand": 4956454.97,
+  "individual": 10708604.34,
+  "pacs": 3210449.2,
+  "party": 63000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 84364.93,
+    "count": 249
+   },
+   {
+    "employer": "CAPITAL GROUP",
+    "total": 70000.0,
+    "count": 29
+   },
+   {
+    "employer": "KKR",
+    "total": 59329.34,
+    "count": 18
+   },
+   {
+    "employer": "FEDEX",
+    "total": 42000.0,
+    "count": 12
+   },
+   {
+    "employer": "WELLS FARGO",
+    "total": 29450.0,
+    "count": 14
+   }
+  ],
+  "committee_id": "C00718627",
+  "source": "https://www.fec.gov/data/candidate/S0TN00169/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "C001056": {
+  "candidate_id": "S2TX00106",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 14265889.69,
+  "disbursements": 14403258.01,
+  "cash_on_hand": 496092.37,
+  "individual": 6420375.97,
+  "pacs": 2474304.41,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "CHARTER BROKERAGE LLC",
+    "total": 57750.0,
+    "count": 33
+   },
+   {
+    "employer": "AT&T",
+    "total": 52315.26,
+    "count": 39
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 38600.0,
+    "count": 15
+   },
+   {
+    "employer": "APOLLO",
+    "total": 28069.73,
+    "count": 15
+   },
+   {
+    "employer": "FIDELITY INVESTMENTS",
+    "total": 25100.0,
+    "count": 18
+   }
+  ],
+  "committee_id": "C00369033",
+  "source": "https://www.fec.gov/data/candidate/S2TX00106/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "C001098": {
+  "candidate_id": "S2TX00312",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 12422145.1,
+  "disbursements": 10969205.3,
+  "cash_on_hand": 3239647.0,
+  "individual": 10285590.21,
+  "pacs": 538050.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2TX00312/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "C001114": {
+  "candidate_id": "S4UT00282",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 862032.94,
+  "disbursements": 952145.59,
+  "cash_on_hand": 698570.01,
+  "individual": 407490.81,
+  "pacs": 454500.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4UT00282/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "L000577": {
+  "candidate_id": "S0UT00165",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 7668836.39,
+  "disbursements": 7918882.62,
+  "cash_on_hand": 712113.69,
+  "individual": 7118642.65,
+  "pacs": 350224.61,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0UT00165/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "K000384": {
+  "candidate_id": "S2VA00142",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 903435.97,
+  "disbursements": 1524380.71,
+  "cash_on_hand": 2178565.26,
+  "individual": 453591.69,
+  "pacs": 151504.02,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2VA00142/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "W000805": {
+  "candidate_id": "S6VA00093",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 27493348.26,
+  "disbursements": 21664081.12,
+  "cash_on_hand": 6217677.32,
+  "individual": 14810676.07,
+  "pacs": 3736290.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "CORNING, INC.",
+    "total": 69000.0,
+    "count": 32
+   },
+   {
+    "employer": "AT&T",
+    "total": 68450.0,
+    "count": 57
+   },
+   {
+    "employer": "APOLLO GLOBAL MANAGEMENT",
+    "total": 52000.0,
+    "count": 19
+   },
+   {
+    "employer": "GOLDMAN SACHS",
+    "total": 50600.0,
+    "count": 18
+   },
+   {
+    "employer": "CISCO SYSTEMS",
+    "total": 48750.0,
+    "count": 17
+   },
+   {
+    "employer": "UNITED AIRLINES",
+    "total": 44025.0,
+    "count": 47
+   },
+   {
+    "employer": "HAVELI INVESTMENTS",
+    "total": 42500.0,
+    "count": 21
+   }
+  ],
+  "committee_id": "C00438713",
+  "source": "https://www.fec.gov/data/candidate/S6VA00093/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "S000033": {
+  "candidate_id": "S4VT00033",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-10-14",
+  "receipts": 26476152.82,
+  "disbursements": 15524841.02,
+  "cash_on_hand": 21692072.46,
+  "individual": 25082378.06,
+  "pacs": 27.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4VT00033/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "W000800": {
+  "candidate_id": "S2VT00235",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 579721.35,
+  "disbursements": 933661.59,
+  "cash_on_hand": 1605729.82,
+  "individual": 146272.25,
+  "pacs": 88110.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2VT00235/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "C000127": {
+  "candidate_id": "S8WA00194",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 985139.34,
+  "disbursements": 1364395.83,
+  "cash_on_hand": 231954.7,
+  "individual": 982337.57,
+  "pacs": 0.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S8WA00194/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "M001111": {
+  "candidate_id": "S2WA00189",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 5687205.21,
+  "disbursements": 4075132.22,
+  "cash_on_hand": 2170413.17,
+  "individual": 4863300.16,
+  "pacs": 622200.01,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2WA00189/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "B001230": {
+  "candidate_id": "S2WI00219",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 3479827.95,
+  "disbursements": 2659510.81,
+  "cash_on_hand": 845583.99,
+  "individual": 3054041.34,
+  "pacs": 230658.4,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2WI00219/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:29+00:00"
+ },
+ "J000293": {
+  "candidate_id": "S0WI00197",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 6601850.37,
+  "disbursements": 6296879.63,
+  "cash_on_hand": 1067075.58,
+  "individual": 6267872.96,
+  "pacs": 76000.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S0WI00197/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:30+00:00"
+ },
+ "C001047": {
+  "candidate_id": "S4WV00159",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 7314563.44,
+  "disbursements": 6714017.43,
+  "cash_on_hand": 3071076.35,
+  "individual": 3553656.47,
+  "pacs": 3132537.98,
+  "party": 62050.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 74057.95,
+    "count": 66
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 47000.0,
+    "count": 20
+   },
+   {
+    "employer": "ANTERO RESOURCES",
+    "total": 26500.0,
+    "count": 11
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 25700.0,
+    "count": 10
+   },
+   {
+    "employer": "JANE STREET CAPITAL",
+    "total": 21000.0,
+    "count": 7
+   }
+  ],
+  "committee_id": "C00539825",
+  "source": "https://www.fec.gov/data/candidate/S4WV00159/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:30+00:00"
+ },
+ "J000312": {
+  "candidate_id": "S4WV00332",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 87370.2,
+  "disbursements": 647341.37,
+  "cash_on_hand": 133969.4,
+  "individual": 46421.75,
+  "pacs": 38750.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4WV00332/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:30+00:00"
+ },
+ "B001261": {
+  "candidate_id": "S6WY00068",
+  "cycle": 2030,
+  "period": "2025-01-01 to 2026-09-30",
+  "receipts": 1844877.79,
+  "disbursements": 1005467.98,
+  "cash_on_hand": 8567838.4,
+  "individual": 518565.07,
+  "pacs": 427749.33,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S6WY00068/?cycle=2030&election_full=true",
+  "fetched": "2026-11-04T00:30+00:00"
+ },
+ "L000571": {
+  "candidate_id": "S0WY00137",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 2718016.58,
+  "disbursements": 2017075.73,
+  "cash_on_hand": 815391.08,
+  "individual": 861738.35,
+  "pacs": 1227484.64,
+  "party": 62000.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 21750.0,
+    "count": 12
+   },
+   {
+    "employer": "CARVER CREEK RANCH",
+    "total": 12000.0,
+    "count": 4
+   },
+   {
+    "employer": "KALSHI",
+    "total": 10000.0,
+    "count": 6
+   },
+   {
+    "employer": "CLEANSPARK",
+    "total": 7500.0,
+    "count": 5
+   },
+   {
+    "employer": "BTC INC.",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "RESEARCH AFFILIATES LLC",
+    "total": 7000.0,
+    "count": 3
+   }
+  ],
+  "committee_id": "C00443580",
+  "source": "https://www.fec.gov/data/candidate/S0WY00137/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:30+00:00"
  }
 }
