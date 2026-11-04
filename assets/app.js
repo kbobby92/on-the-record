@@ -263,6 +263,7 @@
     app.innerHTML = `
       <h1>${d.year} Senate elections</h1>
       <p class="lede">Every Senate race on the ballot, who's running and what they've raised. A race is only marked called once a named news organization projects a winner, with a link to that call.</p>
+      ${balanceBar(d.balance)}
       <div class="metrics">
         <div class="metric"><div class="lbl">Races</div><div class="val">${d.races.length}</div><div class="how">Seats on the ${d.year} ballot</div></div>
         <div class="metric"><div class="lbl">Called</div><div class="val">${(counts.called || 0) + (counts.certified || 0)}</div><div class="how">${counts.certified || 0} certified by the state</div></div>
@@ -272,7 +273,7 @@
         ${[["all", "All races"], ["counting", "Still counting"], ["called", "Called"], ["runoff", "Runoff or recount"]].map(([v, l]) => `<button class="btn ${v === "all" ? "on" : ""}" data-v="${v}">${l}</button>`).join("")}
       </div>
       <div class="grid race-grid" id="races"></div>
-      <p class="muted small" style="margin-top:16px">Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
+      <p class="muted small" style="margin-top:16px">Bars show money raised relative to the top fundraiser in each race. Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
 
     const render = () => {
       const list = d.races.slice().sort((a, b) => (STATES[a.state] || a.state).localeCompare(STATES[b.state] || b.state)).filter((r) => filt.v === "all" || r.status === filt.v ||
@@ -285,10 +286,35 @@
     render();
   }
 
+
+  function balanceBar(b) {
+    if (!b) return "";
+    const total = b.total || 100;
+    const w = (n) => `${(100 * n) / total}%`;
+    const iD = b.independents_caucus_with_d || 0, iOther = (b.not_up.I || 0) - iD;
+    const left = b.not_up.D + b.called.D + iD, right = b.not_up.R + b.called.R;
+    const seg = (n, cls, title) => (n > 0 ? `<span class="seg ${cls}" style="width:${w(n)}" title="${title}: ${n}"></span>` : "");
+    return `<div class="balance">
+      <div class="bal-head">
+        <div class="bal-side d"><b>${left}</b><span>Democrats${iD ? ` + ${iD} independent${iD > 1 ? "s" : ""}` : ""}</span></div>
+        <div class="bal-mid"><b>${b.uncalled}</b><span>still counting</span></div>
+        <div class="bal-side r"><b>${right}</b><span>Republicans</span></div>
+      </div>
+      <div class="bal-bar" role="img" aria-label="Senate seats: ${left} Democrats and allied independents, ${right} Republicans, ${b.uncalled} races not yet called">
+        ${seg(b.not_up.D, "d base", "Democrats not up this year")}${seg(b.called.D, "d won", "Democrats called winners this year")}${seg(iD, "i base", "Independents who caucus with Democrats")}${seg(b.called.I, "i won", "Independents called winners this year")}${seg(iOther, "i base", "Other independents")}${seg(b.uncalled, "open", "Not yet called")}${seg(b.called.R, "r won", "Republicans called winners this year")}${seg(b.not_up.R, "r base", "Republicans not up this year")}
+        <span class="bal-line" title="51 seats is a majority (50 plus the Vice President's tie-breaking vote also controls the chamber)"></span>
+      </div>
+      <div class="bal-legend">
+        <span><i class="sw base"></i>Not up this year</span><span><i class="sw won"></i>Called this year</span><span><i class="sw open"></i>Not yet called</span><span><i class="sw line"></i>51 seats for a majority</span>
+      </div>
+    </div>`;
+  }
+
   function raceCard(r) {
     const h = r.seat_holder;
     const people = r.nominees.length ? r.nominees : r.filers.map((c) => ({ name: c.name, party: c.party, incumbent: c.status === "I", receipts: c.receipts, fec: c.source }));
     const won = (n) => !!n.won;
+    const maxR = Math.max(1, ...people.map((n) => n.receipts || 0));
     return `<div class="card race ${r.status}">
       <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3><span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></div>
       <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
@@ -297,7 +323,8 @@
       <div class="cands">
         ${people.length ? people.map((n) => `<div class="cand p-${fecParty(n.party).replace("O", "X").replace("?", "X")} ${won(n) ? "won" : ""}">
           <span class="dot"></span><span class="cname">${n.bioguide ? `<a href="#/s/${esc(n.bioguide)}">${esc(n.name)}</a>` : esc(n.name)}${n.incumbent ? ` <span class="tag">Incumbent</span>` : ""}${won(n) ? ` <span class="tag win">Winner</span>` : ""}</span>
-          <span class="raised">${n.receipts != null ? (n.fec ? `<a href="${esc(n.fec)}">${fmtMoney(n.receipts)}</a>` : fmtMoney(n.receipts)) : ""}</span></div>`).join("")
+          <span class="raised">${n.receipts != null ? (n.fec ? `<a href="${esc(n.fec)}">${fmtMoney(n.receipts)}</a>` : fmtMoney(n.receipts)) : `<span class="muted small">no FEC match</span>`}</span>
+          ${n.receipts ? `<span class="mbar"><span style="width:${Math.max(1.5, (100 * n.receipts) / maxR)}%"></span></span>` : ""}</div>`).join("")
           : `<p class="muted small">Candidate list loads with the next update.</p>`}
       </div>
       ${!r.nominees.length && people.length ? `<p class="muted small" style="margin:8px 0 0">Candidates who raised money for this seat, per the FEC. May include people who lost the primary; the final ballot lineup is added as results come in.</p>` : ""}

@@ -141,3 +141,29 @@ a.btn:hover { border-color: var(--gold); }
 .tag.win { background: var(--good-soft); color: var(--good); }
 .tag.unchecked { background: var(--warn-soft); color: var(--warn); }
 .tag.ok { background: var(--good-soft); color: var(--good); }
+
+/* Senate balance tracker */
+.balance { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin: 4px 0 16px; }
+.bal-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 12px; margin-bottom: 10px; }
+.bal-side b, .bal-mid b { display: block; font-size: 2.2rem; font-weight: 700; line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.bal-side span, .bal-mid span { font-size: .8rem; color: var(--muted); }
+.bal-side.d b { color: var(--dem); } .bal-side.r { text-align: right; } .bal-side.r b { color: var(--rep); }
+.bal-mid { text-align: center; } .bal-mid b { color: var(--muted); font-size: 1.4rem; }
+.bal-bar { position: relative; display: flex; height: 30px; border-radius: 8px; overflow: hidden; background: var(--surface-2); }
+.seg { height: 100%; border-right: 1px solid var(--bg); }
+.seg.d.won { background: var(--dem); } .seg.d.base { background: color-mix(in srgb, var(--dem) 45%, var(--surface)); }
+.seg.r.won { background: var(--rep); } .seg.r.base { background: color-mix(in srgb, var(--rep) 45%, var(--surface)); }
+.seg.i.won { background: var(--ind); } .seg.i.base { background: color-mix(in srgb, var(--ind) 45%, var(--surface)); }
+.seg.open { background: repeating-linear-gradient(135deg, var(--surface-2) 0 6px, var(--line) 6px 8px); }
+.bal-line { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--ink); transform: translateX(-1px); }
+.bal-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; font-size: .78rem; color: var(--muted); }
+.bal-legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -2px; }
+.sw.base { background: linear-gradient(90deg, color-mix(in srgb, var(--dem) 45%, var(--surface)) 50%, color-mix(in srgb, var(--rep) 45%, var(--surface)) 50%); }
+.sw.won { background: linear-gradient(90deg, var(--dem) 50%, var(--rep) 50%); }
+.sw.open { background: repeating-linear-gradient(135deg, var(--surface-2) 0 3px, var(--line) 3px 4px); border: 1px solid var(--line-2); }
+.sw.line { width: 2px !important; background: var(--ink); }
+/* Money bars */
+.cand { grid-template-rows: auto auto; row-gap: 5px; }
+.mbar { grid-column: 2 / 4; height: 5px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.mbar span { display: block; height: 100%; border-radius: 3px; background: var(--pcolor, var(--faint)); opacity: .85; }
+@media (max-width: 560px) { .bal-side b { font-size: 1.7rem; } }

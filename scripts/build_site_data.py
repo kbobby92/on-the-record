@@ -233,6 +233,32 @@ def last_name(name):
     return parts[-1].lower() if parts else ""
 
 
+def name_tokens(name):
+    return [t for t in re.sub(r"[^a-z ]", " ", (name or "").lower()).split()
+            if t not in ("jr", "sr", "ii", "iii", "iv")]
+
+
+def match_fec(n, state_cands, used, ambiguous):
+    """Find a nominee's FEC record by name. Returns None rather than guess when unsure."""
+    ln = last_name(n["name"])
+    hits = [x for x in state_cands if x["candidate_id"] not in used and last_name(fec_name(x["name"])) == ln]
+    if not hits:
+        return None
+    if ambiguous or len(hits) > 1:
+        # Several people share the last name: require the first name (or initial) to match too,
+        # and a unique best match; otherwise show no money rather than someone else's.
+        mine = name_tokens(n["name"])[:-1]
+        def score(x):
+            theirs = name_tokens(fec_name(x["name"]))[:-1]
+            return sum(1 for a in mine for b in theirs if a == b or (len(a) == 1 and b.startswith(a)) or (len(b) == 1 and a.startswith(b)))
+        scored = sorted(((score(x), x.get("party") == n.get("party"), x.get("receipts") or 0, x) for x in hits),
+                        key=lambda t: (t[0], t[1], t[2]), reverse=True)
+        if scored[0][0] == 0 or (len(scored) > 1 and scored[0][:2] == scored[1][:2] and ambiguous):
+            return None
+        return scored[0][3]
+    return hits[0]
+
+
 RACE_STATUSES = {"counting", "called", "certified", "runoff", "recount"}
 
 
@@ -251,8 +277,15 @@ def build_elections(roster, now):
             print(f"{st}: '{status}' needs winner, called_by and source_url; showing as counting")
             status = "counting"
         nominees = []
+        state_cands = [c for c in cands["candidates"] if c["state"] == st]
+        used = {n.get("candidate_id") for n in r.get("nominees") or [] if n.get("candidate_id")}
+        same_last = Counter(last_name(n.get("name") or "") for n in r.get("nominees") or [])
         for n in r.get("nominees") or []:
             c = by_id.get(n.get("candidate_id") or "")
+            if not c and n.get("name"):
+                c = match_fec(n, state_cands, used, ambiguous=same_last[last_name(n["name"])] > 1)
+                if c:
+                    used.add(c["candidate_id"])
             nominees.append({"name": n.get("name") or fec_name((c or {}).get("name")), "party": n.get("party") or (c or {}).get("party"),
                              "incumbent": bool(n.get("incumbent")), "bioguide": n.get("bioguide"),
                              "receipts": (c or {}).get("receipts"), "cash_on_hand": (c or {}).get("cash_on_hand"),
@@ -275,8 +308,30 @@ def build_elections(roster, now):
             "filers": [{k: c[k] for k in ("party", "status", "receipts", "cash_on_hand", "through", "source")}
                        | {"name": fec_name(c["name"])} for c in filers[:10]],
         })
+    # Senate balance: seats not up this year + races called, by party.
+    def side(party):
+        p = (party or "").upper()
+        return "D" if p in ("DEM", "DFL", "DEMOCRAT") else "R" if p in ("REP", "REPUBLICAN") else "I"
+    up_states = set(races["races"])
+    up_holders = {r.get("seat_holder") for r in races["races"].values()}
+    not_up = {"D": 0, "R": 0, "I": 0}
+    for s_ in roster:
+        if s_["bioguide"] in up_holders:
+            continue
+        not_up[side({"Democrat": "DEM", "Republican": "REP"}.get(s_["party"], "IND"))] += 1
+    called = {"D": 0, "R": 0, "I": 0}
+    for r in out:
+        if r["status"] in ("called", "certified"):
+            w = next((n for n in r["nominees"] if n.get("won")), None)
+            called[side(w["party"]) if w else "I"] += 1
+    caucus_d = sum(1 for s_ in roster if s_["bioguide"] not in up_holders and s_["party"] == "Independent"
+                   and (s_.get("caucus") or "Democrat") == "Democrat")
+    balance = {"not_up": not_up, "called": called, "independents_caucus_with_d": caucus_d,
+               "uncalled": sum(1 for r in out if r["status"] not in ("called", "certified")),
+               "total": sum(not_up.values()) + len(out)}
+
     with open(D("elections.json"), "w", encoding="utf-8") as f:
-        json.dump({"updated": now, "year": races.get("year"), "election_day": races.get("election_day"),
+        json.dump({"updated": now, "year": races.get("year"), "balance": balance, "election_day": races.get("election_day"),
                    "money_through": cands.get("fetched"), "races": out}, f, separators=(",", ":"))
     print(f"Elections: {len(out)} races, {sum(1 for r in out if r['status'] in ('called', 'certified'))} called")
 
