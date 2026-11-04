@@ -1,0 +1,133 @@
+{
+ "M001153": {
+  "candidate_id": "S4AK00099",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 2069260.97,
+  "disbursements": 1162637.58,
+  "cash_on_hand": 1564309.85,
+  "individual": 1295594.47,
+  "pacs": 653600.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S4AK00099/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:02+00:00"
+ },
+ "S001198": {
+  "candidate_id": "S4AK00214",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-10-14",
+  "receipts": 14107205.4,
+  "disbursements": 11999190.88,
+  "cash_on_hand": 2839757.54,
+  "individual": 7150972.13,
+  "pacs": 2952138.81,
+  "party": 62450.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SELF",
+    "total": 170095.84,
+    "count": 293
+   },
+   {
+    "employer": "NULL",
+    "total": 82274.0,
+    "count": 88
+   },
+   {
+    "employer": "UNEMPLOYED",
+    "total": 58789.74,
+    "count": 40
+   },
+   {
+    "employer": "KKR",
+    "total": 49840.91,
+    "count": 17
+   },
+   {
+    "employer": "APOLLO",
+    "total": 41300.0,
+    "count": 18
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 39250.0,
+    "count": 14
+   }
+  ],
+  "committee_id": "C00570994",
+  "source": "https://www.fec.gov/data/candidate/S4AK00214/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:02+00:00"
+ },
+ "B001319": {
+  "candidate_id": "S2AL00145",
+  "cycle": 2028,
+  "period": "2023-01-01 to 2026-09-30",
+  "receipts": 6885246.9,
+  "disbursements": 3459289.85,
+  "cash_on_hand": 5134688.53,
+  "individual": 5464448.9,
+  "pacs": 1354100.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [],
+  "committee_id": null,
+  "source": "https://www.fec.gov/data/candidate/S2AL00145/?cycle=2028&election_full=true",
+  "fetched": "2026-11-04T00:02+00:00"
+ },
+ "T000278": {
+  "candidate_id": "S0AL00230",
+  "cycle": 2026,
+  "period": "2021-01-01 to 2026-09-30",
+  "receipts": 3994826.02,
+  "disbursements": 4118892.11,
+  "cash_on_hand": 49413.75,
+  "individual": 3009300.09,
+  "pacs": 684650.0,
+  "party": 0.0,
+  "self_funded": 0,
+  "top_employers": [
+   {
+    "employer": "SYNERGI PARTNERS",
+    "total": 21000.0,
+    "count": 6
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 20000.0,
+    "count": 6
+   },
+   {
+    "employer": "RADIANCE TECHNOLOGIES",
+    "total": 15423.06,
+    "count": 20
+   },
+   {
+    "employer": "NULL",
+    "total": 14818.05,
+    "count": 67
+   },
+   {
+    "employer": "THE ANSCHUTZ CORPORATION",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "HUNT COMPANIES INC.",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "J.W. CHILDS ASSOCIATES",
+    "total": 7000.0,
+    "count": 2
+   }
+  ],
+  "committee_id": "C00701672",
+  "source": "https://www.fec.gov/data/candidate/S0AL00230/?cycle=2026&election_full=true",
+  "fetched": "2026-11-04T00:02+00:00"
+ }
+}
