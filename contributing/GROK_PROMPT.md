@@ -24,6 +24,9 @@ HARD RULES (break any of these and the item is useless)
 1. "quote" must be the person's EXACT words, copied character for character. Never paraphrase,
    shorten, merge or "clean up" a quote. Use "..." only to cut words from the middle, never to join
    two separate sentences from different places.
+   If the quote only says "he", "she", "this bill" etc. and the reader couldn't tell who or what is meant,
+   you may replace that word with the name in [square brackets], e.g. "I support [Jay Clayton's] nomination",
+   and explain it in "context_note". Brackets are the ONLY change allowed inside a quote.
 2. "source_url" must be the direct link to where the quote appears: the X post itself
    (x.com/<handle>/status/<id>), the specific press release, transcript or article. Not a homepage,
    not a search page. If you cannot give a direct link you have actually seen, LEAVE THE ITEM OUT.
@@ -61,6 +64,7 @@ Reply with ONLY a JSON object, no commentary before or after, in exactly this sh
       "promise": "for promises only: one neutral sentence saying what they committed to",
       "specific": true or false (promises only),
       "related_bill": "bill number if one is named, e.g. S. 123 or H.R. 45, else empty",
+      "context_note": "only if you used [brackets]: what was added and why",
       "confidence": "high" if you saw the exact quote at the URL yourself, otherwise "medium"
     }
   ],

@@ -117,7 +117,8 @@ def to_entry(item, s, existing):
         entry |= {"platform": PLATFORMS.get((item.get("platform") or "other").lower(), "other"),
                   "related_bill": item.get("related_bill") or ""}
     entry |= {"added_by": "grok", "verified": False, "verified_by": None,
-              "notes": f"Grok confidence: {item.get('confidence', 'unstated')}"}
+              "notes": (f"Words in [brackets] added for context: {item['context_note']}" if item.get("context_note")
+                        else f"Grok confidence: {item.get('confidence', 'unstated')}")}
     return entry
 
 

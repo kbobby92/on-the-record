@@ -226,7 +226,8 @@
     if (!s.statements.length) return `<div class="empty">No statements on file yet.</div>`;
     return s.statements.map((x) => `<div class="item"><span class="tag">${esc(x.platform)}</span> <span class="tag">${esc(x.topic)}</span> ${checkedBadge(x)}
       <blockquote>“${esc(x.quote)}”<div class="muted small">${fmtDate(x.source_date)}${postedBy(x.source_url)} · <a href="${esc(x.source_url)}">source</a>${x.archive_url ? ` · <a href="${esc(x.archive_url)}">archived copy</a>` : ""} · ${reportLink(x, s)}</div></blockquote>
-      ${x.related_bill ? `<p class="small">Related: ${esc(x.related_bill)}</p>` : ""}</div>`).join("");
+      ${x.related_bill ? `<p class="small">Related: ${esc(x.related_bill)}</p>` : ""}
+      ${x.notes && !/^Grok confidence/.test(x.notes) ? `<p class="muted small">${esc(x.notes)}</p>` : ""}</div>`).join("");
   }
 
   function committeesTab(s) {

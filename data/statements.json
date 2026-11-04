@@ -1045,17 +1045,17 @@
       "id": "s-C001095-003",
       "bioguide": "C001095",
       "senator": "Tom Cotton",
-      "quote": "I am pleased to support his nomination, and I urge my colleagues to vote in favor of his confirmation.",
+      "quote": "I am pleased to support [Jay Clayton's] nomination, and I urge my colleagues to vote in favor of his confirmation.",
       "source_url": "https://www.congress.gov/119/crec/2026/07/28/172/123/modified/CREC-2026-07-28-pt1-PgS4291.htm",
       "archive_url": "",
       "source_date": "2026-07-28",
-      "topic": "Government & ethics",
+      "topic": "Defense & foreign policy",
       "platform": "floor speech",
       "related_bill": "",
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: high"
+      "notes": "Words in [brackets] added for context: the nominee was Jay Clayton, for Director of National Intelligence (named earlier in the same speech)."
     },
     {
       "id": "s-C001095-004",
