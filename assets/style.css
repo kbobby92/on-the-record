@@ -139,3 +139,5 @@ a.btn:hover { border-color: var(--gold); }
 .cand.won .cname { font-weight: 700; }
 .p-X { --pcolor: var(--faint); --pink: var(--muted); }
 .tag.win { background: var(--good-soft); color: var(--good); }
+.tag.unchecked { background: var(--warn-soft); color: var(--warn); }
+.tag.ok { background: var(--good-soft); color: var(--good); }

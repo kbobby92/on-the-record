@@ -137,7 +137,7 @@
         ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
         ${TRADES_ENABLED ? `${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
         ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}` : ""}
-        ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_tracked} verified promise${m.promises_tracked === 1 ? "" : "s"} tracked. Shown once at least 3 are resolved.`)}
+        ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_tracked} promise${m.promises_tracked === 1 ? "" : "s"} tracked. Scored only on source-checked promises, once at least 3 are resolved.`)}
       </div>
       <div class="tabs" role="tablist">
         ${["Votes", "Stock trades", "Campaign money", "Promises", "Statements", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
@@ -193,25 +193,39 @@
       ${m.top_employers.length ? m.top_employers.map((e) => `<div class="money-row"><span>${esc(e.employer)}</span><b>${fmtMoney(e.total)}</b></div>`).join("") : `<p class="muted">None reported.</p>`}</div></div>`;
   }
 
-  const STATUS_LABEL = { kept: "Kept", compromise: "Compromise", in_progress: "In progress", not_started: "Not started", stalled: "Stalled", broken: "Broken" };
+  const REPO = "https://github.com/kbobby92/on-the-record";
+  function checkedBadge(x) {
+    return x.verified ? `<span class="tag ok" title="Source checked by ${esc(x.verified_by || "a person")}">Source checked</span>`
+      : `<span class="tag unchecked" title="This quote hasn't been checked against its source yet. Open the source link to confirm it.">Not yet checked</span>`;
+  }
+  function reportLink(x, s) {
+    const title = encodeURIComponent(`Error report: ${x.id} (${s.name})`);
+    const body = encodeURIComponent(`Entry: ${x.id}\nSource: ${x.source_url}\n\nWhat's wrong (and a link to the correct source, if you have one):\n`);
+    return `<a href="${REPO}/issues/new?title=${title}&body=${body}">Report an error</a>`;
+  }
+  function postedBy(url) {
+    const m = /^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status\//.exec(url || "");
+    return m ? ` · posted by @${esc(m[1])}` : "";
+  }
+  const STATUS_LABEL = { kept: "Kept", compromise: "Compromise", in_progress: "In progress", not_started: "Not yet reviewed", stalled: "Stalled", broken: "Broken" };
   function promisesTab(s) {
-    if (!s.promises.length) return `<div class="empty">No verified promises tracked yet for ${esc(s.name)}. Promises are added by hand, each with its original source.</div>`;
+    if (!s.promises.length) return `<div class="empty">No promises tracked yet for ${esc(s.name)}. Each one is added with a link to where it was said.</div>`;
     const total = s.promises.length, by = s.metrics.promises_by_status;
     const colors = { kept: "var(--good)", compromise: "var(--accent)", in_progress: "var(--accent-soft)", not_started: "var(--line)", stalled: "var(--muted)", broken: "var(--bad)" };
     return `<div class="bar">${Object.entries(by).filter(([, n]) => n).map(([k, n]) => `<span title="${STATUS_LABEL[k]}: ${n}" style="width:${(100 * n) / total}%;background:${colors[k]}"></span>`).join("")}</div>
       <p class="muted small">${Object.entries(by).filter(([, n]) => n).map(([k, n]) => `${STATUS_LABEL[k]}: ${n}`).join(" · ")}. Senators are judged on their own actions (votes, bills, public pressure), not on whether Congress as a whole passed something.</p>
       ${s.promises.map((p) => `<div class="item">
-        <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> <span class="tag">${esc(p.topic)}</span>
+        <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> <span class="tag">${esc(p.topic)}</span> ${checkedBadge(p)}
         <h3 style="margin-top:8px">${esc(p.promise)}</h3>
-        <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)} · <a href="${esc(p.source_url)}">source</a>${p.archive_url ? ` · <a href="${esc(p.archive_url)}">archived copy</a>` : ""}</div></blockquote>
+        <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)}${postedBy(p.source_url)} · <a href="${esc(p.source_url)}">source</a>${p.archive_url ? ` · <a href="${esc(p.archive_url)}">archived copy</a>` : ""} · ${reportLink(p, s)}</div></blockquote>
         ${(p.evidence || []).length ? `<p class="small"><b>Record since:</b></p><ul class="small">${p.evidence.map((e) => `<li>${fmtDate(e.date)}: ${esc(e.description)} <a href="${esc(e.url)}">source</a></li>`).join("")}</ul>` : ""}
-        ${p.notes ? `<p class="muted small">${esc(p.notes)}</p>` : ""}</div>`).join("")}`;
+        ${p.notes && !/^Grok confidence/.test(p.notes) ? `<p class="muted small">${esc(p.notes)}</p>` : ""}</div>`).join("")}`;
   }
 
   function statementsTab(s) {
-    if (!s.statements.length) return `<div class="empty">No verified statements on file yet.</div>`;
-    return s.statements.map((x) => `<div class="item"><span class="tag">${esc(x.platform)}</span> <span class="tag">${esc(x.topic)}</span>
-      <blockquote>“${esc(x.quote)}”<div class="muted small">${fmtDate(x.source_date)} · <a href="${esc(x.source_url)}">source</a>${x.archive_url ? ` · <a href="${esc(x.archive_url)}">archived copy</a>` : ""}</div></blockquote>
+    if (!s.statements.length) return `<div class="empty">No statements on file yet.</div>`;
+    return s.statements.map((x) => `<div class="item"><span class="tag">${esc(x.platform)}</span> <span class="tag">${esc(x.topic)}</span> ${checkedBadge(x)}
+      <blockquote>“${esc(x.quote)}”<div class="muted small">${fmtDate(x.source_date)}${postedBy(x.source_url)} · <a href="${esc(x.source_url)}">source</a>${x.archive_url ? ` · <a href="${esc(x.archive_url)}">archived copy</a>` : ""} · ${reportLink(x, s)}</div></blockquote>
       ${x.related_bill ? `<p class="small">Related: ${esc(x.related_bill)}</p>` : ""}</div>`).join("");
   }
 
@@ -302,7 +316,7 @@
         <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
         <li><b>Stock trades (coming soon):</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Until they're added, each senator's page explains how to look up their filings there.</li>
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
-        <li><b>Promises and statements:</b> collected by hand. Every entry quotes the original words, links the original source, and is checked by a person before it appears.</li>
+        <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Only source-checked promises count toward the follow-through score. Spot a mistake? Use the "Report an error" link on any entry.</li>
       </ul>
       <h2>What each number means</h2>
       <ul>
@@ -317,6 +331,7 @@
         <li>No overall score that mixes these together. Any weighting would bake in someone's values.</li>
         <li>No ratings of whether a vote was good or bad for you. The record is here so you can judge.</li>
         <li>Nothing appears without a link to its original source.</li>
+        <li>Nothing counts toward a score until a person has checked it against that source.</li>
       </ul>
       <h2>Spot an error?</h2>
       <p>Open an issue on the project's GitHub page with a link to the correct source.</p>

@@ -58,8 +58,10 @@ def main():
     trades = load(D("raw", "trades.json"), {"reports": {}, "industries": {}})
     money = load(D("raw", "money.json"), {})
     sectors = load(D("committee_sectors.json"), {"committees": {}})["committees"]
-    promises = [p for p in load(D("promises.json"), {"promises": []})["promises"] if p.get("verified")]
-    statements = [s for s in load(D("statements.json"), {"statements": []})["statements"] if s.get("verified")]
+    # Unverified entries are shown on the site with a "Not yet checked" label,
+    # but only verified promises count toward the follow-through score.
+    promises = load(D("promises.json"), {"promises": []})["promises"]
+    statements = load(D("statements.json"), {"statements": []})["statements"]
     overrides = load(D("name_overrides.json"), {})
     overrides.pop("_about", None)
 
@@ -149,7 +151,7 @@ def main():
 
         # --- Promises & statements ---
         mine = [p for p in promises if p.get("bioguide") == bid]
-        resolved = [p for p in mine if p.get("status") in RESOLVED]
+        resolved = [p for p in mine if p.get("status") in RESOLVED and p.get("verified")]
         follow = (round(100 * sum(RESOLVED[p["status"]] for p in resolved) / len(resolved), 1)
                   if len(resolved) >= MIN_RESOLVED_PROMISES else None)
         said = sorted([x for x in statements if x.get("bioguide") == bid],
@@ -198,7 +200,8 @@ def main():
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
     build_elections(roster, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
-          f"{len(money)} money records, {len(promises)} verified promises, {len(statements)} verified statements")
+          f"{len(money)} money records, {len(promises)} promises ({sum(1 for p in promises if p.get('verified'))} verified), "
+          f"{len(statements)} statements ({sum(1 for x in statements if x.get('verified'))} verified)")
 
 
 SUFFIXES = {"JR", "SR", "II", "III", "IV", "JR.", "SR."}
