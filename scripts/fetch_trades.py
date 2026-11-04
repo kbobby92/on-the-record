@@ -30,9 +30,16 @@ def session():
     home.raise_for_status()
     form_token = BeautifulSoup(home.text, "html.parser").find(
         attrs={"name": "csrfmiddlewaretoken"})["value"]
+    print("cookies after GET:", list(s.cookies.keys()), "| GET status", home.status_code)
     r = s.post(BASE + "/search/home/", timeout=60,
                data={"csrfmiddlewaretoken": form_token, "prohibition_agreement": "1"},
-               headers={"Referer": BASE + "/search/home/"})
+               headers={"Referer": BASE + "/search/home/", "Origin": BASE,
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
+    if r.status_code != 200:
+        snippet = " ".join(BeautifulSoup(r.text, "html.parser").get_text(" ").split())[:400]
+        print("agreement POST status", r.status_code, "| server said:", snippet)
+        print("response headers:", {k: v for k, v in r.headers.items() if k.lower() in ("server", "x-frame-options", "content-type", "set-cookie")})
     r.raise_for_status()
     token = s.cookies.get("csrftoken") or s.cookies.get("csrf") or form_token
     return s, token
