@@ -26,9 +26,12 @@
     window.scrollTo(0, 0);
   }
 
-  function photo(s, cls = "") {
-    return `<img class="${cls}" src="${esc(s.photo)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph'}))">`;
+  function photo(s) {
+    const initials = esc((s.name || "").split(" ").filter((w) => /^[A-Z]/.test(w) && !w.endsWith(".")).map((w) => w[0]).slice(0, 1).join("") + (s.last || "")[0]);
+    return `<div class="av"><img src="${esc(s.photo)}" alt="" loading="lazy"
+      onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${initials}'}))"></div>`;
   }
+  const PARTY_NAME = { D: "Democrat", R: "Republican", I: "Independent" };
 
   /* ---------- Home: all senators ---------- */
   async function home() {
@@ -81,11 +84,11 @@
       list.sort(sorters[ui.sort]);
       document.getElementById("count").textContent = `${list.length} senator${list.length === 1 ? "" : "s"}`;
       document.getElementById("grid").innerHTML = list.map((s) => `
-        <a class="card" href="#/s/${s.bioguide}">
+        <a class="card p-${pc(s.party)}" href="#/s/${s.bioguide}">
           <div class="who">${photo(s)}<div>
             <div class="name">${esc(s.name)}</div>
-            <div><span class="party ${pc(s.party)}">${pc(s.party)}</span> ${esc(s.state)}
-            ${s.next_election === ELECTION_YEAR ? ` <span class="tag">On ${ELECTION_YEAR} ballot</span>` : ""}</div>
+            <div class="meta">${PARTY_NAME[pc(s.party)] || esc(s.party)} · ${esc(s.state)}</div>
+            ${s.next_election === ELECTION_YEAR ? `<span class="tag" style="margin-top:6px">On ${ELECTION_YEAR} ballot</span>` : ""}
           </div></div>
           <div class="stats">
             <div class="stat"><b>${fmtPct(s.metrics.attendance)}</b><span>votes cast</span></div>
@@ -113,11 +116,11 @@
 
     app.innerHTML = `
       <p class="small"><a href="#/">← All senators</a></p>
-      <div class="profile-head">
+      <div class="profile-head p-${pc(s.party)}">
         ${photo(s)}
         <div>
           <h1>${esc(s.name)}</h1>
-          <div><span class="party ${pc(s.party)}">${esc(s.party)}${s.caucus && s.caucus !== s.party ? `, caucuses with ${esc(s.caucus)}s` : ""}</span>
+          <div><span class="party">${esc(s.party)}${s.caucus && s.caucus !== s.party ? `, caucuses with ${esc(s.caucus)}s` : ""}</span>
             ${s.next_election === ELECTION_YEAR ? `<span class="tag">Seat on the ${ELECTION_YEAR} ballot</span>` : ""}</div>
           <div class="facts">
             <span>${esc(s.state)} · ${esc(s.rank || "")} senator</span>
@@ -125,7 +128,7 @@
             <span>Current term ends ${fmtDate(s.term_end)}</span>
             <span>Next election: ${s.next_election}</span>
           </div>
-          <div class="small">${links}</div>
+          <div class="small links">${links}</div>
         </div>
       </div>
       <div class="metrics">
