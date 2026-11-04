@@ -42,12 +42,13 @@
     },
     "AL": {
       "seat_holder": "T000278",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Barry Moore",
           "party": "REP",
-          "incumbent": false
+          "incumbent": false,
+          "candidate_id": "S6AL00476"
         },
         {
           "name": "Everett Wess",
@@ -56,12 +57,12 @@
           "candidate_id": "S6AL00518"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "winner": "Barry Moore",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T04:17Z",
+      "source_url": "https://www.ckom.com/2026/11/03/republican-barry-moore-wins-election-to-u-s-senate-from-alabama/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-04T06:48:34Z"
     },
     "AR": {
       "seat_holder": "C001095",
@@ -187,12 +188,13 @@
     },
     "IA": {
       "seat_holder": "E000295",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Ashley Hinson",
           "party": "REP",
-          "incumbent": false
+          "incumbent": false,
+          "candidate_id": "S6IA00314"
         },
         {
           "name": "Josh Turek",
@@ -201,22 +203,23 @@
           "candidate_id": "S6IA00298"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "winner": "Josh Turek",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T04:35Z",
+      "source_url": "https://www.ckom.com/2026/11/03/democrat-josh-turek-wins-election-to-u-s-senate-from-iowa/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-04T06:48:34Z"
     },
     "ID": {
       "seat_holder": "R000584",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Jim Risch",
           "party": "REP",
           "incumbent": true,
-          "bioguide": "R000584"
+          "bioguide": "R000584",
+          "candidate_id": "S8ID00092"
         },
         {
           "name": "Todd Achilles",
@@ -225,12 +228,12 @@
           "candidate_id": "S6ID00146"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "winner": "Jim Risch",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T06:31Z",
+      "source_url": "https://www.yahoo.com/news/politics/articles/republican-jim-risch-wins-reelection-063216005.html",
       "notes": "No Democratic nominee; minor-party candidates also on the ballot.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-04T06:48:34Z"
     },
     "IL": {
       "seat_holder": "D000563",
@@ -258,7 +261,7 @@
     },
     "KS": {
       "seat_holder": "M001198",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Roger Marshall",
@@ -274,12 +277,12 @@
           "candidate_id": "S6KS00312"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Adam Hamilton",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T04:24Z",
+      "source_url": "https://www.ckom.com/2026/11/03/democrat-adam-hamilton-wins-election-to-u-s-senate-from-kansas/",
+      "notes": "Decision Desk HQ also projected Hamilton.",
+      "updated": "2026-11-04T06:48:34Z"
     },
     "KY": {
       "seat_holder": "M000355",
@@ -306,7 +309,7 @@
     },
     "LA": {
       "seat_holder": "C001075",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Julia Letlow",
@@ -321,12 +324,12 @@
           "candidate_id": "S6LA00615"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "winner": "Julia Letlow",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T05:31Z",
+      "source_url": "https://www.ckom.com/2026/11/03/republican-julia-letlow-wins-election-to-u-s-senate-from-louisiana/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-04T06:48:34Z"
     },
     "MA": {
       "seat_holder": "M000133",
@@ -355,7 +358,7 @@
     },
     "ME": {
       "seat_holder": "C001035",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Susan Collins",
@@ -371,21 +374,22 @@
           "candidate_id": "S6ME00464"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "Ranked-choice voting.",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Troy Jackson",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T06:02Z",
+      "source_url": "https://www.ckom.com/2026/11/04/democrat-troy-jackson-wins-election-to-u-s-senate-from-maine/",
+      "notes": "Ranked-choice voting. Collins conceded.",
+      "updated": "2026-11-04T06:48:34Z"
     },
     "MI": {
       "seat_holder": "P000595",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Mike Rogers",
           "party": "REP",
-          "incumbent": false
+          "incumbent": false,
+          "candidate_id": "S4MI00595"
         },
         {
           "name": "Abdul El-Sayed",
@@ -394,21 +398,22 @@
           "candidate_id": "S6MI00418"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "winner": "Abdul El-Sayed",
+      "called_by": "Decision Desk HQ",
+      "called_at": "2026-11-04T06:15Z",
+      "source_url": "https://x.com/DecisionDeskHQ/status/2117863335920296120",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-04T06:48:34Z"
     },
     "MN": {
       "seat_holder": "S001203",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Peggy Flanagan",
           "party": "DEM",
-          "incumbent": false
+          "incumbent": false,
+          "candidate_id": "S6MN00440"
         },
         {
           "name": "Michele Tafoya",
@@ -417,12 +422,12 @@
           "candidate_id": "S6MN00556"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Peggy Flanagan",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T05:07Z",
+      "source_url": "https://www.cjme.com/2026/11/03/democrat-peggy-flanagan-wins-election-to-u-s-senate-from-minnesota/",
+      "notes": "CBS News also projected Flanagan.",
+      "updated": "2026-11-04T06:48:34Z"
     },
     "MS": {
       "seat_holder": "H001079",
@@ -452,8 +457,8 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "notes": "Too close to call; margin under 100 votes with most of the vote counted. Plurality wins; no runoff in this regular election.",
+      "updated": "2026-11-04T06:48:34Z"
     },
     "MT": {
       "seat_holder": "D000618",
@@ -610,7 +615,7 @@
     },
     "OH": {
       "seat_holder": "H001104",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Jon Husted",
@@ -626,12 +631,12 @@
           "candidate_id": "S6OH00163"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Sherrod Brown",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T04:10Z",
+      "source_url": "https://gvwire.com/2026/11/03/sherrod-brown-wins-ohio-senate-special-election-ap-says/",
+      "notes": "Special election. CBS News also projected Brown.",
+      "updated": "2026-11-04T06:48:34Z"
     },
     "OK": {
       "seat_holder": "A000383",
@@ -659,7 +664,7 @@
     },
     "OR": {
       "seat_holder": "M001176",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Jeff Merkley",
@@ -675,12 +680,12 @@
           "candidate_id": "S6OR05218"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "winner": "Jeff Merkley",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T04:00Z",
+      "source_url": "https://www.ckom.com/2026/11/03/democrat-jeff-merkley-wins-reelection-to-u-s-senate-from-oregon/",
+      "notes": "Decision Desk HQ also projected Merkley.",
+      "updated": "2026-11-04T06:48:34Z"
     },
     "RI": {
       "seat_holder": "R000122",
@@ -733,7 +738,7 @@
     },
     "SD": {
       "seat_holder": "R000605",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Mike Rounds",
@@ -749,12 +754,12 @@
           "candidate_id": "S6SD01117"
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
+      "winner": "Mike Rounds",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-04T05:02Z",
+      "source_url": "https://www.ckom.com/2026/11/03/republican-mike-rounds-wins-reelection-to-u-s-senate-from-south-dakota/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-04T06:48:34Z"
     },
     "TN": {
       "seat_holder": "H000601",
