@@ -25,6 +25,30 @@ PLATFORMS = {"x": "X", "floor speech": "floor speech", "press release": "press r
              "op-ed": "op-ed", "town hall": "town hall", "other": "other"}
 
 
+TOPICS = ["Economy & taxes", "Health care", "Immigration & border", "Energy & environment",
+          "Defense & foreign policy", "Guns", "Abortion & reproductive rights", "Education", "Criminal justice",
+          "Government & ethics", "Technology", "Agriculture", "Housing", "Labor", "Veterans", "Trade",
+          "Social Security & Medicare", "Other"]
+# Grok sometimes invents its own topic labels; map common ones onto the fixed list.
+TOPIC_MAP = {"elections": "Government & ethics", "voting": "Government & ethics", "appropriations": "Economy & taxes",
+             "budget": "Economy & taxes", "government funding": "Economy & taxes", "small business": "Economy & taxes",
+             "energy": "Energy & environment", "environment": "Energy & environment", "climate": "Energy & environment",
+             "war powers": "Defense & foreign policy", "ukraine": "Defense & foreign policy", "israel": "Defense & foreign policy",
+             "iran": "Defense & foreign policy", "national security": "Defense & foreign policy", "intelligence": "Defense & foreign policy",
+             "hemp": "Agriculture", "farm bill": "Agriculture", "flood insurance": "Housing",
+             "online privacy": "Technology", "ai": "Technology", "tariffs": "Trade", "medicare": "Social Security & Medicare",
+             "medicare fraud": "Social Security & Medicare", "social security": "Social Security & Medicare",
+             "judicial nominations": "Criminal justice", "immigration": "Immigration & border", "abortion": "Abortion & reproductive rights"}
+
+
+def topic(t):
+    t = (t or "").strip()
+    for x in TOPICS:
+        if x.lower() == t.lower():
+            return x
+    return TOPIC_MAP.get(t.lower(), "Other")
+
+
 def norm(s):
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z ]", "", s).strip()
@@ -108,7 +132,7 @@ def to_entry(item, s, existing):
         "source_url": item["source_url"].strip(),
         "archive_url": item.get("archive_url") or "",
         "source_date": item["source_date"],
-        "topic": item.get("topic") or "Other",
+        "topic": topic(item.get("topic")),
     }
     if kind == "promise":
         entry |= {"promise": item["promise"].strip(), "specific": bool(item.get("specific")),
