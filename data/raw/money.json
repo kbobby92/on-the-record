@@ -13,7 +13,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4AK00099/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "S001198": {
   "candidate_id": "S4AK00214",
@@ -60,7 +60,7 @@
   ],
   "committee_id": "C00570994",
   "source": "https://www.fec.gov/data/candidate/S4AK00214/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "B001319": {
   "candidate_id": "S2AL00145",
@@ -76,7 +76,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2AL00145/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "T000278": {
   "candidate_id": "S0AL00230",
@@ -128,7 +128,7 @@
   ],
   "committee_id": "C00701672",
   "source": "https://www.fec.gov/data/candidate/S0AL00230/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "B001236": {
   "candidate_id": "S0AR00150",
@@ -144,7 +144,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0AR00150/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "C001095": {
   "candidate_id": "S4AR00103",
@@ -186,7 +186,7 @@
   ],
   "committee_id": "C00499988",
   "source": "https://www.fec.gov/data/candidate/S4AR00103/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "G000574": {
   "candidate_id": "S4AZ00139",
@@ -202,7 +202,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4AZ00139/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "K000377": {
   "candidate_id": "S0AZ00350",
@@ -218,7 +218,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0AZ00350/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "P000145": {
   "candidate_id": "S2CA00955",
@@ -234,7 +234,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2CA00955/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "S001150": {
   "candidate_id": "S4CA00555",
@@ -250,7 +250,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4CA00555/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "B001267": {
   "candidate_id": "S0CO00211",
@@ -266,7 +266,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0CO00211/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "H000273": {
   "candidate_id": "S0CO00575",
@@ -323,7 +323,7 @@
   ],
   "committee_id": "C00716720",
   "source": "https://www.fec.gov/data/candidate/S0CO00575/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "B001277": {
   "candidate_id": "S0CT00177",
@@ -339,7 +339,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0CT00177/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "M001169": {
   "candidate_id": "S2CT00132",
@@ -355,7 +355,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2CT00132/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "B001303": {
   "candidate_id": "S4DE00060",
@@ -371,7 +371,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4DE00060/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "C001088": {
   "candidate_id": "S0DE00092",
@@ -428,7 +428,7 @@
   ],
   "committee_id": "C00475392",
   "source": "https://www.fec.gov/data/candidate/S0DE00092/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "M001244": {
   "candidate_id": "S6FL00640",
@@ -465,7 +465,7 @@
   ],
   "committee_id": "C00895763",
   "source": "https://www.fec.gov/data/candidate/S6FL00640/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "S001217": {
   "candidate_id": "S8FL00273",
@@ -481,7 +481,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8FL00273/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:58+00:00"
  },
  "O000174": {
   "candidate_id": "S8GA00180",
@@ -538,7 +538,7 @@
   ],
   "committee_id": "C00718866",
   "source": "https://www.fec.gov/data/candidate/S8GA00180/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "W000790": {
   "candidate_id": "S0GA00559",
@@ -554,7 +554,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0GA00559/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "H001042": {
   "candidate_id": "S2HI00106",
@@ -570,7 +570,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2HI00106/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "S001194": {
   "candidate_id": "S4HI00136",
@@ -586,7 +586,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4HI00136/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "E000295": {
   "candidate_id": "S4IA00129",
@@ -638,7 +638,7 @@
   ],
   "committee_id": "C00546788",
   "source": "https://www.fec.gov/data/candidate/S4IA00129/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "G000386": {
   "candidate_id": "S0IA00028",
@@ -654,7 +654,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0IA00028/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "C000880": {
   "candidate_id": "S8ID00027",
@@ -670,7 +670,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8ID00027/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "R000584": {
   "candidate_id": "S8ID00092",
@@ -722,7 +722,7 @@
   ],
   "committee_id": "C00440362",
   "source": "https://www.fec.gov/data/candidate/S8ID00092/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "D000622": {
   "candidate_id": "S6IL00292",
@@ -738,7 +738,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6IL00292/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "D000563": {
   "candidate_id": "S6IL00151",
@@ -795,7 +795,7 @@
   ],
   "committee_id": "C00148999",
   "source": "https://www.fec.gov/data/candidate/S6IL00151/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "B001299": {
   "candidate_id": "S4IN00196",
@@ -811,7 +811,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4IN00196/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "Y000064": {
   "candidate_id": "S6IN00191",
@@ -827,7 +827,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6IN00191/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "M001198": {
   "candidate_id": "S0KS00315",
@@ -864,7 +864,7 @@
   ],
   "committee_id": "C00576173",
   "source": "https://www.fec.gov/data/candidate/S0KS00315/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "M000934": {
   "candidate_id": "S0KS00091",
@@ -880,7 +880,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0KS00091/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "M000355": {
   "candidate_id": "S2KY00012",
@@ -937,7 +937,7 @@
   ],
   "committee_id": "C00193342",
   "source": "https://www.fec.gov/data/candidate/S2KY00012/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "P000603": {
   "candidate_id": "S0KY00156",
@@ -953,7 +953,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0KY00156/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "C001075": {
   "candidate_id": "S4LA00107",
@@ -1000,7 +1000,7 @@
   ],
   "committee_id": "C00543983",
   "source": "https://www.fec.gov/data/candidate/S4LA00107/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:47+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "K000393": {
   "candidate_id": "S4LA00065",
@@ -1016,7 +1016,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4LA00065/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "M000133": {
   "candidate_id": "S4MA00028",
@@ -1053,7 +1053,7 @@
   ],
   "committee_id": "C00196774",
   "source": "https://www.fec.gov/data/candidate/S4MA00028/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "W000817": {
   "candidate_id": "S2MA00170",
@@ -1069,7 +1069,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2MA00170/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "A000382": {
   "candidate_id": "S4MD00327",
@@ -1085,7 +1085,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4MD00327/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "V000128": {
   "candidate_id": "S6MD03441",
@@ -1101,7 +1101,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6MD03441/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "C001035": {
   "candidate_id": "S6ME00159",
@@ -1148,7 +1148,7 @@
   ],
   "committee_id": "C00314575",
   "source": "https://www.fec.gov/data/candidate/S6ME00159/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "K000383": {
   "candidate_id": "S2ME00109",
@@ -1164,7 +1164,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2ME00109/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "P000595": {
   "candidate_id": "S4MI00355",
@@ -1221,7 +1221,7 @@
   ],
   "committee_id": "C00437889",
   "source": "https://www.fec.gov/data/candidate/S4MI00355/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "S001208": {
   "candidate_id": "S4MI00470",
@@ -1237,7 +1237,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4MI00470/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "K000367": {
   "candidate_id": "S6MN00267",
@@ -1253,7 +1253,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6MN00267/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T19:59+00:00"
  },
  "S001203": {
   "candidate_id": "S8MN00578",
@@ -1300,7 +1300,7 @@
   ],
   "committee_id": "C00663781",
   "source": "https://www.fec.gov/data/candidate/S8MN00578/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "H001089": {
   "candidate_id": "S8MO00160",
@@ -1316,7 +1316,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8MO00160/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "S001227": {
   "candidate_id": "S2MO00544",
@@ -1332,7 +1332,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2MO00544/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:48+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "H001079": {
   "candidate_id": "S8MS00261",
@@ -1379,7 +1379,7 @@
   ],
   "committee_id": "C00675348",
   "source": "https://www.fec.gov/data/candidate/S8MS00261/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "W000437": {
   "candidate_id": "S8MS00196",
@@ -1395,7 +1395,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8MS00196/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "D000618": {
   "candidate_id": "S2MT00096",
@@ -1432,7 +1432,7 @@
   ],
   "committee_id": "C00491357",
   "source": "https://www.fec.gov/data/candidate/S2MT00096/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "S001232": {
   "candidate_id": "S4MT00183",
@@ -1448,7 +1448,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4MT00183/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "B001305": {
   "candidate_id": "S2NC00505",
@@ -1464,7 +1464,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2NC00505/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "T000476": {
   "candidate_id": "S4NC00162",
@@ -1511,7 +1511,7 @@
   ],
   "committee_id": "C00545772",
   "source": "https://www.fec.gov/data/candidate/S4NC00162/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "C001096": {
   "candidate_id": "S8ND00120",
@@ -1527,7 +1527,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8ND00120/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "H001061": {
   "candidate_id": "S0ND00093",
@@ -1543,7 +1543,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0ND00093/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "F000463": {
   "candidate_id": "S2NE00094",
@@ -1559,7 +1559,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2NE00094/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "R000618": {
   "candidate_id": "S6NE00129",
@@ -1611,7 +1611,7 @@
   ],
   "committee_id": "C00832436",
   "source": "https://www.fec.gov/data/candidate/S6NE00129/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "H001076": {
   "candidate_id": "S6NH00091",
@@ -1627,7 +1627,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6NH00091/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "S001181": {
   "candidate_id": "S0NH00219",
@@ -1684,7 +1684,7 @@
   ],
   "committee_id": "C00457325",
   "source": "https://www.fec.gov/data/candidate/S0NH00219/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "B001288": {
   "candidate_id": "S4NJ00185",
@@ -1736,7 +1736,7 @@
   ],
   "committee_id": "C00540500",
   "source": "https://www.fec.gov/data/candidate/S4NJ00185/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:00+00:00"
  },
  "K000394": {
   "candidate_id": "S4NJ00466",
@@ -1752,7 +1752,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4NJ00466/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "H001046": {
   "candidate_id": "S2NM00088",
@@ -1768,7 +1768,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2NM00088/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "L000570": {
   "candidate_id": "S0NM00058",
@@ -1825,7 +1825,7 @@
   ],
   "committee_id": "C00443689",
   "source": "https://www.fec.gov/data/candidate/S0NM00058/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "C001113": {
   "candidate_id": "S6NV00200",
@@ -1841,7 +1841,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6NV00200/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "R000608": {
   "candidate_id": "S8NV00156",
@@ -1857,7 +1857,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8NV00156/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "G000555": {
   "candidate_id": "S0NY00410",
@@ -1873,7 +1873,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0NY00410/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:49+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "S000148": {
   "candidate_id": "S8NY00082",
@@ -1889,7 +1889,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8NY00082/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "H001104": {
   "candidate_id": "S6OH00304",
@@ -1941,7 +1941,7 @@
   ],
   "committee_id": "C00896019",
   "source": "https://www.fec.gov/data/candidate/S6OH00304/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "M001242": {
   "candidate_id": "S4OH00192",
@@ -1957,7 +1957,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4OH00192/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "L000575": {
   "candidate_id": "S4OK00232",
@@ -1973,7 +1973,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4OK00232/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "M001176": {
   "candidate_id": "S8OR00207",
@@ -2030,7 +2030,7 @@
   ],
   "committee_id": "C00437277",
   "source": "https://www.fec.gov/data/candidate/S8OR00207/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "W000779": {
   "candidate_id": "S6OR00110",
@@ -2046,7 +2046,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6OR00110/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "F000479": {
   "candidate_id": "S6PA00274",
@@ -2062,7 +2062,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6PA00274/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "M001243": {
   "candidate_id": "S2PA00661",
@@ -2078,7 +2078,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2PA00661/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "R000122": {
   "candidate_id": "S6RI00163",
@@ -2135,7 +2135,7 @@
   ],
   "committee_id": "C00238907",
   "source": "https://www.fec.gov/data/candidate/S6RI00163/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "W000802": {
   "candidate_id": "S6RI00221",
@@ -2151,7 +2151,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6RI00221/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "S001184": {
   "candidate_id": "S4SC00240",
@@ -2167,7 +2167,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4SC00240/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "R000605": {
   "candidate_id": "S4SD00049",
@@ -2219,7 +2219,7 @@
   ],
   "committee_id": "C00532465",
   "source": "https://www.fec.gov/data/candidate/S4SD00049/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:01+00:00"
  },
  "T000250": {
   "candidate_id": "S2SD00068",
@@ -2235,7 +2235,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2SD00068/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "B001243": {
   "candidate_id": "S8TN00337",
@@ -2251,7 +2251,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8TN00337/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "H000601": {
   "candidate_id": "S0TN00169",
@@ -2293,7 +2293,7 @@
   ],
   "committee_id": "C00718627",
   "source": "https://www.fec.gov/data/candidate/S0TN00169/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:50+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "C001056": {
   "candidate_id": "S2TX00106",
@@ -2335,7 +2335,7 @@
   ],
   "committee_id": "C00369033",
   "source": "https://www.fec.gov/data/candidate/S2TX00106/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:51+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "C001098": {
   "candidate_id": "S2TX00312",
@@ -2351,7 +2351,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2TX00312/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:51+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "C001114": {
   "candidate_id": "S4UT00282",
@@ -2367,7 +2367,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4UT00282/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:51+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "L000577": {
   "candidate_id": "S0UT00165",
@@ -2383,7 +2383,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0UT00165/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:51+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "K000384": {
   "candidate_id": "S2VA00142",
@@ -2399,7 +2399,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2VA00142/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "W000805": {
   "candidate_id": "S6VA00093",
@@ -2451,7 +2451,7 @@
   ],
   "committee_id": "C00438713",
   "source": "https://www.fec.gov/data/candidate/S6VA00093/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "S000033": {
   "candidate_id": "S4VT00033",
@@ -2467,7 +2467,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4VT00033/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "W000800": {
   "candidate_id": "S2VT00235",
@@ -2483,7 +2483,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2VT00235/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "C000127": {
   "candidate_id": "S8WA00194",
@@ -2499,7 +2499,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8WA00194/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "M001111": {
   "candidate_id": "S2WA00189",
@@ -2515,7 +2515,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2WA00189/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "B001230": {
   "candidate_id": "S2WI00219",
@@ -2531,7 +2531,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2WI00219/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "J000293": {
   "candidate_id": "S0WI00197",
@@ -2547,7 +2547,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0WI00197/?cycle=2028&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "C001047": {
   "candidate_id": "S4WV00159",
@@ -2589,7 +2589,7 @@
   ],
   "committee_id": "C00539825",
   "source": "https://www.fec.gov/data/candidate/S4WV00159/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "J000312": {
   "candidate_id": "S4WV00332",
@@ -2605,7 +2605,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4WV00332/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "B001261": {
   "candidate_id": "S6WY00068",
@@ -2621,7 +2621,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6WY00068/?cycle=2030&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  },
  "L000571": {
   "candidate_id": "S0WY00137",
@@ -2668,6 +2668,6 @@
   ],
   "committee_id": "C00443580",
   "source": "https://www.fec.gov/data/candidate/S0WY00137/?cycle=2026&election_full=true",
-  "fetched": "2026-11-04T19:52+00:00"
+  "fetched": "2026-11-05T20:02+00:00"
  }
 }
