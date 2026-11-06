@@ -1073,6 +1073,291 @@
       "verified": false,
       "verified_by": null,
       "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-R000618-001",
+      "bioguide": "R000618",
+      "senator": "Pete Ricketts",
+      "quote": "Excited to see the Stop Insider Trading Act pass the House in a bipartisan vote.\n \n@RepBryanSteil and I introduced this legislation to prevent Congressional insider trading and increase transparency.\n \nI will work with my Senate colleagues to get the Stop Insider Trading Act passed into law.",
+      "source_url": "https://x.com/SenatorRicketts/status/2080049067887923217",
+      "archive_url": "",
+      "source_date": "2026-07-22",
+      "topic": "Government & ethics",
+      "promise": "Said he will work with Senate colleagues to pass the Stop Insider Trading Act into law.",
+      "specific": true,
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-09-30",
+          "description": "Voted yes on advancing H.R. 7008, a congressional stock-trading restriction bill, on the day he said the Senate would vote on his Stop Insider Trading Act. The motion fell short of the 60 votes needed, 53–47.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00253.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "He pushed for a vote and voted for it; it hasn't passed the Senate. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-R000618-002",
+      "bioguide": "R000618",
+      "senator": "Pete Ricketts",
+      "quote": "It is my priority to pass the remaining regular appropriations bills before the January 30 deadline to provide certainty for our military and essential services.\n\nI will continue to support DHS funding to ensure our immigration laws are enforced and Nebraskans are safe.",
+      "source_url": "https://x.com/SenatorRicketts/status/2016902628307804625",
+      "archive_url": "",
+      "source_date": "2026-01-29",
+      "topic": "Immigration & border",
+      "promise": "Said he will continue to support DHS funding.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-R000618-003",
+      "bioguide": "R000618",
+      "senator": "Pete Ricketts",
+      "quote": "The government does not get to choose what’s best for our kids. Parents have every right to choose a faith-based curriculum for their children. I urge the Supreme Court to reverse the California court’s discriminatory decision. I will continue to defend homeschooling parents.",
+      "source_url": "https://x.com/SenatorRicketts/status/2108195417246585004",
+      "archive_url": "",
+      "source_date": "2026-10-08",
+      "topic": "Education",
+      "promise": "Said he will continue to defend homeschooling parents.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-S001181-001",
+      "bioguide": "S001181",
+      "senator": "Jeanne Shaheen",
+      "quote": "It has become far too difficult for Americans with diabetes to get the lifesaving insulin they need. My bipartisan INSULIN Act would cap insulin costs at $35 per month, ensuring Americans aren’t bankrupted just trying to stay alive.\n\nI will fight hard to pass this bill into law.",
+      "source_url": "https://x.com/SenatorShaheen/status/2040163418783576490",
+      "archive_url": "",
+      "source_date": "2026-04-03",
+      "topic": "Health care",
+      "promise": "Said she will fight hard to pass the INSULIN Act capping insulin at $35 a month.",
+      "specific": true,
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-03-25",
+          "description": "Introduced S. 4189, the INSULIN Act of 2026, as lead sponsor.",
+          "url": "https://thelobbynews.com/congress/bills/119/senate-bill/4189"
+        },
+        {
+          "date": "2026-07-22",
+          "description": "The Senate HELP Committee advanced S. 4189 18–4. As of November 2026 it hasn't had a Senate floor vote.",
+          "url": "https://thelobbynews.com/congress/bills/119/senate-bill/4189"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Introduced the bill and got it through committee; it hasn't had a floor vote. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-S001181-002",
+      "bioguide": "S001181",
+      "senator": "Jeanne Shaheen",
+      "quote": "My INSULIN Act would deliver much-needed assistance to millions of Americans by capping insulin costs at $35 a month. \n\nWith a bipartisan group of cosponsors spanning 21 states and counting, there is nationwide support for this bill, and I’m committed to getting it passed.",
+      "source_url": "https://x.com/SenatorShaheen/status/2075295132023181740",
+      "archive_url": "",
+      "source_date": "2026-07-09",
+      "topic": "Health care",
+      "promise": "Said she is committed to passing the INSULIN Act.",
+      "specific": true,
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-03-25",
+          "description": "Introduced S. 4189, the INSULIN Act of 2026, as lead sponsor.",
+          "url": "https://thelobbynews.com/congress/bills/119/senate-bill/4189"
+        },
+        {
+          "date": "2026-07-22",
+          "description": "The Senate HELP Committee advanced S. 4189 18–4. As of November 2026 it hasn't had a Senate floor vote.",
+          "url": "https://thelobbynews.com/congress/bills/119/senate-bill/4189"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Introduced the bill and got it through committee; it hasn't had a floor vote. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-H001104-001",
+      "bioguide": "H001104",
+      "senator": "Jon Husted",
+      "quote": "I’ve never missed a vote.\n \nI’ve voted for the SAVE America Act six times.\n \nAny day we take a vote on SAVE is a day I will be in DC to vote yes.",
+      "source_url": "https://x.com/SenJonHusted/status/2083709431607443719",
+      "archive_url": "",
+      "source_date": "2026-08-02",
+      "topic": "Government & ethics",
+      "promise": "Said any day SAVE is voted on he will be in DC to vote yes.",
+      "specific": true,
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-08-08",
+          "description": "Voted yes on advancing S. 5271, a bill requiring voters to show photo ID, six days after the pledge. The motion failed 52–46.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00231.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "No vote on the SAVE America Act itself has been held since the pledge. He voted yes on the related photo-ID vote. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-H001104-002",
+      "bioguide": "H001104",
+      "senator": "Jon Husted",
+      "quote": "If the U.S. is going to lead in digital assets, we need a framework that is clear, practical, and supports innovation and job creation here at home.\n\nThat’s why I support the CLARITY Act and will work to get it passed as soon as possible.",
+      "source_url": "https://x.com/SenJonHusted/status/2081801353345503421",
+      "archive_url": "",
+      "source_date": "2026-07-27",
+      "topic": "Technology",
+      "promise": "Said he supports the CLARITY Act and will work to pass it as soon as possible.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-B001288-001",
+      "bioguide": "B001288",
+      "senator": "Cory A. Booker",
+      "quote": "As I have said, I will not give away my vote to Trump to fund the government for nothing. \n\nA funding bill that continues to raise our costs, jeopardizes our health care, and hurts the people of my state does not have my support.",
+      "source_url": "https://x.com/SenBooker/status/1968029064998031660",
+      "archive_url": "",
+      "source_date": "2025-09-16",
+      "topic": "Health care",
+      "promise": "Said he will not support a government funding bill that raises costs and jeopardizes health care.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-B001288-002",
+      "bioguide": "B001288",
+      "senator": "Cory A. Booker",
+      "quote": "As I've always said, I will not support a government funding bill that continues to raise our costs, jeopardizes our health care, and hurts the people of my state.\n\nI’m urging my colleagues on both sides of the aisle to stand up for Americans who are counting on us to lower their costs, and address the urgent, and–in too many cases–dire challenges people are facing in our country. \n\nI will not let up in this fight.\n\nI will vote no.",
+      "source_url": "https://x.com/SenBooker/status/1987696245620474096",
+      "archive_url": "",
+      "source_date": "2025-11-10",
+      "topic": "Health care",
+      "promise": "Said he will vote no on a government funding bill that raises costs and jeopardizes health care.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-11-10",
+          "description": "Voted no on passage of H.R. 5371, the funding bill that ended the fall 2025 shutdown. It passed 60–40.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00618.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he'd vote no on the funding bill and did. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-B001288-003",
+      "bioguide": "B001288",
+      "senator": "Cory A. Booker",
+      "quote": "Kash Patel is dangerous, dishonest, and unqualified – I am calling for President Trump to withdraw his nomination to be the Director of the FBI, and if his nomination is brought to the Senate floor, I will vote NO. Here’s why 🧵",
+      "source_url": "https://x.com/SenBooker/status/1889836809166922051",
+      "archive_url": "",
+      "source_date": "2025-02-13",
+      "topic": "Government & ethics",
+      "promise": "Said he will vote no if Kash Patel's FBI Director nomination reaches the Senate floor.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-02-20",
+          "description": "Voted no on Kash Patel's confirmation as FBI Director (PN 1235). He was confirmed 51–49.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00061.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he'd vote no if the nomination reached the floor, and did. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-L000570-001",
+      "bioguide": "L000570",
+      "senator": "Ben Ray Luján",
+      "quote": "“The right to vote is precious, almost sacred. It is the most powerful nonviolent tool or instrument in a democratic society. We must use it.”\n\nMy good friend John Lewis was right. I will oppose the SAVE Act if it comes for a vote in the Senate.",
+      "source_url": "https://x.com/SenatorLujan/status/1910785655078003138",
+      "archive_url": "",
+      "source_date": "2025-04-11",
+      "topic": "Government & ethics",
+      "promise": "Said he will oppose the SAVE Act if it comes for a Senate vote.",
+      "specific": true,
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-03-26",
+          "description": "Voted no on cloture for a photo ID requirement offered during Senate debate on the SAVE America Act. Cloture failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm"
+        },
+        {
+          "date": "2026-06-05",
+          "description": "Voted no on a motion to add proof-of-citizenship voter registration and photo ID requirements to S. 2. It failed 50–49.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00151.htm"
+        },
+        {
+          "date": "2026-08-08",
+          "description": "Voted no on advancing S. 5271, a bill requiring voters to show photo ID. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00231.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "No up-or-down Senate vote on the SAVE Act itself has happened yet. He voted no on related proof-of-citizenship and photo-ID votes. Assessed by Claude from public records."
+    },
+    {
+      "id": "p-L000570-002",
+      "bioguide": "L000570",
+      "senator": "Ben Ray Luján",
+      "quote": "Kristi Noem and Donald Trump’s ICE is out of control and terrorizing our communities. With multiple deadly shootings of American citizens by federal agents in Minnesota and no accountability, I will not support an appropriations bill that funds DHS without real oversight, transparency, and consequences. President Trump, Kristi Noem, and Stephen Miller are making our communities and all Americans less safe. Enough is enough.",
+      "source_url": "https://x.com/SenatorLujan/status/2015207899279335549",
+      "archive_url": "",
+      "source_date": "2026-01-24",
+      "topic": "Immigration & border",
+      "promise": "Said he will not support a DHS appropriations bill without real oversight, transparency, and consequences.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
     }
   ]
 }
