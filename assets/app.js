@@ -123,6 +123,7 @@
           <ol class="insights">${dash.insights.map((x) => `<li>${x.href ? `<a class="ins" href="${esc(x.href)}"><span>${md(x.text)}</span></a>` : `<div class="ins"><span>${md(x.text)}</span></div>`}</li>`).join("")}</ol>
           <p class="muted small" style="margin:8px 0 0">Calculated automatically from the data on this site.</p>
         </section>
+        <section class="panel news-panel" id="newspanel" hidden></section>
       </div>` : ""}
       <div class="list-head" id="all"><h2>All senators</h2>
         <div class="controls">
@@ -141,6 +142,14 @@
         ui.mode = b.dataset.v; document.querySelectorAll("#cmode button").forEach((x) => x.classList.toggle("on", x === b)); drawChamber(dash, ss, ui);
       }));
       drawTiles(ss, dash);
+      get("data/news.json").then((n) => {
+        const el = document.getElementById("newspanel");
+        if (!el || !n.items.length) return;
+        el.hidden = false;
+        el.innerHTML = `<div class="panel-top"><p class="ph">Latest</p><a class="small" href="#/news">All news →</a></div>
+          <ul class="newslist">${n.items.slice(0, 8).map((i) => newsItem(i, n.names, n.parties)).join("")}</ul>
+          <p class="muted small" style="margin:8px 0 0">Headlines from ${n.sources.length} outlets across the spectrum, plus official Senate and Congress.gov actions. Checked hourly.</p>`;
+      }).catch(() => {});
     }
 
     const card = (s) => `
@@ -270,6 +279,7 @@
     nav("home");
     let s;
     try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/">Back to all senators</a></div>`; return; }
+    s._news = await get("data/news.json").catch(() => null);
     const m = s.metrics;
     const metric = (lbl, val, how) => `<div class="metric ${val === "—" ? "na" : ""}"><div class="lbl">${lbl}</div><div class="val">${val === "—" ? "Not enough data yet" : val}</div><div class="how">${how}</div></div>`;
     const links = [s.website && `<a href="${esc(s.website)}">Official site</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact</a>`,
@@ -301,11 +311,11 @@
         ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_resolved || 0} of ${m.promises_tracked} promise${m.promises_tracked === 1 ? "" : "s"} resolved. Shown once at least 3 are resolved. Includes sources not yet checked by a person.`)}
       </div>
       <div class="tabs" role="tablist">
-        ${["Votes", "Stock trades", "Campaign money", "Promises", "Statements", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
+        ${["Votes", "In the news", "Promises", "Statements", "Campaign money", "Stock trades", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
       </div>
       <div id="tab"></div>`;
 
-    const tabs = [votesTab, tradesTab, moneyTab, promisesTab, statementsTab, committeesTab];
+    const tabs = [votesTab, newsTab, promisesTab, statementsTab, moneyTab, tradesTab, committeesTab];
     const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); };
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => show(+b.dataset.tab)));
     show(0);
@@ -633,6 +643,74 @@
     render();
   }
 
+
+  /* ---------- News ---------- */
+  const ago = (iso) => {
+    const m = Math.round((Date.now() - new Date(iso)) / 60000);
+    if (m < 60) return `${Math.max(1, m)}m`;
+    if (m < 1440) return `${Math.round(m / 60)}h`;
+    return `${Math.round(m / 1440)}d`;
+  };
+  const dayLabel = (iso) => {
+    const d = new Date(iso), t = new Date(); const y = new Date(); y.setDate(t.getDate() - 1);
+    const same = (a, b) => a.toDateString() === b.toDateString();
+    return same(d, t) ? "Today" : same(d, y) ? "Yesterday" : d.toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
+  };
+  const KIND = { official: ["Official", "off"], vote: ["Senate vote", "off"] };
+  function newsItem(i, names, parties = {}) {
+    const fresh = Date.now() - new Date(i.published) < 3 * 3600e3 && i.kind === "news";
+    const who = (i.senators || []).map((id) => id.startsWith("elect:")
+      ? `<a class="chip p-${parties[id] || "X"}" href="#/elections/${esc(id.slice(6))}">${esc(names[id] || id)} <span>elect</span></a>`
+      : `<a class="chip p-${parties[id] || "X"}" href="#/s/${esc(id)}">${esc((names[id] || id).split(" ").slice(-1)[0])}</a>`).join("");
+    const also = (i.also || []).map((a) => `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.source)}</a>`).join(", ");
+    const k = KIND[i.kind];
+    return `<li class="nitem">
+      <time datetime="${esc(i.published)}" title="${esc(new Date(i.published).toLocaleString())}">${ago(i.published)}</time>
+      <div>
+        <div class="nmeta">${k ? `<span class="src ${k[1]}">${k[0]}</span>` : `<span class="src">${esc(i.source)}</span>`}${fresh ? `<span class="newb">New</span>` : ""}</div>
+        <a class="nhead" href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
+        ${also ? `<div class="nalso">Also covered by ${also}</div>` : ""}
+        ${who ? `<div class="nwho">${who}</div>` : ""}
+      </div></li>`;
+  }
+
+  async function newsPage() {
+    nav("news");
+    const [n, idx] = await Promise.all([get("data/news.json"), get("data/index.json")]);
+    const states = [...new Set(idx.senators.map((s) => s.state))].sort();
+    const f = { kind: "all", st: "", q: "" };
+    app.innerHTML = `<h1>News</h1>
+      <p class="lede">The latest on senators and the federal government: headlines from ${n.sources.length} outlets across the political spectrum, plus official actions from the Senate and Congress.gov. Headlines link to the original story.</p>
+      <div class="controls">
+        <div class="segtg" id="nk">${[["all", "All"], ["news", "Headlines"], ["official", "Official actions"], ["senators", "Mentions a senator"]].map(([v, l]) => `<button type="button" data-v="${v}" class="${v === "all" ? "on" : ""}">${l}</button>`).join("")}</div>
+        <select id="nst" aria-label="Only a state's senators"><option value="">Any state</option>${states.map((x) => `<option value="${x}">${esc(STATES[x] || x)}</option>`).join("")}</select>
+        <input id="nq" type="search" placeholder="Search headlines" aria-label="Search headlines">
+      </div>
+      <div id="nlist"></div>
+      <p class="muted small">Outlets: ${n.sources.map(esc).join(", ")}. Headline wording is each outlet's own. Updated ${new Date(n.updated).toLocaleString()}.</p>`;
+    const ids = (st) => new Set(idx.senators.filter((s) => s.state === st).map((s) => s.bioguide).concat([`elect:${st}`]));
+    const render = () => {
+      const want = f.st ? ids(f.st) : null, q = f.q.toLowerCase();
+      const list = n.items.filter((i) => (f.kind === "all" || (f.kind === "news" && i.kind === "news") || (f.kind === "official" && i.kind !== "news")
+        || (f.kind === "senators" && i.senators.length)) && (!want || i.senators.some((x) => want.has(x))) && (!q || i.title.toLowerCase().includes(q)));
+      let html = "", day = "";
+      list.forEach((i) => { const d = dayLabel(i.published); if (d !== day) { html += `${day ? "</ul>" : ""}<h3 class="nday">${d}</h3><ul class="newslist">`; day = d; } html += newsItem(i, n.names, n.parties); });
+      document.getElementById("nlist").innerHTML = list.length ? html + "</ul>" : `<div class="empty">No news matches those filters in the last 7 days.</div>`;
+    };
+    document.querySelectorAll("#nk button").forEach((b) => b.addEventListener("click", () => { f.kind = b.dataset.v; document.querySelectorAll("#nk button").forEach((x) => x.classList.toggle("on", x === b)); render(); }));
+    document.getElementById("nst").addEventListener("change", (e) => { f.st = e.target.value; render(); });
+    document.getElementById("nq").addEventListener("input", (e) => { f.q = e.target.value; render(); });
+    render();
+  }
+
+  function newsTab(s) {
+    const n = s._news;
+    if (!n) return `<div class="empty">News hasn't loaded yet.</div>`;
+    const mine = n.items.filter((i) => i.senators.includes(s.bioguide));
+    return mine.length ? `<p class="muted small">Headlines from the last 7 days that mention ${esc(s.name)}. Wording is each outlet's own.</p><ul class="newslist">${mine.map((i) => newsItem(i, n.names, n.parties)).join("")}</ul>`
+      : `<div class="empty">No headlines mentioning ${esc(s.name)} in the last 7 days.</div>`;
+  }
+
   /* ---------- About ---------- */
   function about() {
     nav("about");
@@ -645,6 +723,7 @@
         <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
         <li><b>Stock trades (coming soon):</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Until they're added, each senator's page explains how to look up their filings there.</li>
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
+        <li><b>News:</b> headlines from a mix of outlets across the political spectrum (the list is on the News page), plus official actions from Congress.gov and the Senate. Only the headline, outlet and link are shown; stories run on the outlet's own site. Headlines are matched to senators by full name or by "Sen." plus last name. Checked every hour; stories older than 7 days drop off.</li>
         <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Unchecked entries still count toward the follow-through score, so treat it as a guide and use the source links. Spot a mistake? Use the "Report an error" link on any entry.</li>
       </ul>
       <h2>What each number means</h2>
@@ -671,7 +750,7 @@
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
     const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections(arg)
-      : page === "state" && arg ? statePage(arg) : page === "issues" ? issuesPage() : page === "issue" && arg ? issuePage(arg)
+      : page === "state" && arg ? statePage(arg) : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "issue" && arg ? issuePage(arg)
       : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
   }
