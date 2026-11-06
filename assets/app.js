@@ -66,13 +66,22 @@
     return t ? `<span class="tag ${t[1]}" style="margin-top:6px">${t[0]}</span>` : "";
   }
 
-  /* ---------- Home: Senate dashboard ---------- */
+  /* ---------- Senate dashboard ---------- */
   const TILE = [["AK",0,0],["ME",11,0],["VT",10,1],["NH",11,1],["WA",1,2],["ID",2,2],["MT",3,2],["ND",4,2],["MN",5,2],["IL",6,2],["WI",7,2],["MI",8,2],["NY",9,2],["RI",10,2],["MA",11,2],
     ["OR",1,3],["NV",2,3],["WY",3,3],["SD",4,3],["IA",5,3],["IN",6,3],["OH",7,3],["PA",8,3],["NJ",9,3],["CT",10,3],["CA",1,4],["UT",2,4],["CO",3,4],["NE",4,4],["MO",5,4],["KY",6,4],
     ["WV",7,4],["VA",8,4],["MD",9,4],["DE",10,4],["AZ",2,5],["NM",3,5],["KS",4,5],["AR",5,5],["TN",6,5],["NC",7,5],["SC",8,5],["OK",4,6],["LA",5,6],["MS",6,6],["AL",7,6],["GA",8,6],
     ["HI",0,7],["TX",4,7],["FL",9,7]];
   const PCOLOR = { D: "var(--dem)", R: "var(--rep)", I: "var(--ind)", X: "var(--line-2)" };
   const PORDER = { D: 0, I: 1, X: 2, R: 3 };
+  function seatLayout(n, rows, r0, r1, cx = 200, cy = 176) {
+    const radii = Array.from({ length: rows }, (_, i) => r0 + ((r1 - r0) * i) / (rows - 1));
+    const tot = radii.reduce((a, r) => a + r, 0);
+    const per = radii.map((r) => Math.round((n * r) / tot));
+    per[rows - 1] += n - per.reduce((a, b) => a + b, 0);
+    const out = [];
+    radii.forEach((r, k) => { const m = per[k]; for (let i = 0; i < m; i++) { const a = Math.PI - (Math.PI * i) / (m - 1); out.push({ x: cx + r * Math.cos(a), y: cy - r * Math.sin(a), a }); } });
+    return out.sort((p, q) => q.a - p.a);
+  }
   const SEATS = (() => {
     const out = [];
     [[14, 84], [17, 104], [20, 124], [23, 144], [26, 164]].forEach(([n, r]) => {
@@ -80,6 +89,7 @@
     });
     return out.sort((p, q) => q.a - p.a);
   })();
+  const clip = (t, n = 150) => { t = String(t || ""); if (t.length <= n) return t; const c = t.slice(0, n); return c.slice(0, c.lastIndexOf(" ")).replace(/[,;:(]$/, "") + "…"; };
   const md = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
   const GROUPS = {
     state: { label: "State", key: (s) => [s.state], name: (k) => STATES[k] || k },
@@ -93,16 +103,17 @@
     committee: { label: "Committee", key: (s) => (s.committees.length ? s.committees : ["No committee listed"]), name: (k) => k },
   };
 
-  async function home() {
-    nav("home");
+  async function senatePage() {
+    nav("senate");
     const [data, dash] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null)]);
     document.getElementById("updated").textContent = `Data updated ${new Date(data.updated).toLocaleString()}.`;
     const ss = data.senators;
     const states = [...new Set(ss.map((s) => s.state))].sort();
-    const ui = home.ui || (home.ui = { q: "", group: "state", sort: "name", mode: "january" });
+    const ui = senatePage.ui || (senatePage.ui = { q: "", group: "state", sort: "name", mode: "january" });
 
     app.innerHTML = `
-      <div class="dash-title"><h1>The Senate</h1><p class="lede">Who holds every seat, what changes in January, and what senators promised. All from public records, each linked to its source.</p></div>
+      <p class="small"><a href="#/">← Congress</a></p>
+      <div class="dash-title"><h1>The Senate</h1><p class="lede">Who holds every seat, what changes in January, and what senators promised. All from public records, each linked to its source. <a href="#/votes">Recent Senate votes →</a></p></div>
       ${finder(states, store.get("otr_state"))}
       ${dash ? `<div class="dash">
         <section class="panel chamber-panel">
@@ -191,6 +202,91 @@
     render();
   }
 
+  /* ---------- Home: Congress at a glance ---------- */
+  const HOUSE_SEATS = seatLayout(435, 11, 72, 168);
+  function miniChamber(seats, layout, r, center, sub) {
+    const order = seats.slice().sort((a, b) => PORDER[a.p] - PORDER[b.p] || (a.st || "").localeCompare(b.st || ""));
+    return `<svg viewBox="0 0 400 214" class="mini-ch" role="img" aria-label="${esc(sub)}"><title>${esc(sub)}</title>
+      <line x1="200" y1="0" x2="200" y2="40" stroke="var(--gold)" stroke-dasharray="2 3" stroke-width="1.2"></line>
+      ${order.map((s, i) => `<circle cx="${layout[i].x.toFixed(1)}" cy="${layout[i].y.toFixed(1)}" r="${r}" fill="${PCOLOR[s.p] || "var(--line-2)"}"${s.new ? ` stroke="var(--gold)" stroke-width="1.4"` : ""}></circle>`).join("")}
+      <text x="200" y="186" text-anchor="middle" class="ch-num">${esc(center)}</text>
+      <text x="200" y="205" text-anchor="middle" class="ch-sub">${esc(sub)}</text></svg>`;
+  }
+
+  async function home() {
+    nav("home");
+    const [data, dash, issues, promises, news] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null),
+      get("data/issues_index.json").catch(() => ({ issues: [] })), get("data/promises.json").catch(() => ({ promises: [] })), get("data/news.json").catch(() => null)]);
+    document.getElementById("updated").textContent = `Data updated ${new Date(data.updated).toLocaleString()}.`;
+    const states = [...new Set(data.senators.map((s) => s.state))].sort();
+    const ui = home.ui || (home.ui = { view: "january" });
+    const who = Object.fromEntries(data.senators.map((s) => [s.bioguide, s]));
+    const RES = { kept: "Kept", broken: "Broken", compromise: "Compromise", stalled: "Stalled", in_progress: "In progress" };
+    const recent = promises.promises.filter((p) => RES[p.status] && who[p.bioguide] && (p.evidence || []).length)
+      .map((p) => ({ p, d: p.evidence.map((e) => e.date).sort().pop() })).sort((a, b) => b.d.localeCompare(a.d)).slice(0, 4);
+
+    app.innerHTML = `
+      <div class="dash-title"><h1>Congress at a glance</h1>
+        <p class="lede">Who controls Congress, what changes in January, and what members promised, from public records with every item linked to its source.</p></div>
+      <div class="glance">
+        <a class="panel chamber-card" href="#/senate">
+          <div class="panel-top"><p class="ph">Senate · 100 seats</p>
+            <div class="segtg" id="hview" role="group" aria-label="Senate view">${[["now", "Now"], ["january", "January"]].map(([v, l]) => `<button type="button" data-v="${v}" class="${ui.view === v ? "on" : ""}">${l}</button>`).join("")}</div></div>
+          <div id="senmini"></div>
+          <div class="cc-foot"><span id="sennote" class="muted small"></span><span class="go">Open the Senate →</span></div>
+        </a>
+        <a class="panel chamber-card soon" href="#/house">
+          <div class="panel-top"><p class="ph">House · 435 seats</p><span class="soon-tag">Coming soon</span></div>
+          ${miniChamber(Array.from({ length: 435 }, () => ({ p: "X" })), HOUSE_SEATS, 2.6, "435", "House of Representatives")}
+          <div class="cc-foot"><span class="muted small">Members, votes and promises for every representative are on the way.</span><span class="go">What's coming →</span></div>
+        </a>
+      </div>
+      ${dash ? `<div class="dash home-dash">
+        <section class="panel insight-panel"><div class="panel-top"><p class="ph">Insights</p><a class="small" href="#/senate">Senate dashboard →</a></div>
+          <ol class="insights">${dash.insights.slice(0, 5).map((x) => `<li>${x.href ? `<a class="ins" href="${esc(x.href)}"><span>${md(x.text)}</span></a>` : `<div class="ins"><span>${md(x.text)}</span></div>`}</li>`).join("")}</ol></section>
+        <section class="panel promise-panel">${promisePanel(dash.promises)}
+          ${recent.length ? `<p class="ph" style="margin-top:16px">Latest promise updates</p><ul class="recent-p">${recent.map(({ p, d }) => `<li><a href="#/s/${p.bioguide}"><span class="status ${esc(p.status)}">${RES[p.status]}</span>
+            <b>${esc(who[p.bioguide].name)}</b> <span class="muted">(${pc(who[p.bioguide].party)}-${esc(who[p.bioguide].state)})</span><span class="rp">${esc(p.promise || "")}</span></a></li>`).join("")}</ul>` : ""}</section>
+      </div>` : ""}
+      ${finder(states, store.get("otr_state"))}
+      ${news && news.items.length ? `<section class="panel news-panel home-news"><div class="panel-top"><p class="ph">Latest</p><a class="small" href="#/news">All news →</a></div>
+        <ul class="newslist">${news.items.slice(0, 8).map((i) => newsItem(i, news.names, news.parties)).join("")}</ul></section>` : ""}
+      ${issues.issues.length ? `<div class="list-head"><h2>Issues in focus</h2><a class="small" href="#/issues" style="margin-bottom:12px">All issues →</a></div>
+        <div class="grid issue-grid">${issues.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}"><h3>${esc(i.title)}</h3><p class="muted small">${esc(clip(i.summary))}</p>
+          <div class="stats"><div class="stat"><b>${i.votes}</b><span>key votes</span></div><div class="stat"><b>${i.promises}</b><span>promises</span></div><div class="stat"><b>${i.statements}</b><span>statements</span></div></div></a>`).join("")}</div>` : ""}`;
+
+    bindFinder();
+    if (dash) {
+      const draw = () => {
+        const jan = ui.view === "january", c = jan ? dash.count_jan : dash.count_now, left = c.D + c.I;
+        document.getElementById("senmini").innerHTML = miniChamber(jan ? dash.january : dash.now, SEATS, 5.2,
+          jan ? `${left} · ${c.R}` : `${c.R} · ${left}`, jan ? "Dem + Ind · Rep from January" : "Rep · Dem + Ind now");
+        document.getElementById("sennote").textContent = jan
+          ? `${c.X ? `${c.X} races not yet called. ` : ""}Gold rings: newly elected.` : "Who holds the seats today.";
+      };
+      document.querySelectorAll("#hview button").forEach((b) => b.addEventListener("click", (e) => {
+        e.preventDefault(); e.stopPropagation(); ui.view = b.dataset.v;
+        document.querySelectorAll("#hview button").forEach((x) => x.classList.toggle("on", x === b)); draw();
+      }));
+      draw();
+    }
+  }
+
+  function housePage() {
+    nav("house");
+    app.innerHTML = `<p class="small"><a href="#/">← Congress</a></p>
+      <div class="dash-title"><h1>The House of Representatives</h1><p class="lede">All 435 voting members, coming soon, built the same way as the Senate pages.</p></div>
+      <section class="panel chamber-card soon" style="max-width:760px">
+        ${miniChamber(Array.from({ length: 435 }, () => ({ p: "X" })), HOUSE_SEATS, 2.6, "435", "House of Representatives")}</section>
+      <div class="prose" style="margin-top:20px"><h2>What's coming</h2><ul>
+        <li><b>Every representative's profile:</b> votes, attendance, party-line voting, campaign money and committees.</li>
+        <li><b>Promises and statements</b>, tracked and assessed the same way as for senators.</li>
+        <li><b>Find your representative</b> by ZIP code or address, alongside your two senators.</li>
+        <li><b>House results in the Elections page</b> and House votes on every Issues page.</li>
+        <li><b>Stock trades:</b> House disclosures come from a different system than the Senate's, which may make it possible to bring trades back.</li>
+      </ul><p><a href="#/senate">Explore the Senate in the meantime →</a></p></div>`;
+  }
+
   function promisePanel(p) {
     const parts = [["kept", "Kept", "var(--good)"], ["compromise", "Compromise", "var(--gold)"], ["in_progress", "In progress", "var(--dem-ink)"], ["broken", "Broken or stalled", "var(--bad)"]];
     const graded = parts.reduce((t, [k]) => t + (p[k] || 0), 0);
@@ -276,9 +372,9 @@
 
   /* ---------- Senator profile ---------- */
   async function profile(id) {
-    nav("home");
+    nav("senate");
     let s;
-    try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/">Back to all senators</a></div>`; return; }
+    try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/senate">Back to all senators</a></div>`; return; }
     s._news = await get("data/news.json").catch(() => null);
     const m = s.metrics;
     const metric = (lbl, val, how) => `<div class="metric ${val === "—" ? "na" : ""}"><div class="lbl">${lbl}</div><div class="val">${val === "—" ? "Not enough data yet" : val}</div><div class="how">${how}</div></div>`;
@@ -286,7 +382,7 @@
       s.phone && `<a href="tel:${esc(s.phone)}">${esc(s.phone)}</a>`, s.x_handle && `<a href="https://x.com/${esc(s.x_handle)}">@${esc(s.x_handle)} on X</a>`].filter(Boolean).join(" · ");
 
     app.innerHTML = `
-      <p class="small"><a href="#/">← All senators</a></p>
+      <p class="small"><a href="#/senate">← All senators</a></p>
       <div class="profile-head p-${pc(s.party)}">
         ${photo(s)}
         <div>
@@ -546,18 +642,18 @@
   }
 
   async function statePage(st) {
-    nav("home");
+    nav("senate");
     st = (st || "").toUpperCase();
     const data = await get("data/index.json");
     const pair = data.senators.filter((s) => s.state === st).sort((a, b) => a.class - b.class);
-    if (!pair.length) { app.innerHTML = `<div class="empty">No senators found for that state. <a href="#/">Back to all senators</a></div>`; return; }
+    if (!pair.length) { app.innerHTML = `<div class="empty">No senators found for that state. <a href="#/senate">Back to all senators</a></div>`; return; }
     store.set("otr_state", st);
     const full = await Promise.all(pair.map((s) => get(`data/senators/${s.bioguide}.json`)));
     const issues = await get("data/issues_index.json").catch(() => ({ issues: [] }));
     const row = (label, f) => `<div class="cmp-row"><div class="cmp-lbl">${label}</div>${full.map((s) => `<div class="cmp-val">${f(s)}</div>`).join("")}</div>`;
     const kept = (s) => { const b = s.metrics.promises_by_status || {}; return s.metrics.promises_tracked ? `${b.kept || 0} kept · ${b.in_progress || 0} in progress · ${b.broken || 0} broken<div class="muted small">of ${s.metrics.promises_tracked} tracked</div>` : `<span class="muted">None tracked yet</span>`; };
     app.innerHTML = `
-      <p class="small"><a href="#/">← All senators</a></p>
+      <p class="small"><a href="#/senate">← All senators</a></p>
       <h1>${esc(STATES[st] || st)}'s senators</h1>
       <p class="lede">Side by side, from the public record. Tap a name for the full profile.</p>
       <div class="cmp">
@@ -583,7 +679,7 @@
     app.innerHTML = `<h1>Issues</h1>
       <p class="lede">Major fights in the Senate, each in one place: what was voted on, how every senator voted, and what they promised and said about it.</p>
       <div class="grid issue-grid">${d.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}">
-        <h3>${esc(i.title)}</h3><p class="muted small">${esc(i.summary.split(". ")[0])}.</p>
+        <h3>${esc(i.title)}</h3><p class="muted small">${esc(clip(i.summary))}</p>
         <div class="stats"><div class="stat"><b>${i.votes}</b><span>key votes</span></div><div class="stat"><b>${i.promises}</b><span>promises</span></div><div class="stat"><b>${i.statements}</b><span>statements</span></div></div>
       </a>`).join("")}</div>`;
   }
@@ -750,7 +846,7 @@
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
     const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections(arg)
-      : page === "state" && arg ? statePage(arg) : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "issue" && arg ? issuePage(arg)
+      : page === "state" && arg ? statePage(arg) : page === "senate" ? senatePage() : page === "house" ? housePage() : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "issue" && arg ? issuePage(arg)
       : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
   }
