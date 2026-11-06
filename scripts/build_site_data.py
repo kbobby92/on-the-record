@@ -57,6 +57,7 @@ def main():
     votes = load(D("raw", "votes.json"), {"votes": {}, "summaries": {}})
     trades = load(D("raw", "trades.json"), {"reports": {}, "industries": {}})
     money = load(D("raw", "money.json"), {})
+    lobbying = load(D("raw", "lobbying.json"), {})
     sectors = load(D("committee_sectors.json"), {"committees": {}})["committees"]
     # Unverified entries are shown on the site with a "Not yet checked" label and DO count toward
     # the follow-through score (owner's decision, Nov 2026); the site says so next to the score.
@@ -181,7 +182,8 @@ def main():
 
         profile = dict(s, metrics=metrics, votes=recent, trades=tx[:400],
                        paper_reports=[r for r in rows if r.get("paper")],
-                       money=m, promises=mine, statements=said[:200], election=election_of.get(bid))
+                       money=m, promises=mine, statements=said[:200], election=election_of.get(bid),
+                       lobby_contribs=lobby_summary(lobbying.get("contributions", {}).get(bid), lobbying))
         with open(D("senators", f"{bid}.json"), "w", encoding="utf-8") as f:
             json.dump(profile, f, separators=(",", ":"))
 
@@ -203,7 +205,7 @@ def main():
     with open(D("votes_recent.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
     build_elections(roster, now)
-    build_issues(roster, vote_list, summaries, promises, statements, now)
+    build_issues(roster, vote_list, summaries, promises, statements, now, lobbying)
     build_dashboard(roster, index, promises, statements, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
           f"{len(money)} money records, {len(promises)} promises ({sum(1 for p in promises if p.get('verified'))} verified), "
@@ -298,7 +300,7 @@ def seat_elections(roster):
     return out
 
 
-def build_issues(roster, vote_list, summaries, promises, statements, now):
+def build_issues(roster, vote_list, summaries, promises, statements, now, lobbying=None):
     """data/issues/<id>.json: key votes with party breakdown, bill summaries, related promises and statements."""
     cfg = load(D("issues.json"), None)
     if not cfg:
@@ -345,7 +347,8 @@ def build_issues(roster, vote_list, summaries, promises, statements, now):
             return sorted(out, key=lambda x: x["source_date"], reverse=True)
         rp, rs = related(promises, "promise"), related(statements, "statement")
         doc = {k: iss[k] for k in ("id", "title", "summary")} | {"updated": now, "votes": votes, "bills": bills,
-                                                                 "promises": rp, "statements": rs[:60]}
+                                                                 "promises": rp, "statements": rs[:60],
+                                                                 "lobbying": issue_lobbying(iss, lobbying or {})}
         with open(D("issues", f"{iss['id']}.json"), "w", encoding="utf-8") as f:
             json.dump(doc, f, separators=(",", ":"))
         listing.append({k: iss[k] for k in ("id", "title", "summary")} |
@@ -447,6 +450,51 @@ def build_dashboard(roster, index, promises, statements, now):
                    "promises": prom, "insights": ins}, f, separators=(",", ":"))
     print(f"Dashboard: now {cn}, January {cj}, {len(ins)} insights")
 
+
+def lobby_summary(items, lobbying):
+    """Lobbyist-reported contributions (LD-203) to or honoring one senator."""
+    if items is None:
+        return None
+    def amt(x):
+        try:
+            return float(x.get("amount") or 0)
+        except ValueError:
+            return 0.0
+    by_firm = defaultdict(float)
+    for i in items:
+        by_firm[i.get("registrant") or "Unknown"] += amt(i)
+    return {"years": lobbying.get("years"), "fetched": lobbying.get("fetched"), "count": len(items),
+            "total": round(sum(amt(i) for i in items), 2),
+            "top_firms": [{"name": k, "total": round(v, 2)} for k, v in sorted(by_firm.items(), key=lambda kv: -kv[1])[:8]],
+            "items": items[:40]}
+
+
+def issue_lobbying(iss, lobbying):
+    """Who filed lobbying reports mentioning this issue's bills."""
+    bills = lobbying.get("bills")
+    if not bills:
+        return None
+    names = list(dict.fromkeys(iss.get("bills", []) + iss.get("vote_bills", [])))
+    reports = {}
+    for b in names:
+        for r in bills.get(b, []):
+            reports.setdefault(r["uuid"], dict(r, bills=[]))["bills"].append(b)
+    clients = {}
+    for r in reports.values():
+        c = clients.setdefault(r["client"] or "Unknown", {"client": r["client"] or "Unknown", "reports": 0, "amount": 0.0,
+                                                          "firms": set(), "bills": set(), "latest": ""})
+        c["reports"] += 1
+        c["amount"] += r["amount"] or 0
+        if r.get("registrant") and r["registrant"] != r["client"]:
+            c["firms"].add(r["registrant"])
+        c["bills"].update(r["bills"])
+        c["latest"] = max(c["latest"], r.get("posted") or "")
+    top = sorted(clients.values(), key=lambda c: (-c["amount"], -c["reports"]))
+    return {"years": lobbying.get("years"), "fetched": lobbying.get("fetched"), "bills": names,
+            "reports": len(reports), "clients": len(clients),
+            "by_bill": {b: len(bills.get(b, [])) for b in names},
+            "top": [dict(c, firms=sorted(c["firms"])[:3], bills=sorted(c["bills"]), amount=round(c["amount"], 2)) for c in top[:15]]}
+
 RACE_STATUSES = {"counting", "called", "certified", "runoff", "recount"}
 
 
@@ -477,7 +525,8 @@ def build_elections(roster, now):
             nominees.append({"name": n.get("name") or fec_name((c or {}).get("name")), "party": n.get("party") or (c or {}).get("party"),
                              "incumbent": bool(n.get("incumbent")), "bioguide": n.get("bioguide"),
                              "receipts": (c or {}).get("receipts"), "cash_on_hand": (c or {}).get("cash_on_hand"),
-                             "through": (c or {}).get("through"), "fec": (c or {}).get("source")})
+                             "through": (c or {}).get("through"), "fec": (c or {}).get("source"),
+                             "outside": (c or {}).get("outside")})
         nominees.sort(key=lambda n: -(n["receipts"] or 0))
         if status in ("called", "certified") and r.get("winner"):
             for n in nominees:

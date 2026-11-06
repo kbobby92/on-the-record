@@ -326,3 +326,14 @@ button.btn.primary { background: var(--gold); color: #1b1407; border-color: var(
   .tk-head { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
   .tk-who { display: none; }
 }
+
+/* Money & lobbying */
+.money-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.money-grid .card::before { display: none; } .money-grid .card { padding-left: 16px; }
+.bignum.sm { font-size: 2.1rem; margin-top: 4px; }
+.pcounts.one { grid-template-columns: 1fr; }
+.table-wrap.flat { border: 0; background: none; }
+details.outside { grid-column: 2 / 4; font-size: .8rem; color: var(--muted); }
+details.outside summary { cursor: pointer; }
+details.outside .sup { color: var(--good); } details.outside .opp { color: var(--bad); }
+details.outside .money-row { font-size: .8rem; padding: 4px 0; }

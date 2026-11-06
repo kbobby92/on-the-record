@@ -500,11 +500,45 @@
     const m = s.money;
     if (!m) return `<div class="empty">Campaign finance data hasn't loaded for this senator yet.</div>`;
     const rows = [["Total raised", m.receipts], ["From individuals", m.individual], ["From PACs and other committees", m.pacs], ["From party committees", m.party], ["Self-funded (incl. loans)", m.self_funded], ["Spent", m.disbursements], ["Cash on hand", m.cash_on_hand]];
+    const sizes = m.sizes || [], stot = sizes.reduce((t, x) => t + (x.total || 0), 0);
+    const SZC = ["#6ea3ff", "#8fb5ff", "#b6a6ff", "#e8c26e", "#f29b5c"];
+    const small = sizes.find((x) => x.size === 0);
+    const lp = m.leadership_pac, lc = s.lobby_contribs;
     return `<p class="muted small">Campaign committee totals for the ${m.cycle} election cycle (${esc(m.period)}). <a href="${esc(m.source)}">Full FEC record</a></p>
-      <div class="grid"><div class="card">${rows.map(([l, v]) => `<div class="money-row"><span>${l}</span><b>${fmtMoney(v)}</b></div>`).join("")}</div>
-      <div class="card"><h3>Top donor employers</h3><p class="muted small">Itemized donations grouped by the employer donors listed. Reflects employees, not the companies themselves.</p>
-      ${m.top_employers.length ? m.top_employers.map((e) => `<div class="money-row"><span>${esc(e.employer)}</span><b>${fmtMoney(e.total)}</b></div>`).join("") : `<p class="muted">None reported.</p>`}</div></div>`;
+      <div class="grid money-grid">
+        <div class="card"><h3>Totals</h3>${rows.map(([l, v]) => `<div class="money-row"><span>${l}</span><b>${fmtMoney(v)}</b></div>`).join("")}</div>
+        ${stot ? `<div class="card"><h3>Donations by size</h3>
+          <div class="bignum sm">${fmtPct(small ? Math.round((1000 * small.total) / stot) / 10 : null)}</div>
+          <p class="muted small" style="margin:0 0 10px">from donations of $200 or less</p>
+          <div class="pstack" role="img" aria-label="${sizes.map((x) => `${x.label}: ${Math.round((100 * x.total) / stot)}%`).join(", ")}">
+            ${sizes.map((x, i) => `<span style="flex:${x.total};background:${SZC[i % SZC.length]}" title="${esc(x.label)}: ${fmtMoney(x.total)}"></span>`).join("")}</div>
+          <div class="pcounts one">${sizes.map((x, i) => `<div><i style="background:${SZC[i % SZC.length]}"></i><span>${esc(x.label)}</span><b>${Math.round((100 * x.total) / stot)}%</b></div>`).join("")}</div>
+          <p class="muted small" style="margin:10px 0 0">Donations from individuals to the campaign. Gifts of $200 or less aren't itemized, so they're counted together.</p></div>` : ""}
+        ${m.in_state && m.in_state.pct != null ? `<div class="card"><h3>Where donors live</h3>
+          <div class="bignum sm">${fmtPct(m.in_state.pct)}</div>
+          <p class="muted small" style="margin:0 0 10px">of itemized donations came from ${esc(STATES[s.state] || s.state)}</p>
+          ${(m.states || []).slice(0, 6).map((x) => `<div class="money-row"><span>${esc(STATES[x.state] || x.state)}${x.state === s.state ? ` <span class="tag">Home</span>` : ""}</span><b>${fmtMoney(x.total)}</b></div>`).join("")}
+          <p class="muted small" style="margin:10px 0 0">Itemized donations (over $200) only, by the donor's address.</p></div>` : ""}
+        <div class="card"><h3>Top donor employers</h3><p class="muted small">Itemized donations grouped by the employer donors listed. Reflects employees, not the companies themselves.</p>
+          ${m.top_employers.length ? m.top_employers.map((e) => `<div class="money-row"><span>${esc(e.employer)}</span><b>${fmtMoney(e.total)}</b></div>`).join("") : `<p class="muted">None reported.</p>`}</div>
+        ${lp ? `<div class="card"><h3>Leadership PAC</h3><p class="muted small">A second committee many senators run to raise money and give it to other candidates.</p>
+          <p style="margin:6px 0"><b>${esc(lp.name || "")}</b></p>
+          <div class="money-row"><span>Raised (${lp.cycle - 1}–${lp.cycle})</span><b>${fmtMoney(lp.receipts)}</b></div>
+          <div class="money-row"><span>Spent</span><b>${fmtMoney(lp.disbursements)}</b></div>
+          ${lp.to_candidates != null ? `<div class="money-row"><span>Given to candidates and committees</span><b>${fmtMoney(lp.to_candidates)}</b></div>` : ""}
+          <p class="small" style="margin:8px 0 0"><a href="${esc(lp.source)}">FEC record</a></p></div>` : ""}
+      </div>
+      ${lc ? `<h3 style="margin-top:22px">Contributions reported by lobbyists</h3>
+        <p class="muted small">Registered lobbyists and lobbying firms must report political contributions twice a year, including ones made to or in honor of members of Congress. These are what they reported for ${esc(s.name)} in ${(lc.years || []).join("–")}. Many also appear in the campaign totals above. A contribution shows a connection, not that any vote was influenced.</p>
+        ${lc.count ? `<div class="grid money-grid">
+          <div class="card"><div class="bignum sm">${fmtMoney(lc.total)}</div><p class="muted small" style="margin:0 0 8px">in ${lc.count} reported contribution${lc.count === 1 ? "" : "s"}</p>
+            ${lc.top_firms.map((f) => `<div class="money-row"><span>${esc(f.name)}</span><b>${fmtMoney(f.total)}</b></div>`).join("")}</div>
+          <div class="card" style="grid-column:span 2"><h3>Most recent</h3><div class="table-wrap flat"><table><thead><tr><th>Date</th><th>From</th><th>To</th><th>Amount</th></tr></thead><tbody>
+            ${lc.items.slice(0, 15).map((i) => `<tr><td>${fmtDate(i.date)}</td><td>${esc(i.contributor || i.lobbyist || "")}<div class="muted small">${esc(i.registrant || "")}</div></td><td>${esc(i.payee || "")}</td>
+              <td>${fmtMoney(parseFloat(i.amount))} ${i.url ? `<a class="small" href="${esc(i.url)}">report</a>` : ""}</td></tr>`).join("")}</tbody></table></div></div>
+        </div>` : `<div class="empty">No lobbyist contributions to or honoring ${esc(s.name)} were reported in ${(lc.years || []).join("–")}.</div>`}` : ""}`;
   }
+
 
   const REPO = "https://github.com/kbobby92/on-the-record";
   function checkedBadge(x) {
@@ -588,7 +622,7 @@
         ${[["all", "All races"], ["counting", "Still counting"], ["called", "Called"], ["runoff", "Runoff or recount"]].map(([v, l]) => `<button class="btn ${v === "all" ? "on" : ""}" data-v="${v}">${l}</button>`).join("")}
       </div>
       <div class="grid race-grid" id="races"></div>
-      <p class="muted small" style="margin-top:16px">Bars show money raised relative to the top fundraiser in each race. Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
+      <p class="muted small" style="margin-top:16px">Bars show money raised relative to the top fundraiser in each race. "Outside groups" is independent spending by super PACs and other groups for or against a candidate, reported to the FEC; candidates don't control it. Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
 
     const render = () => {
       const list = d.races.slice().sort((a, b) => (STATES[a.state] || a.state).localeCompare(STATES[b.state] || b.state)).filter((r) => filt.v === "all" || r.status === filt.v ||
@@ -643,7 +677,10 @@
         ${people.length ? people.map((n) => `<div class="cand p-${fecParty(n.party).replace("O", "X").replace("?", "X")} ${won(n) ? "won" : ""}">
           <span class="dot"></span><span class="cname">${n.bioguide ? `<a href="#/s/${esc(n.bioguide)}">${esc(n.name)}</a>` : esc(n.name)}${n.incumbent ? ` <span class="tag">Incumbent</span>` : ""}${won(n) ? ` <span class="tag win">Winner</span>` : ""}</span>
           <span class="raised">${n.receipts != null ? (n.fec ? `<a href="${esc(n.fec)}">${fmtMoney(n.receipts)}</a>` : fmtMoney(n.receipts)) : `<span class="muted small">no FEC match</span>`}</span>
-          ${n.receipts ? `<span class="mbar"><span style="width:${Math.max(1.5, (100 * n.receipts) / maxR)}%"></span></span>` : ""}</div>`).join("")
+          ${n.receipts ? `<span class="mbar"><span style="width:${Math.max(1.5, (100 * n.receipts) / maxR)}%"></span></span>` : ""}
+          ${n.outside && (n.outside.support || n.outside.oppose) ? `<details class="outside"><summary>Outside groups: <b class="sup">${fmtMoney(n.outside.support)}</b> for · <b class="opp">${fmtMoney(n.outside.oppose)}</b> against</summary>
+            ${[["Supporting", n.outside.top_support], ["Opposing", n.outside.top_oppose]].filter(([, xs]) => xs && xs.length).map(([l, xs]) => `<p class="small muted" style="margin:6px 0 2px">${l}</p>${xs.map((x) => `<div class="money-row"><span>${esc(x.name || "")}</span><b>${fmtMoney(x.total)}</b></div>`).join("")}`).join("")}
+            <p class="small" style="margin:6px 0 0"><a href="${esc(n.outside.source)}">FEC independent expenditures</a></p></details>` : ""}</div>`).join("")
           : `<p class="muted small">Candidate list loads with the next update.</p>`}
       </div>
       ${!r.nominees.length && people.length ? `<p class="muted small" style="margin:8px 0 0">Candidates who raised money for this seat, per the FEC. May include people who lost the primary; the final ballot lineup is added as results come in.</p>` : ""}
@@ -730,6 +767,20 @@
       </a>`).join("")}</div>`;
   }
 
+  function lobbyBlock(L) {
+    if (!L) return "";
+    const yrs = (L.years || []).join("–");
+    if (!L.reports) return `<h2>Who lobbied on this</h2><div class="empty">No ${yrs} lobbying reports found that name ${L.bills.map(esc).join(", ")}.</div>`;
+    return `<h2>Who lobbied on this</h2>
+      <p class="muted small">From federal lobbying reports filed in ${yrs} that name ${L.bills.map((b) => `${esc(b)} (${L.by_bill[b] || 0})`).join(", ")}. Organizations lobby for and against bills, and reports don't say which. Amounts are what each report disclosed for <i>all</i> its issues, not just this one.</p>
+      <div class="metrics" style="margin-top:8px"><div class="metric"><div class="lbl">Reports</div><div class="val">${L.reports}</div><div class="how">lobbying reports name these bills</div></div>
+        <div class="metric"><div class="lbl">Organizations</div><div class="val">${L.clients}</div><div class="how">clients that lobbied on them</div></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Organization</th><th>Lobbied through</th><th>Reports</th><th>Reported on those reports</th></tr></thead><tbody>
+        ${L.top.map((c) => `<tr><td><b>${esc(c.client)}</b><div class="muted small">${c.bills.map(esc).join(", ")}</div></td><td>${c.firms.length ? c.firms.map(esc).join(", ") : `<span class="muted">Own staff</span>`}</td>
+          <td>${c.reports}</td><td>${c.amount ? fmtMoney(c.amount) : "—"}</td></tr>`).join("")}</tbody></table></div>
+      <p class="small muted">Source: <a href="https://lda.gov/filings/public/filing/search/">Lobbying Disclosure Act database</a>. Updated ${L.fetched ? new Date(L.fetched).toLocaleDateString() : "weekly"}.</p>`;
+  }
+
   const POS_LABEL = { Y: "Yes", N: "No", P: "Present", NV: "Didn't vote" };
   async function issuePage(id) {
     nav("issues");
@@ -744,6 +795,7 @@
       <h1>${esc(d.title)}</h1>
       <p class="lede">${esc(d.summary)}</p>
       ${d.bills.some((b) => b.summary) ? `<div class="item"><h3>What the bills do</h3>${d.bills.filter((b) => b.summary).map((b) => `<details class="sum"><summary>${esc(b.name)}</summary><p>${esc(b.summary.text)} ${b.summary.url ? `<a href="${esc(b.summary.url)}">Congress.gov</a>` : ""}</p></details>`).join("")}<p class="muted small" style="margin:8px 0 0">Summaries by the nonpartisan Congressional Research Service.</p></div>` : ""}
+      ${lobbyBlock(d.lobbying)}
       <h2>Key votes</h2>
       <div class="controls"><select id="ist" aria-label="Show a state's senators"><option value="">Show how a state's senators voted…</option>
         ${states.map((s) => `<option value="${s}" ${s === ui2.st ? "selected" : ""}>${esc(STATES[s] || s)}</option>`).join("")}</select></div>
@@ -865,6 +917,7 @@
         <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
         <li><b>Stock trades (coming soon):</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Until they're added, each senator's page explains how to look up their filings there.</li>
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
+        <li><b>Lobbying:</b> the federal <a href="https://lda.gov">Lobbying Disclosure Act database</a>: quarterly reports naming the bills organizations lobbied on, and lobbyists' reports of political contributions. Refreshed weekly.</li>
         <li><b>News:</b> headlines from a mix of outlets across the political spectrum (the list is on the News page), plus official actions from Congress.gov and the Senate. Only the headline, outlet and link are shown; stories run on the outlet's own site. Headlines are matched to senators by full name or by "Sen." plus last name. Checked four times a day (6 AM, 10 AM, 2 PM and 6 PM Arizona time); stories older than 7 days drop off.</li>
         <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Unchecked entries still count toward the follow-through score, so treat it as a guide and use the source links. Spot a mistake? Use the "Report an error" link on any entry.</li>
       </ul>
