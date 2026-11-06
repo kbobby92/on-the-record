@@ -225,7 +225,17 @@
     const recent = promises.promises.filter((p) => RES[p.status] && who[p.bioguide] && (p.evidence || []).length)
       .map((p) => ({ p, d: p.evidence.map((e) => e.date).sort().pop() })).sort((a, b) => b.d.localeCompare(a.d)).slice(0, 4);
 
+    const tick = news ? news.items.slice(0, 8) : [];
     app.innerHTML = `
+      ${tick.length ? `<div class="ticker" id="ticker" role="region" aria-roledescription="carousel" aria-label="Latest headlines">
+        <a class="tk-label" href="#/news">Latest</a>
+        <div class="tk-body" id="tkbody" aria-live="off"></div>
+        <div class="tk-ctl">
+          <span class="tk-count" id="tkcount"></span>
+          <button type="button" id="tkprev" aria-label="Previous headline">‹</button>
+          <button type="button" id="tkplay" aria-label="Pause headlines">❚❚</button>
+          <button type="button" id="tknext" aria-label="Next headline">›</button>
+        </div></div>` : ""}
       <div class="dash-title"><h1>Congress at a glance</h1>
         <p class="lede">Who controls Congress, what changes in January, and what members promised, from public records with every item linked to its source.</p></div>
       <div class="glance">
@@ -249,13 +259,14 @@
             <b>${esc(who[p.bioguide].name)}</b> <span class="muted">(${pc(who[p.bioguide].party)}-${esc(who[p.bioguide].state)})</span><span class="rp">${esc(p.promise || "")}</span></a></li>`).join("")}</ul>` : ""}</section>
       </div>` : ""}
       ${finder(states, store.get("otr_state"))}
-      ${news && news.items.length ? `<section class="panel news-panel home-news"><div class="panel-top"><p class="ph">Latest</p><a class="small" href="#/news">All news →</a></div>
-        <ul class="newslist">${news.items.slice(0, 8).map((i) => newsItem(i, news.names, news.parties)).join("")}</ul></section>` : ""}
+      ${news && news.items.length > 8 ? `<section class="panel news-panel home-news"><div class="panel-top"><p class="ph">More news</p><a class="small" href="#/news">All news →</a></div>
+        <ul class="newslist">${news.items.slice(8, 14).map((i) => newsItem(i, news.names, news.parties)).join("")}</ul></section>` : ""}
       ${issues.issues.length ? `<div class="list-head"><h2>Issues in focus</h2><a class="small" href="#/issues" style="margin-bottom:12px">All issues →</a></div>
         <div class="grid issue-grid">${issues.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}"><h3>${esc(i.title)}</h3><p class="muted small">${esc(clip(i.summary))}</p>
           <div class="stats"><div class="stat"><b>${i.votes}</b><span>key votes</span></div><div class="stat"><b>${i.promises}</b><span>promises</span></div><div class="stat"><b>${i.statements}</b><span>statements</span></div></div></a>`).join("")}</div>` : ""}`;
 
     bindFinder();
+    if (tick.length) startTicker(tick, news);
     if (dash) {
       const draw = () => {
         const jan = ui.view === "january", c = jan ? dash.count_jan : dash.count_now, left = c.D + c.I;
@@ -270,6 +281,41 @@
       }));
       draw();
     }
+  }
+
+  /* Rotating headline bar: one headline at a time, pauses on hover/focus and for reduced-motion users. */
+  let tickTimer = null;
+  function startTicker(items, news) {
+    const body = document.getElementById("tkbody"), box = document.getElementById("ticker");
+    const play = document.getElementById("tkplay");
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let i = 0, paused = reduce, hover = false;
+    const show = (n, announce) => {
+      i = (n + items.length) % items.length;
+      const it = items[i], k = KIND[it.kind];
+      const who = (it.senators || []).slice(0, 2).map((id) => `<a class="chip p-${news.parties[id] || "X"}" href="${id.startsWith("elect:") ? `#/elections/${esc(id.slice(6))}` : `#/s/${esc(id)}`}">${esc((news.names[id] || id).split(" ").slice(-1)[0])}</a>`).join("");
+      body.classList.remove("in"); void body.offsetWidth;
+      body.innerHTML = `<span class="tk-src${k ? " off" : ""}">${esc(k ? k[0] : it.source)} · ${ago(it.published)}</span>
+        <a class="tk-head" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>${who ? `<span class="tk-who">${who}</span>` : ""}`;
+      body.classList.add("in");
+      body.setAttribute("aria-live", announce ? "polite" : "off");
+      document.getElementById("tkcount").textContent = `${i + 1}/${items.length}`;
+    };
+    const setPaused = (v) => {
+      paused = v; play.textContent = paused ? "▶" : "❚❚";
+      play.setAttribute("aria-label", paused ? "Play headlines" : "Pause headlines");
+    };
+    clearInterval(tickTimer);
+    tickTimer = setInterval(() => { if (!paused && !hover && document.getElementById("ticker")) show(i + 1, false); }, 6500);
+    box.addEventListener("mouseenter", () => (hover = true));
+    box.addEventListener("mouseleave", () => (hover = false));
+    box.addEventListener("focusin", () => (hover = true));
+    box.addEventListener("focusout", () => (hover = false));
+    document.getElementById("tkprev").addEventListener("click", () => { setPaused(true); show(i - 1, true); });
+    document.getElementById("tknext").addEventListener("click", () => { setPaused(true); show(i + 1, true); });
+    play.addEventListener("click", () => setPaused(!paused));
+    setPaused(paused);
+    show(0, false);
   }
 
   function housePage() {
@@ -843,6 +889,7 @@
   }
 
   function route() {
+    clearInterval(tickTimer);
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
     const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections(arg)
