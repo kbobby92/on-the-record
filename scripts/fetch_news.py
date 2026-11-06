@@ -65,24 +65,40 @@ def build_matchers():
         people.append({"id": s["bioguide"], "label": s["name"], "names": names, "last": s["last"],
                        "party": {"Democrat": "D", "Republican": "R"}.get(s["party"], "I")})
     races = load(D("races.json"), {"races": {}})["races"]
+    roster = load(D("senators.json"), {"senators": []})["senators"]
     for st, r in races.items():
         w = r.get("winner")
-        if w and r.get("status") in ("called", "certified") and not any(norm(w) == norm(p["label"]) for p in people):
+        # Skip winners who are already senators (re-elected), matched by state + last name.
+        sitting = any(x["state"] == st and norm(x["last"]) == norm(w.split()[-1]) for x in roster) if w else False
+        if w and r.get("status") in ("called", "certified") and not sitting:
             nom = next((n for n in r.get("nominees") or [] if norm(n.get("name")) == norm(w)), {})
             people.append({"id": f"elect:{st}", "label": w, "names": [w], "last": w.split()[-1],
                            "party": {"DEM": "D", "DFL": "D", "REP": "R"}.get(nom.get("party"), "I")})
     for p in people:
         pats = [re.escape(norm(n)) for n in p["names"]]
         ln = norm(p["last"])
-        # "Sen. Kelly" / "Senator Kelly" is safe even for common names; a bare last name never is.
-        pats.append(rf"(sen|senator|sens|senators)( [a-z]+){{0,3}} {re.escape(ln)}")
-        p["re"] = re.compile(r"\b(" + "|".join(pats) + r")\b")
+        firsts = {norm(n).split()[0] for n in p["names"] if norm(n)}
+        # "Sen. Kelly" or "Sen. Mark Kelly": the title must sit right before the name (only the
+        # senator's own first name may come between). A bare last name never counts.
+        opt_first = "(?: (?:" + "|".join(re.escape(f) for f in sorted(firsts)) + "))?" if firsts else ""
+        pats.append(rf"(?:sen|senator|sens|senators){opt_first} {re.escape(ln)}")
+        p["re"] = re.compile(r"\b(?:" + "|".join(pats) + r")\b")
     return people
 
 
 def tag(text, people):
+    """IDs of people named in the text. A match that sits inside a longer match for someone else
+    (e.g. "Smith" inside "Cindy Hyde Smith") is dropped."""
     t = norm(text)
-    return [p["id"] for p in people if p["re"].search(t)]
+    spans = {p["id"]: [m.span() for m in p["re"].finditer(t)] for p in people}
+    spans = {k: v for k, v in spans.items() if v}
+    keep = []
+    for pid, mine in spans.items():
+        inside = all(any(a <= s0 and e0 <= b and (b - a) > (e0 - s0) for oid, theirs in spans.items() if oid != pid
+                         for a, b in theirs) for s0, e0 in mine)
+        if not inside:
+            keep.append(pid)
+    return keep
 
 
 # ---------- sources ----------
@@ -225,9 +241,12 @@ def main():
     cutoff = (datetime.now(timezone.utc) - timedelta(days=KEEP_DAYS)).isoformat()
     merged = [m for m in merged if m["published"] >= cutoff[:16]]
     # Re-tag stored items too, so senators-elect added after a story ran still get linked.
+    fresh_urls = {f["url"] for f in fresh}
     for m in merged:
-        if m["kind"] != "vote":
-            m["senators"] = sorted(set(m.get("senators", [])) | set(tag(m["title"], people)))
+        if m["kind"] != "vote" and m["url"] not in fresh_urls:
+            # Older items no longer in a feed: re-check the stored tags against the headline-era rules.
+            valid = {p["id"] for p in people}
+            m["senators"] = sorted({x for x in m.get("senators", []) if x in valid} | set(tag(m["title"], people)))
     items = cluster(merged)[:MAX_ITEMS]
     names = {p["id"]: p["label"] for p in people}
     with open(D("news.json"), "w", encoding="utf-8") as f:
