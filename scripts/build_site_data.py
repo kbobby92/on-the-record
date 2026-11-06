@@ -58,8 +58,8 @@ def main():
     trades = load(D("raw", "trades.json"), {"reports": {}, "industries": {}})
     money = load(D("raw", "money.json"), {})
     sectors = load(D("committee_sectors.json"), {"committees": {}})["committees"]
-    # Unverified entries are shown on the site with a "Not yet checked" label,
-    # but only verified promises count toward the follow-through score.
+    # Unverified entries are shown on the site with a "Not yet checked" label and DO count toward
+    # the follow-through score (owner's decision, Nov 2026); the site says so next to the score.
     promises = load(D("promises.json"), {"promises": []})["promises"]
     statements = load(D("statements.json"), {"statements": []})["statements"]
     overrides = load(D("name_overrides.json"), {})
@@ -151,7 +151,7 @@ def main():
 
         # --- Promises & statements ---
         mine = [p for p in promises if p.get("bioguide") == bid]
-        resolved = [p for p in mine if p.get("status") in RESOLVED and p.get("verified")]
+        resolved = [p for p in mine if p.get("status") in RESOLVED]
         follow = (round(100 * sum(RESOLVED[p["status"]] for p in resolved) / len(resolved), 1)
                   if len(resolved) >= MIN_RESOLVED_PROMISES else None)
         said = sorted([x for x in statements if x.get("bioguide") == bid],
@@ -170,6 +170,7 @@ def main():
             "promises_tracked": len(mine),
             "promises_by_status": {k: sum(1 for p in mine if p.get("status") == k) for k in STATUSES},
             "follow_through": follow,
+            "promises_resolved": len(resolved),
             "statements": len(said),
         }
         m = money.get(bid)

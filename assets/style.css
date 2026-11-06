@@ -167,3 +167,4 @@ a.btn:hover { border-color: var(--gold); }
 .mbar { grid-column: 2 / 4; height: 5px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
 .mbar span { display: block; height: 100%; border-radius: 3px; background: var(--pcolor, var(--faint)); opacity: .85; }
 @media (max-width: 560px) { .bal-side b { font-size: 1.7rem; } }
+.assess { background: var(--surface-2); border-radius: 8px; padding: 8px 10px; }

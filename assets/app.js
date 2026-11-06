@@ -137,7 +137,7 @@
         ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
         ${TRADES_ENABLED ? `${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
         ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}` : ""}
-        ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_tracked} promise${m.promises_tracked === 1 ? "" : "s"} tracked. Scored only on source-checked promises, once at least 3 are resolved.`)}
+        ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_resolved || 0} of ${m.promises_tracked} promise${m.promises_tracked === 1 ? "" : "s"} resolved. Shown once at least 3 are resolved. Includes sources not yet checked by a person.`)}
       </div>
       <div class="tabs" role="tablist">
         ${["Votes", "Stock trades", "Campaign money", "Promises", "Statements", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
@@ -218,6 +218,7 @@
         <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> <span class="tag">${esc(p.topic)}</span> ${checkedBadge(p)}
         <h3 style="margin-top:8px">${esc(p.promise)}</h3>
         <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)}${postedBy(p.source_url)} · <a href="${esc(p.source_url)}">source</a>${p.archive_url ? ` · <a href="${esc(p.archive_url)}">archived copy</a>` : ""} · ${reportLink(p, s)}</div></blockquote>
+        ${p.assessment ? `<p class="small assess"><b>Why this status:</b> ${esc(p.assessment)}</p>` : ""}
         ${(p.evidence || []).length ? `<p class="small"><b>Record since:</b></p><ul class="small">${p.evidence.map((e) => `<li>${fmtDate(e.date)}: ${esc(e.description)} <a href="${esc(e.url)}">source</a></li>`).join("")}</ul>` : ""}
         ${p.notes && !/^Grok confidence/.test(p.notes) ? `<p class="muted small">${esc(p.notes)}</p>` : ""}</div>`).join("")}`;
   }
@@ -344,7 +345,7 @@
         <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
         <li><b>Stock trades (coming soon):</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Until they're added, each senator's page explains how to look up their filings there.</li>
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
-        <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Only source-checked promises count toward the follow-through score. Spot a mistake? Use the "Report an error" link on any entry.</li>
+        <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Unchecked entries still count toward the follow-through score, so treat it as a guide and use the source links. Spot a mistake? Use the "Report an error" link on any entry.</li>
       </ul>
       <h2>What each number means</h2>
       <ul>
@@ -352,14 +353,14 @@
         <li><b>Votes with own party:</b> how often their yes/no matched the majority of their party (independents counted with the party they caucus with). Context only: neither high nor low is "better."</li>
         <li><i>When stock trades are added:</i> <b>Trades reported on time:</b> the STOCK Act requires reporting a trade within 45 days. We count days between the trade and the date the report was received.</li>
         <li><b>Trades in their committees' industries:</b> trades in companies whose industry falls under a committee the senator sits on. The committee-to-industry list is public in <code>data/committee_sectors.json</code>. A flag isn't proof of wrongdoing; it marks where a conflict of interest is possible.</li>
-        <li><b>Promise follow-through:</b> among resolved promises, kept counts 1, compromise counts ½, stalled or broken count 0. Only specific, checkable promises are graded, and only once at least 3 are resolved. Senators are judged on their own actions, since no single senator can pass a law alone.</li>
+        <li><b>Promise follow-through:</b> among resolved promises, kept counts 1, compromise counts ½, stalled or broken count 0. Only specific, checkable promises are graded, and only once at least 3 are resolved. Senators are judged on their own actions, since no single senator can pass a law alone. Statuses are assessed from the official Senate roll-call record, and each one explains its reasoning. The score includes promises whose quotes haven't been checked by a person yet.</li>
       </ul>
       <h2>What we don't do</h2>
       <ul>
         <li>No overall score that mixes these together. Any weighting would bake in someone's values.</li>
         <li>No ratings of whether a vote was good or bad for you. The record is here so you can judge.</li>
         <li>Nothing appears without a link to its original source.</li>
-        <li>Nothing counts toward a score until a person has checked it against that source.</li>
+        <li>Every promise status links to the votes or actions it's based on, with a short explanation.</li>
       </ul>
       <h2>Spot an error?</h2>
       <p>Open an issue on the project's GitHub page with a link to the correct source.</p>

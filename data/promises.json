@@ -48,12 +48,19 @@
       "topic": "Defense & foreign policy",
       "promise": "Said he intends to vote against U.S. military action to invade or occupy Cuba without congressional authorization.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-04-28",
+          "description": "Voted against the point of order that blocked S.J.Res. 124, a resolution to remove U.S. forces from unauthorized hostilities against Cuba. The point of order was upheld 51–47, ending the resolution.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00108.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: high"
+      "notes": "Grok confidence: high",
+      "assessment": "The only recorded vote was procedural; he voted on the side of letting the war powers resolution proceed. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-C001088-002",
@@ -210,12 +217,24 @@
       "topic": "Government & ethics",
       "promise": "Said he will vote no on the SAVE Act if it reaches the Senate floor.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-03-26",
+          "description": "Voted no on cloture for a photo ID requirement offered during Senate debate on the SAVE America Act. Cloture failed 53–47.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm"
+        },
+        {
+          "date": "2026-06-05",
+          "description": "Voted no on a motion to add proof-of-citizenship voter registration and photo ID requirements to S. 2. It failed 50–49.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00151.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "No up-or-down Senate vote on the SAVE Act itself has happened yet. He voted no on related proof-of-citizenship and photo-ID votes in 2026. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-H000273-002",
@@ -228,12 +247,19 @@
       "topic": "Health care",
       "promise": "Said he will not vote for a government funding bill unless it addresses health care costs and tariffs.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-11-10",
+          "description": "Voted no on passage of H.R. 5371, the continuing resolution that ended the fall 2025 shutdown. It passed 60–40 with some Democratic votes.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00618.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he wouldn't be one of the Democratic votes needed to fund the government without action on health care costs and tariffs; voted no on the deal that ended the shutdown. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-M001244-001",
@@ -282,12 +308,19 @@
       "topic": "Defense & foreign policy",
       "promise": "Said he will vote against Pete Hegseth's nomination for Secretary of Defense on the Senate floor.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-01-24",
+          "description": "Voted no on Pete Hegseth's confirmation as Secretary of Defense (PN 117). He was confirmed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00015.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Words in [brackets] added for context: 'his'/'him' replaced with Mr. (Pete) Hegseth, named in the preceding sentences of the same speech."
+      "notes": "Words in [brackets] added for context: 'his'/'him' replaced with Mr. (Pete) Hegseth, named in the preceding sentences of the same speech.",
+      "assessment": "Promised to oppose the nomination on the floor and voted no. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-M001244-002",
@@ -426,12 +459,29 @@
       "topic": "Immigration & border",
       "promise": "Said he will not vote to fund DHS and ICE operations he described as illegal.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-02-12",
+          "description": "Voted no on advancing H.R. 7147, the FY2026 Homeland Security funding bill, including ICE funding. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00038.htm"
+        },
+        {
+          "date": "2026-03-26",
+          "description": "Voted no again on advancing H.R. 7147. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00074.htm"
+        },
+        {
+          "date": "2026-06-05",
+          "description": "Voted no on S. 2, a reconciliation bill providing $70 billion for DHS, CBP and ICE immigration enforcement. It passed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00163.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Voted against every recorded Senate vote on DHS/ICE funding after making the pledge. He voted yes on the Jan. 30 package only after the DHS bill had been split off it. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-M001244-005",
@@ -624,12 +674,29 @@
       "topic": "Immigration & border",
       "promise": "Said he will not support any funding deal that funds ICE under its current leadership.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-02-12",
+          "description": "Voted no on advancing H.R. 7147, the FY2026 Homeland Security funding bill. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00038.htm"
+        },
+        {
+          "date": "2026-03-26",
+          "description": "Voted no again on advancing H.R. 7147. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00074.htm"
+        },
+        {
+          "date": "2026-06-05",
+          "description": "Voted no on S. 2, a reconciliation bill providing $70 billion for DHS, CBP and ICE immigration enforcement. It passed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00163.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Voted against every recorded Senate vote on DHS/ICE funding after making the pledge. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-M000133-002",
@@ -660,12 +727,24 @@
       "topic": "Government & ethics",
       "promise": "Said he will vote no if the SAVE Act comes to the Senate floor.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-03-26",
+          "description": "Voted no on cloture for a photo ID requirement offered during Senate debate on the SAVE America Act. Cloture failed 53–47.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm"
+        },
+        {
+          "date": "2026-06-05",
+          "description": "Voted no on a motion to add proof-of-citizenship voter registration and photo ID requirements to S. 2. It failed 50–49.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00151.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "No up-or-down Senate vote on the SAVE Act itself has happened yet. He voted no on related proof-of-citizenship and photo-ID votes in 2026. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-P000595-002",
@@ -696,12 +775,29 @@
       "topic": "Immigration & border",
       "promise": "Said he will vote no on the Consolidated Appropriations Act, 2026 unless DHS funding is stripped or reforms added.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-01-29",
+          "description": "Voted no on advancing H.R. 7148, the funding package that still included the DHS bill. The motion failed 45–55.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00013.htm"
+        },
+        {
+          "date": "2026-01-30",
+          "description": "The Senate removed the Homeland Security bill from the package.",
+          "url": "https://www.appropriations.senate.gov/news/minority/senate-passes-five-funding-bills-strips-out-dhs-bill-to-ensure-negotiations-proceed-to-rein-in-ice-and-cbp"
+        },
+        {
+          "date": "2026-01-30",
+          "description": "Voted yes on the amended package without the DHS bill. It passed 71–29.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00020.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Words in [brackets] added for context: Replaced 'the bill before us' with [the Consolidated Appropriations Act, 2026] from the speech heading on the same Congressional Record page."
+      "notes": "Words in [brackets] added for context: Replaced 'the bill before us' with [the Consolidated Appropriations Act, 2026] from the speech heading on the same Congressional Record page.",
+      "assessment": "Said he'd vote no unless DHS funding was stripped out; voted no while it was included and yes once it was removed. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-P000595-004",
@@ -714,12 +810,24 @@
       "topic": "Immigration & border",
       "promise": "Said he will vote no on the DHS funding bill lacking immigration-enforcement reforms.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-02-12",
+          "description": "Voted no on advancing H.R. 7147, the FY2026 Homeland Security funding bill. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00038.htm"
+        },
+        {
+          "date": "2026-03-26",
+          "description": "Voted no again on advancing H.R. 7147. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00074.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Voted no on every recorded vote on the DHS funding bill after making the pledge. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-S001203-001",
@@ -804,12 +912,24 @@
       "topic": "Energy & environment",
       "promise": "Said she will continue to support Chris Wright's Energy Secretary nomination through confirmation.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-01-30",
+          "description": "Voted yes on cloture for Chris Wright's nomination as Secretary of Energy.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00027.htm"
+        },
+        {
+          "date": "2025-02-03",
+          "description": "Did not vote on the final confirmation, which passed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00030.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Voted to advance the nomination but missed the final confirmation vote. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-D000618-001",
@@ -858,12 +978,19 @@
       "topic": "Trade",
       "promise": "Said he will vote against the Kaine resolution on tariffs.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-04-02",
+          "description": "Voted no on S.J.Res. 37, Sen. Kaine's resolution to end the national emergency used for tariffs on Canada. It passed 51–48.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00160.htm"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he'd vote against the Kaine resolution and did. Assessed by Claude from Senate roll-call records."
     },
     {
       "id": "p-T000476-002",
