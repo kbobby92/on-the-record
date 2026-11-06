@@ -104,3 +104,36 @@ PEOPLE: Mike Lee (UT), Tim Kaine (VA), Bernard Sanders (VT), Peter Welch (VT), M
 ```
 PEOPLE: Patty Murray (WA), Tammy Baldwin (WI), Ron Johnson (WI), James C. Justice (WV), John Barrasso (WY)
 ```
+
+## Senators-elect (2026 winners)
+
+These people won Senate races on Nov 3 but aren't senators until January. Their campaign promises are the most
+important thing to capture now, before campaign websites come down. Add this line above PEOPLE when you send these:
+
+```text
+These are senators-elect who won on November 3, 2026. Focus on CAMPAIGN PROMISES: their campaign websites,
+debate transcripts, candidate questionnaires and interviews with local news. Prefer specific, checkable pledges
+(a named bill, a number, a yes/no vote). Use the senator-elect's name and state as usual.
+```
+
+**Winners batch 1**
+```
+PEOPLE: Barry Moore (AL), Josh Turek (IA), Juliana Stratton (IL), Adam Hamilton (KS), Andy Barr (KY)
+```
+
+**Winners batch 2**
+```
+PEOPLE: Julia Letlow (LA), Troy Jackson (ME), Abdul El-Sayed (MI), Peggy Flanagan (MN), Kurt Alme (MT)
+```
+
+**Winners batch 3**
+```
+PEOPLE: Roy Cooper (NC), Chris Pappas (NH), Sherrod Brown (OH), Kevin Hern (OK), Annie Andrews (SC)
+```
+
+**Winners batch 4**
+```
+PEOPLE: James Talarico (TX), Harriet Hageman (WY)
+```
+
+Alaska and Mississippi weren't called yet when this list was made; they'll be added once they are.
