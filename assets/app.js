@@ -159,7 +159,7 @@
         el.hidden = false;
         el.innerHTML = `<div class="panel-top"><p class="ph">Latest</p><a class="small" href="#/news">All news →</a></div>
           <ul class="newslist">${n.items.slice(0, 8).map((i) => newsItem(i, n.names, n.parties)).join("")}</ul>
-          <p class="muted small" style="margin:8px 0 0">Headlines from ${n.sources.length} outlets across the spectrum, plus official Senate and Congress.gov actions. Checked hourly.</p>`;
+          <p class="muted small" style="margin:8px 0 0">Headlines from ${n.sources.length} outlets across the spectrum, plus official Senate and Congress.gov actions. Checked four times a day.</p>`;
       }).catch(() => {});
     }
 
@@ -865,7 +865,7 @@
         <li><b>Votes:</b> official roll-call records from <a href="https://www.senate.gov/legislative/votes_new.htm">senate.gov</a>. Bill summaries come from the nonpartisan Congressional Research Service via <a href="https://www.congress.gov">Congress.gov</a>.</li>
         <li><b>Stock trades (coming soon):</b> Periodic Transaction Reports filed under the STOCK Act at <a href="https://efdsearch.senate.gov">efdsearch.senate.gov</a>. Until they're added, each senator's page explains how to look up their filings there.</li>
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
-        <li><b>News:</b> headlines from a mix of outlets across the political spectrum (the list is on the News page), plus official actions from Congress.gov and the Senate. Only the headline, outlet and link are shown; stories run on the outlet's own site. Headlines are matched to senators by full name or by "Sen." plus last name. Checked every hour; stories older than 7 days drop off.</li>
+        <li><b>News:</b> headlines from a mix of outlets across the political spectrum (the list is on the News page), plus official actions from Congress.gov and the Senate. Only the headline, outlet and link are shown; stories run on the outlet's own site. Headlines are matched to senators by full name or by "Sen." plus last name. Checked four times a day (6 AM, 10 AM, 2 PM and 6 PM Arizona time); stories older than 7 days drop off.</li>
         <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Unchecked entries still count toward the follow-through score, so treat it as a guide and use the source links. Spot a mistake? Use the "Report an error" link on any entry.</li>
       </ul>
       <h2>What each number means</h2>

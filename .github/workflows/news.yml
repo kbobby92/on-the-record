@@ -2,7 +2,8 @@ name: Update news
 
 on:
   schedule:
-    - cron: "41 * * * *"   # every hour at :41
+    # 6 AM, 10 AM, 2 PM and 6 PM Arizona time (UTC-7, no daylight saving) = 13, 17, 21, 01 UTC
+    - cron: "7 13,17,21,1 * * *"
   workflow_dispatch:
   push:
     paths:
