@@ -145,12 +145,24 @@
       "topic": "Defense & foreign policy",
       "promise": "Said he will keep working to move U.S. Space Command headquarters to Huntsville.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-07-24",
+          "description": "Said publicly he'd discussed the move with the president and expected it to happen.",
+          "url": "https://www.waff.com/2025/07/24/not-if-when-it-happens-senator-tuberville-talks-about-space-command-moving-huntsville"
+        },
+        {
+          "date": "2025-09-02",
+          "description": "President Trump announced Space Command's headquarters would move to Huntsville, Alabama.",
+          "url": "https://www.axios.com/2025/09/02/trump-space-comman-huntsville-redstone-arsenal"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Kept advocating, and the move he pushed for was announced. The decision was the president's. Assessed by Claude from public records."
     },
     {
       "id": "p-C001095-002",
@@ -163,12 +175,19 @@
       "topic": "Immigration & border",
       "promise": "Said he would introduce legislation the following week to end birthright citizenship for children of illegal immigrants.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-07-15",
+          "description": "Introduced S. 2274, the Constitutional Citizenship Clarification Act, to end birthright citizenship for children of people in the U.S. illegally, five days after the pledge.",
+          "url": "https://www.cotton.senate.gov/news/press-releases/cotton-colleagues-introduce-legislation-to-end-birthright-citizenship-for-illegal-aliens"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Promised to introduce the bill the following week and did. Assessed by Claude from public records."
     },
     {
       "id": "p-C001095-003",
@@ -181,12 +200,19 @@
       "topic": "Criminal justice",
       "promise": "Said he would introduce a bill the next month requiring teenagers to be charged in criminal court.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2025-11-06",
+          "description": "Cosponsored Sen. Blackburn's Violent Juvenile Offender Accountability Act, which eases prosecuting violent offenders 16 and older as adults for federal crimes.",
+          "url": "https://m.washingtontimes.com/news/2025/nov/6/gop-senators-introduce-bill-ease-prosecution-violent-offenders-age-16/"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "No bill sponsored by Cotton found matching the pledge. Three months later he cosponsored a related bill, narrower than what he described. Assessed by Claude from public records."
     },
     {
       "id": "p-C001095-004",
@@ -351,12 +377,24 @@
       "topic": "Defense & foreign policy",
       "promise": "Said she would seek inclusion of her Drone Espionage Act in the NDAA.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2025-11-14",
+          "description": "Publicly pushed to include the Drone Espionage Act in the FY2026 defense bill (NDAA).",
+          "url": "https://dronelife.com/2025/11/14/senator-moody-seeks-inclusion-of-drone-espionage-act-in-fy-2026-ndaa"
+        },
+        {
+          "date": "2026-02-05",
+          "description": "The Drone Espionage Act passed the Senate Judiciary Committee as a standalone bill.",
+          "url": "https://www.moody.senate.gov/?p=7713"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "She pushed for it, but no record shows it was included in the NDAA. It has advanced separately. Assessed by Claude from public records."
     },
     {
       "id": "p-M001244-004",
@@ -620,12 +658,19 @@
       "topic": "Government & ethics",
       "promise": "Said he will cosponsor the SAVE Act requiring proof of citizenship to register to vote.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-09-09",
+          "description": "Became a cosponsor of S. 128, the SAVE Act.",
+          "url": "https://policyrisk.com/behind-the-curtain/legislation/S128"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he would cosponsor the SAVE Act and did, about two weeks later. Assessed by Claude from public records."
     },
     {
       "id": "p-C001075-002",
@@ -638,12 +683,24 @@
       "topic": "Social Security & Medicare",
       "promise": "Said he will keep working until the Social Security Fairness Act is implemented.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-06-06",
+          "description": "Called with Sen. Collins for immediate implementation of the Social Security Fairness Act.",
+          "url": "https://www.cassidy.senate.gov/newsroom/press-releases/cassidy-collins-call-for-immediate-implementation-of-the-social-security-fairness-act/"
+        },
+        {
+          "date": "2025-07-18",
+          "description": "The Social Security Administration reported it had completed over 3.1 million payments under the law, ahead of schedule. Some advocates questioned whether every case was finished.",
+          "url": "https://www.thinkadvisor.com/amp/2025/07/18/social-security-fast-tracked-fairness-act-payments-but-at-what-cost/"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Grok confidence: medium"
+      "notes": "Grok confidence: medium",
+      "assessment": "Kept pressing until the agency reported implementation complete. Assessed by Claude from public records."
     },
     {
       "id": "p-C001075-003",
@@ -960,12 +1017,19 @@
       "topic": "Abortion & reproductive rights",
       "promise": "Said he will fight to pass the Unborn Child Support Act.",
       "specific": true,
-      "status": "not_started",
-      "evidence": [],
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-11-05",
+          "description": "As of November 2026, S. 230, the Unborn Child Support Act, is still in the Senate Finance Committee with no committee or floor vote.",
+          "url": "https://www.thelobbynews.com/congress/bills/119/senate-bill/230"
+        }
+      ],
       "added_by": "grok",
       "verified": false,
       "verified_by": null,
-      "notes": "Words in [brackets] added for context: Replaced 'this bill' with [the Unborn Child Support Act] named earlier in the same floor speech on the same page."
+      "notes": "Words in [brackets] added for context: Replaced 'this bill' with [the Unborn Child Support Act] named earlier in the same floor speech on the same page.",
+      "assessment": "Spoke for the bill on the Senate floor; it hasn't come up for a vote. Assessed by Claude from public records."
     },
     {
       "id": "p-T000476-001",
