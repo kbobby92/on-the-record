@@ -1566,6 +1566,218 @@
       "verified": false,
       "verified_by": null,
       "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-H000601-001",
+      "bioguide": "H000601",
+      "senator": "Bill Hagerty",
+      "quote": "I cannot and I will not support a resolution that removes the ability of the President of the United States to act decisively in defense of national interests, our allies, and our Armed Forces.",
+      "source_url": "https://www.congress.gov/119/crec/2025/06/27/171/111/modified/CREC-2025-06-27-pt1-PgS3583-2.htm",
+      "archive_url": "",
+      "source_date": "2025-06-27",
+      "topic": "Defense & foreign policy",
+      "promise": "Said he will not support a resolution that removes the President's ability to act decisively in defense of national interests, allies, and the Armed Forces.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-06-27",
+          "description": "Voted no on discharging S.J.Res. 59, a war powers resolution on hostilities with Iran, the day of the pledge. It failed 47–53.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00328.htm"
+        },
+        {
+          "date": "2026-03-04",
+          "description": "Voted no again on S.J.Res. 104, a later Iran war powers resolution. It failed 47–53.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00046.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "Said he wouldn't support such a resolution and voted against them. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-H000601-002",
+      "bioguide": "H000601",
+      "senator": "Bill Hagerty",
+      "quote": "I oppose Central Bank Digital Currencies. They are a threat to Americans' freedom and privacy.\n\nWe need private-sector innovation and competition to drive stablecoin innovation in America.",
+      "source_url": "https://x.com/SenatorHagerty/status/1945912852117701066",
+      "archive_url": "",
+      "source_date": "2025-07-17",
+      "topic": "Technology",
+      "promise": "Said he opposes central bank digital currencies as a threat to freedom and privacy.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-C001056-001",
+      "bioguide": "C001056",
+      "senator": "John Cornyn",
+      "quote": "Blue city liberal mayors are defying federal law, ignoring ICE detainers & not cooperating with @RealTomHoman or border enforcement agencies.\n \nI support @POTUS holding these mayors accountable & keep our communities safe.",
+      "source_url": "https://x.com/JohnCornyn/status/1898078332408774671",
+      "archive_url": "",
+      "source_date": "2025-03-07",
+      "topic": "Immigration & border",
+      "promise": "Said he supports the President holding sanctuary mayors accountable on ICE detainers.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-W000805-001",
+      "bioguide": "W000805",
+      "senator": "Mark R. Warner",
+      "quote": "If the SAVE Act comes up in the Senate, I will vote no.",
+      "source_url": "https://x.com/MarkWarner/status/1910465058364080201",
+      "archive_url": "",
+      "source_date": "2025-04-10",
+      "topic": "Government & ethics",
+      "promise": "Said he will vote no if the SAVE Act comes up in the Senate.",
+      "specific": true,
+      "status": "in_progress",
+      "evidence": [
+        {
+          "date": "2026-03-26",
+          "description": "Voted no on cloture for a photo ID requirement offered during Senate debate on the SAVE America Act. Cloture failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm"
+        },
+        {
+          "date": "2026-06-05",
+          "description": "Voted no on a motion to add proof-of-citizenship voter registration and photo ID requirements to S. 2. It failed 50–49.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00151.htm"
+        },
+        {
+          "date": "2026-08-08",
+          "description": "Voted no on advancing S. 5271, a bill requiring voters to show photo ID. The motion failed.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00231.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "No up-or-down Senate vote on the SAVE Act itself has happened yet. He voted no on related proof-of-citizenship and photo-ID votes. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-W000805-002",
+      "bioguide": "W000805",
+      "senator": "Mark R. Warner",
+      "quote": "The “Big Beautiful Bill” is a giveaway to billionaires on the backs of the working class. I will vote hell no.",
+      "source_url": "https://x.com/MarkWarner/status/1938694699348353352",
+      "archive_url": "",
+      "source_date": "2025-06-27",
+      "topic": "Economy & taxes",
+      "promise": "Said he will vote no on the “Big Beautiful Bill.”",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-07-01",
+          "description": "Voted no on passage of H.R. 1, the One Big Beautiful Bill Act. It passed 51–50 with the Vice President breaking a 50–50 tie.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00372.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he'd vote no and did. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-C001047-001",
+      "bioguide": "C001047",
+      "senator": "Shelley Moore Capito",
+      "quote": "Since the day this regulation was finalized last November, I pledged that I would work with President Trump and my colleagues in the Congress to repeal this misguided, anti-energy tax.",
+      "source_url": "https://www.congress.gov/119/crec/2025/02/26/171/38/modified/CREC-2025-02-26-pt1-PgS1383-2.htm",
+      "archive_url": "",
+      "source_date": "2025-02-26",
+      "topic": "Energy & environment",
+      "promise": "Said she pledged to work with President Trump and colleagues to repeal the Biden waste emissions / natural gas tax.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-02-27",
+          "description": "Voted yes on H.J.Res. 35, disapproving the EPA's waste emissions charge for oil and natural gas systems. It passed 52–47.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00097.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "Pledged to work to repeal the charge and voted for the resolution repealing it. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-C001047-002",
+      "bioguide": "C001047",
+      "senator": "Shelley Moore Capito",
+      "quote": "West Virginia has been hit harder than any other state by the Fentanyl crisis and I support taking all available steps to stop the flow of illegal opioids into our country.\n\n@POTUS and his administration are committed to making our country safe.",
+      "source_url": "https://x.com/SenCapito/status/1907534489334804692",
+      "archive_url": "",
+      "source_date": "2025-04-02",
+      "topic": "Criminal justice",
+      "promise": "Said she supports taking all available steps to stop the flow of illegal opioids into the country.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-L000571-001",
+      "bioguide": "L000571",
+      "senator": "Cynthia M. Lummis",
+      "quote": "President Trump’s objective is clear: Iran cannot have a nuclear weapon.\n\nI will vote to support @POTUS and give him all the tools available to defend America’s interests.",
+      "source_url": "https://x.com/SenLummis/status/2029288520217420237",
+      "archive_url": "",
+      "source_date": "2026-03-04",
+      "topic": "Defense & foreign policy",
+      "promise": "Said she will vote to support the President and give him tools to defend America’s interests regarding Iran.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-03-04",
+          "description": "Voted no on discharging S.J.Res. 104, a war powers resolution on hostilities with Iran, the day of the pledge. It failed 47–53.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00046.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Said she'd vote to support the President on Iran and voted against limiting his war powers. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-L000571-002",
+      "bioguide": "L000571",
+      "senator": "Cynthia M. Lummis",
+      "quote": "Israel remains one of America's most steadfast allies, and I support its right to engage in defensive actions to protect its people.",
+      "source_url": "https://x.com/SenLummis/status/1933354560380416463",
+      "archive_url": "",
+      "source_date": "2025-06-13",
+      "topic": "Defense & foreign policy",
+      "promise": "Said she supports Israel's right to engage in defensive actions to protect its people.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
     }
   ]
 }
