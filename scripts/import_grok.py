@@ -89,6 +89,9 @@ def resolve(item, roster):
     words = norm(item.get("senator")).split()
     if not words:
         return None
+    exact = [s for s in roster if (not st or s["state"] == st) and norm(s["name"]) == " ".join(words)]
+    if len(exact) == 1:
+        return exact[0]
     joined = f" {' '.join(words)} "
     cands = [s for s in roster if (not st or s["state"] == st) and f" {norm(s['last'])} " in joined]
     if len(cands) == 1:
