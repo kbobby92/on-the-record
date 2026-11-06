@@ -106,6 +106,8 @@ def main():
         print("Unmatched filers (add to data/name_overrides.json if they are current senators):",
               dict(unmatched))
 
+    election_of = seat_elections(roster)
+
     os.makedirs(D("senators"), exist_ok=True)
     index = []
     for s in roster:
@@ -179,14 +181,15 @@ def main():
 
         profile = dict(s, metrics=metrics, votes=recent, trades=tx[:400],
                        paper_reports=[r for r in rows if r.get("paper")],
-                       money=m, promises=mine, statements=said[:200])
+                       money=m, promises=mine, statements=said[:200], election=election_of.get(bid))
         with open(D("senators", f"{bid}.json"), "w", encoding="utf-8") as f:
             json.dump(profile, f, separators=(",", ":"))
 
         index.append({k: s[k] for k in ("bioguide", "name", "last", "party", "caucus", "state", "class",
                                          "next_election", "term_end", "photo", "serving_since")}
                      | {"committees": [c["name"].replace("Senate Committee on ", "").replace("Senate ", "")
-                                       for c in s["committees"]], "metrics": metrics})
+                                       for c in s["committees"]], "metrics": metrics,
+                        "election": election_of.get(bid)})
 
     recent_votes = [{"id": v["id"], "date": v["date"], "question": v["question"], "title": v["title"],
                      "result": v["result"], "bill": v["document"].get("name"), "counts": v["counts"],
@@ -200,6 +203,7 @@ def main():
     with open(D("votes_recent.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
     build_elections(roster, now)
+    build_issues(roster, vote_list, summaries, promises, statements, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
           f"{len(money)} money records, {len(promises)} promises ({sum(1 for p in promises if p.get('verified'))} verified), "
           f"{len(statements)} statements ({sum(1 for x in statements if x.get('verified'))} verified)")
@@ -259,6 +263,96 @@ def match_fec(n, state_cands, used, ambiguous):
         return scored[0][3]
     return hits[0]
 
+
+
+def seat_elections(roster):
+    """For each senator whose seat was on the ballot: did they win, lose, or not run?"""
+    races = load(D("races.json"), None)
+    if not races:
+        return {}
+    out = {}
+    for st, r in races["races"].items():
+        bid = r.get("seat_holder")
+        if not bid:
+            continue
+        me = next((s for s in roster if s["bioguide"] == bid), None)
+        if not me:
+            continue
+        ln = last_name(me["name"])
+        on_ballot = any(n.get("bioguide") == bid or (last_name(n.get("name") or "") == ln and n.get("incumbent"))
+                        for n in r.get("nominees") or [])
+        called = r.get("status") in ("called", "certified") and r.get("winner")
+        won = bool(called and last_name(r["winner"]) == ln)
+        if not called:
+            outcome = "counting" if on_ballot else "not_running_counting"
+        elif won:
+            outcome = "reelected"
+        elif on_ballot:
+            outcome = "lost"
+        else:
+            outcome = "not_on_ballot"
+        out[bid] = {"year": races.get("year"), "state": st, "status": r.get("status"), "outcome": outcome,
+                    "winner": r.get("winner") if called else None, "called_by": r.get("called_by") if called else None,
+                    "source_url": r.get("source_url") if called else None}
+    return out
+
+
+def build_issues(roster, vote_list, summaries, promises, statements, now):
+    """data/issues/<id>.json: key votes with party breakdown, bill summaries, related promises and statements."""
+    cfg = load(D("issues.json"), None)
+    if not cfg:
+        return
+    by_bio = {s["bioguide"]: s for s in roster}
+    def side(s):
+        return {"Democrat": "D", "Republican": "R"}.get(s["party"], "I")
+    os.makedirs(D("issues"), exist_ok=True)
+    listing = []
+    for iss in cfg["issues"]:
+        tre = re.compile(iss["vote_title"], re.I) if iss.get("vote_title") else None
+        qre = re.compile(iss.get("vote_questions") or ".", re.I)
+        votes = []
+        for v in vote_list:
+            name = v["document"].get("name") or ""
+            hit = v["id"] in iss.get("vote_ids", []) or (name in iss.get("vote_bills", []) and qre.search(v["question"])) \
+                  or (tre and tre.search(v["title"] or "") and qre.search(v["question"]))
+            if not hit:
+                continue
+            parties = {p: {"Y": 0, "N": 0, "NV": 0} for p in ("D", "R", "I")}
+            for bid, pos in v["positions"].items():
+                if bid in by_bio:
+                    parties[side(by_bio[bid])]["Y" if pos == "Y" else "N" if pos == "N" else "NV"] += 1
+            votes.append({"id": v["id"], "date": v["date"], "bill": name, "title": v["title"], "question": v["question"],
+                          "result": v["result"], "counts": v["counts"], "source": v["source"], "parties": parties,
+                          "positions": {b: p for b, p in v["positions"].items() if b in by_bio}})
+        votes.sort(key=lambda v: (v["date"], v["id"]), reverse=True)
+        bills = []
+        for b in iss.get("bills", []):
+            m = re.match(r"^(H\.R\.|S\.|H\.J\.Res\.|S\.J\.Res\.|H\.Res\.|S\.Res\.|H\.Con\.Res\.|S\.Con\.Res\.)\s*(\d+)$", b)
+            summ = summaries.get(f"119-{m.group(1)}-{m.group(2)}") if m else None
+            bills.append({"name": b, "summary": summ})
+        xre = re.compile(iss["text_match"], re.I)
+        def related(items, kind):
+            out = []
+            for x in items:
+                text = " ".join(str(x.get(k) or "") for k in ("quote", "promise", "related_bill", "assessment"))
+                if xre.search(text) and x.get("bioguide") in by_bio:
+                    s_ = by_bio[x["bioguide"]]
+                    out.append({"kind": kind, "id": x["id"], "bioguide": x["bioguide"], "name": s_["name"],
+                                "party": s_["party"], "state": s_["state"], "quote": x["quote"],
+                                "promise": x.get("promise"), "status": x.get("status"), "verified": x.get("verified"),
+                                "source_url": x["source_url"], "source_date": x["source_date"], "platform": x.get("platform")})
+            return sorted(out, key=lambda x: x["source_date"], reverse=True)
+        rp, rs = related(promises, "promise"), related(statements, "statement")
+        doc = {k: iss[k] for k in ("id", "title", "summary")} | {"updated": now, "votes": votes, "bills": bills,
+                                                                 "promises": rp, "statements": rs[:60]}
+        with open(D("issues", f"{iss['id']}.json"), "w", encoding="utf-8") as f:
+            json.dump(doc, f, separators=(",", ":"))
+        listing.append({k: iss[k] for k in ("id", "title", "summary")} |
+                       {"votes": len(votes), "promises": len(rp), "statements": len(rs),
+                        "latest": votes[0]["date"] if votes else None})
+    with open(D("issues_index.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "issues": listing}, f, separators=(",", ":"))
+    print("Issues: " + ", ".join(f"{i['id']} ({i['votes']} votes, {i['promises']}p/{i['statements']}s)" for i in listing))
 
 RACE_STATUSES = {"counting", "called", "certified", "runoff", "recount"}
 

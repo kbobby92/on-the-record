@@ -1,0 +1,60 @@
+{
+  "_about": "Issue pages. Each issue pulls together the key Senate votes, bill summaries, and the promises and statements that mention it. Votes are matched by vote_title (regex on the vote's title), vote_bills (exact bill names) and vote_ids; vote_questions limits which kinds of vote count as key votes (regex). text_match (regex) finds related promises and statements. Keep summaries neutral and factual: describe what was voted on, not who was right.",
+  "issues": [
+    {
+      "id": "voter-citizenship-id",
+      "title": "Voter citizenship and ID rules (SAVE Act)",
+      "summary": "Proposals to require documentary proof of U.S. citizenship to register to vote in federal elections and photo ID to vote, including the SAVE Act (S. 128) and the SAVE America Act. Supporters say the rules protect election integrity; opponents say they would make it harder for eligible citizens to register and vote. The Senate debated the SAVE America Act in March 2026 but has not held a final up-or-down vote on it; related votes are listed below.",
+      "vote_title": "citizens are registered to vote|provide photo identification|proof of citizenship",
+      "vote_bills": [],
+      "vote_ids": [],
+      "vote_questions": ".",
+      "bills": ["S. 128"],
+      "text_match": "SAVE (America )?Act|proof of citizenship|photo ID|voter ID|photo identification"
+    },
+    {
+      "id": "dhs-ice-funding-2026",
+      "title": "Homeland Security and ICE funding (2026)",
+      "summary": "In January 2026 the Senate split the Department of Homeland Security (DHS) bill off a six-bill FY2026 funding package and passed the other five. The separate DHS bill (H.R. 7147) then failed repeated Senate votes, leading to a partial DHS shutdown that ended April 30, 2026 with a version that left out ICE funding. In June 2026 the Senate passed S. 2, a reconciliation bill providing $70 billion for DHS, CBP and ICE immigration enforcement.",
+      "vote_title": "",
+      "vote_bills": ["H.R. 7147", "H.R. 7148"],
+      "vote_ids": ["119-2-136", "119-2-163"],
+      "vote_questions": "Passage|Cloture|Motion to Proceed",
+      "bills": ["H.R. 7147", "H.R. 7148", "S. 2"],
+      "text_match": "\\bDHS\\b|\\bICE\\b|Homeland Security|immigration enforcement|Secure America"
+    },
+    {
+      "id": "shutdown-2025",
+      "title": "The fall 2025 government shutdown",
+      "summary": "Government funding lapsed on October 1, 2025 after the Senate could not reach the 60 votes needed to advance either a Republican-backed continuing resolution (H.R. 5371) or a Democratic alternative (S. 2882), which also extended expiring health insurance subsidies. The Senate voted on the two bills repeatedly before passing an amended H.R. 5371 on November 10, 2025, 60–40.",
+      "vote_title": "",
+      "vote_bills": ["H.R. 5371", "S. 2882"],
+      "vote_ids": [],
+      "vote_questions": "Passage|Cloture",
+      "bills": ["H.R. 5371", "S. 2882"],
+      "text_match": "shutdown|continuing resolution|Shutdown Fairness|fund (the|our) government|funding bill"
+    },
+    {
+      "id": "war-powers",
+      "title": "War powers resolutions",
+      "summary": "Under the War Powers Resolution, senators can force votes on removing U.S. forces from hostilities Congress hasn't authorized. Since 2025 the Senate has voted on many such resolutions, involving Iran, Venezuela, Cuba and other conflicts. Most failed on procedural votes. Each vote's full title below names the conflict it concerned.",
+      "vote_title": "removal of United States Armed Forces from hostilities",
+      "vote_bills": [],
+      "vote_ids": [],
+      "vote_questions": "Joint Resolution|Discharge|Point of Order|Passage",
+      "bills": [],
+      "text_match": "war powers|hostilities|invade|Cuba|Venezuela|use of force|Kaine war"
+    },
+    {
+      "id": "tariffs",
+      "title": "Tariffs and trade emergencies",
+      "summary": "In 2025 the President imposed tariffs under national emergency declarations. Senators forced votes on resolutions to end those emergencies, including the tariffs on Canada (S.J.Res. 37, which passed the Senate 51–48 on April 2, 2025) and global tariffs. To take effect, a resolution would also need to pass the House and be signed by the President (or survive a veto).",
+      "vote_title": "national emergency declared.*(duties|tariff)|tariff",
+      "vote_bills": [],
+      "vote_ids": [],
+      "vote_questions": "Joint Resolution|Passage|Motion to Table|Discharge",
+      "bills": ["S.J.Res. 37"],
+      "text_match": "tariff|Kaine resolution|trade war|duties on"
+    }
+  ]
+}

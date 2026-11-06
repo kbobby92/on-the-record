@@ -12,6 +12,7 @@ on:
       - "data/name_overrides.json"
       - "inbox/**"
       - "data/races.json"
+      - "data/issues.json"
 
 permissions:
   contents: write

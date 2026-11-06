@@ -32,6 +32,39 @@
       onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${initials}'}))"></div>`;
   }
   const PARTY_NAME = { D: "Democrat", R: "Republican", I: "Independent" };
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage unavailable */ } },
+  };
+  // First three ZIP digits -> state. Ranges from the USPS prefix table; a handful of ZIPs near
+  // borders can fall in a neighboring state, so the state picker is always offered too.
+  const ZIP_RANGES = [[5,5,"NY"],[10,27,"MA"],[28,29,"RI"],[30,38,"NH"],[39,49,"ME"],[50,54,"VT"],[55,55,"MA"],[56,59,"VT"],[60,69,"CT"],
+    [70,89,"NJ"],[100,149,"NY"],[150,196,"PA"],[197,199,"DE"],[200,200,"DC"],[201,201,"VA"],[202,205,"DC"],[206,219,"MD"],[220,246,"VA"],
+    [247,268,"WV"],[270,289,"NC"],[290,299,"SC"],[300,319,"GA"],[320,339,"FL"],[341,349,"FL"],[350,369,"AL"],[370,385,"TN"],[386,397,"MS"],
+    [398,399,"GA"],[400,427,"KY"],[430,459,"OH"],[460,479,"IN"],[480,499,"MI"],[500,528,"IA"],[530,549,"WI"],[550,567,"MN"],[569,569,"DC"],
+    [570,577,"SD"],[580,588,"ND"],[590,599,"MT"],[600,629,"IL"],[630,658,"MO"],[660,679,"KS"],[680,693,"NE"],[700,714,"LA"],[716,729,"AR"],
+    [730,732,"OK"],[733,733,"TX"],[734,749,"OK"],[750,799,"TX"],[800,816,"CO"],[820,831,"WY"],[832,838,"ID"],[840,847,"UT"],[850,865,"AZ"],
+    [870,884,"NM"],[885,885,"TX"],[889,898,"NV"],[900,961,"CA"],[967,968,"HI"],[970,979,"OR"],[980,994,"WA"],[995,999,"AK"]];
+  const zipToState = (zip) => { const p = parseInt(String(zip).slice(0, 3), 10); const r = ZIP_RANGES.find(([a, b]) => p >= a && p <= b); return r ? r[2] : null; };
+
+  function electionNote(e, name) {
+    if (!e) return "";
+    const by = e.called_by ? ` (called by ${esc(e.called_by)})` : "";
+    const txt = {
+      reelected: `Won re-election in ${e.year}${by}.`,
+      lost: `Lost the ${e.year} election to ${esc(e.winner)}${by}. Serves until the new term begins in January.`,
+      not_on_ballot: `Wasn't on the November ${e.year} ballot. ${esc(e.winner)} won the seat${by} and takes office in January.`,
+      counting: `Up for election in ${e.year}. The race hasn't been called yet.`,
+      not_running_counting: `Wasn't on the November ${e.year} ballot. The race for the seat hasn't been called yet.`,
+    }[e.outcome];
+    return txt ? `<a class="elect-note ${e.outcome}" href="#/elections/${esc(e.state)}"><span>${txt}</span><span class="go">See the race →</span></a>` : "";
+  }
+  const ELECTION_TAG = { reelected: ["Re-elected", "win"], lost: ["Lost in 2026", "lost"], not_on_ballot: ["Leaving in January", ""],
+    counting: ["Race not called", ""], not_running_counting: ["Leaving in January", ""] };
+  function electionTag(e) {
+    const t = e && ELECTION_TAG[e.outcome];
+    return t ? `<span class="tag ${t[1]}" style="margin-top:6px">${t[0]}</span>` : "";
+  }
 
   /* ---------- Home: all senators ---------- */
   async function home() {
@@ -46,6 +79,7 @@
     app.innerHTML = `
       <h1>Your senators, in one place</h1>
       <p class="lede">What each U.S. senator votes for, raises and has promised, pulled from official public records and linked back to the source. No party scores, no spin: just the record, so you can decide.</p>
+      ${finder(states, store.get("otr_state"))}
       <div class="banner">
         <div><strong>${ELECTION_YEAR} election:</strong> ${onBallot} of these seats are on the ballot. Winners take office in January; their campaign promises will be tracked from day one.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="#/elections" style="text-decoration:none;color:inherit">See races and results</a>
@@ -89,7 +123,7 @@
           <div class="who">${photo(s)}<div>
             <div class="name">${esc(s.name)}</div>
             <div class="meta">${PARTY_NAME[pc(s.party)] || esc(s.party)} · ${esc(s.state)}</div>
-            ${s.next_election === ELECTION_YEAR ? `<span class="tag" style="margin-top:6px">On ${ELECTION_YEAR} ballot</span>` : ""}
+            ${s.election ? electionTag(s.election) : s.next_election === ELECTION_YEAR ? `<span class="tag" style="margin-top:6px">On ${ELECTION_YEAR} ballot</span>` : ""}
           </div></div>
           <div class="stats">
             <div class="stat"><b>${fmtPct(s.metrics.attendance)}</b><span>votes cast</span></div>
@@ -99,6 +133,7 @@
           </div>
         </a>`).join("") || `<div class="empty">No senators match those filters.</div>`;
     };
+    bindFinder();
     const bind = (id, key, ev = "change") => document.getElementById(id).addEventListener(ev, (e) => { ui[key] = e.target.value; render(); });
     bind("q", "q", "input"); bind("st", "state"); bind("pt", "party"); bind("so", "sort");
     document.getElementById("ballot").addEventListener("click", (e) => { ui.ballot = !ui.ballot; e.target.classList.toggle("on", ui.ballot); render(); });
@@ -122,7 +157,7 @@
         <div>
           <h1>${esc(s.name)}</h1>
           <div><span class="party">${esc(s.party)}${s.caucus && s.caucus !== s.party ? `, caucuses with ${esc(s.caucus)}s` : ""}</span>
-            ${s.next_election === ELECTION_YEAR ? `<span class="tag">Seat on the ${ELECTION_YEAR} ballot</span>` : ""}</div>
+            ${!s.election && s.next_election === ELECTION_YEAR ? `<span class="tag">Seat on the ${ELECTION_YEAR} ballot</span>` : ""}</div>
           <div class="facts">
             <span>${esc(s.state)} · ${esc(s.rank || "")} senator</span>
             <span>In the Senate since ${fmtDate(s.serving_since)}</span>
@@ -132,6 +167,7 @@
           <div class="small links">${links}</div>
         </div>
       </div>
+      ${electionNote(s.election, s.name)}
       <div class="metrics">
         ${metric("Attendance", fmtPct(m.attendance), `Share of ${m.votes_eligible} roll-call votes this Congress where they voted.`)}
         ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
@@ -257,7 +293,7 @@
   const fecParty = (p) => ({ DEM: "D", REP: "R", IND: "I", DFL: "D" }[p] || (p ? "O" : "?"));
   const fmtWhen = (t) => { if (!t) return ""; const d = new Date(t); return isNaN(d) ? esc(t) : d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
 
-  async function elections() {
+  async function elections(focus) {
     nav("elections");
     const d = await get("data/elections.json");
     const counts = d.races.reduce((a, r) => ((a[r.status] = (a[r.status] || 0) + 1), a), {});
@@ -286,6 +322,10 @@
       filt.v = b.dataset.v; document.querySelectorAll("#rf button").forEach((x) => x.classList.toggle("on", x === b)); render();
     }));
     render();
+    if (focus) {
+      const el = document.getElementById(`race-${focus.toUpperCase()}`);
+      if (el) { el.classList.add("focus"); el.scrollIntoView({ block: "center" }); }
+    }
   }
 
 
@@ -317,7 +357,7 @@
     const people = r.nominees.length ? r.nominees : r.filers.map((c) => ({ name: c.name, party: c.party, incumbent: c.status === "I", receipts: c.receipts, fec: c.source }));
     const won = (n) => !!n.won;
     const maxR = Math.max(1, ...people.map((n) => n.receipts || 0));
-    return `<div class="card race ${r.status}">
+    return `<div class="card race ${r.status}" id="race-${esc(r.state)}">
       <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3><span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></div>
       <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
       ${r.winner ? `<div class="called">Called for <b>${esc(r.winner)}</b> by ${esc(r.called_by)}${r.called_at ? `, ${fmtWhen(r.called_at)}` : ""} · <a href="${esc(r.source_url)}">source</a></div>` : ""}
@@ -331,6 +371,141 @@
       </div>
       ${!r.nominees.length && people.length ? `<p class="muted small" style="margin:8px 0 0">Candidates who raised money for this seat, per the FEC. May include people who lost the primary; the final ballot lineup is added as results come in.</p>` : ""}
     </div>`;
+  }
+
+
+  /* ---------- Find your senators ---------- */
+  function finder(states, saved) {
+    return `<form class="finder" id="finder" autocomplete="off">
+      <div><b>Find your senators</b><span class="muted small">Enter your ZIP code or pick your state.</span></div>
+      <input id="zip" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="ZIP code" aria-label="ZIP code">
+      <select id="fstate" aria-label="State"><option value="">Choose a state</option>
+        ${states.map((st) => `<option value="${st}" ${st === saved ? "selected" : ""}>${esc(STATES[st] || st)}</option>`).join("")}</select>
+      <button class="btn primary" type="submit">Show my senators</button>
+      <p class="ferr small" id="ferr" role="alert"></p>
+    </form>`;
+  }
+  function bindFinder() {
+    const f = document.getElementById("finder");
+    if (!f) return;
+    const err = document.getElementById("ferr");
+    const zip = document.getElementById("zip"), sel = document.getElementById("fstate");
+    zip.addEventListener("input", () => { err.textContent = ""; const z = zip.value.replace(/\D/g, ""); zip.value = z;
+      if (z.length === 5) { const st = zipToState(z); if (st && [...sel.options].some((o) => o.value === st)) sel.value = st; } });
+    sel.addEventListener("change", () => { err.textContent = ""; });
+    f.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const z = zip.value.trim();
+      let st = sel.value;
+      if (z) {
+        if (!/^\d{5}$/.test(z)) { err.textContent = "Enter a 5-digit ZIP code, or pick your state."; return; }
+        const zs = zipToState(z);
+        if (zs === "DC") { err.textContent = "Washington, D.C. doesn't have senators. Pick a state to see its senators."; return; }
+        if (!zs) { err.textContent = "That ZIP code isn't in one of the 50 states. Pick your state instead."; return; }
+        st = zs;
+      }
+      if (!st) { err.textContent = "Enter your ZIP code or pick a state."; return; }
+      store.set("otr_state", st);
+      location.hash = `#/state/${st}`;
+    });
+  }
+
+  async function statePage(st) {
+    nav("home");
+    st = (st || "").toUpperCase();
+    const data = await get("data/index.json");
+    const pair = data.senators.filter((s) => s.state === st).sort((a, b) => a.class - b.class);
+    if (!pair.length) { app.innerHTML = `<div class="empty">No senators found for that state. <a href="#/">Back to all senators</a></div>`; return; }
+    store.set("otr_state", st);
+    const full = await Promise.all(pair.map((s) => get(`data/senators/${s.bioguide}.json`)));
+    const issues = await get("data/issues_index.json").catch(() => ({ issues: [] }));
+    const row = (label, f) => `<div class="cmp-row"><div class="cmp-lbl">${label}</div>${full.map((s) => `<div class="cmp-val">${f(s)}</div>`).join("")}</div>`;
+    const kept = (s) => { const b = s.metrics.promises_by_status || {}; return s.metrics.promises_tracked ? `${b.kept || 0} kept · ${b.in_progress || 0} in progress · ${b.broken || 0} broken<div class="muted small">of ${s.metrics.promises_tracked} tracked</div>` : `<span class="muted">None tracked yet</span>`; };
+    app.innerHTML = `
+      <p class="small"><a href="#/">← All senators</a></p>
+      <h1>${esc(STATES[st] || st)}'s senators</h1>
+      <p class="lede">Side by side, from the public record. Tap a name for the full profile.</p>
+      <div class="cmp">
+        <div class="cmp-row cmp-head"><div class="cmp-lbl"></div>${full.map((s) => `<a class="cmp-who p-${pc(s.party)}" href="#/s/${s.bioguide}">${photo(s)}
+          <div><div class="name">${esc(s.name)}</div><div class="meta">${PARTY_NAME[pc(s.party)] || esc(s.party)} · ${esc(s.rank || "")} senator</div>${electionTag(s.election)}</div></a>`).join("")}</div>
+        ${row("In the Senate since", (s) => fmtDate(s.serving_since))}
+        ${row("Term ends", (s) => fmtDate(s.term_end))}
+        ${row("Next election", (s) => s.election ? `<a href="#/elections/${st}">${({ reelected: "Re-elected in ", lost: "Lost in ", not_on_ballot: "Leaving; seat filled in ", counting: "Being counted, ", not_running_counting: "Leaving; being counted, " })[s.election.outcome] || ""}${s.election.year}</a>` : s.next_election)}
+        ${row("Attendance", (s) => `<b class="big">${fmtPct(s.metrics.attendance)}</b><div class="muted small">of ${s.metrics.votes_eligible} votes</div>`)}
+        ${row("Votes with own party", (s) => `<b class="big">${fmtPct(s.metrics.party_unity)}</b>`)}
+        ${row("Raised this cycle", (s) => `<b class="big">${fmtMoney(s.metrics.raised)}</b>${s.money ? `<div class="muted small">${s.money.cycle} cycle · <a href="${esc(s.money.source)}">FEC</a></div>` : ""}`)}
+        ${row("Promises", kept)}
+        ${row("Committees", (s) => s.committees.map((c) => esc(c.name.replace("Senate Committee on ", "").replace("Senate ", ""))).join(", ") || "—")}
+        ${row("Contact", (s) => [s.phone && `<a href="tel:${esc(s.phone)}">${esc(s.phone)}</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact form</a>`].filter(Boolean).join("<br>") || "—")}
+      </div>
+      ${issues.issues.length ? `<h2>How they voted on major issues</h2><div class="grid issue-grid">${issues.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}"><h3>${esc(i.title)}</h3><p class="muted small">${i.votes} key vote${i.votes === 1 ? "" : "s"} · see how ${esc(STATES[st] || st)}'s senators voted</p></a>`).join("")}</div>` : ""}`;
+  }
+
+  /* ---------- Issues ---------- */
+  async function issuesPage() {
+    nav("issues");
+    const d = await get("data/issues_index.json");
+    app.innerHTML = `<h1>Issues</h1>
+      <p class="lede">Major fights in the Senate, each in one place: what was voted on, how every senator voted, and what they promised and said about it.</p>
+      <div class="grid issue-grid">${d.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}">
+        <h3>${esc(i.title)}</h3><p class="muted small">${esc(i.summary.split(". ")[0])}.</p>
+        <div class="stats"><div class="stat"><b>${i.votes}</b><span>key votes</span></div><div class="stat"><b>${i.promises}</b><span>promises</span></div><div class="stat"><b>${i.statements}</b><span>statements</span></div></div>
+      </a>`).join("")}</div>`;
+  }
+
+  const POS_LABEL = { Y: "Yes", N: "No", P: "Present", NV: "Didn't vote" };
+  async function issuePage(id) {
+    nav("issues");
+    let d;
+    try { d = await get(`data/issues/${id}.json`); } catch { app.innerHTML = `<div class="empty">Issue not found. <a href="#/issues">All issues</a></div>`; return; }
+    const idx = await get("data/index.json");
+    const who = Object.fromEntries(idx.senators.map((s) => [s.bioguide, s]));
+    const states = [...new Set(idx.senators.map((s) => s.state))].sort();
+    const ui2 = { st: store.get("otr_state") || "", all: false };
+    app.innerHTML = `
+      <p class="small"><a href="#/issues">← All issues</a></p>
+      <h1>${esc(d.title)}</h1>
+      <p class="lede">${esc(d.summary)}</p>
+      ${d.bills.some((b) => b.summary) ? `<div class="item"><h3>What the bills do</h3>${d.bills.filter((b) => b.summary).map((b) => `<details class="sum"><summary>${esc(b.name)}</summary><p>${esc(b.summary.text)} ${b.summary.url ? `<a href="${esc(b.summary.url)}">Congress.gov</a>` : ""}</p></details>`).join("")}<p class="muted small" style="margin:8px 0 0">Summaries by the nonpartisan Congressional Research Service.</p></div>` : ""}
+      <h2>Key votes</h2>
+      <div class="controls"><select id="ist" aria-label="Show a state's senators"><option value="">Show how a state's senators voted…</option>
+        ${states.map((s) => `<option value="${s}" ${s === ui2.st ? "selected" : ""}>${esc(STATES[s] || s)}</option>`).join("")}</select></div>
+      <div id="ivotes"></div>
+      ${d.promises.length ? `<h2>Promises about this</h2>${d.promises.map((p) => `<div class="item"><span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> ${p.verified ? `<span class="tag ok">Source checked</span>` : `<span class="tag unchecked">Not yet checked</span>`}
+        <h3 style="margin-top:8px"><a href="#/s/${p.bioguide}">${esc(p.name)}</a> <span class="muted small">(${pc(p.party)}-${esc(p.state)})</span></h3>
+        <p style="margin:4px 0">${esc(p.promise || "")}</p><blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)} · <a href="${esc(p.source_url)}">source</a> · <a href="#/s/${p.bioguide}">full record</a></div></blockquote></div>`).join("")}` : ""}
+      ${d.statements.length ? `<h2>What senators said</h2>${d.statements.map((x) => `<div class="item"><span class="tag">${esc(x.platform || "")}</span> ${x.verified ? `<span class="tag ok">Source checked</span>` : `<span class="tag unchecked">Not yet checked</span>`}
+        <h3 style="margin-top:8px"><a href="#/s/${x.bioguide}">${esc(x.name)}</a> <span class="muted small">(${pc(x.party)}-${esc(x.state)})</span></h3>
+        <blockquote>“${esc(x.quote)}”<div class="muted small">${fmtDate(x.source_date)} · <a href="${esc(x.source_url)}">source</a></div></blockquote></div>`).join("")}` : ""}`;
+
+    const chips = (v, pos) => Object.entries(v.positions).filter(([, p]) => (pos === "NV" ? !["Y", "N"].includes(p) : p === pos))
+      .map(([b]) => who[b]).filter(Boolean).sort((a, b) => a.last.localeCompare(b.last))
+      .map((s) => `<a class="chip p-${pc(s.party)}" href="#/s/${s.bioguide}">${esc(s.last)} <span>${pc(s.party)}-${esc(s.state)}</span></a>`).join("") || `<span class="muted small">None</span>`;
+    const partyBar = (p) => {
+      const t = p.Y + p.N;
+      return t ? `<span class="pbar" title="${p.Y} yes, ${p.N} no"><span class="py" style="width:${(100 * p.Y) / t}%"></span><span class="pn" style="width:${(100 * p.N) / t}%"></span></span>` : `<span class="pbar empty"></span>`;
+    };
+    const render = () => {
+      const mine = ui2.st ? idx.senators.filter((s) => s.state === ui2.st) : [];
+      const list = ui2.all ? d.votes : d.votes.slice(0, 8);
+      document.getElementById("ivotes").innerHTML = (list.map((v) => `<div class="item vote">
+        <div class="vote-top"><span class="muted small">${fmtDate(v.date)}</span>${v.bill ? ` <b>${esc(v.bill)}</b>` : ""}<span class="vres">${esc(v.result)}</span></div>
+        <div>${esc(v.title)}</div><div class="muted small">${esc(v.question)} · ${esc(v.counts.yeas)}–${esc(v.counts.nays)} · <a href="${esc(v.source)}">official record</a></div>
+        <div class="vparties">
+          ${[["D", "Democrats"], ["R", "Republicans"], ["I", "Independents"]].filter(([k]) => v.parties[k].Y + v.parties[k].N + v.parties[k].NV).map(([k, l]) =>
+            `<div class="vp p-${k}"><span class="vpl">${l}</span>${partyBar(v.parties[k])}<span class="vpn">${v.parties[k].Y} yes · ${v.parties[k].N} no</span></div>`).join("")}
+        </div>
+        ${mine.length ? `<div class="mine">${mine.map((s) => { const p = v.positions[s.bioguide]; return `<span class="mine-v"><a href="#/s/${s.bioguide}">${esc(s.name)}</a>: <b class="pos ${p || "NV"}">${p ? POS_LABEL[p] || p : "Not in office"}</b></span>`; }).join("")}</div>` : ""}
+        <details class="sum"><summary>See every senator's vote</summary>
+          <div class="chips"><b class="small">Yes</b>${chips(v, "Y")}</div><div class="chips"><b class="small">No</b>${chips(v, "N")}</div><div class="chips"><b class="small">Didn't vote</b>${chips(v, "NV")}</div>
+          <p class="muted small">Current senators only.</p></details>
+      </div>`).join("") || `<div class="empty">No recorded votes on this yet.</div>`)
+        + (!ui2.all && d.votes.length > 8 ? `<button class="btn" id="vmore">Show all ${d.votes.length} votes</button>` : "");
+      const more = document.getElementById("vmore");
+      if (more) more.addEventListener("click", () => { ui2.all = true; render(); });
+    };
+    document.getElementById("ist").addEventListener("change", (e) => { ui2.st = e.target.value; if (ui2.st) store.set("otr_state", ui2.st); render(); });
+    render();
   }
 
   /* ---------- About ---------- */
@@ -370,7 +545,9 @@
   function route() {
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
-    const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections() : page === "about" ? about() : home();
+    const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections(arg)
+      : page === "state" && arg ? statePage(arg) : page === "issues" ? issuesPage() : page === "issue" && arg ? issuePage(arg)
+      : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
   }
   window.addEventListener("hashchange", route);
