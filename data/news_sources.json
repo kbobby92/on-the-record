@@ -1,16 +1,60 @@
 {
   "_about": "Outlets for the news feed. Chosen as a mix across the political spectrum; only headlines, outlet names and links are shown, never article text. Add or remove feeds here. 'filter': true means the feed covers more than government, so only items mentioning a senator or a government keyword are kept.",
   "feeds": [
-    {"source": "NPR", "url": "https://feeds.npr.org/1014/rss.xml", "filter": true},
-    {"source": "PBS NewsHour", "url": "https://www.pbs.org/newshour/feeds/rss/politics", "filter": true},
-    {"source": "CBS News", "url": "https://www.cbsnews.com/latest/rss/politics", "filter": true},
-    {"source": "ABC News", "url": "https://feeds.abcnews.com/abcnews/politicsheadlines", "filter": true},
-    {"source": "Fox News", "url": "https://moxie.foxnews.com/google-publisher/politics.xml", "filter": true},
-    {"source": "Politico", "url": "https://rss.politico.com/congress.xml", "filter": false},
-    {"source": "The Hill", "url": "https://thehill.com/homenews/senate/feed/", "filter": false},
-    {"source": "Roll Call", "url": "https://rollcall.com/feed/", "filter": true},
-    {"source": "Washington Examiner", "url": "https://www.washingtonexaminer.com/section/policy/feed/", "filter": true},
-    {"source": "The Dispatch", "url": "https://thedispatch.com/feed/", "filter": true},
-    {"source": "Washington Times", "url": "https://www.washingtontimes.com/rss/headlines/news/politics/", "filter": true}
+    {
+      "source": "NPR",
+      "url": "https://feeds.npr.org/1014/rss.xml",
+      "filter": true
+    },
+    {
+      "source": "PBS NewsHour",
+      "url": "https://www.pbs.org/newshour/feeds/rss/politics",
+      "filter": true
+    },
+    {
+      "source": "CBS News",
+      "url": "https://www.cbsnews.com/latest/rss/politics",
+      "filter": true
+    },
+    {
+      "source": "ABC News",
+      "url": "https://feeds.abcnews.com/abcnews/politicsheadlines",
+      "filter": true
+    },
+    {
+      "source": "Fox News",
+      "url": "https://moxie.foxnews.com/google-publisher/politics.xml",
+      "filter": true
+    },
+    {
+      "source": "Politico",
+      "url": "https://rss.politico.com/congress.xml",
+      "filter": false
+    },
+    {
+      "source": "The Hill",
+      "url": "https://thehill.com/homenews/senate/feed/",
+      "filter": false
+    },
+    {
+      "source": "Roll Call",
+      "url": "https://rollcall.com/feed/",
+      "filter": true
+    },
+    {
+      "source": "Washington Examiner",
+      "url": "https://www.washingtonexaminer.com/section/policy/feed/",
+      "filter": true
+    },
+    {
+      "source": "The Dispatch",
+      "url": "https://thedispatch.com/feed/",
+      "filter": true
+    },
+    {
+      "source": "National Review",
+      "url": "https://www.nationalreview.com/feed/",
+      "filter": true
+    }
   ]
 }
