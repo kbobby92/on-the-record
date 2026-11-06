@@ -66,78 +66,203 @@
     return t ? `<span class="tag ${t[1]}" style="margin-top:6px">${t[0]}</span>` : "";
   }
 
-  /* ---------- Home: all senators ---------- */
+  /* ---------- Home: Senate dashboard ---------- */
+  const TILE = [["AK",0,0],["ME",11,0],["VT",10,1],["NH",11,1],["WA",1,2],["ID",2,2],["MT",3,2],["ND",4,2],["MN",5,2],["IL",6,2],["WI",7,2],["MI",8,2],["NY",9,2],["RI",10,2],["MA",11,2],
+    ["OR",1,3],["NV",2,3],["WY",3,3],["SD",4,3],["IA",5,3],["IN",6,3],["OH",7,3],["PA",8,3],["NJ",9,3],["CT",10,3],["CA",1,4],["UT",2,4],["CO",3,4],["NE",4,4],["MO",5,4],["KY",6,4],
+    ["WV",7,4],["VA",8,4],["MD",9,4],["DE",10,4],["AZ",2,5],["NM",3,5],["KS",4,5],["AR",5,5],["TN",6,5],["NC",7,5],["SC",8,5],["OK",4,6],["LA",5,6],["MS",6,6],["AL",7,6],["GA",8,6],
+    ["HI",0,7],["TX",4,7],["FL",9,7]];
+  const PCOLOR = { D: "var(--dem)", R: "var(--rep)", I: "var(--ind)", X: "var(--line-2)" };
+  const PORDER = { D: 0, I: 1, X: 2, R: 3 };
+  const SEATS = (() => {
+    const out = [];
+    [[14, 84], [17, 104], [20, 124], [23, 144], [26, 164]].forEach(([n, r]) => {
+      for (let i = 0; i < n; i++) { const a = Math.PI - (Math.PI * i) / (n - 1); out.push({ x: 200 + r * Math.cos(a), y: 176 - r * Math.sin(a), a }); }
+    });
+    return out.sort((p, q) => q.a - p.a);
+  })();
+  const md = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+  const GROUPS = {
+    state: { label: "State", key: (s) => [s.state], name: (k) => STATES[k] || k },
+    party: { label: "Party", key: (s) => [s.party], name: (k) => `${k}s` },
+    outcome: { label: "2026 election", key: (s) => [s.election ? s.election.outcome : "not_up"],
+      name: (k) => ({ reelected: "Re-elected in 2026", lost: "Lost in 2026", not_on_ballot: "Leaving in January (weren't on the ballot)",
+        counting: "Race not called yet", not_running_counting: "Leaving; race not called yet", not_up: "Seat not up in 2026" })[k] || k,
+      order: ["reelected", "lost", "not_on_ballot", "counting", "not_running_counting", "not_up"] },
+    next: { label: "Next election", key: (s) => [s.election ? "decided" : String(s.next_election)],
+      name: (k) => (k === "decided" ? "Seat decided in 2026" : `Up in ${k}`), order: ["decided", "2028", "2030"] },
+    committee: { label: "Committee", key: (s) => (s.committees.length ? s.committees : ["No committee listed"]), name: (k) => k },
+  };
+
   async function home() {
     nav("home");
-    const data = await get("data/index.json");
+    const [data, dash] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null)]);
     document.getElementById("updated").textContent = `Data updated ${new Date(data.updated).toLocaleString()}.`;
     const ss = data.senators;
     const states = [...new Set(ss.map((s) => s.state))].sort();
-    const onBallot = ss.filter((s) => s.next_election === ELECTION_YEAR).length;
-    const noData = !data.totals.votes && !data.totals.trade_reports;
+    const ui = home.ui || (home.ui = { q: "", group: "state", sort: "name", mode: "january" });
 
     app.innerHTML = `
-      <h1>Your senators, in one place</h1>
-      <p class="lede">What each U.S. senator votes for, raises and has promised, pulled from official public records and linked back to the source. No party scores, no spin: just the record, so you can decide.</p>
+      <div class="dash-title"><h1>The Senate</h1><p class="lede">Who holds every seat, what changes in January, and what senators promised. All from public records, each linked to its source.</p></div>
       ${finder(states, store.get("otr_state"))}
-      <div class="banner">
-        <div><strong>${ELECTION_YEAR} election:</strong> ${onBallot} of these seats are on the ballot. Winners take office in January; their campaign promises will be tracked from day one.</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="#/elections" style="text-decoration:none;color:inherit">See races and results</a>
-        <button class="btn ${ui.ballot ? "on" : ""}" id="ballot">Show only seats on the ${ELECTION_YEAR} ballot</button></div>
+      ${dash ? `<div class="dash">
+        <section class="panel chamber-panel">
+          <div class="panel-top"><p class="ph">Chamber</p>
+            <div class="segtg" id="cmode" role="group" aria-label="Chamber view">${[["now", "Now"], ["january", "January"], ["next", "Next election"], ["attendance", "Attendance"]]
+              .map(([v, l]) => `<button type="button" data-v="${v}" class="${ui.mode === v ? "on" : ""}">${l}</button>`).join("")}</div></div>
+          <svg id="chamber" viewBox="0 0 400 214" role="img" aria-labelledby="ctitle"><title id="ctitle">Senate seats</title></svg>
+          <div class="readout" id="readout"></div>
+          <div class="clegend" id="clegend"></div>
+        </section>
+        <section class="panel promise-panel">${promisePanel(dash.promises)}</section>
+        <section class="panel map-panel">
+          <div class="panel-top"><p class="ph">By state</p><span class="muted small">Tap a state to compare its senators</span></div>
+          <div class="tilemap" id="tilemap"></div>
+          <div class="clegend"><span><i style="background:var(--dem)"></i>Democrat</span><span><i style="background:var(--rep)"></i>Republican</span><span><i style="background:var(--ind)"></i>Independent</span><span><i class="flipdot"></i>Seat changes party in January</span></div>
+        </section>
+        <section class="panel insight-panel"><p class="ph">Insights</p>
+          <ol class="insights">${dash.insights.map((x) => `<li>${x.href ? `<a class="ins" href="${esc(x.href)}"><span>${md(x.text)}</span></a>` : `<div class="ins"><span>${md(x.text)}</span></div>`}</li>`).join("")}</ol>
+          <p class="muted small" style="margin:8px 0 0">Calculated automatically from the data on this site.</p>
+        </section>
+      </div>` : ""}
+      <div class="list-head" id="all"><h2>All senators</h2>
+        <div class="controls">
+          <input id="q" type="search" placeholder="Search by name, state or committee" value="${esc(ui.q)}" aria-label="Search senators">
+          <label class="ctl">Group by <select id="grp">${Object.entries(GROUPS).map(([k, g]) => `<option value="${k}" ${k === ui.group ? "selected" : ""}>${g.label}</option>`).join("")}</select></label>
+          <label class="ctl">Sort <select id="so">${[["name", "Name"], ["attendance", "Lowest attendance"], ["unity_low", "Least party-line voting"], ["raised", "Most money raised"]]
+            .map(([v, l]) => `<option value="${v}" ${v === ui.sort ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+        </div>
       </div>
-      ${noData ? `<div class="notice">Votes and campaign money load after the daily update job first runs. Until then you'll see each senator's basic profile and committees.</div>` : ""}
-      <div class="controls">
-        <input id="q" type="search" placeholder="Search by name or committee" value="${esc(ui.q)}" aria-label="Search">
-        <select id="st" aria-label="State"><option value="">All states</option>${states.map((s) => `<option ${s === ui.state ? "selected" : ""}>${s}</option>`).join("")}</select>
-        <select id="pt" aria-label="Party"><option value="">All parties</option>${["Democrat", "Republican", "Independent"].map((p) => `<option ${p === ui.party ? "selected" : ""}>${p}</option>`).join("")}</select>
-        <select id="so" aria-label="Sort">
-          ${[["state", "Sort: state"], ["name", "Sort: name"], ["attendance", "Lowest attendance"], ["unity_low", "Most often votes against own party"], ["raised", "Most money raised"]]
-            .concat(TRADES_ENABLED ? [["late", "Most late trade reports"], ["overlap", "Most committee-overlap trades"], ["trades", "Most trades"]] : [])
-            .map(([v, l]) => `<option value="${v}" ${v === ui.sort ? "selected" : ""}>${l}</option>`).join("")}
-        </select>
-      </div>
-      <p class="muted small" id="count"></p>
-      <div class="grid" id="grid"></div>`;
+      <div id="groups"></div>`;
 
-    const render = () => {
-      const q = ui.q.toLowerCase();
-      let list = ss.filter((s) =>
-        (!ui.state || s.state === ui.state) && (!ui.party || s.party === ui.party) &&
-        (!ui.ballot || s.next_election === ELECTION_YEAR) &&
-        (!q || s.name.toLowerCase().includes(q) || s.committees.join(" ").toLowerCase().includes(q)));
-      const m = (s, k) => s.metrics[k] ?? -1;
-      const sorters = {
-        state: (a, b) => a.state.localeCompare(b.state) || a.last.localeCompare(b.last),
-        name: (a, b) => a.last.localeCompare(b.last),
-        attendance: (a, b) => (a.metrics.attendance ?? 101) - (b.metrics.attendance ?? 101),
-        late: (a, b) => m(b, "late_trades") - m(a, "late_trades"),
-        overlap: (a, b) => m(b, "committee_overlap_trades") - m(a, "committee_overlap_trades"),
-        trades: (a, b) => m(b, "trades") - m(a, "trades"),
-        raised: (a, b) => m(b, "raised") - m(a, "raised"),
-        unity_low: (a, b) => (a.metrics.party_unity ?? 101) - (b.metrics.party_unity ?? 101),
-      };
-      list.sort(sorters[ui.sort]);
-      document.getElementById("count").textContent = `${list.length} senator${list.length === 1 ? "" : "s"}`;
-      document.getElementById("grid").innerHTML = list.map((s) => `
+    bindFinder();
+    if (dash) {
+      drawChamber(dash, ss, ui);
+      document.querySelectorAll("#cmode button").forEach((b) => b.addEventListener("click", () => {
+        ui.mode = b.dataset.v; document.querySelectorAll("#cmode button").forEach((x) => x.classList.toggle("on", x === b)); drawChamber(dash, ss, ui);
+      }));
+      drawTiles(ss, dash);
+    }
+
+    const card = (s) => `
         <a class="card p-${pc(s.party)}" href="#/s/${s.bioguide}">
           <div class="who">${photo(s)}<div>
             <div class="name">${esc(s.name)}</div>
             <div class="meta">${PARTY_NAME[pc(s.party)] || esc(s.party)} · ${esc(s.state)}</div>
-            ${s.election ? electionTag(s.election) : s.next_election === ELECTION_YEAR ? `<span class="tag" style="margin-top:6px">On ${ELECTION_YEAR} ballot</span>` : ""}
+            ${electionTag(s.election)}
           </div></div>
           <div class="stats">
             <div class="stat"><b>${fmtPct(s.metrics.attendance)}</b><span>votes cast</span></div>
-            ${TRADES_ENABLED ? `<div class="stat"><b>${s.metrics.trades}</b><span>stock trades</span></div>
-            <div class="stat"><b>${s.metrics.late_trades}</b><span>reported late</span></div>` : `<div class="stat"><b>${fmtPct(s.metrics.party_unity)}</b><span>votes with party</span></div>
-            <div class="stat"><b>${fmtMoney(s.metrics.raised)}</b><span>raised this cycle</span></div>`}
+            <div class="stat"><b>${fmtPct(s.metrics.party_unity)}</b><span>votes with party</span></div>
+            <div class="stat"><b>${fmtMoney(s.metrics.raised)}</b><span>raised this cycle</span></div>
           </div>
-        </a>`).join("") || `<div class="empty">No senators match those filters.</div>`;
+        </a>`;
+    const render = () => {
+      const q = ui.q.toLowerCase().trim();
+      const list = ss.filter((s) => !q || s.name.toLowerCase().includes(q) || s.state.toLowerCase() === q ||
+        (STATES[s.state] || "").toLowerCase().includes(q) || s.committees.join(" ").toLowerCase().includes(q));
+      const sorters = {
+        name: (a, b) => a.last.localeCompare(b.last),
+        attendance: (a, b) => (a.metrics.attendance ?? 101) - (b.metrics.attendance ?? 101),
+        unity_low: (a, b) => (a.metrics.party_unity ?? 101) - (b.metrics.party_unity ?? 101),
+        raised: (a, b) => (b.metrics.raised ?? -1) - (a.metrics.raised ?? -1),
+      };
+      const G = GROUPS[ui.group];
+      const buckets = {};
+      list.forEach((s) => G.key(s).forEach((k) => (buckets[k] = buckets[k] || []).push(s)));
+      const keys = Object.keys(buckets).sort((a, b) => (G.order ? G.order.indexOf(a) - G.order.indexOf(b) : G.name(a).localeCompare(G.name(b))));
+      document.getElementById("groups").innerHTML = keys.map((k) => `
+        <section class="group"><div class="group-head"><h3>${esc(G.name(k))}</h3><span class="muted small">${buckets[k].length}</span>
+          ${ui.group === "state" ? `<a class="small" href="#/state/${esc(k)}">Compare side by side →</a>` : ""}</div>
+          <div class="grid">${buckets[k].sort(sorters[ui.sort]).map(card).join("")}</div></section>`).join("")
+        || `<div class="empty">No senators match "${esc(ui.q)}".</div>`;
     };
-    bindFinder();
-    const bind = (id, key, ev = "change") => document.getElementById(id).addEventListener(ev, (e) => { ui[key] = e.target.value; render(); });
-    bind("q", "q", "input"); bind("st", "state"); bind("pt", "party"); bind("so", "sort");
-    document.getElementById("ballot").addEventListener("click", (e) => { ui.ballot = !ui.ballot; e.target.classList.toggle("on", ui.ballot); render(); });
+    document.getElementById("q").addEventListener("input", (e) => { ui.q = e.target.value; render(); });
+    document.getElementById("grp").addEventListener("change", (e) => { ui.group = e.target.value; render(); });
+    document.getElementById("so").addEventListener("change", (e) => { ui.sort = e.target.value; render(); });
     render();
+  }
+
+  function promisePanel(p) {
+    const parts = [["kept", "Kept", "var(--good)"], ["compromise", "Compromise", "var(--gold)"], ["in_progress", "In progress", "var(--dem-ink)"], ["broken", "Broken or stalled", "var(--bad)"]];
+    const graded = parts.reduce((t, [k]) => t + (p[k] || 0), 0);
+    return `<p class="ph">Promises tracked</p>
+      <div class="bignum">${p.tracked}</div>
+      <p class="muted small" style="margin:0 0 12px">from ${p.senators} senators so far, plus ${p.statements} public statements</p>
+      <div class="pstack" role="img" aria-label="${parts.map(([k, l]) => `${p[k] || 0} ${l.toLowerCase()}`).join(", ")}">
+        ${parts.map(([k, l, c]) => (p[k] ? `<span style="flex:${p[k]};background:${c}" title="${l}: ${p[k]}"></span>` : "")).join("")}</div>
+      <div class="pcounts">${parts.map(([k, l, c]) => `<div><i style="background:${c}"></i><span>${l}</span><b>${p[k] || 0}</b></div>`).join("")}</div>
+      <p class="muted small" style="margin:10px 0 0">${graded} specific promises have a status. ${p.not_reviewed} general pledges aren't graded. Most promises so far come from senators' own posts, which tend to highlight pledges they kept.</p>`;
+  }
+
+  function drawChamber(dash, ss, ui) {
+    const svg = document.getElementById("chamber");
+    const mode = ui.mode;
+    const base = mode === "january" ? dash.january : dash.now;
+    const seats = base.slice().sort((a, b) => PORDER[a.p] - PORDER[b.p] || (a.st || "").localeCompare(b.st || ""));
+    const cnt = mode === "january" ? dash.count_jan : dash.count_now;
+    const left = cnt.D + cnt.I, right = cnt.R;
+    const atts = dash.now.map((s) => s.a).filter((x) => x != null).sort((a, b) => a - b);
+    const lo = atts[0] ?? 80, median = atts.length ? atts[Math.floor(atts.length / 2)] : null;
+    const cls = (c) => ({ 2026: "var(--gold)", 2028: "#8ea3c8", 2030: "#3c4b70" })[c] || "var(--line-2)";
+    const yrs = dash.now.reduce((a, s) => ((a[s.c] = (a[s.c] || 0) + 1), a), {});
+    const head = {
+      now: [`${right} · ${left}`, "Republicans · Democrats + independents"],
+      january: [`${left} · ${right}`, `Democrats + independents · Republicans${cnt.X ? ` · ${cnt.X} not called` : ""}`],
+      next: [`${yrs[2028] || 0} · ${yrs[2030] || 0}`, `Seats up in 2028 · 2030 · ${yrs[2026] || 0} decided in 2026`],
+      attendance: [median != null ? `${median}%` : "—", "Median attendance this Congress"],
+    }[mode];
+    let out = `<title id="ctitle">Senate seats: ${esc(head[1])}</title>
+      <line x1="200" y1="0" x2="200" y2="40" stroke="var(--gold)" stroke-dasharray="2 3" stroke-width="1.2"></line>
+      <text x="200" y="186" text-anchor="middle" class="ch-num">${esc(head[0])}</text>
+      <text x="200" y="205" text-anchor="middle" class="ch-sub">${esc(head[1])}</text>`;
+    seats.forEach((s, i) => {
+      const p = SEATS[i];
+      let fill = PCOLOR[s.p], op = 1, ring = "";
+      if (mode === "next") fill = cls(s.c);
+      if (mode === "attendance") op = s.a == null ? 0.2 : Math.max(0.18, Math.min(1, (s.a - lo) / (100 - lo || 1)));
+      if (mode === "january" && s.new) ring = ` stroke="var(--gold)" stroke-width="1.6"`;
+      out += `<circle class="seat" data-i="${i}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="5.2" fill="${fill}" fill-opacity="${op.toFixed(2)}"${ring}></circle>`;
+    });
+    svg.innerHTML = out;
+    const legend = {
+      now: [["var(--dem)", `Democrats ${cnt.D}`], ["var(--ind)", `Independents ${cnt.I}`], ["var(--rep)", `Republicans ${cnt.R}`]],
+      january: [["var(--dem)", `Democrats ${cnt.D}`], ["var(--ind)", `Independents ${cnt.I}`], ["var(--line-2)", `Not called ${cnt.X}`], ["var(--rep)", `Republicans ${cnt.R}`], ["ring", "Newly elected"]],
+      next: [["var(--gold)", "Decided in 2026"], ["#8ea3c8", "Up in 2028"], ["#3c4b70", "Up in 2030"]],
+      attendance: [["fade", "Dimmer seats missed more votes"]],
+    }[mode];
+    document.getElementById("clegend").innerHTML = legend.map(([c, l]) => `<span><i class="${c === "ring" ? "ringdot" : c === "fade" ? "fadedot" : ""}" ${c.startsWith("var") || c.startsWith("#") ? `style="background:${c}"` : ""}></i>${esc(l)}</span>`).join("")
+      + `<span><i class="majline"></i>51 for a majority</span>`;
+    const readout = document.getElementById("readout");
+    const idle = `<span class="muted">Hover or tap a seat to see who holds it.</span>`;
+    readout.innerHTML = idle;
+    const info = (s) => {
+      const extra = mode === "attendance" ? ` · ${s.a != null ? `${s.a}% of votes cast` : "no vote data"}` : mode === "next" ? ` · ${s.c === 2026 ? "decided in 2026" : `up in ${s.c}`}`
+        : s.uncalled ? "" : s.new ? " · newly elected" : "";
+      return `<b>${esc(s.n)}</b> <span class="muted">${s.uncalled ? "" : `${PARTY_NAME[s.p] || ""} · `}${esc(STATES[s.st] || s.st)}${extra}</span>`;
+    };
+    svg.querySelectorAll(".seat").forEach((c) => {
+      const s = seats[+c.dataset.i];
+      c.addEventListener("mouseenter", () => { readout.innerHTML = info(s); });
+      c.addEventListener("mouseleave", () => { readout.innerHTML = idle; });
+      c.addEventListener("click", () => { location.hash = s.b ? `#/s/${s.b}` : `#/elections/${s.st}`; });
+    });
+  }
+
+  function drawTiles(ss, dash) {
+    const by = {};
+    ss.forEach((s) => (by[s.state] = by[s.state] || []).push(s));
+    const flips = new Set(dash.january.filter((x) => x.flip).map((x) => x.st));
+    const el = document.getElementById("tilemap");
+    let html = "";
+    for (let y = 0; y < 8; y++) for (let x = 0; x < 12; x++) {
+      const t = TILE.find((q) => q[1] === x && q[2] === y);
+      if (!t) { html += `<span></span>`; continue; }
+      const pair = (by[t[0]] || []).sort((a, b) => a.class - b.class);
+      const desc = pair.map((s) => `${s.name} (${pc(s.party)})`).join(", ");
+      html += `<a class="tile" href="#/state/${t[0]}" title="${esc(STATES[t[0]])}: ${esc(desc)}${flips.has(t[0]) ? ". A seat changes party in January." : ""}" aria-label="${esc(STATES[t[0]])}">
+        ${pair.map((s) => `<span style="background:${PCOLOR[pc(s.party)] || PCOLOR.I}"></span>`).join("")}<b>${t[0]}</b>${flips.has(t[0]) ? `<i class="flipdot"></i>` : ""}</a>`;
+    }
+    el.innerHTML = html;
   }
 
   /* ---------- Senator profile ---------- */

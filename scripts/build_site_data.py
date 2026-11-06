@@ -204,6 +204,7 @@ def main():
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
     build_elections(roster, now)
     build_issues(roster, vote_list, summaries, promises, statements, now)
+    build_dashboard(roster, index, promises, statements, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
           f"{len(money)} money records, {len(promises)} promises ({sum(1 for p in promises if p.get('verified'))} verified), "
           f"{len(statements)} statements ({sum(1 for x in statements if x.get('verified'))} verified)")
@@ -353,6 +354,98 @@ def build_issues(roster, vote_list, summaries, promises, statements, now):
     with open(D("issues_index.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "issues": listing}, f, separators=(",", ":"))
     print("Issues: " + ", ".join(f"{i['id']} ({i['votes']} votes, {i['promises']}p/{i['statements']}s)" for i in listing))
+
+
+STATE_NAMES = dict(x.split(":") for x in (
+    "AL:Alabama AK:Alaska AZ:Arizona AR:Arkansas CA:California CO:Colorado CT:Connecticut DE:Delaware FL:Florida GA:Georgia "
+    "HI:Hawaii ID:Idaho IL:Illinois IN:Indiana IA:Iowa KS:Kansas KY:Kentucky LA:Louisiana ME:Maine MD:Maryland MA:Massachusetts "
+    "MI:Michigan MN:Minnesota MS:Mississippi MO:Missouri MT:Montana NE:Nebraska NV:Nevada NH:New_Hampshire NJ:New_Jersey "
+    "NM:New_Mexico NY:New_York NC:North_Carolina ND:North_Dakota OH:Ohio OK:Oklahoma OR:Oregon PA:Pennsylvania RI:Rhode_Island "
+    "SC:South_Carolina SD:South_Dakota TN:Tennessee TX:Texas UT:Utah VT:Vermont VA:Virginia WA:Washington WV:West_Virginia "
+    "WI:Wisconsin WY:Wyoming").replace("_", "~").split()) 
+STATE_NAMES = {k: v.replace("~", " ") for k, v in STATE_NAMES.items()}
+
+
+def build_dashboard(roster, index, promises, statements, now):
+    """data/dashboard.json: chamber seats now and from January, promise totals, and factual insights."""
+    el = load(D("elections.json"), {"races": []})
+    P = lambda party: {"Democrat": "D", "Republican": "R", "DEM": "D", "DFL": "D", "REP": "R"}.get(party, "I")
+    by_holder = {r["seat_holder"]["bioguide"]: r for r in el["races"] if r.get("seat_holder")}
+    idx = {s["bioguide"]: s for s in index}
+    now_seats, jan_seats = [], []
+    for s in index:
+        now_seats.append({"b": s["bioguide"], "n": s["name"], "p": P(s["party"]), "st": s["state"],
+                          "c": s["next_election"], "a": s["metrics"].get("attendance")})
+        r = by_holder.get(s["bioguide"])
+        if not r:
+            jan_seats.append({"b": s["bioguide"], "n": s["name"], "p": P(s["party"]), "st": s["state"]})
+        elif r["status"] in ("called", "certified") and r.get("winner"):
+            w = next((n for n in r["nominees"] if n.get("won")), None)
+            stays = bool(w and w.get("bioguide") == s["bioguide"]) or last_name(r["winner"]) == last_name(s["name"])
+            jan_seats.append({"b": s["bioguide"] if stays else None, "n": r["winner"], "p": P(w["party"]) if w else "I",
+                              "st": s["state"], "new": not stays, "flip": bool(w) and P(w["party"]) != P(s["party"])})
+        else:
+            jan_seats.append({"b": None, "n": f"{s['state']}: not yet called", "p": "X", "st": s["state"], "uncalled": True})
+    cnt = lambda seats: {k: sum(1 for x in seats if x["p"] == k) for k in ("D", "R", "I", "X")}
+    cn, cj = cnt(now_seats), cnt(jan_seats)
+
+    # Promises
+    specific = [p for p in promises if p.get("specific")]
+    status = Counter(p.get("status") for p in promises)
+    prom = {"tracked": len(promises), "statements": len(statements), "specific": len(specific),
+            "kept": status["kept"], "in_progress": status["in_progress"], "compromise": status["compromise"],
+            "broken": status["broken"] + status["stalled"], "not_reviewed": status["not_started"],
+            "senators": len({p["bioguide"] for p in promises + statements})}
+
+    # Insights: plain facts computed from the data, never opinions.
+    ins = []
+    def add(text, href=None):
+        ins.append({"text": text, "href": href})
+    left_now, left_jan = cn["D"] + cn["I"], cj["D"] + cj["I"]
+    if cj["X"] < 100:
+        if (cn["R"] > 50) != (cj["R"] > 50) and max(cj["R"], left_jan) > 50:
+            add(f"**Senate control changes in January.** Republicans hold {cn['R']} seats now; based on called races, "
+                f"Democrats and independents will hold {left_jan}" + (f" ({cj['X']} races not yet called)." if cj["X"] else "."), "#/elections")
+        else:
+            add(f"From January: **{left_jan} Democrats and independents, {cj['R']} Republicans**"
+                + (f", with {cj['X']} races not yet called." if cj["X"] else "."), "#/elections")
+    lost = [s for s in index if (s.get("election") or {}).get("outcome") == "lost"]
+    if lost:
+        add(f"**{len(lost)} incumbent{'s' if len(lost) > 1 else ''} lost re-election:** "
+            + ", ".join(f"{x['name']} ({x['state']})" for x in lost) + ".", "#/elections")
+    flips = [x for x in jan_seats if x.get("flip")]
+    if flips:
+        add(f"**{len(flips)} seat{'s' if len(flips) > 1 else ''} change{'' if len(flips) > 1 else 's'} party** in January: "
+            + ", ".join(sorted({x['st'] for x in flips})) + ".", "#/elections")
+    leaving = [s for s in index if (s.get("election") or {}).get("outcome") in ("lost", "not_on_ballot")]
+    if leaving:
+        add(f"**{len(leaving)} senators leave in January**, and {sum(1 for x in jan_seats if x.get('new'))} new senators take their seats.", "#/elections")
+    races = [(r["state"], sum(n.get("receipts") or 0 for n in r["nominees"])) for r in el["races"] if r["nominees"]]
+    if races:
+        st_, amt = max(races, key=lambda t: t[1])
+        add(f"Most money raised in one race: **{STATE_NAMES.get(st_, st_)}**, ${amt / 1e6:,.0f}M across the nominees (FEC).", f"#/elections/{st_}")
+    perfect = [s for s in index if s["metrics"].get("attendance") == 100.0]
+    if perfect:
+        names = ", ".join(x["name"] for x in perfect[:4]) + (f" and {len(perfect) - 4} more" if len(perfect) > 4 else "")
+        add(f"**{len(perfect)} senator{'s' if len(perfect) > 1 else ''} haven't missed a roll-call vote** this Congress: {names}.",
+            f"#/s/{perfect[0]['bioguide']}" if len(perfect) == 1 else None)
+    uni = [s for s in index if s["metrics"].get("party_unity") is not None]
+    if uni:
+        lo = min(uni, key=lambda s: s["metrics"]["party_unity"])
+        add(f"**{lo['name']}** votes with their party least often: {lo['metrics']['party_unity']}% of the time.", f"#/s/{lo['bioguide']}")
+    resolved = prom["kept"] + prom["compromise"] + prom["broken"]
+    if resolved:
+        if prom["kept"] == resolved:
+            add(f"**All {resolved} promises resolved so far were kept**; {prom['in_progress']} more are in progress.")
+        else:
+            add(f"Of **{resolved} resolved promises**, {prom['kept']} were kept"
+                + (f" and {prom['broken']} broken or stalled." if prom["broken"] else ".")
+                + f" {prom['in_progress']} more are in progress.")
+
+    with open(D("dashboard.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "now": now_seats, "january": jan_seats, "count_now": cn, "count_jan": cj,
+                   "promises": prom, "insights": ins}, f, separators=(",", ":"))
+    print(f"Dashboard: now {cn}, January {cj}, {len(ins)} insights")
 
 RACE_STATUSES = {"counting", "called", "certified", "runoff", "recount"}
 
