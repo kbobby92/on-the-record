@@ -1778,6 +1778,90 @@
       "verified": false,
       "verified_by": null,
       "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-M001153-001",
+      "bioguide": "M001153",
+      "senator": "Lisa Murkowski",
+      "quote": "We need to act to end this shutdown, and I am going to call on all of my colleagues to stay here until we get it done.",
+      "source_url": "https://www.congress.gov/119/crec/2025/10/27/171/178/modified/CREC-2025-10-27-pt1-PgS7744-2.htm",
+      "archive_url": "",
+      "source_date": "2025-10-27",
+      "topic": "Government & ethics",
+      "promise": "Said she would call on colleagues to stay until the government shutdown ends.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-B001319-001",
+      "bioguide": "B001319",
+      "senator": "Katie Boyd Britt",
+      "quote": "I will work to make sure the people tasked with protecting the public from this poison have the resources they need to help.",
+      "source_url": "https://www.congress.gov/119/crec/2025/02/05/171/24/modified/CREC-2025-02-05-pt1-PgS610.htm",
+      "archive_url": "",
+      "source_date": "2025-02-05",
+      "topic": "Criminal justice",
+      "promise": "Said she will work to ensure people fighting fentanyl have the resources they need.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-B001236-001",
+      "bioguide": "B001236",
+      "senator": "John Boozman",
+      "quote": "We must make improvements to the farm safety net and farm bill programs to support today’s needs of the agriculture community so farmers can continue operations. As @SenateAgGOP Chairman, this remains my top priority.",
+      "source_url": "https://x.com/JohnBoozman/status/1895122620926042310",
+      "archive_url": "",
+      "source_date": "2025-02-27",
+      "topic": "Agriculture",
+      "promise": "Said improving the farm safety net and farm bill programs remains his top priority as Senate Ag GOP chair.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium"
+    },
+    {
+      "id": "p-G000574-001",
+      "bioguide": "G000574",
+      "senator": "Ruben Gallego",
+      "quote": "We cannot start 2026 sleepwalking into another illegal war. \n\nLet’s be clear about what’s happening: this is a regime-change operation in Venezuela that Congress never authorized.\n\nWhen the Senate returns, I will demand a vote.",
+      "source_url": "https://x.com/RubenGallego/status/2006037000827113812",
+      "archive_url": "",
+      "source_date": "2025-12-30",
+      "topic": "Defense & foreign policy",
+      "promise": "Said he will demand a Senate vote on Venezuela military action when the Senate returns.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-01-08",
+          "description": "The Senate voted on S.J.Res. 98, a war powers resolution on U.S. hostilities against Venezuela, in its first week back. Gallego voted yes to discharge it; the motion passed 52–47.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00005.htm"
+        },
+        {
+          "date": "2026-01-14",
+          "description": "Voted against the point of order that then blocked the resolution. The point of order was upheld on a 50–50 vote.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00009.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: medium",
+      "assessment": "Said he'd demand a vote when the Senate returned; a vote was held the first week back and he voted to advance the resolution. Whether he personally forced the vote isn't shown in the roll-call record. Assessed by Claude from Senate roll-call records."
     }
   ]
 }
