@@ -11,14 +11,18 @@
           "name": "Mary Peltola",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6AK00276"
+          "candidate_id": "S6AK00276",
+          "votes": 102962,
+          "pct": 48.2
         },
         {
           "name": "Dan Sullivan",
           "party": "REP",
           "incumbent": true,
           "bioguide": "S001198",
-          "candidate_id": "S4AK00214"
+          "candidate_id": "S4AK00214",
+          "votes": 102325,
+          "pct": 47.9
         },
         {
           "name": "Daniel J. Sullivan Jr.",
@@ -30,15 +34,21 @@
           "name": "Gerald Heikes",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S8AK00140"
+          "candidate_id": "S8AK00140",
+          "votes": 4846,
+          "pct": 2.3
         }
       ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Top-four ballot with ranked-choice voting; two candidates named Sullivan appear on it. Not called; as of Nov. 5 AP data showed Peltola ahead by roughly 600 votes with about 74% counted. Mailed ballots accepted for 10 days (15 from overseas); ranked-choice tabulation, if needed, cannot start before Nov. 18.",
-      "updated": "2026-11-06T12:44:55Z"
+      "notes": "Top-four ballot with ranked-choice voting; two candidates named Sullivan appear on it. Not called. Mailed ballots accepted for 10 days (15 from overseas); ranked-choice tabulation, if needed, cannot start before Nov. 18. Source table does not list Daniel J. Sullivan Jr. separately.",
+      "updated": "2026-11-07T17:38:38Z",
+      "counted_pct": 70,
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/alaska-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "AL": {
       "seat_holder": "T000278",
@@ -48,13 +58,17 @@
           "name": "Barry Moore",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6AL00476"
+          "candidate_id": "S6AL00476",
+          "votes": 917914,
+          "pct": 54.8
         },
         {
           "name": "Everett Wess",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6AL00518"
+          "candidate_id": "S6AL00518",
+          "votes": 758480,
+          "pct": 45.2
         }
       ],
       "winner": "Barry Moore",
@@ -62,7 +76,10 @@
       "called_at": "2026-11-04T04:17Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-barry-moore-wins-election-to-u-s-senate-from-alabama/",
       "notes": "",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/alabama-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "AR": {
       "seat_holder": "C001095",
@@ -72,13 +89,26 @@
           "name": "Tom Cotton",
           "party": "REP",
           "incumbent": true,
-          "bioguide": "C001095"
+          "bioguide": "C001095",
+          "votes": 480860,
+          "pct": 54.2,
+          "candidate_id": "S4AR00103"
         },
         {
           "name": "Hallie Shoffner",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6AR00199"
+          "candidate_id": "S6AR00199",
+          "votes": 375821,
+          "pct": 42.4
+        },
+        {
+          "name": "Jeff Wadlin",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S6AR00223",
+          "votes": 30164,
+          "pct": 3.4
         }
       ],
       "winner": "Tom Cotton",
@@ -86,7 +116,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://foxnews.com/elections/2026/midterm-results/senate",
       "notes": "Exact call time not reported.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/arkansas-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "CO": {
       "seat_holder": "H000273",
@@ -97,13 +130,25 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "H000273",
-          "candidate_id": "S0CO00575"
+          "candidate_id": "S0CO00575",
+          "votes": 1606858,
+          "pct": 60.4
         },
         {
           "name": "Mark Baisley",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6CO00507"
+          "candidate_id": "S6CO00507",
+          "votes": 932096,
+          "pct": 35.1
+        },
+        {
+          "name": "Robert Chew",
+          "party": "FWD",
+          "incumbent": false,
+          "candidate_id": "S6CO00549",
+          "votes": 69999,
+          "pct": 2.6
         }
       ],
       "winner": "John Hickenlooper",
@@ -111,7 +156,10 @@
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-john-hickenlooper-wins-reelection-to-u-s-senate-from-colorado/",
       "notes": "CBS News also projected Hickenlooper.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-07T01:10-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/colorado-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "DE": {
       "seat_holder": "C001088",
@@ -122,13 +170,17 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "C001088",
-          "candidate_id": "S0DE00092"
+          "candidate_id": "S0DE00092",
+          "votes": 240347,
+          "pct": 63.6
         },
         {
           "name": "Michael Katz",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6DE00206"
+          "candidate_id": "S6DE00206",
+          "votes": 137764,
+          "pct": 36.4
         }
       ],
       "winner": "Chris Coons",
@@ -136,7 +188,10 @@
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-chris-coons-wins-reelection-to-u-s-senate-from-delaware/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/delaware-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "FL": {
       "seat_holder": "M001244",
@@ -147,13 +202,24 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "M001244",
-          "candidate_id": "S6FL00640"
+          "candidate_id": "S6FL00640",
+          "votes": 4210358,
+          "pct": 50.9
         },
         {
           "name": "Angie Nixon",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6FL00830"
+          "candidate_id": "S6FL00830",
+          "votes": 3973037,
+          "pct": 48.0
+        },
+        {
+          "name": "Neil Gillespie",
+          "party": "IND",
+          "incumbent": false,
+          "votes": 94634,
+          "pct": 1.1
         }
       ],
       "winner": "Ashley Moody",
@@ -161,7 +227,10 @@
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://townhall.com/news/dmitri-bolt/2026/11/03/florida-senate-race-n2685851",
       "notes": "Special election. Source page embeds the DDHQ call post.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T19:34-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/florida-us-senate-special-election-general",
+      "results_source_name": "Decision Desk HQ"
     },
     "GA": {
       "seat_holder": "O000174",
@@ -171,12 +240,18 @@
           "name": "Jon Ossoff",
           "party": "DEM",
           "incumbent": true,
-          "bioguide": "O000174"
+          "bioguide": "O000174",
+          "votes": 2466265,
+          "pct": 59.0,
+          "candidate_id": "S8GA00180"
         },
         {
           "name": "Mike Collins",
           "party": "REP",
-          "incumbent": false
+          "incumbent": false,
+          "votes": 1712061,
+          "pct": 41.0,
+          "candidate_id": "S6GA00390"
         }
       ],
       "winner": "Jon Ossoff",
@@ -184,7 +259,10 @@
       "called_at": "2026-11-04T00:18Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117773436718137533",
       "notes": "CBS News also projected Ossoff.",
-      "updated": "2026-11-04T01:52:49Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T13:01-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/georgia-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "IA": {
       "seat_holder": "E000295",
@@ -194,13 +272,25 @@
           "name": "Ashley Hinson",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6IA00314"
+          "candidate_id": "S6IA00314",
+          "votes": 630798,
+          "pct": 46.4
         },
         {
           "name": "Josh Turek",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6IA00298"
+          "candidate_id": "S6IA00298",
+          "votes": 686634,
+          "pct": 50.5
+        },
+        {
+          "name": "Thomas Laehn",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S6IA00181",
+          "votes": 42090,
+          "pct": 3.1
         }
       ],
       "winner": "Josh Turek",
@@ -208,7 +298,10 @@
       "called_at": "2026-11-04T04:35Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-josh-turek-wins-election-to-u-s-senate-from-iowa/",
       "notes": "",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T13:35-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/iowa-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "ID": {
       "seat_holder": "R000584",
@@ -219,13 +312,24 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "R000584",
-          "candidate_id": "S8ID00092"
+          "candidate_id": "S8ID00092",
+          "votes": 401731,
+          "pct": 56.5
         },
         {
           "name": "Todd Achilles",
           "party": "IND",
           "incumbent": false,
-          "candidate_id": "S6ID00146"
+          "candidate_id": "S6ID00146",
+          "votes": 238348,
+          "pct": 33.5
+        },
+        {
+          "name": "Natalie Fleming",
+          "party": "IND",
+          "incumbent": false,
+          "votes": 49927,
+          "pct": 7.0
         }
       ],
       "winner": "Jim Risch",
@@ -233,7 +337,10 @@
       "called_at": "2026-11-04T06:31Z",
       "source_url": "https://www.yahoo.com/news/politics/articles/republican-jim-risch-wins-reelection-063216005.html",
       "notes": "No Democratic nominee; minor-party candidates also on the ballot.",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/idaho-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "IL": {
       "seat_holder": "D000563",
@@ -243,13 +350,25 @@
           "name": "Juliana Stratton",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6IL00458"
+          "candidate_id": "S6IL00458",
+          "votes": 2408498,
+          "pct": 60.9
         },
         {
           "name": "Don Tracy",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6IL00615"
+          "candidate_id": "S6IL00615",
+          "votes": 1486461,
+          "pct": 37.6
+        },
+        {
+          "name": "Whitfield Harrington Jr.",
+          "party": "IND",
+          "incumbent": false,
+          "candidate_id": "S6IL00680",
+          "votes": 62439,
+          "pct": 1.6
         }
       ],
       "winner": "Juliana Stratton",
@@ -257,7 +376,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
       "notes": "NBC News also projected Stratton. Exact call time not reported.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T17:04-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/illinois-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "KS": {
       "seat_holder": "M001198",
@@ -268,13 +390,25 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "M001198",
-          "candidate_id": "S0KS00315"
+          "candidate_id": "S0KS00315",
+          "votes": 505559,
+          "pct": 46.0
         },
         {
           "name": "Adam Hamilton",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6KS00312"
+          "candidate_id": "S6KS00312",
+          "votes": 561148,
+          "pct": 51.0
+        },
+        {
+          "name": "David Graham",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S2KS00154",
+          "votes": 33396,
+          "pct": 3.0
         }
       ],
       "winner": "Adam Hamilton",
@@ -282,7 +416,10 @@
       "called_at": "2026-11-04T04:24Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-adam-hamilton-wins-election-to-u-s-senate-from-kansas/",
       "notes": "Decision Desk HQ also projected Hamilton.",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-07T05:47-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/kansas-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "KY": {
       "seat_holder": "M000355",
@@ -291,13 +428,25 @@
         {
           "name": "Andy Barr",
           "party": "REP",
-          "incumbent": false
+          "incumbent": false,
+          "votes": 784181,
+          "pct": 55.0,
+          "candidate_id": "S6KY00286"
         },
         {
           "name": "Charles Booker",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6KY00385"
+          "candidate_id": "S6KY00385",
+          "votes": 612397,
+          "pct": 42.9
+        },
+        {
+          "name": "Christopher Campbell",
+          "party": "IND",
+          "incumbent": false,
+          "votes": 29957,
+          "pct": 2.1
         }
       ],
       "winner": "Andy Barr",
@@ -305,7 +454,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.bloomberg.com/news/articles/2026-11-04/republican-barr-wins-kentucky-senate-race-ddhq-projects",
       "notes": "Exact call time not reported.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T22:01-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/kentucky-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "LA": {
       "seat_holder": "C001075",
@@ -315,13 +467,17 @@
           "name": "Julia Letlow",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6LA00664"
+          "candidate_id": "S6LA00664",
+          "votes": 745963,
+          "pct": 50.9
         },
         {
           "name": "Jamie Davis",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6LA00615"
+          "candidate_id": "S6LA00615",
+          "votes": 720106,
+          "pct": 49.1
         }
       ],
       "winner": "Julia Letlow",
@@ -329,7 +485,10 @@
       "called_at": "2026-11-04T05:31Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-julia-letlow-wins-election-to-u-s-senate-from-louisiana/",
       "notes": "",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/louisiana-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "MA": {
       "seat_holder": "M000133",
@@ -340,13 +499,25 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "M000133",
-          "candidate_id": "S4MA00028"
+          "candidate_id": "S4MA00028",
+          "votes": 1606277,
+          "pct": 63.5
         },
         {
           "name": "John Deaton",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6MA00304"
+          "candidate_id": "S6MA00304",
+          "votes": 811583,
+          "pct": 32.1
+        },
+        {
+          "name": "Shiva Ayyadurai",
+          "party": "IND",
+          "incumbent": false,
+          "candidate_id": "S8MA00268",
+          "votes": 57773,
+          "pct": 2.3
         }
       ],
       "winner": "Ed Markey",
@@ -354,7 +525,11 @@
       "called_at": "2026-11-04T01:01Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-edward-markey-wins-reelection-to-u-s-senate-from-massachusetts/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "counted_pct": 92,
+      "results_as_of": "2026-11-05T18:12-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/massachusetts-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "ME": {
       "seat_holder": "C001035",
@@ -365,21 +540,28 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "C001035",
-          "candidate_id": "S6ME00159"
+          "candidate_id": "S6ME00159",
+          "votes": 332686,
+          "pct": 46.3
         },
         {
           "name": "Troy Jackson",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6ME00464"
+          "candidate_id": "S6ME00464",
+          "votes": 376187,
+          "pct": 52.4
         }
       ],
       "winner": "Troy Jackson",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T06:02Z",
       "source_url": "https://www.ckom.com/2026/11/04/democrat-troy-jackson-wins-election-to-u-s-senate-from-maine/",
-      "notes": "Ranked-choice voting. Collins conceded.",
-      "updated": "2026-11-04T06:48:34Z"
+      "notes": "Ranked-choice voting; Jackson won a first-round majority, so no further rounds. Collins conceded.",
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T11:11-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/maine-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "MI": {
       "seat_holder": "P000595",
@@ -389,13 +571,25 @@
           "name": "Mike Rogers",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S4MI00595"
+          "candidate_id": "S4MI00595",
+          "votes": 2180541,
+          "pct": 45.5
         },
         {
           "name": "Abdul El-Sayed",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6MI00418"
+          "candidate_id": "S6MI00418",
+          "votes": 2520388,
+          "pct": 52.5
+        },
+        {
+          "name": "Lydia Christensen",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S6MI00442",
+          "votes": 49733,
+          "pct": 1.0
         }
       ],
       "winner": "Abdul El-Sayed",
@@ -403,7 +597,10 @@
       "called_at": "2026-11-04T06:15Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117863335920296120",
       "notes": "",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T16:53-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/michigan-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "MN": {
       "seat_holder": "S001203",
@@ -413,13 +610,24 @@
           "name": "Peggy Flanagan",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6MN00440"
+          "candidate_id": "S6MN00440",
+          "votes": 1521331,
+          "pct": 53.8
         },
         {
           "name": "Michele Tafoya",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6MN00556"
+          "candidate_id": "S6MN00556",
+          "votes": 1233498,
+          "pct": 43.6
+        },
+        {
+          "name": "Marisa Simonetti",
+          "party": "IND",
+          "incumbent": false,
+          "votes": 41588,
+          "pct": 1.5
         }
       ],
       "winner": "Peggy Flanagan",
@@ -427,7 +635,10 @@
       "called_at": "2026-11-04T05:07Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-peggy-flanagan-wins-election-to-u-s-senate-from-minnesota/",
       "notes": "CBS News also projected Flanagan.",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/minnesota-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "MS": {
       "seat_holder": "H001079",
@@ -438,27 +649,36 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "H001079",
-          "candidate_id": "S8MS00261"
+          "candidate_id": "S8MS00261",
+          "votes": 465643,
+          "pct": 48.8
         },
         {
           "name": "Scott Colom",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6MS00133"
+          "candidate_id": "S6MS00133",
+          "votes": 468339,
+          "pct": 49.1
         },
         {
           "name": "Ty Pinkins",
           "party": "IND",
           "incumbent": false,
-          "candidate_id": "S4MS00187"
+          "candidate_id": "S4MS00187",
+          "votes": 20043,
+          "pct": 2.1
         }
       ],
       "winner": null,
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Not called; no listed outlet has projected a winner. AP data as of midday Nov. 6 showed Colom ahead by 2,010 votes (49.1% to 48.8%). Affidavit ballots still being counted; mail ballots may arrive and ID cures are due by Nov. 10; counties certify by Nov. 13. Mississippi has no recount law. Plurality wins; no runoff in this regular election.",
-      "updated": "2026-11-06T18:45:01Z"
+      "notes": "Not called; no listed outlet has projected a winner. Affidavit and late mail ballots still being counted; mail ballots and ID cures are due by Nov. 10 and counties certify by Nov. 13. Mississippi has no recount law; plurality wins.",
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T19:41-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/mississippi-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "MT": {
       "seat_holder": "D000618",
@@ -468,19 +688,25 @@
           "name": "Kurt Alme",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6MT00295"
+          "candidate_id": "S6MT00295",
+          "votes": 232916,
+          "pct": 48.3
         },
         {
           "name": "Alani Bankhead",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6MT00253"
+          "candidate_id": "S6MT00253",
+          "votes": 58562,
+          "pct": 12.2
         },
         {
           "name": "Seth Bodnar",
           "party": "IND",
           "incumbent": false,
-          "candidate_id": "S6MT00287"
+          "candidate_id": "S6MT00287",
+          "votes": 181674,
+          "pct": 37.7
         }
       ],
       "winner": "Kurt Alme",
@@ -488,7 +714,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.aol.com/articles/gop-alme-wins-montana-senate-061635000.html",
       "notes": "Sen. Steve Daines did not seek reelection. Bodnar conceded. AP had not called the race as of early Nov. 4. Exact call time not reported.",
-      "updated": "2026-11-04T09:45:23Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T00:17-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/montana-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "NC": {
       "seat_holder": "T000476",
@@ -498,13 +727,24 @@
           "name": "Roy Cooper",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6NC00407"
+          "candidate_id": "S6NC00407",
+          "votes": 2467963,
+          "pct": 58.7
         },
         {
           "name": "Michael Whatley",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6NC00415"
+          "candidate_id": "S6NC00415",
+          "votes": 1643088,
+          "pct": 39.1
+        },
+        {
+          "name": "Shannon Bray",
+          "party": "LIB",
+          "incumbent": false,
+          "votes": 57190,
+          "pct": 1.4
         }
       ],
       "winner": "Roy Cooper",
@@ -512,7 +752,10 @@
       "called_at": "2026-11-04T01:23Z",
       "source_url": "https://www.wbtv.com/2026/11/04/roy-cooper-wins-2026-us-senate-race-north-carolina-ap-projects/",
       "notes": "Decision Desk HQ also called it at the same time.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/north-carolina-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "NE": {
       "seat_holder": "R000618",
@@ -523,13 +766,24 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "R000618",
-          "candidate_id": "S6NE00129"
+          "candidate_id": "S6NE00129",
+          "votes": 373115,
+          "pct": 50.4
         },
         {
           "name": "Dan Osborn",
           "party": "IND",
           "incumbent": false,
-          "candidate_id": "S4NE00207"
+          "candidate_id": "S4NE00207",
+          "votes": 322625,
+          "pct": 43.6
+        },
+        {
+          "name": "Robin Richards",
+          "party": "OTH",
+          "incumbent": false,
+          "votes": 19064,
+          "pct": 2.6
         }
       ],
       "winner": "Pete Ricketts",
@@ -537,7 +791,10 @@
       "called_at": "2026-11-04T08:27Z",
       "source_url": "https://www.kjct8.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
       "notes": "No Democratic nominee; minor-party candidates also on the ballot. CBS News and NBC News also projected Ricketts.",
-      "updated": "2026-11-04T09:45:23Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T12:09-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/nebraska-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "NH": {
       "seat_holder": "S001181",
@@ -547,13 +804,25 @@
           "name": "Chris Pappas",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6NH00141"
+          "candidate_id": "S6NH00141",
+          "votes": 331682,
+          "pct": 56.4
         },
         {
           "name": "John E. Sununu",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6NH00208"
+          "candidate_id": "S6NH00208",
+          "votes": 244938,
+          "pct": 41.7
+        },
+        {
+          "name": "Edmond Laplante",
+          "party": "CON",
+          "incumbent": false,
+          "candidate_id": "S2NH00223",
+          "votes": 11059,
+          "pct": 1.9
         }
       ],
       "winner": "Chris Pappas",
@@ -561,7 +830,11 @@
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117784016719954261",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "counted_pct": 91,
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/new-hampshire-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "NJ": {
       "seat_holder": "B001288",
@@ -572,13 +845,24 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "B001288",
-          "candidate_id": "S4NJ00185"
+          "candidate_id": "S4NJ00185",
+          "votes": 1819769,
+          "pct": 62.3
         },
         {
           "name": "Justin Murphy",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S4NJ00532"
+          "candidate_id": "S4NJ00532",
+          "votes": 1023549,
+          "pct": 35.1
+        },
+        {
+          "name": "Veronica Fernandez",
+          "party": "IND",
+          "incumbent": false,
+          "votes": 48275,
+          "pct": 1.7
         }
       ],
       "winner": "Cory Booker",
@@ -586,7 +870,11 @@
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-cory-booker-wins-reelection-to-u-s-senate-from-new-jersey/",
       "notes": "ABC News also projected Booker.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "counted_pct": 96,
+      "results_as_of": "2026-11-07T12:28-05:00",
+      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/new-jersey",
+      "results_source_name": "Associated Press via Fox News"
     },
     "NM": {
       "seat_holder": "L000570",
@@ -597,13 +885,17 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "L000570",
-          "candidate_id": "S0NM00058"
+          "candidate_id": "S0NM00058",
+          "votes": 458007,
+          "pct": 63.2
         },
         {
           "name": "Larry Marker",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6NM01186"
+          "candidate_id": "S6NM01186",
+          "votes": 266260,
+          "pct": 36.8
         }
       ],
       "winner": "Ben Ray Luján",
@@ -611,7 +903,10 @@
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-ben-lujan-wins-reelection-to-u-s-senate-from-new-mexico/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/new-mexico-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "OH": {
       "seat_holder": "H001104",
@@ -622,13 +917,25 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "H001104",
-          "candidate_id": "S6OH00304"
+          "candidate_id": "S6OH00304",
+          "votes": 2077750,
+          "pct": 45.2
         },
         {
           "name": "Sherrod Brown",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6OH00163"
+          "candidate_id": "S6OH00163",
+          "votes": 2301042,
+          "pct": 50.0
+        },
+        {
+          "name": "William Redpath",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S6OH00429",
+          "votes": 128272,
+          "pct": 2.8
         }
       ],
       "winner": "Sherrod Brown",
@@ -636,7 +943,10 @@
       "called_at": "2026-11-04T04:10Z",
       "source_url": "https://gvwire.com/2026/11/03/sherrod-brown-wins-ohio-senate-special-election-ap-says/",
       "notes": "Special election. CBS News also projected Brown.",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/ohio-us-senate-special-election-general",
+      "results_source_name": "Decision Desk HQ"
     },
     "OK": {
       "seat_holder": "A000383",
@@ -646,13 +956,24 @@
           "name": "Kevin Hern",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6OK04247"
+          "candidate_id": "S6OK04247",
+          "votes": 639510,
+          "pct": 57.2
         },
         {
           "name": "N'Kiyla Thomas",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6OK04163"
+          "candidate_id": "S6OK04163",
+          "votes": 439109,
+          "pct": 39.3
+        },
+        {
+          "name": "Curtis Stinnett",
+          "party": "IND",
+          "incumbent": false,
+          "votes": 14622,
+          "pct": 1.3
         }
       ],
       "winner": "Kevin Hern",
@@ -660,7 +981,10 @@
       "called_at": "2026-11-04T02:36Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-kevin-hern-wins-election-to-u-s-senate-from-oklahoma/",
       "notes": "Appointed Sen. Alan Armstrong was not on the ballot.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oklahoma-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "OR": {
       "seat_holder": "M001176",
@@ -671,13 +995,24 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "M001176",
-          "candidate_id": "S8OR00207"
+          "candidate_id": "S8OR00207",
+          "votes": 864436,
+          "pct": 56.6
         },
         {
           "name": "David Brock Smith",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6OR05218"
+          "candidate_id": "S6OR05218",
+          "votes": 619295,
+          "pct": 40.6
+        },
+        {
+          "name": "Chris Henry",
+          "party": "GRE",
+          "incumbent": false,
+          "votes": 28849,
+          "pct": 1.9
         }
       ],
       "winner": "Jeff Merkley",
@@ -685,7 +1020,10 @@
       "called_at": "2026-11-04T04:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-jeff-merkley-wins-reelection-to-u-s-senate-from-oregon/",
       "notes": "Decision Desk HQ also projected Merkley.",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oregon-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "RI": {
       "seat_holder": "R000122",
@@ -695,13 +1033,26 @@
           "name": "Jack Reed",
           "party": "DEM",
           "incumbent": true,
-          "bioguide": "R000122"
+          "bioguide": "R000122",
+          "votes": 238971,
+          "pct": 66.8,
+          "candidate_id": "S6RI00163"
         },
         {
           "name": "Raymond McKay",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S4RI00051"
+          "candidate_id": "S4RI00051",
+          "votes": 105126,
+          "pct": 29.4
+        },
+        {
+          "name": "Michael Bahry",
+          "party": "IND",
+          "incumbent": false,
+          "candidate_id": "S6RI00288",
+          "votes": 13491,
+          "pct": 3.8
         }
       ],
       "winner": "Jack Reed",
@@ -709,7 +1060,10 @@
       "called_at": "2026-11-04T01:01Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-john-reed-wins-reelection-to-u-s-senate-from-rhode-island/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/rhode-island-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "SC": {
       "seat_holder": "G000608",
@@ -720,13 +1074,25 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "G000608",
-          "candidate_id": "S6SC04437"
+          "candidate_id": "S6SC04437",
+          "votes": 951951,
+          "pct": 46.8
         },
         {
           "name": "Annie Andrews",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6SC04239"
+          "candidate_id": "S6SC04239",
+          "votes": 1043516,
+          "pct": 51.3
+        },
+        {
+          "name": "Kasie Whitener",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S6SC04247",
+          "votes": 23592,
+          "pct": 1.2
         }
       ],
       "winner": "Annie Andrews",
@@ -734,7 +1100,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.foxcarolina.com/2026/11/04/annie-andrews-projected-win-us-senate-race-flipping-south-carolina-seat-blue/",
       "notes": "Decision Desk HQ and CBS News also projected Andrews. Exact call time not reported.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T16:08-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/south-carolina-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "SD": {
       "seat_holder": "R000605",
@@ -745,13 +1114,17 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "R000605",
-          "candidate_id": "S4SD00049"
+          "candidate_id": "S4SD00049",
+          "votes": 184589,
+          "pct": 60.5
         },
         {
           "name": "Brian Bengs",
           "party": "IND",
           "incumbent": false,
-          "candidate_id": "S6SD01117"
+          "candidate_id": "S6SD01117",
+          "votes": 120509,
+          "pct": 39.5
         }
       ],
       "winner": "Mike Rounds",
@@ -759,7 +1132,10 @@
       "called_at": "2026-11-04T05:02Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-mike-rounds-wins-reelection-to-u-s-senate-from-south-dakota/",
       "notes": "",
-      "updated": "2026-11-04T06:48:34Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:57-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/south-dakota-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "TN": {
       "seat_holder": "H000601",
@@ -770,13 +1146,17 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "H000601",
-          "candidate_id": "S0TN00169"
+          "candidate_id": "S0TN00169",
+          "votes": 1138436,
+          "pct": 55.1
         },
         {
           "name": "Marquita Bradshaw",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S4TN00542"
+          "candidate_id": "S4TN00542",
+          "votes": 886988,
+          "pct": 42.9
         }
       ],
       "winner": "Bill Hagerty",
@@ -784,7 +1164,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.wsmv.com/2026/11/04/hagerty-serve-second-us-senate-term-after-defeating-democrat-bradshaw/",
       "notes": "Fox News also shows the race called. Exact call time not reported.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-07T12:25-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/tennessee-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "TX": {
       "seat_holder": "C001056",
@@ -793,21 +1176,37 @@
         {
           "name": "Ken Paxton",
           "party": "REP",
-          "incumbent": false
+          "incumbent": false,
+          "votes": 4250352,
+          "pct": 43.0,
+          "candidate_id": "S6TX00388"
         },
         {
           "name": "James Talarico",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6TX00479"
+          "candidate_id": "S6TX00479",
+          "votes": 5446338,
+          "pct": 55.1
+        },
+        {
+          "name": "Ted Brown",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S4TX00888",
+          "votes": 190561,
+          "pct": 1.9
         }
       ],
       "winner": "James Talarico",
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T03:14Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117817837893104086",
-      "notes": "Other listed organizations had not yet called the race at the time of this update.",
-      "updated": "2026-11-04T03:46:41Z"
+      "notes": "NBC News also projected Talarico.",
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T16:50-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/texas-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "VA": {
       "seat_holder": "W000805",
@@ -818,13 +1217,17 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "W000805",
-          "candidate_id": "S6VA00093"
+          "candidate_id": "S6VA00093",
+          "votes": 2190392,
+          "pct": 61.2
         },
         {
           "name": "Bert Mizusawa",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S8VA00321"
+          "candidate_id": "S8VA00321",
+          "votes": 1388958,
+          "pct": 38.8
         }
       ],
       "winner": "Mark Warner",
@@ -832,7 +1235,10 @@
       "called_at": "2026-11-04T00:00Z",
       "source_url": "https://www.fox5dc.com/news/va-senate-election-mark-warner-fourth-term",
       "notes": "Also projected by DDHQ, NBC News and CNN.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-06T00:24-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/virginia-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "WV": {
       "seat_holder": "C001047",
@@ -843,13 +1249,25 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "C001047",
-          "candidate_id": "S4WV00159"
+          "candidate_id": "S4WV00159",
+          "votes": 266068,
+          "pct": 58.3
         },
         {
           "name": "Rachel Fetty Anderson",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6WV00188"
+          "candidate_id": "S6WV00188",
+          "votes": 172922,
+          "pct": 37.9
+        },
+        {
+          "name": "S. Marshall Wilson",
+          "party": "CON",
+          "incumbent": false,
+          "candidate_id": "S6WV00204",
+          "votes": 17139,
+          "pct": 3.8
         }
       ],
       "winner": "Shelley Moore Capito",
@@ -857,7 +1275,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.wsaz.com/2026/11/04/us-sen-shelley-moore-capito-wins-reelection/",
       "notes": "Decision Desk HQ also called it. Exact call time not reported.",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/west-virginia-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     },
     "WY": {
       "seat_holder": "L000571",
@@ -867,13 +1288,17 @@
           "name": "Harriet Hageman",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6WY00209"
+          "candidate_id": "S6WY00209",
+          "votes": 122157,
+          "pct": 65.2
         },
         {
           "name": "James Byrd",
           "party": "DEM",
           "incumbent": false,
-          "candidate_id": "S6WY00217"
+          "candidate_id": "S6WY00217",
+          "votes": 65097,
+          "pct": 34.8
         }
       ],
       "winner": "Harriet Hageman",
@@ -881,7 +1306,10 @@
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-harriet-hageman-wins-election-to-u-s-senate-from-wyoming/",
       "notes": "",
-      "updated": "2026-11-04T03:46:41Z"
+      "updated": "2026-11-07T17:38:38Z",
+      "results_as_of": "2026-11-05T16:55-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/wyoming-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ"
     }
   }
 }
