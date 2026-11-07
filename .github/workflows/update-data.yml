@@ -73,6 +73,14 @@ jobs:
           FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
         run: python scripts/fetch_candidates.py
 
+      - name: Sponsored and cosponsored bills
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 30
+        env:
+          CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+        run: python scripts/fetch_bills.py
+
       - name: Lobbying (weekly)
         if: github.event_name != 'push'
         continue-on-error: true
