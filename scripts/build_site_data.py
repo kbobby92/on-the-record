@@ -568,14 +568,24 @@ def build_elections(roster, now):
                              "incumbent": bool(n.get("incumbent")), "bioguide": n.get("bioguide"),
                              "receipts": (c or {}).get("receipts"), "cash_on_hand": (c or {}).get("cash_on_hand"),
                              "through": (c or {}).get("through"), "fec": (c or {}).get("source"),
-                             "outside": (c or {}).get("outside")})
-        nominees.sort(key=lambda n: -(n["receipts"] or 0))
+                             "outside": (c or {}).get("outside"),
+                             "votes": n.get("votes") if isinstance(n.get("votes"), int) else None,
+                             "pct": n.get("pct") if isinstance(n.get("pct"), (int, float)) else None})
+        has_votes = any(n["votes"] is not None or n["pct"] is not None for n in nominees)
+        nominees.sort(key=(lambda n: (-(n["pct"] or 0), -(n["votes"] or 0))) if has_votes else (lambda n: -(n["receipts"] or 0)))
         if status in ("called", "certified") and r.get("winner"):
             for n in nominees:
                 n["won"] = last_name(n["name"] or "") == last_name(r["winner"])
         filers = sorted([c for c in cands["candidates"] if c["state"] == st and (c.get("receipts") or 0) >= 5000],
                         key=lambda c: -(c["receipts"] or 0))
         holder = by_bio.get(r.get("seat_holder"))
+        results = None
+        if has_votes:
+            shown = [n for n in nominees if n["pct"] is not None]
+            results = {"counted_pct": r.get("counted_pct"), "as_of": r.get("results_as_of"),
+                       "source": r.get("results_source"), "source_name": r.get("results_source_name"),
+                       "margin": round(shown[0]["pct"] - shown[1]["pct"], 1) if len(shown) > 1 else None,
+                       "total_votes": sum(n["votes"] or 0 for n in nominees) or None}
         out.append({
             "state": st, "status": status,
             "seat_holder": {k: holder[k] for k in ("bioguide", "name", "party")} if holder else None,
@@ -583,7 +593,7 @@ def build_elections(roster, now):
             "called_by": r.get("called_by") if status in ("called", "certified") else None,
             "called_at": r.get("called_at"), "source_url": r.get("source_url"),
             "notes": r.get("notes"), "updated": r.get("updated"),
-            "nominees": nominees,
+            "nominees": nominees, "results": results, "certify_by": r.get("certify_by"),
             "filers": [{k: c[k] for k in ("party", "status", "receipts", "cash_on_hand", "through", "source")}
                        | {"name": fec_name(c["name"])} for c in filers[:10]],
         })
@@ -603,15 +613,39 @@ def build_elections(roster, now):
         if r["status"] in ("called", "certified"):
             w = next((n for n in r["nominees"] if n.get("won")), None)
             called[side(w["party"]) if w else "I"] += 1
+    # Seats changing party, and whether the bigger fundraiser won.
+    hold_side = lambda h: "D" if h["party"] == "Democrat" else "R" if h["party"] == "Republican" else "I"
+    flips, net = [], {"D": 0, "R": 0, "I": 0}
+    for r in out:
+        w = next((n for n in r["nominees"] if n.get("won")), None)
+        r["flip"] = None
+        if w and r["seat_holder"]:
+            a, b = hold_side(r["seat_holder"]), side(w["party"])
+            if a != b:
+                r["flip"] = {"from": a, "to": b}
+                flips.append({"state": r["state"], "from": a, "to": b, "winner": r["winner"]})
+                net[a] -= 1; net[b] += 1
+        raised = [n for n in r["nominees"] if n.get("receipts")]
+        if w and len(raised) >= 2:
+            top = max(raised, key=lambda n: n["receipts"])
+            r["money_won"] = top is w
+    closest = sorted([{"state": r["state"], "margin": r["results"]["margin"], "status": r["status"]} for r in out
+                      if r.get("results") and r["results"].get("margin") is not None], key=lambda x: x["margin"])[:5]
+    money_won = [r["money_won"] for r in out if "money_won" in r]
     caucus_d = sum(1 for s_ in roster if s_["bioguide"] not in up_holders and s_["party"] == "Independent"
                    and (s_.get("caucus") or "Democrat") == "Democrat")
     balance = {"not_up": not_up, "called": called, "independents_caucus_with_d": caucus_d,
                "uncalled": sum(1 for r in out if r["status"] not in ("called", "certified")),
                "total": sum(not_up.values()) + len(out)}
+    summary = {"flips": flips, "net": net, "closest": closest,
+               "counting": [r["state"] for r in out if r["status"] not in ("called", "certified")],
+               "certified": sum(1 for r in out if r["status"] == "certified"),
+               "with_votes": sum(1 for r in out if r.get("results")),
+               "money_won": {"yes": sum(money_won), "of": len(money_won)}}
 
     with open(D("elections.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "year": races.get("year"), "balance": balance, "election_day": races.get("election_day"),
-                   "money_through": cands.get("fetched"), "races": out}, f, separators=(",", ":"))
+                   "money_through": cands.get("fetched"), "summary": summary, "races": out}, f, separators=(",", ":"))
     print(f"Elections: {len(out)} races, {sum(1 for r in out if r['status'] in ('called', 'certified'))} called")
 
 

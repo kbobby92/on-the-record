@@ -606,41 +606,61 @@
   const fecParty = (p) => ({ DEM: "D", REP: "R", IND: "I", DFL: "D" }[p] || (p ? "O" : "?"));
   const fmtWhen = (t) => { if (!t) return ""; const d = new Date(t); return isNaN(d) ? esc(t) : d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
 
+  const SIDE_NAME = { D: "Democrats", R: "Republicans", I: "Independents" };
   async function elections(focus) {
     nav("elections");
     const d = await get("data/elections.json");
+    const S = d.summary || { flips: [], net: {}, closest: [], counting: [], money_won: { yes: 0, of: 0 } };
     const counts = d.races.reduce((a, r) => ((a[r.status] = (a[r.status] || 0) + 1), a), {});
     const filt = { v: "all" };
+    const stName = (st) => esc(STATES[st] || st);
+    const netLine = Object.entries(S.net || {}).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([p, n]) => `${SIDE_NAME[p]} ${n > 0 ? "+" : "−"}${Math.abs(n)}`).join(", ");
     app.innerHTML = `
       <h1>${d.year} Senate elections</h1>
-      <p class="lede">Every Senate race on the ballot, who's running and what they've raised. A race is only marked called once a named news organization projects a winner, with a link to that call.</p>
+      <p class="lede">Results for every Senate race on the ballot: who won, by how much, and which seats change party. A race is only marked called once a named news organization projects a winner, with a link to that call.</p>
       ${balanceBar(d.balance)}
-      <div class="metrics">
-        <div class="metric"><div class="lbl">Races</div><div class="val">${d.races.length}</div><div class="how">Seats on the ${d.year} ballot</div></div>
-        <div class="metric"><div class="lbl">Called</div><div class="val">${(counts.called || 0) + (counts.certified || 0)}</div><div class="how">${counts.certified || 0} certified by the state</div></div>
-        <div class="metric"><div class="lbl">Still counting</div><div class="val">${counts.counting || 0}</div><div class="how">${(counts.runoff || 0) + (counts.recount || 0)} in a runoff or recount</div></div>
+      <div class="el-sum">
+        <section class="panel"><p class="ph">Seats that flip</p>
+          <div class="bignum sm">${S.flips.length}</div>
+          ${S.flips.length ? `<p class="muted small" style="margin:0 0 8px">Net change: ${netLine}</p><ul class="flips">${S.flips.map((f) => `<li><a href="#/elections/${f.state}" data-jump="${f.state}"><b>${stName(f.state)}</b><span class="fl"><i class="p-${f.from}"></i>→<i class="p-${f.to}"></i></span><span class="muted">${esc(f.winner)}</span></a></li>`).join("")}</ul>`
+            : `<p class="muted small">No called race has changed a seat's party yet.</p>`}
+        </section>
+        <section class="panel"><p class="ph">Closest races</p>
+          ${S.closest.length ? `<ul class="flips">${S.closest.map((c) => `<li><a href="#/elections/${c.state}" data-jump="${c.state}"><b>${stName(c.state)}</b><span class="mono">${c.margin.toFixed(1)} pts</span><span class="muted">${c.status === "called" || c.status === "certified" ? "called" : "still counting"}</span></a></li>`).join("")}</ul>
+            <p class="muted small" style="margin:8px 0 0">Gap between the top two candidates, in percentage points.</p>`
+            : `<p class="muted small">Vote counts are being added. The closest margins will show here once they're in.</p>`}
+        </section>
+        <section class="panel"><p class="ph">Still counting</p>
+          <div class="bignum sm">${S.counting.length}</div>
+          ${S.counting.length ? `<p class="small" style="margin:0">${S.counting.map((st) => `<a href="#/elections/${st}" data-jump="${st}">${stName(st)}</a>`).join(", ")}</p>` : `<p class="muted small">Every race has been called.</p>`}
+          <p class="muted small" style="margin:8px 0 0">${S.certified || 0} of ${d.races.length} results certified by the state so far.</p>
+        </section>
+        <section class="panel"><p class="ph">Money and results</p>
+          ${S.money_won.of ? `<div class="bignum sm">${S.money_won.yes} <span class="of">of ${S.money_won.of}</span></div><p class="muted small" style="margin:0">called races were won by the candidate who raised more. Raising more often follows being favored, so this shows a pattern, not cause and effect.</p>`
+            : `<p class="muted small">Shows once races are called.</p>`}
+        </section>
       </div>
       <div class="controls" id="rf">
-        ${[["all", "All races"], ["counting", "Still counting"], ["called", "Called"], ["runoff", "Runoff or recount"]].map(([v, l]) => `<button class="btn ${v === "all" ? "on" : ""}" data-v="${v}">${l}</button>`).join("")}
+        ${[["all", "All races"], ["flip", "Seats that flip"], ["counting", "Still counting"], ["called", "Called"], ["runoff", "Runoff or recount"]].map(([v, l]) => `<button class="btn ${v === "all" ? "on" : ""}" data-v="${v}">${l}</button>`).join("")}
       </div>
       <div class="grid race-grid" id="races"></div>
-      <p class="muted small" style="margin-top:16px">Bars show money raised relative to the top fundraiser in each race. "Outside groups" is independent spending by super PACs and other groups for or against a candidate, reported to the FEC; candidates don't control it. Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. Results statuses are checked every few hours on election week, then daily until certification. Last updated ${fmtWhen(d.updated)}.</p>`;
+      <p class="muted small" style="margin-top:16px">Vote counts come from each state's official results page when available, and otherwise from Associated Press counts as reported by news outlets. Each race links its source and says how much of the vote was counted. Counts are checked daily until the state certifies the result. Money figures are from the FEC, covering the full six-year cycle through each candidate's latest report. "Outside groups" is independent spending by super PACs and other groups, which candidates don't control. Last updated ${fmtWhen(d.updated)}.</p>`;
 
     const render = () => {
       const list = d.races.slice().sort((a, b) => (STATES[a.state] || a.state).localeCompare(STATES[b.state] || b.state)).filter((r) => filt.v === "all" || r.status === filt.v ||
-        (filt.v === "called" && r.status === "certified") || (filt.v === "runoff" && r.status === "recount"));
+        (filt.v === "flip" && r.flip) || (filt.v === "called" && r.status === "certified") || (filt.v === "runoff" && r.status === "recount"));
       document.getElementById("races").innerHTML = list.map(raceCard).join("") || `<div class="empty">No races in this group yet.</div>`;
     };
+    const jump = (st) => { const el = document.getElementById(`race-${st.toUpperCase()}`); if (el) { document.querySelectorAll(".race.focus").forEach((x) => x.classList.remove("focus")); el.classList.add("focus"); el.scrollIntoView({ block: "center", behavior: "smooth" }); } };
     document.querySelectorAll("#rf button").forEach((b) => b.addEventListener("click", () => {
       filt.v = b.dataset.v; document.querySelectorAll("#rf button").forEach((x) => x.classList.toggle("on", x === b)); render();
     }));
+    document.querySelectorAll("[data-jump]").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault(); if (filt.v !== "all") { filt.v = "all"; document.querySelectorAll("#rf button").forEach((x) => x.classList.toggle("on", x.dataset.v === "all")); render(); }
+      history.replaceState(null, "", `#/elections/${a.dataset.jump}`); jump(a.dataset.jump); }));
     render();
-    if (focus) {
-      const el = document.getElementById(`race-${focus.toUpperCase()}`);
-      if (el) { el.classList.add("focus"); el.scrollIntoView({ block: "center" }); }
-    }
+    if (focus) jump(focus);
   }
-
 
   function balanceBar(b) {
     if (!b) return "";
@@ -666,26 +686,43 @@
   }
 
   function raceCard(r) {
-    const h = r.seat_holder;
+    const h = r.seat_holder, R = r.results;
     const people = r.nominees.length ? r.nominees : r.filers.map((c) => ({ name: c.name, party: c.party, incumbent: c.status === "I", receipts: c.receipts, fec: c.source }));
     const won = (n) => !!n.won;
+    const cls = (n) => fecParty(n.party).replace("O", "X").replace("?", "X");
     const maxR = Math.max(1, ...people.map((n) => n.receipts || 0));
-    return `<div class="card race ${r.status}" id="race-${esc(r.state)}">
-      <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3><span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></div>
-      <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
-      ${r.winner ? `<div class="called">Called for <b>${esc(r.winner)}</b> by ${esc(r.called_by)}${r.called_at ? `, ${fmtWhen(r.called_at)}` : ""} · <a href="${esc(r.source_url)}">source</a></div>` : ""}
-      ${r.notes ? `<p class="small muted">${esc(r.notes)}</p>` : ""}
-      <div class="cands">
-        ${people.length ? people.map((n) => `<div class="cand p-${fecParty(n.party).replace("O", "X").replace("?", "X")} ${won(n) ? "won" : ""}">
-          <span class="dot"></span><span class="cname">${n.bioguide ? `<a href="#/s/${esc(n.bioguide)}">${esc(n.name)}</a>` : esc(n.name)}${n.incumbent ? ` <span class="tag">Incumbent</span>` : ""}${won(n) ? ` <span class="tag win">Winner</span>` : ""}</span>
+    const nameOf = (n) => `${n.bioguide ? `<a href="#/s/${esc(n.bioguide)}">${esc(n.name)}</a>` : esc(n.name)}${n.incumbent ? ` <span class="tag">Incumbent</span>` : ""}${won(n) ? ` <span class="tag win">Winner</span>` : ""}`;
+    const fmtVotes = (v) => (v == null ? "" : v.toLocaleString("en-US"));
+    const resultRows = R ? people.map((n) => `<div class="vrow p-${cls(n)} ${won(n) ? "won" : ""}">
+        <span class="cname"><span class="dot"></span>${nameOf(n)}</span>
+        <span class="vpct">${n.pct != null ? `${n.pct.toFixed(1)}%` : "—"}</span>
+        <span class="vbar"><span style="width:${Math.max(0.5, n.pct || 0)}%"></span></span>
+        <span class="vvotes muted">${fmtVotes(n.votes)}${n.votes != null ? " votes" : ""}</span></div>`).join("")
+      : people.length ? people.map((n) => `<div class="vrow p-${cls(n)} ${won(n) ? "won" : ""}"><span class="cname"><span class="dot"></span>${nameOf(n)}</span></div>`).join("")
+        + (r.nominees.length ? `<p class="muted small" style="margin:6px 0 0">Vote counts are added with the next results update.</p>` : "")
+        : `<p class="muted small">Candidate list loads with the next update.</p>`;
+    const meta = R ? [R.counted_pct != null ? `${R.counted_pct}% of expected vote counted` : null, r.status === "certified" ? "Certified" : null,
+      R.as_of ? `as of ${fmtWhen(R.as_of)}` : null, R.source ? `<a href="${esc(R.source)}">${esc(R.source_name || "source")}</a>` : null].filter(Boolean).join(" · ") : "";
+    const top = people.filter((n) => n.receipts).sort((a, b) => b.receipts - a.receipts)[0];
+    const moneyLine = "money_won" in r && top ? (r.money_won ? `${esc(top.name)} raised the most and won.` : `${esc(top.name)} raised the most but didn't win.`) : "";
+    const moneyRows = people.filter((n) => n.receipts != null || n.outside).map((n) => `<div class="cand p-${cls(n)}">
+          <span class="dot"></span><span class="cname">${esc(n.name)}</span>
           <span class="raised">${n.receipts != null ? (n.fec ? `<a href="${esc(n.fec)}">${fmtMoney(n.receipts)}</a>` : fmtMoney(n.receipts)) : `<span class="muted small">no FEC match</span>`}</span>
           ${n.receipts ? `<span class="mbar"><span style="width:${Math.max(1.5, (100 * n.receipts) / maxR)}%"></span></span>` : ""}
           ${n.outside && (n.outside.support || n.outside.oppose) ? `<details class="outside"><summary>Outside groups: <b class="sup">${fmtMoney(n.outside.support)}</b> for · <b class="opp">${fmtMoney(n.outside.oppose)}</b> against</summary>
             ${[["Supporting", n.outside.top_support], ["Opposing", n.outside.top_oppose]].filter(([, xs]) => xs && xs.length).map(([l, xs]) => `<p class="small muted" style="margin:6px 0 2px">${l}</p>${xs.map((x) => `<div class="money-row"><span>${esc(x.name || "")}</span><b>${fmtMoney(x.total)}</b></div>`).join("")}`).join("")}
-            <p class="small" style="margin:6px 0 0"><a href="${esc(n.outside.source)}">FEC independent expenditures</a></p></details>` : ""}</div>`).join("")
-          : `<p class="muted small">Candidate list loads with the next update.</p>`}
-      </div>
-      ${!r.nominees.length && people.length ? `<p class="muted small" style="margin:8px 0 0">Candidates who raised money for this seat, per the FEC. May include people who lost the primary; the final ballot lineup is added as results come in.</p>` : ""}
+            <p class="small" style="margin:6px 0 0"><a href="${esc(n.outside.source)}">FEC independent expenditures</a></p></details>` : ""}</div>`).join("");
+    return `<div class="card race ${r.status}" id="race-${esc(r.state)}">
+      <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3>
+        <span class="race-tags">${r.flip ? `<span class="fliptag" title="Seat changes party"><i class="p-${r.flip.from}"></i>→<i class="p-${r.flip.to}"></i> Flips</span>` : ""}<span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></span></div>
+      <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
+      ${r.winner ? `<div class="called">Called for <b>${esc(r.winner)}</b> by ${esc(r.called_by)}${r.called_at ? `, ${fmtWhen(r.called_at)}` : ""}${R && R.margin != null ? ` · won by ${R.margin.toFixed(1)} pts` : ""} · <a href="${esc(r.source_url)}">source</a></div>` : ""}
+      <div class="vrows">${resultRows}</div>
+      ${meta ? `<p class="muted small vmeta">${meta}</p>` : ""}
+      ${r.notes ? `<p class="small muted">${esc(r.notes)}</p>` : ""}
+      ${moneyRows ? `<details class="race-money"><summary><span>Campaign money</span>${moneyLine ? `<span class="muted"> · ${moneyLine}</span>` : ""}</summary>
+        <div class="cands">${moneyRows}</div>
+        ${!r.nominees.length ? `<p class="muted small" style="margin:8px 0 0">Candidates who raised money for this seat, per the FEC. May include people who lost the primary.</p>` : ""}</details>` : ""}
     </div>`;
   }
 

@@ -385,3 +385,34 @@ button.btn.more { display: block; margin: 14px auto; }
 .pc-who a { color: var(--ink); text-decoration: none; } .pc-who a:hover { color: var(--gold); }
 .pc-foot { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 @media (max-width: 860px) { .pp-top, .pgrid { grid-template-columns: 1fr; } }
+
+/* Election results */
+.el-sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+.el-sum .panel { min-width: 0; }
+.el-sum .of { font-size: 1rem; color: var(--muted); font-family: Inter, system-ui, sans-serif; }
+.flips { list-style: none; margin: 0; padding: 0; }
+.flips li a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; padding: 6px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); font-size: .88rem; }
+.flips li a:hover b { color: var(--gold); }
+.flips li a > .muted { grid-column: 1 / -1; font-size: .78rem; }
+.fl, .fliptag { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: .78rem; }
+.fl i, .fliptag i { width: 10px; height: 10px; border-radius: 3px; background: var(--pcolor, var(--faint)); display: inline-block; }
+.fliptag { font-weight: 700; text-transform: uppercase; letter-spacing: .05em; font-size: .68rem; color: var(--gold); padding: 3px 8px; border-radius: 6px; background: var(--gold-soft); }
+.race-tags { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.vrows { margin-top: 12px; }
+.vrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .92rem; }
+.vrow .cname { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; }
+.vrow .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--pcolor, var(--faint)); flex: none; }
+.vrow.won .cname { font-weight: 600; }
+.vpct { font: 600 1.05rem "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.vbar { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+.vbar span { display: block; height: 100%; background: var(--pcolor, var(--faint)); opacity: .55; border-radius: 4px; }
+.vrow.won .vbar span { opacity: 1; }
+.vvotes { grid-column: 1 / -1; font-size: .78rem; font-variant-numeric: tabular-nums; }
+.vmeta { margin: 8px 0 0; }
+details.race-money { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 8px; }
+details.race-money > summary { cursor: pointer; font-size: .86rem; color: var(--gold); }
+details.race-money > summary .muted { color: var(--muted); }
+details.race-money .cands { margin-top: 8px; }
+@media (max-width: 1000px) { .el-sum { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .el-sum { grid-template-columns: 1fr; } }
