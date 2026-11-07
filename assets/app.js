@@ -342,7 +342,8 @@
       <div class="pstack" role="img" aria-label="${parts.map(([k, l]) => `${p[k] || 0} ${l.toLowerCase()}`).join(", ")}">
         ${parts.map(([k, l, c]) => (p[k] ? `<span style="flex:${p[k]};background:${c}" title="${l}: ${p[k]}"></span>` : "")).join("")}</div>
       <div class="pcounts">${parts.map(([k, l, c]) => `<div><i style="background:${c}"></i><span>${l}</span><b>${p[k] || 0}</b></div>`).join("")}</div>
-      <p class="muted small" style="margin:10px 0 0">${graded} specific promises have a status. ${p.not_reviewed} general pledges aren't graded. Most promises so far come from senators' own posts, which tend to highlight pledges they kept.</p>`;
+      <p class="muted small" style="margin:10px 0 0">${graded} specific promises have a status. ${p.not_reviewed} general pledges aren't graded. Most promises so far come from senators' own posts, which tend to highlight pledges they kept.</p>
+      <p style="margin:10px 0 0"><a class="small" href="#/promises">Browse every promise →</a></p>`;
   }
 
   function drawChamber(dash, ss, ui) {
@@ -450,15 +451,16 @@
         ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
         ${TRADES_ENABLED ? `${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
         ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}` : ""}
+        ${metric("Bills sponsored", m.bills_sponsored != null ? String(m.bills_sponsored) : "—", m.bills_sponsored != null ? `${m.bills_law} became law and ${m.bills_passed} passed at least one chamber. This Congress, from Congress.gov.` : "From Congress.gov, updated daily.")}
         ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_resolved || 0} of ${m.promises_tracked} promise${m.promises_tracked === 1 ? "" : "s"} resolved. Shown once at least 3 are resolved. Includes sources not yet checked by a person.`)}
       </div>
       <div class="tabs" role="tablist">
-        ${["Votes", "In the news", "Promises", "Statements", "Campaign money", "Stock trades", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
+        ${["Votes", "Bills", "In the news", "Promises", "Statements", "Campaign money", "Stock trades", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
       </div>
       <div id="tab"></div>`;
 
-    const tabs = [votesTab, newsTab, promisesTab, statementsTab, moneyTab, tradesTab, committeesTab];
-    const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); };
+    const tabs = [votesTab, billsTab, newsTab, promisesTab, statementsTab, moneyTab, tradesTab, committeesTab];
+    const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); if (tabs[i].bind) tabs[i].bind(s); };
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => show(+b.dataset.tab)));
     show(0);
   }
@@ -756,6 +758,136 @@
   }
 
   /* ---------- Issues ---------- */
+  // ---------- Bills tab ----------
+  const STAGE = { law: ["Became law", "good"], vetoed: ["Vetoed", "bad"], passed: ["Passed a chamber", "gold"], adopted: ["Adopted", "good"],
+    failed: ["Failed a floor vote", "bad"], advanced: ["Advanced", "gold"], introduced: ["Introduced", "muted"] };
+  const STAGE_ORDER = ["law", "vetoed", "passed", "adopted", "failed", "advanced", "introduced"];
+  const RES_TYPES = new Set(["SRES", "SCONRES", "HRES", "HCONRES"]);
+  function billRow(b) {
+    const [lbl, tone] = STAGE[b.stage] || [b.stage, "muted"];
+    return `<div class="bill"><div class="bill-top"><a class="bill-id" href="${esc(b.url)}">${esc(b.name)}</a><span class="stg ${tone}">${lbl}</span>
+      <span class="muted small">Introduced ${fmtDate(b.introduced)}</span>${b.policy ? `<span class="tag">${esc(b.policy)}</span>` : ""}</div>
+      <div class="bill-title">${esc(b.title)}</div>
+      ${b.action ? `<div class="muted small">Latest action, ${fmtDate(b.action_date)}: ${esc(b.action)}</div>` : ""}</div>`;
+  }
+  function billsTab(s) {
+    const b = s.bills;
+    if (!b) return `<div class="empty">Bills for ${esc(s.name)} aren't loaded yet. They come from Congress.gov and refresh daily.</div>`;
+    const st = b.stages || {};
+    const stat = (n, l) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`;
+    return `<div class="bill-stats">${stat(b.sponsored_total, "sponsored")}${stat(st.law || 0, "became law")}${stat((st.passed || 0) + (st.vetoed || 0), "passed a chamber, not yet law")}${stat(b.cosponsored_total + (b.cosponsored_capped ? "+" : ""), "cosponsored")}</div>
+      ${b.sponsored.length ? `<div class="bar" role="img" aria-label="Sponsored bills by stage">${STAGE_ORDER.filter((k) => st[k]).map((k) => `<span class="stg-bar ${STAGE[k][1]}" style="width:${(100 * st[k]) / b.sponsored.length}%" title="${STAGE[k][0]}: ${st[k]}"></span>`).join("")}</div>
+      <p class="muted small">${STAGE_ORDER.filter((k) => st[k]).map((k) => `${STAGE[k][0]}: ${st[k]}`).join(" · ")}</p>` : ""}
+      ${b.areas && b.areas.length ? `<p class="small"><b>Most common subjects:</b> ${b.areas.map(([a, n]) => `${esc(a)} (${n})`).join(", ")}</p>` : ""}
+      <div class="controls bill-controls">
+        <div class="segtg" id="bkind" role="group" aria-label="Which bills"><button type="button" data-v="sponsored" class="on">Sponsored (${b.sponsored_total})</button><button type="button" data-v="cosponsored">Cosponsored (${b.cosponsored_total}${b.cosponsored_capped ? "+" : ""})</button></div>
+        <select id="bstage" aria-label="Stage"><option value="">Any stage</option>${STAGE_ORDER.map((k) => `<option value="${k}">${STAGE[k][0]}</option>`).join("")}</select>
+        <input id="bq" type="search" placeholder="Search titles" aria-label="Search bill titles">
+        <label class="chk"><input type="checkbox" id="bres"> Hide resolutions</label>
+      </div>
+      <div id="blist"></div>
+      <p class="muted small">The stage comes from each bill's latest action on Congress.gov. Open a bill for its full history. Resolutions include ceremonial ones, like naming a day or honoring a team. Bills from the current Congress only (2025–2026).</p>`;
+  }
+  billsTab.bind = (s) => {
+    const b = s.bills; if (!b) return;
+    const ui = { kind: "sponsored", stage: "", q: "", hide: false, n: 40 };
+    const draw = () => {
+      const src = ui.kind === "sponsored" ? b.sponsored : b.cosponsored;
+      const q = ui.q.toLowerCase();
+      const rows = src.filter((x) => (!ui.stage || x.stage === ui.stage) && (!ui.hide || !RES_TYPES.has(x.type)) && (!q || (x.title + " " + x.name).toLowerCase().includes(q)));
+      const extra = ui.kind === "cosponsored" && b.cosponsored.length < b.cosponsored_total ? `<p class="muted small">Showing the ${b.cosponsored.length} most recent cosponsorships. See all on <a href="https://www.congress.gov/member/${esc(s.bioguide)}">Congress.gov</a>.</p>` : "";
+      document.getElementById("blist").innerHTML = (rows.length ? rows.slice(0, ui.n).map(billRow).join("") : `<div class="empty">No bills match.</div>`)
+        + (rows.length > ui.n ? `<button class="btn more" id="bmore">Show more (${rows.length - ui.n} left)</button>` : "") + extra;
+      const more = document.getElementById("bmore"); if (more) more.onclick = () => { ui.n += 40; draw(); };
+    };
+    document.querySelectorAll("#bkind button").forEach((x) => x.onclick = () => { ui.kind = x.dataset.v; ui.n = 40; document.querySelectorAll("#bkind button").forEach((y) => y.classList.toggle("on", y === x)); draw(); });
+    document.getElementById("bstage").onchange = (e) => { ui.stage = e.target.value; ui.n = 40; draw(); };
+    document.getElementById("bq").oninput = (e) => { ui.q = e.target.value; ui.n = 40; draw(); };
+    document.getElementById("bres").onchange = (e) => { ui.hide = e.target.checked; ui.n = 40; draw(); };
+    draw();
+  };
+
+  // ---------- Promises page ----------
+  const PCOL = { kept: "var(--good)", compromise: "var(--gold)", in_progress: "var(--dem-ink)", stalled: "var(--muted)", broken: "var(--bad)", not_started: "var(--line-2)" };
+  const PORDER_S = ["kept", "compromise", "in_progress", "stalled", "broken", "not_started"];
+  function promiseCard(p) {
+    const who = { name: p.senator, last: p.senator.split(" ").pop(), photo: p.photo };
+    return `<article class="item pcard">
+      <div class="pc-head">${photo(who)}<div class="pc-who"><a href="#/s/${esc(p.bioguide)}"><b>${esc(p.senator)}</b></a> <span class="muted">(${pc(p.party)}-${esc(p.state)})</span>
+        <div class="muted small">${fmtDate(p.source_date)} · ${esc(p.topic)}</div></div>
+        <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span></div>
+      <h3>${esc(p.promise || "")}</h3>
+      ${p.assessment ? `<p class="small assess"><b>Why this status:</b> ${esc(p.assessment)}</p>` : !p.specific ? `<p class="muted small">A general pledge, so it isn't graded.</p>` : ""}
+      <details class="sum"><summary>Their words${(p.evidence || []).length ? " and the record since" : ""}</summary>
+        <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)}${postedBy(p.source_url)} · <a href="${esc(p.source_url)}">source</a></div></blockquote>
+        ${(p.evidence || []).length ? `<ul class="small">${p.evidence.map((e) => `<li>${fmtDate(e.date)}: ${esc(e.description)} <a href="${esc(e.url)}">source</a></li>`).join("")}</ul>` : ""}
+      </details>
+      <div class="pc-foot">${checkedBadge(p)}${p.specific ? "" : `<span class="tag">General pledge</span>`}</div>
+    </article>`;
+  }
+  async function promisesPage(arg) {
+    nav("promises");
+    const [d, idx] = await Promise.all([get("data/promises_index.json"), get("data/index.json")]);
+    const ui = promisesPage.ui || (promisesPage.ui = { status: "", q: "", topic: "", party: "", state: "", specific: false, sort: "updated", n: 30 });
+    if (arg) ui.status = STATUS_LABEL[arg] ? arg : "";
+    ui.n = 30;
+    const all = d.promises;
+    const cnt = Object.fromEntries(PORDER_S.map((k) => [k, all.filter((p) => p.status === k).length]));
+    const topics = [...new Set(all.map((p) => p.topic).filter(Boolean))].sort();
+    const states = [...new Set(all.map((p) => p.state))].sort();
+    const people = new Set(all.map((p) => p.bioguide)).size;
+    const scored = idx.senators.filter((s) => s.metrics.follow_through != null)
+      .sort((a, b) => b.metrics.follow_through - a.metrics.follow_through || a.last.localeCompare(b.last));
+    app.innerHTML = `
+      <div class="dash-title"><h1>Promises</h1><p class="lede">Every promise tracked so far, from ${people} senators. Each one quotes the senator's own words, links to where they said it, and is rated against what they've done since.</p></div>
+      <div class="pp-top">
+        <section class="panel"><p class="ph">By status</p>
+          <div class="bignum">${all.length}</div>
+          <div class="pstack" role="img" aria-label="${PORDER_S.map((k) => `${cnt[k]} ${STATUS_LABEL[k].toLowerCase()}`).join(", ")}">${PORDER_S.map((k) => (cnt[k] ? `<span style="flex:${cnt[k]};background:${PCOL[k]}" title="${STATUS_LABEL[k]}: ${cnt[k]}"></span>` : "")).join("")}</div>
+          <div class="pfilter" id="pstatus" role="group" aria-label="Filter by status">
+            <button type="button" data-s="" class="${ui.status ? "" : "on"}"><span>All</span><b>${all.length}</b></button>
+            ${PORDER_S.map((k) => `<button type="button" data-s="${k}" class="${ui.status === k ? "on" : ""}"><i style="background:${PCOL[k]}"></i><span>${STATUS_LABEL[k]}</span><b>${cnt[k]}</b></button>`).join("")}</div>
+          <p class="muted small" style="margin:10px 0 0">Most promises so far come from senators' own posts and floor speeches, which tend to highlight pledges they kept. Senators are judged on their own votes and actions, not on whether Congress as a whole passed something.</p>
+        </section>
+        <section class="panel"><p class="ph">Follow-through scores</p>
+          ${scored.length ? `<ol class="scores">${scored.map((s) => `<li><a href="#/s/${esc(s.bioguide)}"><span class="sc-name">${esc(s.name)} <span class="muted">(${pc(s.party)}-${esc(s.state)})</span></span>
+            <span class="sc-bar"><span style="width:${s.metrics.follow_through}%"></span></span><b>${fmtPct(s.metrics.follow_through)}</b></a>
+            <span class="muted small">${s.metrics.promises_resolved} resolved of ${s.metrics.promises_tracked}</span></li>`).join("")}</ol>` : `<p class="muted">No senator has enough resolved promises yet.</p>`}
+          <p class="muted small" style="margin:10px 0 0">A senator gets a score once at least 3 of their promises are resolved. Kept counts 1, compromise ½, stalled or broken 0. ${scored.length} senator${scored.length === 1 ? " has" : "s have"} one so far. Scores include sources not yet checked by a person. <a href="#/about">How it works</a></p>
+        </section>
+      </div>
+      <div class="controls">
+        <input id="pq" type="search" placeholder="Search promises or senators" aria-label="Search promises" value="${esc(ui.q)}">
+        <select id="ptopic" aria-label="Topic"><option value="">All topics</option>${topics.map((t) => `<option ${ui.topic === t ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>
+        <select id="pparty" aria-label="Party"><option value="">All parties</option>${["D", "R", "I"].map((x) => `<option value="${x}" ${ui.party === x ? "selected" : ""}>${PARTY_NAME[x]}s</option>`).join("")}</select>
+        <select id="pstate" aria-label="State"><option value="">All states</option>${states.map((x) => `<option ${ui.state === x ? "selected" : ""}>${x}</option>`).join("")}</select>
+        <select id="psort" aria-label="Sort"><option value="updated">Latest update</option><option value="said">Newest promise</option><option value="name">Senator A–Z</option></select>
+        <label class="chk"><input type="checkbox" id="pspec" ${ui.specific ? "checked" : ""}> Graded promises only</label>
+      </div>
+      <p class="muted small" id="pcount" aria-live="polite"></p>
+      <div id="plist"></div>`;
+    document.getElementById("psort").value = ui.sort;
+    const draw = () => {
+      const q = ui.q.toLowerCase();
+      let rows = all.filter((p) => (!ui.status || p.status === ui.status) && (!ui.topic || p.topic === ui.topic) && (!ui.party || pc(p.party) === ui.party)
+        && (!ui.state || p.state === ui.state) && (!ui.specific || p.specific) && (!q || `${p.senator} ${p.promise} ${p.quote}`.toLowerCase().includes(q)));
+      const key = { updated: (p) => p.updated || p.source_date || "", said: (p) => p.source_date || "" }[ui.sort];
+      rows = ui.sort === "name" ? rows.sort((a, b) => a.senator.split(" ").pop().localeCompare(b.senator.split(" ").pop()) || (b.source_date || "").localeCompare(a.source_date || ""))
+        : rows.sort((a, b) => key(b).localeCompare(key(a)));
+      document.getElementById("pcount").textContent = `${rows.length} promise${rows.length === 1 ? "" : "s"}`;
+      document.getElementById("plist").innerHTML = (rows.length ? `<div class="pgrid">${rows.slice(0, ui.n).map(promiseCard).join("")}</div>` : `<div class="empty">No promises match these filters.</div>`)
+        + (rows.length > ui.n ? `<button class="btn more" id="pmore">Show more (${rows.length - ui.n} left)</button>` : "");
+      const more = document.getElementById("pmore"); if (more) more.onclick = () => { ui.n += 30; draw(); };
+    };
+    document.querySelectorAll("#pstatus button").forEach((b) => b.onclick = () => {
+      ui.status = b.dataset.s; ui.n = 30; document.querySelectorAll("#pstatus button").forEach((x) => x.classList.toggle("on", x === b));
+      history.replaceState(null, "", ui.status ? `#/promises/${ui.status}` : "#/promises"); draw(); });
+    const bindIn = (id, k, ev = "change", f = (e) => e.target.value) => { document.getElementById(id).addEventListener(ev, (e) => { ui[k] = f(e); ui.n = 30; draw(); }); };
+    bindIn("pq", "q", "input"); bindIn("ptopic", "topic"); bindIn("pparty", "party"); bindIn("pstate", "state"); bindIn("psort", "sort");
+    bindIn("pspec", "specific", "change", (e) => e.target.checked);
+    draw();
+  }
+
   async function issuesPage() {
     nav("issues");
     const d = await get("data/issues_index.json");
@@ -919,6 +1051,7 @@
         <li><b>Campaign money:</b> the <a href="https://www.fec.gov">Federal Election Commission</a>.</li>
         <li><b>Lobbying:</b> the federal <a href="https://lda.gov">Lobbying Disclosure Act database</a>: quarterly reports naming the bills organizations lobbied on, and lobbyists' reports of political contributions. Refreshed weekly.</li>
         <li><b>News:</b> headlines from a mix of outlets across the political spectrum (the list is on the News page), plus official actions from Congress.gov and the Senate. Only the headline, outlet and link are shown; stories run on the outlet's own site. Headlines are matched to senators by full name or by "Sen." plus last name. Checked four times a day (6 AM, 10 AM, 2 PM and 6 PM Arizona time); stories older than 7 days drop off.</li>
+        <li><b>Bills:</b> every bill and resolution each senator sponsored or cosponsored this Congress, from Congress.gov, refreshed daily. A bill's stage (introduced, advanced, passed a chamber, became law) is read from its latest official action, which is shown word for word. Open the bill on Congress.gov for its full history.</li>
         <li><b>Promises and statements:</b> gathered with the help of AI research tools. Every entry quotes the original words and links the original source. Entries marked <b>Not yet checked</b> haven't been compared against their source by a person yet, so open the link before relying on one. Entries marked <b>Source checked</b> have been. Unchecked entries still count toward the follow-through score, so treat it as a guide and use the source links. Spot a mistake? Use the "Report an error" link on any entry.</li>
       </ul>
       <h2>What each number means</h2>
@@ -946,7 +1079,7 @@
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
     const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections(arg)
-      : page === "state" && arg ? statePage(arg) : page === "senate" ? senatePage() : page === "house" ? housePage() : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "issue" && arg ? issuePage(arg)
+      : page === "state" && arg ? statePage(arg) : page === "senate" ? senatePage() : page === "house" ? housePage() : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "promises" ? promisesPage(arg) : page === "issue" && arg ? issuePage(arg)
       : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
   }

@@ -58,6 +58,7 @@ def main():
     trades = load(D("raw", "trades.json"), {"reports": {}, "industries": {}})
     money = load(D("raw", "money.json"), {})
     lobbying = load(D("raw", "lobbying.json"), {})
+    bills = load(D("raw", "bills.json"), {}).get("members", {})
     sectors = load(D("committee_sectors.json"), {"committees": {}})["committees"]
     # Unverified entries are shown on the site with a "Not yet checked" label and DO count toward
     # the follow-through score (owner's decision, Nov 2026); the site says so next to the score.
@@ -179,11 +180,19 @@ def main():
         m = money.get(bid)
         if m:
             metrics["raised"] = m.get("receipts")
+        b = bills.get(bid)
+        if b:
+            st = Counter(x["stage"] for x in b["sponsored"])
+            metrics["bills_sponsored"] = b["sponsored_total"]
+            metrics["bills_cosponsored"] = b["cosponsored_total"]
+            metrics["bills_law"] = st["law"]
+            metrics["bills_passed"] = st["law"] + st["passed"] + st["vetoed"]
 
         profile = dict(s, metrics=metrics, votes=recent, trades=tx[:400],
                        paper_reports=[r for r in rows if r.get("paper")],
                        money=m, promises=mine, statements=said[:200], election=election_of.get(bid),
-                       lobby_contribs=lobby_summary(lobbying.get("contributions", {}).get(bid), lobbying))
+                       lobby_contribs=lobby_summary(lobbying.get("contributions", {}).get(bid), lobbying),
+                       bills=bills_summary(b))
         with open(D("senators", f"{bid}.json"), "w", encoding="utf-8") as f:
             json.dump(profile, f, separators=(",", ":"))
 
@@ -205,6 +214,7 @@ def main():
     with open(D("votes_recent.json"), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
     build_elections(roster, now)
+    build_promises_index(roster, promises, now)
     build_issues(roster, vote_list, summaries, promises, statements, now, lobbying)
     build_dashboard(roster, index, promises, statements, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
@@ -213,6 +223,38 @@ def main():
 
 
 SUFFIXES = {"JR", "SR", "II", "III", "IV", "JR.", "SR."}
+
+
+def bills_summary(b):
+    """What the profile's Bills tab needs: every sponsored bill, recent cosponsorships, and counts."""
+    if not b:
+        return None
+    areas = Counter(x["policy"] for x in b["sponsored"] + b["cosponsored"] if x.get("policy"))
+    return {"sponsored": b["sponsored"], "cosponsored": b["cosponsored"][:150],
+            "sponsored_total": b["sponsored_total"], "cosponsored_total": b["cosponsored_total"],
+            "cosponsored_capped": b.get("capped", False),
+            "stages": dict(Counter(x["stage"] for x in b["sponsored"])),
+            "areas": areas.most_common(8)}
+
+
+def build_promises_index(roster, promises, now):
+    """One list of every promise across the Senate, for the Promises page."""
+    by_bio = {s["bioguide"]: s for s in roster}
+    rows = []
+    for p in promises:
+        s = by_bio.get(p.get("bioguide"))
+        if not s:
+            continue
+        ev = p.get("evidence") or []
+        rows.append({"id": p["id"], "bioguide": s["bioguide"], "senator": s["name"], "party": s["party"],
+                     "state": s["state"], "photo": s.get("photo"), "promise": p.get("promise"),
+                     "quote": p.get("quote"), "source_url": p.get("source_url"), "source_date": p.get("source_date"),
+                     "topic": p.get("topic"), "specific": bool(p.get("specific")), "status": p.get("status"),
+                     "verified": bool(p.get("verified")), "assessment": p.get("assessment"),
+                     "evidence": ev, "updated": max([e.get("date") or "" for e in ev] or [""]) or None})
+    rows.sort(key=lambda r: (r["updated"] or r["source_date"] or ""), reverse=True)
+    with open(D("promises_index.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "promises": rows}, f, separators=(",", ":"))
 
 
 def fec_name(raw):

@@ -337,3 +337,51 @@ details.outside { grid-column: 2 / 4; font-size: .8rem; color: var(--muted); }
 details.outside summary { cursor: pointer; }
 details.outside .sup { color: var(--good); } details.outside .opp { color: var(--bad); }
 details.outside .money-row { font-size: .8rem; padding: 4px 0; }
+
+/* Bills tab */
+.bill-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 4px 0 12px; }
+.bill-stats .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.bill-stats .stat b { font-size: 1.6rem; }
+.stg-bar.good { background: var(--good); } .stg-bar.gold { background: var(--gold); } .stg-bar.bad { background: var(--bad); } .stg-bar.muted { background: var(--line-2); }
+.bill-controls { align-items: center; margin-top: 14px; }
+.bill-controls input[type=search] { flex: 1 1 200px; }
+.chk { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; color: var(--muted); cursor: pointer; }
+.chk input { accent-color: var(--gold); width: 16px; height: 16px; flex: none; }
+.bill { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.bill-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 4px; }
+.bill-id { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .86rem; font-weight: 600; color: var(--gold); text-decoration: none; }
+.bill-id:hover { text-decoration: underline; }
+.bill-title { line-height: 1.4; margin-bottom: 4px; }
+.stg { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 6px; }
+.stg.good { background: var(--good-soft); color: var(--good); } .stg.gold { background: var(--gold-soft); color: var(--gold); }
+.stg.bad { background: var(--bad-soft); color: var(--bad); } .stg.muted { background: var(--surface-2); color: var(--muted); }
+button.btn.more { display: block; margin: 14px auto; }
+@media (max-width: 640px) { .bill-stats { grid-template-columns: 1fr 1fr; } }
+
+/* Promises page */
+.pp-top { display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px; margin-bottom: 18px; }
+.pp-top .panel { min-width: 0; }
+.pfilter { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 12px; }
+.pfilter button { font: inherit; font-size: .86rem; display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; border: 1px solid transparent; background: none; color: var(--ink); cursor: pointer; text-align: left; }
+.pfilter button:hover { background: var(--surface-2); }
+.pfilter button.on { background: var(--surface-2); border-color: rgba(232,194,110,.4); }
+.pfilter button:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.pfilter i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.pfilter span { flex: 1; } .pfilter b { font-variant-numeric: tabular-nums; }
+.scores { list-style: none; margin: 0; padding: 0; max-height: 330px; overflow-y: auto; }
+.scores li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.scores a { display: grid; grid-template-columns: minmax(0, 1fr) 90px 48px; gap: 10px; align-items: center; text-decoration: none; color: var(--ink); }
+.scores a:hover .sc-name { color: var(--gold); }
+.sc-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sc-bar { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.sc-bar span { display: block; height: 100%; background: var(--good); }
+.scores b { text-align: right; font-variant-numeric: tabular-nums; }
+.pgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; }
+.pcard { margin: 0; }
+.pcard h3 { margin: 10px 0 6px; font-size: 1.02rem; line-height: 1.35; }
+.pc-head { display: flex; gap: 10px; align-items: center; }
+.pc-head .av { width: 40px; height: 40px; flex: none; }
+.pc-who { flex: 1; min-width: 0; }
+.pc-who a { color: var(--ink); text-decoration: none; } .pc-who a:hover { color: var(--gold); }
+.pc-foot { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+@media (max-width: 860px) { .pp-top, .pgrid { grid-template-columns: 1fr; } }
