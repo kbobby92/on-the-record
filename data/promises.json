@@ -1639,6 +1639,84 @@
       "verified_by": null,
       "notes": "Grok confidence: medium",
       "assessment": "Said he'd demand a vote when the Senate returned; a vote was held the first week back and he voted to advance the resolution. Whether he personally forced the vote isn't shown in the roll-call record. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-S001150-001",
+      "bioguide": "S001150",
+      "senator": "Adam B. Schiff",
+      "quote": "And if the Senate votes to bring this resolution before the body, which I hope it will see the wisdom of doing, I will move an amendment that I have filed with Senators Kim and Kaine that I would hope would receive all of our support.",
+      "source_url": "https://www.congress.gov/119/crec/2025/06/27/171/111/modified/CREC-2025-06-27-pt1-PgS3583-2.htm",
+      "archive_url": "",
+      "source_date": "2025-06-27",
+      "topic": "Defense & foreign policy",
+      "promise": "Said he would move his amendment concerning U.S. military action against Iran if the Senate takes up the resolution.",
+      "specific": true,
+      "status": "not_started",
+      "evidence": [
+        {
+          "date": "2025-06-27",
+          "description": "The motion to bring up S.J.Res. 59, the Iran war powers resolution, failed 47–53 (Schiff voted yes), so the resolution never reached the stage where his amendment could be offered.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00328.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "This promise depended on the Senate taking up the resolution. It didn't, so the condition was never met. Left as not started. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-B001277-001",
+      "bioguide": "B001277",
+      "senator": "Richard Blumenthal",
+      "quote": "I will continue, on my subcommittee, the Permanent Subcommittee on Investigations, the work that we have done, the investigation that is ongoing right now.",
+      "source_url": "https://www.congress.gov/119/crec/2026/01/14/172/10/modified/CREC-2026-01-14-pt1-PgS186-2.htm",
+      "archive_url": "",
+      "source_date": "2026-01-14",
+      "topic": "Immigration & border",
+      "promise": "Said he would continue the Permanent Subcommittee on Investigations investigation of immigration-enforcement conduct.",
+      "specific": true,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-M001169-001",
+      "bioguide": "M001169",
+      "senator": "Christopher Murphy",
+      "quote": "I will personally seek to block any arms sale that is announced as part of this trip with a country that is personally investing in Donald Trump and his family.",
+      "source_url": "https://www.congress.gov/119/crec/2025/05/13/171/80/modified/CREC-2025-05-13-pt1-PgS2872.htm",
+      "archive_url": "",
+      "source_date": "2025-05-13",
+      "topic": "Defense & foreign policy",
+      "promise": "Said he would seek to block arms sales announced during the trip to countries investing personally in President Trump and his family.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-05-15",
+          "description": "Introduced S.J.Res. 53 to block a proposed arms sale to Qatar, one of the countries on the President's May 2025 trip.",
+          "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/53"
+        },
+        {
+          "date": "2025-06-11",
+          "description": "Voted to discharge S.J.Res. 53 (Qatar arms sale); the motion failed 39–56.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00306.htm"
+        },
+        {
+          "date": "2025-06-11",
+          "description": "Voted to discharge S.J.Res. 54 (UAE arms sale); the motion failed 39–56.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00307.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "He said he'd try to block the arms sales, not that he would succeed. He introduced a resolution against the Qatar sale and forced floor votes on the Qatar and UAE sales; both failed. Assessed by Claude from Senate roll-call records and Congress.gov."
     }
   ]
 }
