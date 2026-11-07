@@ -253,7 +253,7 @@
       "confidence": "medium"
     },
     {
-      "type": "promise",
+      "type": "statement",
       "senator": "Tina Smith",
       "state": "MN",
       "quote": "I cannot be bullied to vote for a bill that I know will price more people out of health insurance — especially at a time when everything else is completely unaffordable.",
@@ -354,7 +354,7 @@
       "confidence": "high"
     },
     {
-      "type": "promise",
+      "type": "statement",
       "senator": "Cindy Hyde-Smith",
       "state": "MS",
       "quote": "I am running for another term because that work is not finished. We need a new Farm Bill, better rural housing, and more shipbuilding in our state.",
@@ -557,7 +557,7 @@
       "confidence": "medium"
     },
     {
-      "type": "promise",
+      "type": "statement",
       "senator": "Thom Tillis",
       "state": "NC",
       "quote": "The Senate version of the One Big Beautiful bill contains significant changes to Medicaid that would be devastating to North Carolina, and I cannot support it.",
