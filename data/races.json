@@ -28,7 +28,9 @@
           "name": "Daniel J. Sullivan Jr.",
           "party": "REP",
           "incumbent": false,
-          "candidate_id": "S6AK00326"
+          "candidate_id": "S6AK00326",
+          "votes": 3600,
+          "pct": 1.7
         },
         {
           "name": "Gerald Heikes",
@@ -43,8 +45,8 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Top-four ballot with ranked-choice voting; two candidates named Sullivan appear on it. Not called. Mailed ballots accepted for 10 days (15 from overseas); ranked-choice tabulation, if needed, cannot start before Nov. 18. Source table does not list Daniel J. Sullivan Jr. separately.",
-      "updated": "2026-11-07T17:38:38Z",
+      "notes": "Top-four ranked-choice ballot with two candidates named Sullivan; not called, and ranked-choice tabulation cannot start before Nov. 18. Daniel J. Sullivan Jr.'s count is the remainder of the source's total, itemized by Ballotpedia citing The New York Times; newer counts (about 74% in) were reported without full figures.",
+      "updated": "2026-11-07T23:54:55Z",
       "counted_pct": 70,
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/alaska-us-senate-general-election",
