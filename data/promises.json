@@ -1933,6 +1933,303 @@
       "verified": false,
       "verified_by": null,
       "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-G000386-001",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "As chairman of the Senate Judiciary Committee, you can be sure that I will continue my work to protect and support law enforcement in both Iowa and nationwide.",
+      "source_url": "https://www.congress.gov/119/crec/2025/01/09/171/5/modified/CREC-2025-01-09-pt1-PgS69-6.htm",
+      "archive_url": "",
+      "source_date": "2025-01-09",
+      "topic": "Criminal justice",
+      "promise": "Said he would continue work to protect and support law enforcement.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-G000386-002",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "I will keep fighting misguided efforts to water down Lincoln's Law and build on whistleblower protection laws across-the- board so truth-tellers don't fear reprisal.",
+      "source_url": "https://www.congress.gov/119/crec/2025/03/05/171/42/modified/CREC-2025-03-05-pt1-PgS1576-2.htm",
+      "archive_url": "",
+      "source_date": "2025-03-05",
+      "topic": "Government & ethics",
+      "promise": "Said he would oppose weakening the False Claims Act and strengthen whistleblower protections.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-G000386-003",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "Mr. President, today, 20 of my colleagues and I will introduce legislation to stop the abuse of universal injunctions that we are seeing all across the country--all of this to stop the Trump agenda.",
+      "source_url": "https://www.congress.gov/119/crec/2025/03/31/171/57/modified/CREC-2025-03-31-pt1-PgS1925-2.htm",
+      "archive_url": "",
+      "source_date": "2025-03-31",
+      "topic": "Government & ethics",
+      "promise": "Said he and twenty colleagues would introduce legislation against universal injunctions.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-03-31",
+          "description": "Introduced S. 1206, the Judicial Relief Clarification Act of 2025, to limit nationwide injunctions, the same day as the speech.",
+          "url": "https://www.govinfo.gov/app/details/BILLS-119s1206is"
+        },
+        {
+          "date": "2025-03-31",
+          "description": "Senate Judiciary Committee announcement of the bill.",
+          "url": "https://www.judiciary.senate.gov/press/rep/releases/grassley-introduces-legislation-to-clarify-the-scope-of-judicial-relief"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "Said he would introduce the bill that day; S. 1206 was introduced on March 31, 2025. Assessed by Claude from the bill text on GovInfo and the committee announcement."
+    },
+    {
+      "id": "p-G000386-004",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "And while I may not always agree with someone else's conclusions, I will always fairly consider any information brought to my office.",
+      "source_url": "https://www.congress.gov/119/crec/2025/07/29/171/130/modified/CREC-2025-07-29-pt1-PgS4798-2.htm",
+      "archive_url": "",
+      "source_date": "2025-07-29",
+      "topic": "Government & ethics",
+      "promise": "Said he would fairly consider information brought to his office.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-G000386-005",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "As chairman of the Judiciary Committee, I will continue to work across the aisle to restore a commonsense confirmation process for U.S. attorneys.",
+      "source_url": "https://www.congress.gov/119/crec/2025/08/02/171/134/modified/CREC-2025-08-02-pt1-PgS5494.htm",
+      "archive_url": "",
+      "source_date": "2025-08-02",
+      "topic": "Government & ethics",
+      "promise": "Said he would work across party lines to restore a confirmation process for U.S. attorneys.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-G000386-006",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "We need the Senate to act on these bills, and I will continue pushing to fix a broken system and lower drug costs.",
+      "source_url": "https://www.congress.gov/119/crec/2026/06/17/172/102/modified/CREC-2026-06-17-pt1-PgS2868.htm",
+      "archive_url": "",
+      "source_date": "2026-06-17",
+      "topic": "Health care",
+      "promise": "Said he would continue pushing for prescription-drug reforms and lower costs.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-G000386-007",
+      "bioguide": "G000386",
+      "senator": "Chuck Grassley",
+      "quote": "And I want you to know that I will continue to make records public because that is what the taxpayers need and deserve and expect.",
+      "source_url": "https://www.congress.gov/119/crec/2026/07/22/172/120/modified/CREC-2026-07-22-pt1-PgS4207.htm",
+      "archive_url": "",
+      "source_date": "2026-07-22",
+      "topic": "Government & ethics",
+      "promise": "Said he would continue making records public.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-D000622-001",
+      "bioguide": "D000622",
+      "senator": "Tammy Duckworth",
+      "quote": "For all these reasons and quite a few more, I will not be voting to confirm the extremely unqualified Pete Hegseth as Secretary of Defense.",
+      "source_url": "https://www.congress.gov/119/crec/2025/01/16/171/9/modified/CREC-2025-01-16-pt1-PgS198.htm",
+      "archive_url": "",
+      "source_date": "2025-01-16",
+      "topic": "Defense & foreign policy",
+      "promise": "Said she would vote against confirming Pete Hegseth as Secretary of Defense.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2025-01-24",
+          "description": "Voted no on confirming Pete Hegseth as Secretary of Defense. The vote tied 50–50 and the Vice President broke the tie to confirm him.",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00015.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "Said she'd vote against confirming Hegseth and did. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-D000622-002",
+      "bioguide": "D000622",
+      "senator": "Tammy Duckworth",
+      "quote": "I am relieved to announce that just moments ago I secured a Senate hearing in the coming weeks with witnesses from the Trump administration where I will ask tough questions and demand answers on these unjustifiable actions because I refuse to stay silent as our military and our servicemembers' sacrifices are disrespected and abused by a man who was never brave enough to serve himself.",
+      "source_url": "https://www.congress.gov/119/crec/2025/10/09/171/167/modified/CREC-2025-10-09-pt1-PgS7052-2.htm",
+      "archive_url": "",
+      "source_date": "2025-10-09",
+      "topic": "Defense & foreign policy",
+      "promise": "Said she would question administration witnesses and demand answers at a Senate hearing.",
+      "specific": true,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-D000622-003",
+      "bioguide": "D000622",
+      "senator": "Tammy Duckworth",
+      "quote": "Moving forward, I will come back to the Chamber every afternoon, if necessary, to remind the Nation of the hard lessons learned the last time a President rashly sent our sons and daughters into another unjustified war in the Middle East, trying to ensure that this time we do right by our troops, trying to ensure that this time we actually fully, soberly consider the consequences of Washington's decisions on those who serve and their families.",
+      "source_url": "https://www.congress.gov/119/crec/2026/03/02/172/39/modified/CREC-2026-03-02-pt1-PgS738.htm",
+      "archive_url": "",
+      "source_date": "2026-03-02",
+      "topic": "Defense & foreign policy",
+      "promise": "Said she would return to the Chamber every afternoon if necessary to discuss the consequences of the war.",
+      "specific": true,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
+    },
+    {
+      "id": "p-D000622-004",
+      "bioguide": "D000622",
+      "senator": "Tammy Duckworth",
+      "quote": "So until we get some answers, I will keep coming to this floor; I will keep voting to withdraw our sons and daughters from hostilities with Iran.",
+      "source_url": "https://www.congress.gov/119/crec/2026/03/24/172/55/modified/CREC-2026-03-24-pt1-PgS1570.htm",
+      "archive_url": "",
+      "source_date": "2026-03-24",
+      "topic": "Defense & foreign policy",
+      "promise": "Said she would continue voting to withdraw U.S. forces from hostilities with Iran until she receives answers.",
+      "specific": true,
+      "status": "kept",
+      "evidence": [
+        {
+          "date": "2026-03-24",
+          "description": "Voted yes on the Iran war powers measure (47–53).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00069.htm"
+        },
+        {
+          "date": "2026-04-15",
+          "description": "Voted yes on the Iran war powers measure (47–52).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00079.htm"
+        },
+        {
+          "date": "2026-04-22",
+          "description": "Voted yes on the Iran war powers measure (46–51).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00088.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "description": "Voted yes on the Iran war powers measure (47–50).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00113.htm"
+        },
+        {
+          "date": "2026-05-13",
+          "description": "Voted yes on the Iran war powers measure (49–50).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00118.htm"
+        },
+        {
+          "date": "2026-05-19",
+          "description": "Voted yes on the Iran war powers measure (50–47, passed).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00129.htm"
+        },
+        {
+          "date": "2026-06-16",
+          "description": "Voted yes on the Iran war powers measure (47–48).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00174.htm"
+        },
+        {
+          "date": "2026-06-23",
+          "description": "Voted yes on the Iran war powers measure (50–48, passed).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00184.htm"
+        },
+        {
+          "date": "2026-06-24",
+          "description": "Voted yes on the Iran war powers measure (47–50).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00192.htm"
+        },
+        {
+          "date": "2026-07-23",
+          "description": "Voted yes on the Iran war powers measure (47–49).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00207.htm"
+        },
+        {
+          "date": "2026-07-30",
+          "description": "Voted yes on the Iran war powers measure (49–50).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00216.htm"
+        },
+        {
+          "date": "2026-09-24",
+          "description": "Voted yes on the Iran war powers measure (49–50).",
+          "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00244.htm"
+        }
+      ],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high",
+      "assessment": "Said she'd keep voting to withdraw U.S. forces from hostilities with Iran. She voted yes on all 12 Iran war powers votes from that day through September 2026. Assessed by Claude from Senate roll-call records."
+    },
+    {
+      "id": "p-B001299-001",
+      "bioguide": "B001299",
+      "senator": "Jim Banks",
+      "quote": "While Democrats continue to moan on and on about ICE, shutting down the Department of Homeland Security because of it, I will work to keep the people of Indiana safe from illegal immigrants, especially illegal immigrants who are behind the wheel of semitrucks.",
+      "source_url": "https://www.congress.gov/119/crec/2026/02/25/172/37/modified/CREC-2026-02-25-pt1-PgS683-3.htm",
+      "archive_url": "",
+      "source_date": "2026-02-25",
+      "topic": "Immigration & border",
+      "promise": "Said he would work to protect Indiana residents from illegal immigrants, particularly commercial truckdrivers.",
+      "specific": false,
+      "status": "not_started",
+      "evidence": [],
+      "added_by": "grok",
+      "verified": false,
+      "verified_by": null,
+      "notes": "Grok confidence: high"
     }
   ]
 }
