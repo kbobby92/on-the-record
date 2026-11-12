@@ -79,10 +79,11 @@
       "called_at": "2026-11-04T04:17Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-barry-moore-wins-election-to-u-s-senate-from-alabama/",
       "notes": "",
-      "updated": "2026-11-09T23:56:58Z",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-06T12:52-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/alabama-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-11-25"
     },
     "AR": {
       "seat_holder": "C001095",
@@ -198,11 +199,12 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-chris-coons-wins-reelection-to-u-s-senate-from-delaware/",
-      "notes": "",
-      "updated": "2026-11-07T17:38:38Z",
+      "notes": "Delaware's county boards of canvass were scheduled to certify results on Nov. 5; certified statewide figures could not be confirmed from the state results page.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/delaware-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-11-05"
     },
     "FL": {
       "seat_holder": "M001244",
@@ -311,10 +313,11 @@
       "called_at": "2026-11-04T04:35Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-josh-turek-wins-election-to-u-s-senate-from-iowa/",
       "notes": "",
-      "updated": "2026-11-10T23:58:19Z",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-09T17:50-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/iowa-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-11-30"
     },
     "ID": {
       "seat_holder": "R000584",
@@ -341,19 +344,29 @@
           "name": "Natalie Fleming",
           "party": "IND",
           "incumbent": false,
+          "candidate_id": "S0ID00172",
           "votes": 49932,
           "pct": 7.0
+        },
+        {
+          "name": "Matt Loesby",
+          "party": "LIB",
+          "incumbent": false,
+          "candidate_id": "S6ID00187",
+          "votes": 20672,
+          "pct": 2.9
         }
       ],
       "winner": "Jim Risch",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T06:31Z",
       "source_url": "https://www.yahoo.com/news/politics/articles/republican-jim-risch-wins-reelection-063216005.html",
-      "notes": "No Democratic nominee. A Libertarian candidate was also on the ballot; the source does not itemize his votes.",
-      "updated": "2026-11-09T23:56:58Z",
+      "notes": "No Democratic nominee. The Libertarian candidate's count comes from an earlier Ballotpedia snapshot of NYT/DDHQ figures, because the primary source does not itemize it.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-09T17:31-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/idaho-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-11-24"
     },
     "IL": {
       "seat_holder": "D000563",
@@ -636,7 +649,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MN00440",
-          "votes": 1520608,
+          "votes": 1520908,
           "pct": 53.7
         },
         {
@@ -659,7 +672,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6MN00572",
-          "votes": 32470,
+          "votes": 32471,
           "pct": 1.1
         }
       ],
@@ -668,9 +681,9 @@
       "called_at": "2026-11-04T05:07Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-peggy-flanagan-wins-election-to-u-s-senate-from-minnesota/",
       "notes": "CBS News also projected Flanagan.",
-      "updated": "2026-11-09T23:56:58Z",
-      "results_as_of": "2026-11-09T11:38-06:00",
-      "results_source": "https://electionresults.sos.mn.gov/Results/Index?ErsElectionId=201&officeInElectionIdList=38485&officeInElectionIdList=-1&scenario=USSenate&electionDate=11%2F03%2F2026+00%3A00%3A00",
+      "updated": "2026-11-12T23:56:12Z",
+      "results_as_of": "2026-11-09",
+      "results_source": "https://www.sos.mn.gov/elections-voting/election-results/2026/2026-general-election-results/",
       "results_source_name": "Minnesota Secretary of State (unofficial results)",
       "certify_by": "2026-11-19"
     },
@@ -708,8 +721,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-11",
       "source_url": "https://www.wlox.com/2026/11/11/ap-projects-democrat-scott-colom-winner-highly-contested-mississippi-us-senate-seat/",
-      "notes": "Associated Press projected Colom the winner on Nov. 11. Counties certify by Nov. 13; Mississippi has no recount law. Vote figures have not been refreshed since Nov. 6.",
-      "updated": "2026-11-11T23:59:36Z",
+      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. Counties certify by Nov. 13; vote figures shown predate the final county updates.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-06T19:41-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/mississippi-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
@@ -1055,8 +1068,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:36Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-kevin-hern-wins-election-to-u-s-senate-from-oklahoma/",
-      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. Ron Meinhardt's count is itemized by PollCheck (civicAPI) and matches the remainder of the source's total.",
-      "updated": "2026-11-09T23:56:58Z",
+      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. Ron Meinhardt's count is itemized by PollCheck (civicAPI) and matches the remainder of the source's total. The State Election Board scheduled state and federal certification for Nov. 10; certification not yet confirmed from an official page.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oklahoma-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -1183,8 +1196,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04",
       "source_url": "https://www.foxcarolina.com/2026/11/04/annie-andrews-projected-win-us-senate-race-flipping-south-carolina-seat-blue/",
-      "notes": "Decision Desk HQ and CBS News also projected Andrews. Exact call time not reported.",
-      "updated": "2026-11-09T23:56:58Z",
+      "notes": "Decision Desk HQ and CBS News also projected Andrews. Reports place the AP call at about 10:40 p.m. ET on Nov. 3; counties certified their tallies on Nov. 6, and statewide certification is not yet confirmed.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-06T18:19-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/south-carolina-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
@@ -1247,8 +1260,8 @@
       "called_by": "NBC News",
       "called_at": "2026-11-04",
       "source_url": "https://www.wsmv.com/2026/11/04/hagerty-serve-second-us-senate-term-after-defeating-democrat-bradshaw/",
-      "notes": "Fox News also shows the race called. Exact call time not reported.",
-      "updated": "2026-11-07T17:38:38Z",
+      "notes": "Fox News and the Associated Press also projected Hagerty. Exact NBC call time not reported.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-07T12:25-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/tennessee-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
@@ -1287,10 +1300,11 @@
       "called_at": "2026-11-04T03:14Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117817837893104086",
       "notes": "NBC News also projected Talarico.",
-      "updated": "2026-11-09T23:56:58Z",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-08T15:44-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/texas-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-12-07"
     },
     "VA": {
       "seat_holder": "W000805",
@@ -1302,16 +1316,16 @@
           "incumbent": true,
           "bioguide": "W000805",
           "candidate_id": "S6VA00093",
-          "votes": 2190392,
-          "pct": 61.2
+          "votes": 2228020,
+          "pct": 61.4
         },
         {
           "name": "Bert Mizusawa",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S8VA00321",
-          "votes": 1388958,
-          "pct": 38.8
+          "votes": 1389997,
+          "pct": 38.3
         }
       ],
       "winner": "Mark Warner",
@@ -1319,10 +1333,10 @@
       "called_at": "2026-11-04T00:00Z",
       "source_url": "https://www.fox5dc.com/news/va-senate-election-mark-warner-fourth-term",
       "notes": "Also projected by DDHQ, NBC News and CNN.",
-      "updated": "2026-11-10T23:58:19Z",
-      "results_as_of": "2026-11-06T00:24-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/virginia-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
+      "updated": "2026-11-12T23:56:12Z",
+      "results_as_of": "2026-11-12",
+      "results_source": "https://cardinalnews.org/2026/11/03/live-2026-election-results/",
+      "results_source_name": "Virginia Department of Elections unofficial results (via Cardinal News)",
       "certify_by": "2026-12-07"
     },
     "WV": {
@@ -1390,8 +1404,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-harriet-hageman-wins-election-to-u-s-senate-from-wyoming/",
-      "notes": "Wyoming Public Media reported Nov. 10 that the State Canvassing Board approved the general election results; awaiting the official certified figures.",
-      "updated": "2026-11-10T23:58:19Z",
+      "notes": "Wyoming Public Media and KHOL reported that the State Canvassing Board certified the general election results on Nov. 10; the official certified figures have not yet been obtained, so totals remain unofficial.",
+      "updated": "2026-11-12T23:56:12Z",
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/wyoming-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
