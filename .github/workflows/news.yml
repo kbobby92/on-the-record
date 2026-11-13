@@ -2,8 +2,10 @@ name: Update news
 
 on:
   schedule:
-    # 6 AM, 10 AM, 2 PM and 6 PM Arizona time (UTC-7, no daylight saving) = 13, 17, 21, 01 UTC
-    - cron: "7 13,17,21,1 * * *"
+    # Every hour from 6 AM to 6 PM Arizona time (UTC-7, no daylight saving) = 13:00-01:00 UTC.
+    # GitHub delays or drops scheduled runs when it's busy, so we check hourly and each run skips itself
+    # if the news was updated in the last 2.5 hours. Result: about four real updates a day, reliably.
+    - cron: "23 0,1,13-23 * * *"
   workflow_dispatch:
   push:
     paths:
@@ -30,12 +32,31 @@ jobs:
           python-version: "3.12"
       - run: pip install requests==2.32.3 feedparser==6.0.11
 
+      - name: Skip if the news is fresh
+        id: fresh
+        if: github.event_name == 'schedule'
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          try:
+              up = datetime.fromisoformat(json.load(open("data/news.json"))["updated"])
+              age = (datetime.now(timezone.utc) - up).total_seconds() / 60
+          except Exception:
+              age = 9999
+          print(f"News last updated {age:.0f} minutes ago")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"skip={'true' if age < 150 else 'false'}\n")
+          PY
+
       - name: Collect news
+        if: steps.fresh.outputs.skip != 'true'
         env:
           CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
         run: python scripts/fetch_news.py
 
       - name: Commit changes
+        if: steps.fresh.outputs.skip != 'true'
         run: |
           git config user.name "on-the-record-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
