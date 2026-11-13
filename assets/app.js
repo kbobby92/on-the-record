@@ -21,6 +21,92 @@
     return cache[path];
   }
 
+  /* ---------- Shared pieces for the 2026-11 redesign ---------- */
+  const PC = { D: "var(--dem)", R: "var(--rep)", I: "var(--ind)" };
+  const watch = {
+    all() { try { return (store.get("otr_watch") || "").split(",").filter(Boolean); } catch { return []; } },
+    has(id) { return watch.all().includes(id); },
+    toggle(id) { const a = watch.all(); const i = a.indexOf(id); i < 0 ? a.push(id) : a.splice(i, 1); store.set("otr_watch", a.join(",")); return i < 0; },
+  };
+  function spark(vals, color) {
+    const v = (vals || []).filter((x) => x != null);
+    if (v.length < 2) return `<svg class="spark" aria-hidden="true"></svg>`;
+    const lo = Math.min(...v), hi = Math.max(...v), r = hi - lo || 1;
+    const pts = vals.map((x, i) => (x == null ? null : [(i / (vals.length - 1)) * 96, 31 - ((x - lo) / r) * 28])).filter(Boolean);
+    return `<svg class="spark" viewBox="0 0 96 34" preserveAspectRatio="none" aria-hidden="true"><path d="M${pts.map((q) => q.map((n) => n.toFixed(1)).join(",")).join("L")}" fill="none" stroke="${color}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
+  }
+  function srow(s, vals, pill, sub) {
+    const p = pc(s.party);
+    return `<a class="row p-${p}" href="#/s/${esc(s.bioguide)}">${photo(s)}
+      <div style="min-width:0"><div class="nm">${esc(s.name)}</div><div class="sub">${sub || `${PARTY_NAME[p] || esc(s.party)} · ${esc(STATES[s.state] || s.state)}`}</div></div>
+      ${spark(vals, PC[p] || "var(--faint)")}<span class="pill">${pill}</span></a>`;
+  }
+  // Line chart you can scrub: moving along it updates the big number, like a stock chart.
+  function lineChart(el, labels, vals, color, onScrub) {
+    const W = 800, H = 250, pad = 6;
+    const pts = vals.map((v, i) => (v == null ? null : { i, v })).filter(Boolean);
+    if (pts.length < 2) { el.innerHTML = `<div class="nodata">Not enough votes in this period to chart.</div>`; onScrub(null); return; }
+    const lo = Math.min(...pts.map((q) => q.v)), hi = Math.max(...pts.map((q) => q.v));
+    const span = Math.max(hi - lo, 4), y0 = lo - span * 0.15, y1 = hi + span * 0.15;
+    const X = (i) => pad + (i / Math.max(1, vals.length - 1)) * (W - pad * 2);
+    const Y = (v) => H - ((v - y0) / (y1 - y0)) * H;
+    const d = pts.map((q, k) => `${k ? "L" : "M"}${X(q.i).toFixed(1)},${Y(q.v).toFixed(1)}`).join("");
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Chart">
+      <line x1="0" x2="${W}" y1="${Y(pts[0].v)}" y2="${Y(pts[0].v)}" stroke="#2a2e35" stroke-width="1.5" stroke-dasharray="2 6" vector-effect="non-scaling-stroke"/>
+      <path d="${d}" fill="none" stroke="${color}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+      <line class="xh" y1="0" y2="${H}" stroke="#3a3f47" stroke-width="1" vector-effect="non-scaling-stroke" visibility="hidden"/>
+      <circle class="dot" r="5" fill="${color}" stroke="#000" stroke-width="2" visibility="hidden"/></svg><div class="tip" hidden></div>`;
+    const svg = el.querySelector("svg"), xh = svg.querySelector(".xh"), dot = svg.querySelector(".dot"), tip = el.querySelector(".tip");
+    const move = (cx) => {
+      const r = svg.getBoundingClientRect(), fx = ((cx - r.left) / r.width) * W;
+      let b = pts[0]; for (const q of pts) if (Math.abs(X(q.i) - fx) < Math.abs(X(b.i) - fx)) b = q;
+      xh.setAttribute("x1", X(b.i)); xh.setAttribute("x2", X(b.i)); xh.setAttribute("visibility", "visible");
+      dot.setAttribute("cx", X(b.i)); dot.setAttribute("cy", Y(b.v)); dot.setAttribute("visibility", "visible");
+      tip.hidden = false; tip.style.left = `${Math.min(92, Math.max(8, (X(b.i) / W) * 100))}%`; tip.textContent = labels[b.i];
+      onScrub(b.v, labels[b.i]);
+    };
+    const leave = () => { xh.setAttribute("visibility", "hidden"); dot.setAttribute("visibility", "hidden"); tip.hidden = true; onScrub(null); };
+    svg.addEventListener("pointermove", (e) => move(e.clientX));
+    svg.addEventListener("pointerdown", (e) => move(e.clientX));
+    svg.addEventListener("pointerleave", leave);
+    svg.addEventListener("pointerup", (e) => { if (e.pointerType !== "mouse") leave(); });
+  }
+  function nrow(i, names, parties = {}) {
+    const k = KIND[i.kind];
+    const who = (i.senators || []).slice(0, 3).map((id) => id.startsWith("elect:")
+      ? `<a class="chip p-${parties[id] || "X"}" href="#/elections/${esc(id.slice(6))}">${esc(names[id] || id)} <span>elect</span></a>`
+      : `<a class="chip p-${parties[id] || "X"}" href="#/s/${esc(id)}">${esc(names[id] || id)}</a>`).join("");
+    return `<div class="nrow"><div class="src">${esc(k ? k[0] : i.source)} <span>· ${ago(i.published)}</span></div>
+      <a class="hl" href="${esc(i.url)}" target="_blank" rel="noopener" style="display:block;color:inherit">${esc(i.title)}</a>${who ? `<div class="nwho">${who}</div>` : ""}</div>`;
+  }
+  // Stories per senator per day over the last week, from the news feed.
+  function newsCounts(news, days = 7) {
+    const out = {}, now = Date.now();
+    for (const it of news.items) {
+      const age = Math.floor((now - new Date(it.published)) / 864e5);
+      if (age < 0 || age >= days) continue;
+      for (const id of it.senators || []) { if (id.startsWith("elect:")) continue; (out[id] = out[id] || Array(days).fill(0))[days - 1 - age]++; }
+    }
+    return out;
+  }
+  const wkLabel = (iso) => `Week of ${new Date(iso + "T12:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`;
+  // Header search: jump to a senator or state.
+  get("data/index.json").then((d) => {
+    const dl = document.getElementById("gnames"), inp = document.getElementById("gsearch");
+    if (!dl || !inp) return;
+    dl.innerHTML = d.senators.map((x) => `<option value="${esc(x.name)}">${esc(STATES[x.state] || x.state)}</option>`).join("")
+      + [...new Set(d.senators.map((x) => x.state))].map((st) => `<option value="${esc(STATES[st] || st)}">State</option>`).join("");
+    const go = () => {
+      const v = inp.value.trim().toLowerCase(); if (!v) return;
+      const sen = d.senators.find((x) => x.name.toLowerCase() === v) || d.senators.find((x) => x.name.toLowerCase().includes(v));
+      const st = Object.keys(STATES).find((k) => STATES[k].toLowerCase() === v || k.toLowerCase() === v);
+      if (st) location.hash = `#/state/${st}`; else if (sen) location.hash = `#/s/${sen.bioguide}`;
+      inp.value = ""; inp.blur();
+    };
+    inp.addEventListener("change", go);
+    inp.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+  }).catch(() => {});
+
   function nav(which) {
     document.querySelectorAll("nav a").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
     window.scrollTo(0, 0);
@@ -105,7 +191,7 @@
 
   async function senatePage() {
     nav("senate");
-    const [data, dash] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null)]);
+    const [data, dash, series] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null), get("data/series.json").catch(() => null)]);
     document.getElementById("updated").textContent = `Data updated ${new Date(data.updated).toLocaleString()}.`;
     const ss = data.senators;
     const states = [...new Set(ss.map((s) => s.state))].sort();
@@ -163,19 +249,13 @@
       }).catch(() => {});
     }
 
-    const card = (s) => `
-        <a class="card p-${pc(s.party)}" href="#/s/${s.bioguide}">
-          <div class="who">${photo(s)}<div>
-            <div class="name">${esc(s.name)}</div>
-            <div class="meta">${PARTY_NAME[pc(s.party)] || esc(s.party)} · ${esc(s.state)}</div>
-            ${electionTag(s.election)}
-          </div></div>
-          <div class="stats">
-            <div class="stat"><b>${fmtPct(s.metrics.attendance)}</b><span>votes cast</span></div>
-            <div class="stat"><b>${fmtPct(s.metrics.party_unity)}</b><span>votes with party</span></div>
-            <div class="stat"><b>${fmtMoney(s.metrics.raised)}</b><span>raised this cycle</span></div>
-          </div>
-        </a>`;
+    // Each row: sparkline and value of whatever the list is sorted by (attendance by default).
+    const card = (s) => {
+      const ser = series && series.senators[s.bioguide];
+      if (ui.sort === "unity_low") return srow(s, ser ? ser.unity.slice(-26) : [], fmtPct(s.metrics.party_unity));
+      if (ui.sort === "raised") return srow(s, [], fmtMoney(s.metrics.raised));
+      return srow(s, ser ? ser.attendance.slice(-26) : [], fmtPct(s.metrics.attendance));
+    };
     const render = () => {
       const q = ui.q.toLowerCase().trim();
       const list = ss.filter((s) => !q || s.name.toLowerCase().includes(q) || s.state.toLowerCase() === q ||
@@ -193,7 +273,7 @@
       document.getElementById("groups").innerHTML = keys.map((k) => `
         <section class="group"><div class="group-head"><h3>${esc(G.name(k))}</h3><span class="muted small">${buckets[k].length}</span>
           ${ui.group === "state" ? `<a class="small" href="#/state/${esc(k)}">Compare side by side →</a>` : ""}</div>
-          <div class="grid">${buckets[k].sort(sorters[ui.sort]).map(card).join("")}</div></section>`).join("")
+          <div>${buckets[k].sort(sorters[ui.sort]).map(card).join("")}</div></section>`).join("")
         || `<div class="empty">No senators match "${esc(ui.q)}".</div>`;
     };
     document.getElementById("q").addEventListener("input", (e) => { ui.q = e.target.value; render(); });
@@ -215,72 +295,116 @@
 
   async function home() {
     nav("home");
-    const [data, dash, issues, promises, news] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null),
-      get("data/issues_index.json").catch(() => ({ issues: [] })), get("data/promises.json").catch(() => ({ promises: [] })), get("data/news.json").catch(() => null)]);
+    const [data, dash, issues, promises, news, series, votesR] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null),
+      get("data/issues_index.json").catch(() => ({ issues: [] })), get("data/promises.json").catch(() => ({ promises: [] })), get("data/news.json").catch(() => null),
+      get("data/series.json").catch(() => null), get("data/votes_recent.json").catch(() => ({ votes: [] }))]);
     document.getElementById("updated").textContent = `Data updated ${new Date(data.updated).toLocaleString()}.`;
     const states = [...new Set(data.senators.map((s) => s.state))].sort();
-    const ui = home.ui || (home.ui = { view: "january" });
+    const ui = home.ui || (home.ui = { metric: "attendance" });
     const who = Object.fromEntries(data.senators.map((s) => [s.bioguide, s]));
     const RES = { kept: "Kept", broken: "Broken", compromise: "Compromise", stalled: "Stalled", in_progress: "In progress" };
     const recent = promises.promises.filter((p) => RES[p.status] && who[p.bioguide] && (p.evidence || []).length)
       .map((p) => ({ p, d: p.evidence.map((e) => e.date).sort().pop() })).sort((a, b) => b.d.localeCompare(a.d)).slice(0, 4);
-
+    const j = dash ? dash.count_jan : null, n = dash ? dash.count_now : null;
+    const flips = dash ? dash.january.filter((x) => x.flip).length : 0;
+    const mySt = store.get("otr_state");
+    const mine = mySt ? data.senators.filter((s) => s.state === mySt) : [];
+    const watched = watch.all().map((id) => who[id]).filter(Boolean);
+    const nc = news ? newsCounts(news) : {};
+    const total = (id) => (nc[id] || []).reduce((a, x) => a + x, 0);
+    const movers = Object.keys(nc).filter((id) => who[id]).sort((a, b) => total(b) - total(a)).slice(0, 5).map((id) => who[id]);
     const tick = news ? news.items.slice(0, 8) : [];
+    const kept = dash && dash.promises ? dash.promises.kept : null;
+
     app.innerHTML = `
-      ${tick.length ? `<div class="ticker" id="ticker" role="region" aria-roledescription="carousel" aria-label="Latest headlines">
+      ${tick.length ? `<div class="ticker tickbar" id="ticker" role="region" aria-roledescription="carousel" aria-label="Latest headlines">
         <a class="tk-label" href="#/news">Latest</a>
         <div class="tk-body" id="tkbody" aria-live="off"></div>
-        <div class="tk-ctl">
-          <span class="tk-count" id="tkcount"></span>
+        <div class="tk-ctl"><span class="tk-count" id="tkcount"></span>
           <button type="button" id="tkprev" aria-label="Previous headline">‹</button>
           <button type="button" id="tkplay" aria-label="Pause headlines">❚❚</button>
-          <button type="button" id="tknext" aria-label="Next headline">›</button>
-        </div></div>` : ""}
-      <div class="dash-title"><h1>Congress at a glance</h1>
-        <p class="lede">Who controls Congress, what changes in January, and what members promised, from public records with every item linked to its source.</p></div>
-      <div class="glance">
-        <a class="panel chamber-card" href="#/senate">
-          <div class="panel-top"><p class="ph">Senate · 100 seats</p>
-            <div class="segtg" id="hview" role="group" aria-label="Senate view">${[["now", "Now"], ["january", "January"]].map(([v, l]) => `<button type="button" data-v="${v}" class="${ui.view === v ? "on" : ""}">${l}</button>`).join("")}</div></div>
-          <div id="senmini"></div>
-          <div class="cc-foot"><span id="sennote" class="muted small"></span><span class="go">Open the Senate →</span></div>
-        </a>
-        <a class="panel chamber-card soon" href="#/house">
-          <div class="panel-top"><p class="ph">House · 435 seats</p><span class="soon-tag">Coming soon</span></div>
-          ${miniChamber(Array.from({ length: 435 }, () => ({ p: "X" })), HOUSE_SEATS, 2.6, "435", "House of Representatives")}
-          <div class="cc-foot"><span class="muted small">Members, votes and promises for every representative are on the way.</span><span class="go">What's coming →</span></div>
-        </a>
-      </div>
-      ${dash ? `<div class="dash home-dash">
-        <section class="panel insight-panel"><div class="panel-top"><p class="ph">Insights</p><a class="small" href="#/senate">Senate dashboard →</a></div>
-          <ol class="insights">${dash.insights.slice(0, 5).map((x) => `<li>${x.href ? `<a class="ins" href="${esc(x.href)}"><span>${md(x.text)}</span></a>` : `<div class="ins"><span>${md(x.text)}</span></div>`}</li>`).join("")}</ol></section>
-        <section class="panel promise-panel">${promisePanel(dash.promises)}
-          ${recent.length ? `<p class="ph" style="margin-top:16px">Latest promise updates</p><ul class="recent-p">${recent.map(({ p, d }) => `<li><a href="#/s/${p.bioguide}"><span class="status ${esc(p.status)}">${RES[p.status]}</span>
-            <b>${esc(who[p.bioguide].name)}</b> <span class="muted">(${pc(who[p.bioguide].party)}-${esc(who[p.bioguide].state)})</span><span class="rp">${esc(p.promise || "")}</span></a></li>`).join("")}</ul>` : ""}</section>
-      </div>` : ""}
-      ${finder(states, store.get("otr_state"))}
-      ${news && news.items.length > 8 ? `<section class="panel news-panel home-news"><div class="panel-top"><p class="ph">More news</p><a class="small" href="#/news">All news →</a></div>
-        <ul class="newslist">${news.items.slice(8, 14).map((i) => newsItem(i, news.names, news.parties)).join("")}</ul></section>` : ""}
-      ${issues.issues.length ? `<div class="list-head"><h2>Issues in focus</h2><a class="small" href="#/issues" style="margin-bottom:12px">All issues →</a></div>
-        <div class="grid issue-grid">${issues.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}"><h3>${esc(i.title)}</h3><p class="muted small">${esc(clip(i.summary))}</p>
-          <div class="stats"><div class="stat"><b>${i.votes}</b><span>key votes</span></div><div class="stat"><b>${i.promises}</b><span>promises</span></div><div class="stat"><b>${i.statements}</b><span>statements</span></div></div></a>`).join("")}</div>` : ""}`;
+          <button type="button" id="tknext" aria-label="Next headline">›</button></div></div>` : ""}
+      <div class="page"><div style="min-width:0">
+        ${j ? `<div class="eyebrow">Senate in January</div>
+          <div class="big"><span style="color:var(--dem)">${j.D}</span> <span style="color:var(--faint)">–</span> <span style="color:var(--rep)">${j.R}</span></div>
+          <div class="delta"><b>${flips} seats</b> change party after the election${j.X ? ` · ${j.X} ${j.X === 1 ? "race" : "races"} still counting` : ""} · <a href="#/elections">Results</a></div>
+          <div class="jbar" role="img" aria-label="${j.D} Democrats, ${j.I} independents, ${j.X || 0} not called, ${j.R} Republicans"><span style="flex:${j.D};background:var(--dem)"></span><span style="flex:${j.I};background:var(--ind)"></span>${j.X ? `<span style="flex:${j.X};background:var(--line-2)"></span>` : ""}<span style="flex:${j.R};background:var(--rep)"></span></div>
+          <div class="jlegend"><span><i style="background:var(--dem)"></i>${j.D} Democrats</span><span><i style="background:var(--ind)"></i>${j.I} Independents</span>${j.X ? `<span><i style="background:var(--line-2)"></i>${j.X} not called</span>` : ""}<span><i style="background:var(--rep)"></i>${j.R} Republicans</span><span style="color:var(--faint)">Today: ${n.D} D · ${n.I} I · ${n.R} R</span></div>` : ""}
 
-    bindFinder();
+        <section class="blk"><div class="sh"><h2>${mySt ? `Your senators` : "Find your senators"}</h2>
+          ${mine.length ? `<span class="segtg" id="hmetric">${[["attendance", "Attendance"], ["unity", "With party"]].map(([k, l]) => `<button type="button" data-m="${k}" class="${ui.metric === k ? "on" : ""}">${l}</button>`).join("")}</span>` : ""}</div>
+          ${mine.length ? `<div id="mine"></div><p class="small muted" style="margin:10px 0 0">${esc(STATES[mySt])} · <a href="#/state/${mySt}">Compare side by side</a> · <a href="#" id="chst">Change state</a></p>` : zipForm(states)}</section>
+
+        <section class="blk"><div class="sh"><h2>Watchlist</h2>${watched.length ? `<span class="muted small">${watched.length} following</span>` : ""}</div>
+          ${watched.length ? watched.map((s) => srow(s, series && series.senators[s.bioguide] ? series.senators[s.bioguide].attendance.slice(-26) : [], fmtPct(s.metrics.attendance), `${PARTY_NAME[pc(s.party)]} · ${esc(STATES[s.state])} · attendance`)).join("")
+            : `<div class="empty">Tap <b>Follow</b> on any senator's page to track them here. <a href="#/senate">Browse senators</a></div>`}</section>
+
+        ${movers.length ? `<section class="blk"><div class="sh"><h2>Most in the news</h2><a class="more" href="#/news">All news</a></div>
+          ${movers.map((s) => srow(s, nc[s.bioguide], `${total(s.bioguide)} ${total(s.bioguide) === 1 ? "story" : "stories"}`, "This week")).join("")}</section>` : ""}
+
+        ${recent.length ? `<section class="blk"><div class="sh"><h2>Promise updates</h2><a class="more" href="#/promises">All promises</a></div>
+          ${recent.map(({ p, d }) => `<a class="prow" href="#/s/${p.bioguide}"><div><div class="t">${esc(p.promise || "")}</div>
+            <div class="d">${esc(who[p.bioguide].name)} (${pc(who[p.bioguide].party)}-${esc(who[p.bioguide].state)}) · updated ${fmtDate(d)}</div></div><span class="status ${esc(p.status)}">${RES[p.status]}</span></a>`).join("")}</section>` : ""}
+
+        ${news && news.items.length ? `<section class="blk"><div class="sh"><h2>News</h2><a class="more" href="#/news">See all</a></div>
+          ${news.items.slice(0, 8).map((i) => nrow(i, news.names, news.parties)).join("")}</section>` : ""}
+
+        ${issues.issues.length ? `<section class="blk"><div class="sh"><h2>Issues in focus</h2><a class="more" href="#/issues">All issues</a></div>
+          ${issues.issues.map((i) => `<a class="prow" href="#/issue/${i.id}"><div><div class="t">${esc(i.title)}</div><div class="d">${esc(clip(i.summary, 110))}</div></div>
+            <span class="pill ghost">${i.votes} votes</span></a>`).join("")}</section>` : ""}
+      </div>
+      <aside class="side">
+        <div class="card lists"><h4>Lists</h4>
+          ${mySt ? `<a href="#/state/${mySt}"><i>📍</i><span>${esc(STATES[mySt])}</span><small>${mine.length}</small></a>` : ""}
+          <a href="#/senate"><i>🏛️</i><span>All senators</span><small>${data.senators.length}</small></a>
+          <a href="#/elections"><i>🔁</i><span>Seats that flip</span><small>${flips}</small></a>
+          <a href="#/promises/kept"><i>✅</i><span>Promises kept</span><small>${kept ?? ""}</small></a>
+          <a href="#/promises"><i>📝</i><span>All promises</span><small>${promises.promises.length}</small></a>
+          <a href="#/issues"><i>⚖️</i><span>Issues</span><small>${issues.issues.length}</small></a>
+        </div>
+        ${votesR.votes.length ? `<div class="card"><h4>Latest Senate votes</h4><div class="vlist">${votesR.votes.slice(0, 5).map((v) => `<a href="${esc(v.source)}" target="_blank" rel="noopener">${esc(v.bill || v.question)}<span>${esc((v.result || "").replace(/\s*\(.*\)/, ""))} · ${v.counts ? `${v.counts.yeas}–${v.counts.nays}` : ""} · ${fmtDate(v.date)}</span></a>`).join("")}</div>
+          <p class="small" style="margin:10px 0 0"><a href="#/votes">All recent votes</a></p></div>` : ""}
+        <a class="card" href="#/house" style="color:var(--ink)"><h4>House of Representatives</h4><p class="muted small" style="margin:0">All 435 members are coming next, built the same way as the Senate.</p></a>
+      </aside></div>`;
+
     if (tick.length) startTicker(tick, news);
-    if (dash) {
+    if (!mine.length) bindZip(() => home());
+    else {
       const draw = () => {
-        const jan = ui.view === "january", c = jan ? dash.count_jan : dash.count_now, left = c.D + c.I;
-        document.getElementById("senmini").innerHTML = miniChamber(jan ? dash.january : dash.now, SEATS, 5.2,
-          jan ? `${left} · ${c.R}` : `${c.R} · ${left}`, jan ? "Dem + Ind · Rep from January" : "Rep · Dem + Ind now");
-        document.getElementById("sennote").textContent = jan
-          ? `${c.X ? `${c.X} races not yet called. ` : ""}Gold rings: newly elected.` : "Who holds the seats today.";
+        document.getElementById("mine").innerHTML = mine.map((s) => {
+          const v = series && series.senators[s.bioguide] ? series.senators[s.bioguide][ui.metric].slice(-26) : [];
+          return srow(s, v, fmtPct(ui.metric === "unity" ? s.metrics.party_unity : s.metrics.attendance));
+        }).join("");
       };
-      document.querySelectorAll("#hview button").forEach((b) => b.addEventListener("click", (e) => {
-        e.preventDefault(); e.stopPropagation(); ui.view = b.dataset.v;
-        document.querySelectorAll("#hview button").forEach((x) => x.classList.toggle("on", x === b)); draw();
-      }));
+      document.querySelectorAll("#hmetric button").forEach((b) => b.addEventListener("click", () => {
+        ui.metric = b.dataset.m; document.querySelectorAll("#hmetric button").forEach((x) => x.classList.toggle("on", x === b)); draw(); }));
+      document.getElementById("chst").addEventListener("click", (e) => { e.preventDefault(); store.set("otr_state", ""); home(); });
       draw();
     }
+  }
+  // Compact ZIP / state picker used on Home.
+  function zipForm(states) {
+    return `<form class="zip" id="zipf" autocomplete="off"><input id="zip" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="ZIP code" aria-label="ZIP code">
+      <select id="fstate" aria-label="State" class="zsel"><option value="">or pick a state</option>${states.map((st) => `<option value="${st}">${esc(STATES[st] || st)}</option>`).join("")}</select>
+      <button class="cta" type="submit" style="width:auto">Show my senators</button><p class="ferr small" id="ferr" role="alert"></p></form>`;
+  }
+  function bindZip(done) {
+    const f = document.getElementById("zipf"); if (!f) return;
+    const err = document.getElementById("ferr"), zip = document.getElementById("zip"), sel = document.getElementById("fstate");
+    zip.addEventListener("input", () => { err.textContent = ""; zip.value = zip.value.replace(/\D/g, ""); });
+    f.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let st = sel.value; const z = zip.value.trim();
+      if (z) {
+        if (!/^\d{5}$/.test(z)) { err.textContent = "Enter a 5-digit ZIP code, or pick your state."; return; }
+        const zs = zipToState(z);
+        if (zs === "DC") { err.textContent = "Washington, D.C. doesn't have senators. Pick a state instead."; return; }
+        if (!zs) { err.textContent = "That ZIP code isn't in one of the 50 states. Pick your state instead."; return; }
+        st = zs;
+      }
+      if (!st) { err.textContent = "Enter your ZIP code or pick a state."; return; }
+      store.set("otr_state", st); done(st);
+    });
   }
 
   /* Rotating headline bar: one headline at a time, pauses on hover/focus and for reduced-motion users. */
@@ -422,42 +546,84 @@
     nav("senate");
     let s;
     try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/senate">Back to all senators</a></div>`; return; }
-    s._news = await get("data/news.json").catch(() => null);
-    const m = s.metrics;
-    const metric = (lbl, val, how) => `<div class="metric ${val === "—" ? "na" : ""}"><div class="lbl">${lbl}</div><div class="val">${val === "—" ? "Not enough data yet" : val}</div><div class="how">${how}</div></div>`;
-    const links = [s.website && `<a href="${esc(s.website)}">Official site</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact</a>`,
-      s.phone && `<a href="tel:${esc(s.phone)}">${esc(s.phone)}</a>`, s.x_handle && `<a href="https://x.com/${esc(s.x_handle)}">@${esc(s.x_handle)} on X</a>`].filter(Boolean).join(" · ");
+    const [news, series] = await Promise.all([get("data/news.json").catch(() => null), get("data/series.json").catch(() => null)]);
+    s._news = news;
+    const m = s.metrics, p = pc(s.party), c = PC[p] || "var(--accent)";
+    const ser = series && series.senators[id];
+    const ui = profile.ui || (profile.ui = { metric: "attendance", range: "1Y" });
+    const RANGE = { "1M": 5, "3M": 13, "6M": 26, "1Y": 52, ALL: 9999 };
+    const LABEL = { attendance: "Attendance", unity: "Votes with own party" };
+    const NOW = { attendance: m.attendance, unity: m.party_unity };
+    const HOW = { attendance: "Share of roll-call votes they voted in", unity: "How often they voted with most of their party. Context, not good or bad" };
+    const kstat = (k, v, h) => `<div class="kstat"><div class="k">${k}</div><div class="v">${v}</div>${h ? `<div class="h">${h}</div>` : ""}</div>`;
+    const following = () => watch.has(id);
 
     app.innerHTML = `
-      <p class="small"><a href="#/senate">← All senators</a></p>
-      <div class="profile-head p-${pc(s.party)}">
-        ${photo(s)}
-        <div>
-          <h1>${esc(s.name)}</h1>
-          <div><span class="party">${esc(s.party)}${s.caucus && s.caucus !== s.party ? `, caucuses with ${esc(s.caucus)}s` : ""}</span>
-            ${!s.election && s.next_election === ELECTION_YEAR ? `<span class="tag">Seat on the ${ELECTION_YEAR} ballot</span>` : ""}</div>
-          <div class="facts">
-            <span>${esc(s.state)} · ${esc(s.rank || "")} senator</span>
-            <span>In the Senate since ${fmtDate(s.serving_since)}</span>
-            <span>Current term ends ${fmtDate(s.term_end)}</span>
-            <span>Next election: ${s.next_election}</span>
-          </div>
-          <div class="small links">${links}</div>
+      <div class="page" style="--c:${c}"><div style="min-width:0">
+        <div class="who-head p-${p}">${photo(s)}<div><h1>${esc(s.name)}</h1>
+          <div class="sub">${PARTY_NAME[p] || esc(s.party)}${s.caucus && s.caucus !== s.party ? ` (caucuses with ${esc(s.caucus)}s)` : ""} · ${esc(STATES[s.state] || s.state)} · Senator since ${new Date(s.serving_since + "T12:00").getFullYear()}</div></div></div>
+        <div class="eyebrow" id="lbl"></div>
+        <div class="big" id="num"></div>
+        <div class="delta" id="dl"></div>
+        <div class="chart" id="chart"></div>
+        <div class="ranges">${Object.keys(RANGE).map((r) => `<button type="button" data-r="${r}" class="${r === ui.range ? "on" : ""}">${r}</button>`).join("")}<span class="sp"></span>
+          <span class="segtg" id="pmetric">${[["attendance", "Attendance"], ["unity", "With party"]].map(([k, l]) => `<button type="button" data-m="${k}" class="${k === ui.metric ? "on" : ""}">${l}</button>`).join("")}</span></div>
+        ${electionNote(s.election, s.name)}
+        <section class="blk"><div class="sh"><h2>Key stats</h2></div><div class="kstats">
+          ${kstat("Attendance", fmtPct(m.attendance), `${m.votes_eligible} votes this Congress`)}
+          ${kstat("Votes with party", fmtPct(m.party_unity), "")}
+          ${kstat("Promise follow-through", m.follow_through != null ? `${m.follow_through}%` : `— <small>needs 3 resolved</small>`, `${m.promises_tracked || 0} tracked · ${m.promises_resolved || 0} resolved`)}
+          ${kstat("Bills sponsored", m.bills_sponsored != null ? `${m.bills_sponsored}` : "—", m.bills_sponsored != null ? `${m.bills_law} became law · ${m.bills_passed} passed a chamber` : "")}
+          ${kstat("Raised this cycle", fmtMoney(m.raised), "FEC, candidate committee")}
+          ${kstat("Next election", s.next_election, `Term ends ${new Date(s.term_end + "T12:00").getFullYear()}`)}
+        </div></section>
+        <div class="tabs" role="tablist">
+          ${["Votes", "Bills", "In the news", "Promises", "Statements", "Campaign money", "Stock trades", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
         </div>
+        <div id="tab"></div>
       </div>
-      ${electionNote(s.election, s.name)}
-      <div class="metrics">
-        ${metric("Attendance", fmtPct(m.attendance), `Share of ${m.votes_eligible} roll-call votes this Congress where they voted.`)}
-        ${metric("Votes with own party", fmtPct(m.party_unity), "How often they voted with most of their party. Shown for context, not as good or bad.")}
-        ${TRADES_ENABLED ? `${metric("Trades reported on time", m.trades ? fmtPct(m.on_time) : "—", `STOCK Act deadline: 45 days. ${m.late_trades} of ${m.trades} trades were reported late.`)}
-        ${metric("Trades in their committees' industries", m.trades ? String(m.committee_overlap_trades) : "—", m.industry_coverage != null ? `Industry identified for ${m.industry_coverage}% of traded stocks.` : "Needs industry data (see How it works).")}` : ""}
-        ${metric("Bills sponsored", m.bills_sponsored != null ? String(m.bills_sponsored) : "—", m.bills_sponsored != null ? `${m.bills_law} became law and ${m.bills_passed} passed at least one chamber. This Congress, from Congress.gov.` : "From Congress.gov, updated daily.")}
-        ${metric("Promise follow-through", fmtPct(m.follow_through), `${m.promises_resolved || 0} of ${m.promises_tracked} promise${m.promises_tracked === 1 ? "" : "s"} resolved. Shown once at least 3 are resolved. Includes sources not yet checked by a person.`)}
-      </div>
-      <div class="tabs" role="tablist">
-        ${["Votes", "Bills", "In the news", "Promises", "Statements", "Campaign money", "Stock trades", "Committees"].map((t, i) => `<button role="tab" data-tab="${i}" class="${i === 0 ? "on" : ""}">${t}</button>`).join("")}
-      </div>
-      <div id="tab"></div>`;
+      <aside class="side">
+        <div class="card">
+          <button type="button" class="cta" id="follow"></button>
+          ${s.phone ? `<a class="cta ghost" style="margin-top:10px" href="tel:${esc(s.phone)}">Call their office</a>` : ""}
+          <div style="margin-top:14px">
+            ${s.phone ? `<div class="kv"><span>Phone</span><b>${esc(s.phone)}</b></div>` : ""}
+            <div class="kv"><span>Seat</span><b>${esc(s.rank ? s.rank[0].toUpperCase() + s.rank.slice(1) : "")} senator · Class ${esc(s.class)}</b></div>
+            <div class="kv"><span>In office since</span><b>${fmtDate(s.serving_since)}</b></div>
+            <div class="kv"><span>Term ends</span><b>${fmtDate(s.term_end)}</b></div>
+          </div>
+          <p class="small" style="margin:12px 0 0">${[s.website && `<a href="${esc(s.website)}">Official site</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact form</a>`, s.x_handle && `<a href="https://x.com/${esc(s.x_handle)}">@${esc(s.x_handle)}</a>`].filter(Boolean).join(" · ")}</p>
+        </div>
+        <div class="card"><h4>Committees</h4><div class="muted small" style="line-height:1.9">${(s.committees || []).map((x) => esc(x.name.replace("Senate Committee on ", "").replace("Committee on ", "").replace("Senate ", ""))).join("<br>") || "None listed"}</div></div>
+        <a class="card" href="#/state/${esc(s.state)}" style="color:var(--ink)"><h4>Compare with the other ${esc(STATES[s.state] || s.state)} senator</h4><p class="small" style="margin:0;color:var(--accent)">Side by side →</p></a>
+      </aside></div>`;
+
+    const fb = document.getElementById("follow");
+    const paintFollow = () => { fb.textContent = following() ? "✓ Following" : "＋ Follow"; fb.classList.toggle("on", following()); fb.setAttribute("aria-pressed", following()); };
+    fb.addEventListener("click", () => { watch.toggle(id); paintFollow(); });
+    paintFollow();
+
+    const draw = () => {
+      const n = Math.min(RANGE[ui.range], series ? series.weeks.length : 0);
+      const vals = ser ? ser[ui.metric].slice(-n) : [], labels = series ? series.weeks.slice(-n).map(wkLabel) : [];
+      const first = vals.find((v) => v != null), now = NOW[ui.metric];
+      const set = (v, when) => {
+        document.getElementById("lbl").textContent = LABEL[ui.metric];
+        const shown = v ?? now;
+        document.getElementById("num").textContent = shown == null ? "—" : `${Number(shown).toFixed(1)}%`;
+        const ch = first != null && now != null ? now - first : null;
+        const per = ui.range === "ALL" ? "this Congress" : `the past ${({ "1M": "month", "3M": "3 months", "6M": "6 months", "1Y": "year" })[ui.range]}`;
+        document.getElementById("dl").innerHTML = when ? `Their last ${series.window} votes, as of the ${esc(when.toLowerCase())}`
+          : `${ch != null ? `<b style="color:${c}">${ch >= 0 ? "+" : "−"}${Math.abs(ch).toFixed(1)} pts</b> over ${per} · ` : ""}${HOW[ui.metric]}. Chart shows a rolling ${series ? series.window : 40}-vote average.`;
+      };
+      lineChart(document.getElementById("chart"), labels, vals, c, set);
+      set(null);
+    };
+    document.querySelectorAll(".ranges > button[data-r]").forEach((b) => b.addEventListener("click", () => {
+      ui.range = b.dataset.r; document.querySelectorAll(".ranges > button[data-r]").forEach((x) => x.classList.toggle("on", x === b)); draw(); }));
+    document.querySelectorAll("#pmetric button").forEach((b) => b.addEventListener("click", () => {
+      ui.metric = b.dataset.m; document.querySelectorAll("#pmetric button").forEach((x) => x.classList.toggle("on", x === b)); draw(); }));
+    draw();
 
     const tabs = [votesTab, billsTab, newsTab, promisesTab, statementsTab, moneyTab, tradesTab, committeesTab];
     const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); if (tabs[i].bind) tabs[i].bind(s); };
@@ -466,19 +632,27 @@
   }
 
   const POS = { Y: "Yes", N: "No", P: "Present", NV: "Didn't vote" };
+  function voteRow(v) {
+    return `<div class="vote-row"><div style="min-width:0"><div class="t">${v.bill ? `${esc(v.bill)} · ` : ""}${esc(clip(v.title || v.question, 140))}</div>
+      <div class="d">${fmtDate(v.date)} · ${esc(v.question)} · ${esc(v.result)} · <a href="${esc(v.source)}">source</a></div>
+      ${v.broke_with_party ? `<span class="flag break">Voted against most of their party</span>` : ""}
+      ${v.summary ? `<details class="sum"><summary>What the bill does</summary><p>${esc(v.summary.text)} ${v.summary.url ? `<a href="${esc(v.summary.url)}">Congress.gov</a>` : ""}</p></details>` : ""}</div>
+      <span class="vpill ${esc(v.position)}">${POS[v.position] || esc(v.position)}</span></div>`;
+  }
   function votesTab(s) {
     if (!s.votes.length) return `<div class="empty">No votes loaded yet. They arrive with the first daily update.</div>`;
-    return `<p class="muted small">Most recent ${s.votes.length} roll-call votes. Where available, the summary is the Congressional Research Service's neutral description of the bill.</p>
-      <div class="table-wrap"><table><thead><tr><th>Date</th><th>What was voted on</th><th>Their vote</th><th>Result</th></tr></thead><tbody>
-      ${s.votes.map((v) => `<tr>
-        <td>${fmtDate(v.date)}</td>
-        <td>${v.bill ? `<b>${esc(v.bill)}</b> ` : ""}${esc(v.title || "")}<div class="muted small">${esc(v.question)}</div>
-          ${v.summary ? `<details class="sum"><summary>What the bill does</summary><p>${esc(v.summary.text)} ${v.summary.url ? `<a href="${esc(v.summary.url)}">Congress.gov</a>` : ""}</p></details>` : ""}
-          ${v.broke_with_party ? `<span class="flag break">Voted against most of party</span>` : ""}</td>
-        <td class="pos ${v.position}">${POS[v.position] || esc(v.position)}</td>
-        <td>${esc(v.result)} <a class="small" href="${esc(v.source)}">source</a></td></tr>`).join("")}
-      </tbody></table></div>`;
+    return `<p class="muted small">Their most recent ${s.votes.length} roll-call votes. Where available, "What the bill does" is the Congressional Research Service's neutral summary.</p>
+      <div id="vlist"></div>`;
   }
+  votesTab.bind = (s) => {
+    let n = 25;
+    const draw = () => {
+      document.getElementById("vlist").innerHTML = s.votes.slice(0, n).map(voteRow).join("")
+        + (s.votes.length > n ? `<button class="btn more" id="vmore">Show more (${s.votes.length - n} left)</button>` : "");
+      const m = document.getElementById("vmore"); if (m) m.onclick = () => { n += 25; draw(); };
+    };
+    draw();
+  };
 
   function tradesTab(s) {
     if (!TRADES_ENABLED) return `<div class="empty">Stock trades aren't loaded into this site yet.<br>

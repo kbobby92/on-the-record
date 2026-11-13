@@ -215,6 +215,7 @@ def main():
         json.dump({"updated": now, "votes": recent_votes}, f, separators=(",", ":"))
     build_elections(roster, now)
     build_promises_index(roster, promises, now)
+    build_series(roster, by_bio, vote_list, majority, bloc, now)
     build_issues(roster, vote_list, summaries, promises, statements, now, lobbying)
     build_dashboard(roster, index, promises, statements, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
@@ -223,6 +224,44 @@ def main():
 
 
 SUFFIXES = {"JR", "SR", "II", "III", "IV", "JR.", "SR."}
+
+
+def build_series(roster, by_bio, vote_list, majority, bloc, now, window=40):
+    """data/series.json: for each senator, week by week, their attendance and party-line voting over their last
+    `window` roll-call votes (a rolling average), for the charts on profiles and the sparklines in lists."""
+    from datetime import timedelta
+    if not vote_list:
+        return
+    d0 = date.fromisoformat(vote_list[0]["date"]); d0 -= timedelta(days=d0.weekday())
+    end = date.fromisoformat(vote_list[-1]["date"])
+    weeks = []
+    while d0 <= end:
+        weeks.append(d0); d0 += timedelta(days=7)
+    out = {}
+    for s in roster:
+        bid = s["bioguide"]
+        hist = []
+        for v in vote_list:
+            p = v["positions"].get(bid)
+            if p is None:
+                continue
+            m = majority[v["id"]].get(bloc(s))
+            hist.append((v["date"], p in ("Y", "N", "P"), (p == m) if (p in ("Y", "N") and m) else None))
+        U, A, k = [], [], 0
+        for w in weeks:
+            cut = (w + timedelta(days=7)).isoformat()
+            while k < len(hist) and hist[k][0] < cut:
+                k += 1
+            h = hist[max(0, k - window):k]
+            if len(h) < 10:
+                U.append(None); A.append(None); continue
+            u = [x[2] for x in h if x[2] is not None]
+            U.append(round(100 * sum(u) / len(u), 1) if u else None)
+            A.append(round(100 * sum(x[1] for x in h) / len(h), 1))
+        out[bid] = {"unity": U, "attendance": A}
+    with open(D("series.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "window": window, "weeks": [w.isoformat() for w in weeks], "senators": out}, f,
+                  separators=(",", ":"))
 
 
 def bills_summary(b):
