@@ -12,8 +12,8 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6AK00276",
-          "votes": 118926,
-          "pct": 49.0
+          "votes": 125157,
+          "pct": 49.2
         },
         {
           "name": "Dan Sullivan",
@@ -21,15 +21,15 @@
           "incumbent": true,
           "bioguide": "S001198",
           "candidate_id": "S4AK00214",
-          "votes": 114676,
-          "pct": 47.2
+          "votes": 119357,
+          "pct": 47.0
         },
         {
           "name": "Daniel J. Sullivan Jr.",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6AK00326",
-          "votes": 4027,
+          "votes": 4199,
           "pct": 1.7
         },
         {
@@ -37,7 +37,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S8AK00140",
-          "votes": 5318,
+          "votes": 5490,
           "pct": 2.2
         }
       ],
@@ -45,13 +45,13 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Not called; no listed outlet has projected a winner. Ranked-choice tabulation is scheduled for Nov. 18 if no candidate passes 50%; percentages are of the four named candidates and exclude write-ins.",
-      "updated": "2026-11-11T23:59:36Z",
-      "results_as_of": "2026-11-10",
-      "results_source": "https://www.yahoo.com/news/politics/articles/peltolas-lead-over-sullivan-grows-144700252.html",
-      "results_source_name": "Alaska Division of Elections (unofficial) via Anchorage Daily News",
+      "notes": "Not called; no listed outlet has projected a winner. Ranked-choice tabulation is scheduled for Nov. 18 if no candidate passes 50%; percentages are as reported by AP.",
+      "updated": "2026-11-14T00:04:28Z",
+      "results_as_of": "2026-11-13",
+      "results_source": "https://www.newsweek.com/mary-peltola-path-winning-alaska-senate-race-outright-12709303",
+      "results_source_name": "Associated Press via Newsweek",
       "certify_by": "2026-11-25",
-      "counted_pct": 84
+      "counted_pct": 88
     },
     "AL": {
       "seat_holder": "T000278",
@@ -288,7 +288,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IA00314",
-          "votes": 631380,
+          "votes": 631422,
           "pct": 46.4
         },
         {
@@ -296,15 +296,15 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IA00298",
-          "votes": 688487,
-          "pct": 50.5
+          "votes": 688567,
+          "pct": 50.6
         },
         {
           "name": "Thomas Laehn",
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6IA00181",
-          "votes": 42131,
+          "votes": 42134,
           "pct": 3.1
         }
       ],
@@ -313,8 +313,8 @@
       "called_at": "2026-11-04T04:35Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-josh-turek-wins-election-to-u-s-senate-from-iowa/",
       "notes": "",
-      "updated": "2026-11-12T23:56:12Z",
-      "results_as_of": "2026-11-09T17:50-05:00",
+      "updated": "2026-11-14T00:04:28Z",
+      "results_as_of": "2026-11-12T13:18-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/iowa-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-30"
@@ -329,7 +329,7 @@
           "incumbent": true,
           "bioguide": "R000584",
           "candidate_id": "S8ID00092",
-          "votes": 401792,
+          "votes": 402983,
           "pct": 56.5
         },
         {
@@ -337,15 +337,15 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6ID00146",
-          "votes": 238361,
-          "pct": 33.5
+          "votes": 239422,
+          "pct": 33.6
         },
         {
           "name": "Natalie Fleming",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S0ID00172",
-          "votes": 49932,
+          "votes": 50134,
           "pct": 7.0
         },
         {
@@ -353,7 +353,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6ID00187",
-          "votes": 20672,
+          "votes": 20742,
           "pct": 2.9
         }
       ],
@@ -361,11 +361,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T06:31Z",
       "source_url": "https://www.yahoo.com/news/politics/articles/republican-jim-risch-wins-reelection-063216005.html",
-      "notes": "No Democratic nominee. The Libertarian candidate's count comes from an earlier Ballotpedia snapshot of NYT/DDHQ figures, because the primary source does not itemize it.",
-      "updated": "2026-11-12T23:56:12Z",
-      "results_as_of": "2026-11-09T17:31-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/idaho-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
+      "notes": "No Democratic nominee. Figures are unofficial pending the state canvass.",
+      "updated": "2026-11-14T00:04:28Z",
+      "results_as_of": "2026-11-10",
+      "results_source": "https://www.spokesman.com/elections/2026/idaho-general-election-nov-3/results/",
+      "results_source_name": "Idaho Secretary of State via The Spokesman-Review",
       "certify_by": "2026-11-24"
     },
     "IL": {
@@ -377,23 +377,23 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IL00458",
-          "votes": 2501456,
-          "pct": 61.4
+          "votes": 2571963,
+          "pct": 61.8
         },
         {
           "name": "Don Tracy",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IL00615",
-          "votes": 1510968,
-          "pct": 37.1
+          "votes": 1525328,
+          "pct": 36.6
         },
         {
           "name": "Whitfield Harrington Jr.",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6IL00680",
-          "votes": 64555,
+          "votes": 66032,
           "pct": 1.6
         }
       ],
@@ -402,11 +402,11 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
       "notes": "NBC News also projected Stratton. Exact call time not reported.",
-      "updated": "2026-11-08T23:59:28Z",
-      "results_as_of": "2026-11-08T18:57-05:00",
-      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/illinois",
-      "results_source_name": "Associated Press via Fox News",
-      "counted_pct": 96
+      "updated": "2026-11-14T00:04:28Z",
+      "results_as_of": "2026-11-13",
+      "results_source": "https://www.nbcchicago.com/elections/who-won-illinois-live-election-results-and-winners-from-the-2026-midterm-election/4012160/",
+      "results_source_name": "NBC News Decision Desk via NBC Chicago",
+      "counted_pct": 97.7
     },
     "KS": {
       "seat_holder": "M001198",
@@ -697,23 +697,23 @@
           "incumbent": true,
           "bioguide": "H001079",
           "candidate_id": "S8MS00261",
-          "votes": 465643,
-          "pct": 48.8
+          "votes": 469797,
+          "pct": 48.7
         },
         {
           "name": "Scott Colom",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MS00133",
-          "votes": 468339,
-          "pct": 49.1
+          "votes": 475478,
+          "pct": 49.2
         },
         {
           "name": "Ty Pinkins",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4MS00187",
-          "votes": 20043,
+          "votes": 20340,
           "pct": 2.1
         }
       ],
@@ -721,9 +721,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-11",
       "source_url": "https://www.wlox.com/2026/11/11/ap-projects-democrat-scott-colom-winner-highly-contested-mississippi-us-senate-seat/",
-      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. Counties certify by Nov. 13; vote figures shown predate the final county updates.",
-      "updated": "2026-11-12T23:56:12Z",
-      "results_as_of": "2026-11-06T19:41-05:00",
+      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. County results were due to the Secretary of State by Nov. 13, and the statewide result had not been certified as of the latest report.",
+      "updated": "2026-11-14T00:04:28Z",
+      "results_as_of": "2026-11-12T20:52-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/mississippi-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
     },
@@ -1068,11 +1068,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:36Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-kevin-hern-wins-election-to-u-s-senate-from-oklahoma/",
-      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. Ron Meinhardt's count is itemized by PollCheck (civicAPI) and matches the remainder of the source's total. The State Election Board scheduled state and federal certification for Nov. 10; certification not yet confirmed from an official page.",
-      "updated": "2026-11-12T23:56:12Z",
-      "results_as_of": "2026-11-05T16:55-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oklahoma-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
+      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. The State Election Board was scheduled to certify results on Nov. 10 and Hern is set to take office Nov. 30, but certification has not been confirmed on an official state page.",
+      "updated": "2026-11-14T00:04:28Z",
+      "results_as_of": "2026-11-13",
+      "results_source": "https://ballotpedia.org/U.S._Senate,_Oklahoma_election,_2026",
+      "results_source_name": "Ballotpedia (citing The New York Times)",
       "certify_by": "2026-11-10"
     },
     "OR": {
@@ -1117,10 +1117,11 @@
       "called_at": "2026-11-04T04:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-jeff-merkley-wins-reelection-to-u-s-senate-from-oregon/",
       "notes": "Decision Desk HQ also projected Merkley. Gary Dye's count is the remainder of the source's total, itemized by PollCheck (civicAPI). Mail ballots still being counted.",
-      "updated": "2026-11-08T23:59:28Z",
+      "updated": "2026-11-14T00:04:28Z",
       "results_as_of": "2026-11-06T22:40-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oregon-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-12-10"
     },
     "RI": {
       "seat_holder": "R000122",
@@ -1164,7 +1165,7 @@
     },
     "SC": {
       "seat_holder": "G000608",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Darline Graham",
@@ -1195,9 +1196,9 @@
       "winner": "Annie Andrews",
       "called_by": "Associated Press",
       "called_at": "2026-11-04",
-      "source_url": "https://www.foxcarolina.com/2026/11/04/annie-andrews-projected-win-us-senate-race-flipping-south-carolina-seat-blue/",
-      "notes": "Decision Desk HQ and CBS News also projected Andrews. Reports place the AP call at about 10:40 p.m. ET on Nov. 3; counties certified their tallies on Nov. 6, and statewide certification is not yet confirmed.",
-      "updated": "2026-11-12T23:56:12Z",
+      "source_url": "https://scvotes.gov/state-election-commission-certifies-2026-statewide-general-election/",
+      "notes": "Decision Desk HQ and CBS News also projected Andrews. The State Election Commission certified the statewide general election results on Nov. 11; vote figures shown are the latest unofficial counts pending retrieval of the certified tallies.",
+      "updated": "2026-11-14T00:04:28Z",
       "results_as_of": "2026-11-06T18:19-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/south-carolina-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
@@ -1228,11 +1229,12 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:02Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-mike-rounds-wins-reelection-to-u-s-senate-from-south-dakota/",
-      "notes": "",
-      "updated": "2026-11-08T23:59:28Z",
+      "notes": "The State Board of Canvassers was scheduled to meet Nov. 10; the state results site still labels the figures unofficial.",
+      "updated": "2026-11-14T00:04:28Z",
       "results_as_of": "2026-11-06T20:00-06:00",
       "results_source": "https://electionresults.sd.gov/resultsSW.aspx",
-      "results_source_name": "South Dakota Secretary of State"
+      "results_source_name": "South Dakota Secretary of State",
+      "certify_by": "2026-11-10"
     },
     "TN": {
       "seat_holder": "H000601",
