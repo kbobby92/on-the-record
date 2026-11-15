@@ -45,8 +45,8 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Not called; no listed outlet has projected a winner. Ranked-choice tabulation is scheduled for Nov. 18 if no candidate passes 50%; percentages are as reported by AP.",
-      "updated": "2026-11-14T00:04:28Z",
+      "notes": "Not called; no listed outlet has projected a winner. AP estimated about 96% counted after the Nov. 13 update, newer than the figures shown; ranked-choice tabulation is set for Nov. 18 if no one passes 50%.",
+      "updated": "2026-11-15T00:05Z",
       "results_as_of": "2026-11-13",
       "results_source": "https://www.newsweek.com/mary-peltola-path-winning-alaska-senate-race-outright-12709303",
       "results_source_name": "Associated Press via Newsweek",
@@ -361,8 +361,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T06:31Z",
       "source_url": "https://www.yahoo.com/news/politics/articles/republican-jim-risch-wins-reelection-063216005.html",
-      "notes": "No Democratic nominee. Figures are unofficial pending the state canvass.",
-      "updated": "2026-11-14T00:04:28Z",
+      "notes": "No Democratic nominee. Latah County recounted some early in-person votes left out of election-night reporting; officials said no statewide outcome changed. Figures are unofficial pending the state canvass.",
+      "updated": "2026-11-15T00:05Z",
       "results_as_of": "2026-11-10",
       "results_source": "https://www.spokesman.com/elections/2026/idaho-general-election-nov-3/results/",
       "results_source_name": "Idaho Secretary of State via The Spokesman-Review",
@@ -442,8 +442,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:24Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-adam-hamilton-wins-election-to-u-s-senate-from-kansas/",
-      "notes": "Decision Desk HQ also projected Hamilton.",
-      "updated": "2026-11-11T23:59:36Z",
+      "notes": "Decision Desk HQ also projected Hamilton. The Senate race is not among the contests in the state's close-race audit.",
+      "updated": "2026-11-15T00:05Z",
       "results_as_of": "2026-11-10T18:52-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/kansas-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -457,7 +457,7 @@
           "name": "Andy Barr",
           "party": "REP",
           "incumbent": false,
-          "votes": 788055,
+          "votes": 784869,
           "pct": 55.0,
           "candidate_id": "S6KY00286"
         },
@@ -466,14 +466,14 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6KY00385",
-          "votes": 615688,
+          "votes": 612357,
           "pct": 42.9
         },
         {
           "name": "Christopher Campbell",
           "party": "IND",
           "incumbent": false,
-          "votes": 30208,
+          "votes": 29892,
           "pct": 2.1
         }
       ],
@@ -481,11 +481,11 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04",
       "source_url": "https://www.bloomberg.com/news/articles/2026-11-04/republican-barr-wins-kentucky-senate-race-ddhq-projects",
-      "notes": "Exact call time not reported.",
-      "updated": "2026-11-11T23:59:36Z",
-      "results_as_of": "2026-11-10T11:47-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/kentucky-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "notes": "Exact call time not reported. All 120 counties have reported; the state still labels its results unofficial.",
+      "updated": "2026-11-15T00:05Z",
+      "results_as_of": "2026-11-14T18:43-05:00",
+      "results_source": "https://vrsws.sos.ky.gov/liveresults/Statewide",
+      "results_source_name": "Kentucky State Board of Elections (unofficial results)"
     },
     "LA": {
       "seat_holder": "C001075",
@@ -649,7 +649,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MN00440",
-          "votes": 1520908,
+          "votes": 1521794,
           "pct": 53.7
         },
         {
@@ -657,14 +657,14 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6MN00556",
-          "votes": 1233468,
-          "pct": 43.6
+          "votes": 1233555,
+          "pct": 43.5
         },
         {
           "name": "Marisa Simonetti",
           "party": "IND",
           "incumbent": false,
-          "votes": 41566,
+          "votes": 41583,
           "pct": 1.5
         },
         {
@@ -672,7 +672,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6MN00572",
-          "votes": 32471,
+          "votes": 32491,
           "pct": 1.1
         }
       ],
@@ -680,12 +680,13 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:07Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-peggy-flanagan-wins-election-to-u-s-senate-from-minnesota/",
-      "notes": "CBS News also projected Flanagan.",
-      "updated": "2026-11-12T23:56:12Z",
-      "results_as_of": "2026-11-09",
-      "results_source": "https://www.sos.mn.gov/elections-voting/election-results/2026/2026-general-election-results/",
+      "notes": "CBS News also projected Flanagan. All precincts have reported; the State Canvassing Board meets Nov. 19.",
+      "updated": "2026-11-15T00:05Z",
+      "results_as_of": "2026-11-13T13:38-06:00",
+      "results_source": "https://electionresults.sos.mn.gov/Results/Index?ErsElectionId=201&officeInElectionIdList=38485&officeInElectionIdList=-1&scenario=USSenate&electionDate=11%2F03%2F2026%2000%3A00%3A00",
       "results_source_name": "Minnesota Secretary of State (unofficial results)",
-      "certify_by": "2026-11-19"
+      "certify_by": "2026-11-19",
+      "counted_pct": 100
     },
     "MS": {
       "seat_holder": "H001079",
@@ -736,23 +737,23 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6MT00295",
-          "votes": 233546,
-          "pct": 48.3
+          "votes": 235580,
+          "pct": 48.2
         },
         {
           "name": "Alani Bankhead",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MT00253",
-          "votes": 58854,
-          "pct": 12.2
+          "votes": 59960,
+          "pct": 12.3
         },
         {
           "name": "Seth Bodnar",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6MT00287",
-          "votes": 182118,
+          "votes": 184563,
           "pct": 37.7
         },
         {
@@ -760,7 +761,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6MT00261",
-          "votes": 8904,
+          "votes": 9016,
           "pct": 1.8
         }
       ],
@@ -769,10 +770,11 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.aol.com/articles/gop-alme-wins-montana-senate-061635000.html",
       "notes": "Sen. Steve Daines did not seek reelection. Bodnar conceded. AP had not called the race as of early Nov. 4. Exact call time not reported.",
-      "updated": "2026-11-09T23:56:58Z",
-      "results_as_of": "2026-11-09T16:50:24-07:00",
-      "results_source": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY",
-      "results_source_name": "Montana Secretary of State"
+      "updated": "2026-11-15T00:05Z",
+      "results_as_of": "2026-11-14T16:45:24-07:00",
+      "results_source": "https://electionresults.mt.gov/ResultsSW.aspx",
+      "results_source_name": "Montana Secretary of State",
+      "counted_pct": 99.7
     },
     "NC": {
       "seat_holder": "T000476",
@@ -823,22 +825,22 @@
           "incumbent": true,
           "bioguide": "R000618",
           "candidate_id": "S6NE00129",
-          "votes": 378244,
-          "pct": 50.1
+          "votes": 381045,
+          "pct": 49.9
         },
         {
           "name": "Dan Osborn",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4NE00207",
-          "votes": 331250,
-          "pct": 43.9
+          "votes": 336296,
+          "pct": 44.1
         },
         {
           "name": "Robin Richards",
           "party": "OTH",
           "incumbent": false,
-          "votes": 19541,
+          "votes": 19886,
           "pct": 2.6
         },
         {
@@ -846,7 +848,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6NE00152",
-          "votes": 16238,
+          "votes": 16547,
           "pct": 2.2
         },
         {
@@ -854,7 +856,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6NE00202",
-          "votes": 9094,
+          "votes": 9222,
           "pct": 1.2
         }
       ],
@@ -862,9 +864,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T08:27Z",
       "source_url": "https://www.kjct8.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
-      "notes": "No Democratic nominee. CBS News and NBC News also projected Ricketts.",
-      "updated": "2026-11-10T23:58:19Z",
-      "results_as_of": "2026-11-06T16:59-06:00",
+      "notes": "No Democratic nominee. CBS News and NBC News also projected Ricketts; the state still labels its count unofficial.",
+      "updated": "2026-11-15T00:05Z",
+      "results_as_of": "2026-11-14",
       "results_source": "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
       "results_source_name": "Nebraska Secretary of State (unofficial results)",
       "certify_by": "2026-11-30"
@@ -1085,7 +1087,7 @@
           "incumbent": true,
           "bioguide": "M001176",
           "candidate_id": "S8OR00207",
-          "votes": 1081731,
+          "votes": 1138894,
           "pct": 58.1
         },
         {
@@ -1093,22 +1095,22 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6OR05218",
-          "votes": 719926,
-          "pct": 38.7
+          "votes": 757034,
+          "pct": 38.6
         },
         {
           "name": "Chris Henry",
           "party": "GRE",
           "incumbent": false,
-          "votes": 40659,
-          "pct": 2.2
+          "votes": 44208,
+          "pct": 2.3
         },
         {
           "name": "Gary Dye",
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S0OR00378",
-          "votes": 18529,
+          "votes": 20095,
           "pct": 1.0
         }
       ],
@@ -1116,11 +1118,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-jeff-merkley-wins-reelection-to-u-s-senate-from-oregon/",
-      "notes": "Decision Desk HQ also projected Merkley. Gary Dye's count is the remainder of the source's total, itemized by PollCheck (civicAPI). Mail ballots still being counted.",
-      "updated": "2026-11-14T00:04:28Z",
-      "results_as_of": "2026-11-06T22:40-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oregon-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
+      "notes": "Decision Desk HQ also projected Merkley. Percentages include write-ins; mail ballots are still being counted.",
+      "updated": "2026-11-15T00:05Z",
+      "results_as_of": "2026-11-14T11:45-08:00",
+      "results_source": "https://results.oregonvotes.gov/resultsSW.aspx?type=FED&map=CTY",
+      "results_source_name": "Oregon Secretary of State (unofficial results)",
       "certify_by": "2026-12-10"
     },
     "RI": {
@@ -1229,8 +1231,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:02Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-mike-rounds-wins-reelection-to-u-s-senate-from-south-dakota/",
-      "notes": "The State Board of Canvassers was scheduled to meet Nov. 10; the state results site still labels the figures unofficial.",
-      "updated": "2026-11-14T00:04:28Z",
+      "notes": "The Secretary of State has posted the general election state canvass and certificate; the certified figures could not be retrieved this run, and the totals shown are the unofficial ones.",
+      "updated": "2026-11-15T00:05Z",
       "results_as_of": "2026-11-06T20:00-06:00",
       "results_source": "https://electionresults.sd.gov/resultsSW.aspx",
       "results_source_name": "South Dakota Secretary of State",
@@ -1406,8 +1408,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-harriet-hageman-wins-election-to-u-s-senate-from-wyoming/",
-      "notes": "Wyoming Public Media and KHOL reported that the State Canvassing Board certified the general election results on Nov. 10; the official certified figures have not yet been obtained, so totals remain unofficial.",
-      "updated": "2026-11-12T23:56:12Z",
+      "notes": "The Secretary of State now labels the 2026 general results official and posts the State Canvassing Board certification; the certified figures could not be retrieved this run, so totals shown remain unofficial.",
+      "updated": "2026-11-15T00:05Z",
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/wyoming-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
