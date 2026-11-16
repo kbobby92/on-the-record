@@ -484,7 +484,8 @@
 
   async function housePage() {
     nav("house");
-    const [hd, dash, series] = await Promise.all([get("data/house_index.json"), get("data/house_dashboard.json"), get("data/house_series.json").catch(() => null)]);
+    const [hd, dash, series] = await Promise.all([get("data/house_index.json").catch(() => null), get("data/house_dashboard.json").catch(() => null), get("data/house_series.json").catch(() => null)]);
+    if (!hd || !dash) { app.innerHTML = `<p class="small"><a href="#/">← Congress</a></p><h1>The House</h1><div class="empty">House data is loading for the first time. Check back in about an hour.</div>`; return; }
     document.getElementById("updated").textContent = `Data updated ${new Date(hd.updated).toLocaleString()}.`;
     const ms = hd.members, c = dash.counts;
     const ui = housePage.ui || (housePage.ui = { q: "", sort: "state" });
