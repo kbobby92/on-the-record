@@ -37,10 +37,15 @@
   }
   function srow(s, vals, pill, sub) {
     const p = pc(s.party);
-    return `<a class="row p-${p}" href="#/s/${esc(s.bioguide)}">${photo(s)}
-      <div style="min-width:0"><div class="nm">${esc(s.name)}</div><div class="sub">${sub || `${PARTY_NAME[p] || esc(s.party)} · ${esc(STATES[s.state] || s.state)}`}</div></div>
+    return `<a class="row p-${p}" href="${who(s)}">${photo(s)}
+      <div style="min-width:0"><div class="nm">${esc(s.name)}</div><div class="sub">${sub || `${PARTY_NAME[p] || esc(s.party)} · ${s.seat ? esc(seatLabel(s)) : esc(STATES[s.state] || s.state)}`}</div></div>
       ${spark(vals, PC[p] || "var(--faint)")}<span class="pill">${pill}</span></a>`;
   }
+  const who = (s) => (s.seat ? `#/r/${esc(s.bioguide)}` : `#/s/${esc(s.bioguide)}`);
+  const seatLabel = (m) => `${m.state}-${m.district ? m.district : "AL"}`;
+  const distName = (m) => (m.district ? `District ${m.district}` : "At-large");
+  // ZIP code -> House seats it touches (largest share first). Loaded once, only when needed.
+  const zipSeats = (zip) => get("data/zip_districts.json").then((z) => z[zip] || null).catch(() => null);
   // Line chart you can scrub: moving along it updates the big number, like a stock chart.
   function lineChart(el, labels, vals, color, onScrub) {
     const W = 800, H = 250, pad = 6;
@@ -107,16 +112,21 @@
   });
   const wkLabel = (iso) => `Week of ${new Date(iso + "T12:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`;
   // Header search: jump to a senator or state.
-  get("data/index.json").then((d) => {
+  Promise.all([get("data/index.json"), get("data/house_index.json").catch(() => ({ members: [] }))]).then(([d, hd]) => {
     const dl = document.getElementById("gnames"), inp = document.getElementById("gsearch");
     if (!dl || !inp) return;
-    dl.innerHTML = d.senators.map((x) => `<option value="${esc(x.name)}">${esc(STATES[x.state] || x.state)}</option>`).join("")
+    const reps = hd.members;
+    dl.innerHTML = d.senators.map((x) => `<option value="${esc(x.name)}">Senator · ${esc(STATES[x.state] || x.state)}</option>`).join("")
+      + reps.map((x) => `<option value="${esc(x.name)}">Representative · ${esc(seatLabel(x))}</option>`).join("")
       + [...new Set(d.senators.map((x) => x.state))].map((st) => `<option value="${esc(STATES[st] || st)}">State</option>`).join("");
     const go = () => {
       const v = inp.value.trim().toLowerCase(); if (!v) return;
       const sen = d.senators.find((x) => x.name.toLowerCase() === v) || d.senators.find((x) => x.name.toLowerCase().includes(v));
       const st = Object.keys(STATES).find((k) => STATES[k].toLowerCase() === v || k.toLowerCase() === v);
-      if (st) location.hash = `#/state/${st}`; else if (sen) location.hash = `#/s/${sen.bioguide}`;
+      const rp = reps.find((x) => x.name.toLowerCase() === v || seatLabel(x).toLowerCase() === v) || reps.find((x) => x.name.toLowerCase().includes(v));
+      if (st) location.hash = `#/state/${st}`;
+      else if (sen && (sen.name.toLowerCase() === v || !rp || rp.name.toLowerCase() !== v)) location.hash = `#/s/${sen.bioguide}`;
+      else if (rp) location.hash = `#/r/${rp.bioguide}`;
       inp.value = ""; inp.blur();
     };
     inp.addEventListener("change", go);
@@ -311,6 +321,9 @@
 
   async function home() {
     nav("home");
+    const [hidx, hdash, hseries] = await Promise.all([get("data/house_index.json").catch(() => null), get("data/house_dashboard.json").catch(() => null), get("data/house_series.json").catch(() => null)]);
+    const mySeats = (store.get("otr_seats") || "").split(",").filter(Boolean);
+    const myReps = hidx ? mySeats.map((st) => hidx.members.find((m) => seatLabel(m) === st)).filter(Boolean) : [];
     const [data, dash, issues, promises, news, series, votesR] = await Promise.all([get("data/index.json"), get("data/dashboard.json").catch(() => null),
       get("data/issues_index.json").catch(() => ({ issues: [] })), get("data/promises.json").catch(() => ({ promises: [] })), get("data/news.json").catch(() => null),
       get("data/series.json").catch(() => null), get("data/votes_recent.json").catch(() => ({ votes: [] }))]);
@@ -325,7 +338,9 @@
     const flips = dash ? dash.january.filter((x) => x.flip).length : 0;
     const mySt = store.get("otr_state");
     const mine = mySt ? data.senators.filter((s) => s.state === mySt) : [];
-    const watched = watch.all().map((id) => who[id]).filter(Boolean);
+    const repWho = hidx ? Object.fromEntries(hidx.members.map((m) => [m.bioguide, m])) : {};
+    const watched = watch.all().map((id) => who[id] || repWho[id]).filter(Boolean);
+    const serOf = (s) => (s.seat ? hseries && hseries.senators[s.bioguide] : series && series.senators[s.bioguide]);
     const nc = news ? newsCounts(news) : {};
     const total = (id) => (nc[id] || []).reduce((a, x) => a + x, 0);
     const movers = Object.keys(nc).filter((id) => who[id]).sort((a, b) => total(b) - total(a)).slice(0, 5).map((id) => who[id]);
@@ -350,10 +365,14 @@
         <section class="blk"><div class="sh"><h2>${mySt ? `Your senators` : "Find your senators"}</h2>
           ${mine.length ? `<span class="segtg" id="hmetric">${[["attendance", "Attendance"], ["unity", "With party"]].map(([k, l]) => `<button type="button" data-m="${k}" class="${ui.metric === k ? "on" : ""}">${l}</button>`).join("")}</span>` : ""}</div>
           ${mine.length ? `<div id="mine"></div><p class="small muted" style="margin:10px 0 0">${esc(STATES[mySt])} · <a href="#/state/${mySt}">Compare side by side</a> · <a href="#" id="chst">Change state</a></p>` : zipForm(states)}</section>
+        ${mine.length && hidx ? `<section class="blk"><div class="sh"><h2>${myReps.length > 1 ? "Your representatives" : "Your representative"}</h2><a class="more" href="#/house">House</a></div>
+          ${myReps.length ? myReps.map((r) => srow(r, serOf(r) ? serOf(r).attendance.slice(-26) : [], fmtPct(r.metrics.attendance), `${PARTY_NAME[pc(r.party)]} · ${esc(seatLabel(r))} · attendance`)).join("")
+            + (myReps.length > 1 ? `<p class="small muted" style="margin:10px 0 0">Your ZIP code crosses district lines, so it could be either one. <a href="https://www.house.gov/representatives/find-your-representative">Check your street address on house.gov</a></p>` : "")
+            : `<div class="empty">Enter your ZIP code to find your representative. <a href="#/house">Find them on the House page</a></div>`}</section>` : ""}
 
         <section class="blk"><div class="sh"><h2>Watchlist</h2>${watched.length ? `<span class="muted small">${watched.length} following</span>` : ""}</div>
-          ${watched.length ? watched.map((s) => srow(s, series && series.senators[s.bioguide] ? series.senators[s.bioguide].attendance.slice(-26) : [], fmtPct(s.metrics.attendance), `${PARTY_NAME[pc(s.party)]} · ${esc(STATES[s.state])} · attendance`)).join("")
-            : `<div class="empty">Tap <b>Follow</b> on any senator's page to track them here. <a href="#/senate">Browse senators</a></div>`}</section>
+          ${watched.length ? watched.map((s) => srow(s, serOf(s) ? serOf(s).attendance.slice(-26) : [], fmtPct(s.metrics.attendance), `${PARTY_NAME[pc(s.party)]} · ${s.seat ? esc(seatLabel(s)) : esc(STATES[s.state])} · attendance`)).join("")
+            : `<div class="empty">Tap <b>Follow</b> on any senator's or representative's page to track them here. <a href="#/senate">Senate</a> · <a href="#/house">House</a></div>`}</section>
 
         ${movers.length ? `<section class="blk"><div class="sh"><h2>Most in the news</h2><a class="more" href="#/news">All news</a></div>
           ${movers.map((s) => srow(s, nc[s.bioguide], `${total(s.bioguide)} ${total(s.bioguide) === 1 ? "story" : "stories"}`, "This week")).join("")}</section>` : ""}
@@ -380,7 +399,10 @@
         </div>
         ${votesR.votes.length ? `<div class="card"><h4>Latest Senate votes</h4><div class="vlist">${votesR.votes.slice(0, 5).map((v) => `<a href="${esc(v.source)}" target="_blank" rel="noopener">${esc(v.bill || v.question)}<span>${esc((v.result || "").replace(/\s*\(.*\)/, ""))} · ${v.counts ? `${v.counts.yeas}–${v.counts.nays}` : ""} · ${fmtDate(v.date)}</span></a>`).join("")}</div>
           <p class="small" style="margin:10px 0 0"><a href="#/votes">All recent votes</a></p></div>` : ""}
-        <a class="card" href="#/house" style="color:var(--ink)"><h4>House of Representatives</h4><p class="muted small" style="margin:0">All 435 members are coming next, built the same way as the Senate.</p></a>
+        ${hdash ? `<a class="card" href="#/house" style="color:var(--ink)"><h4>House of Representatives</h4>
+          <div class="big" style="font-size:30px"><span style="color:var(--rep)">${hdash.counts.R}</span> <span style="color:var(--faint)">–</span> <span style="color:var(--dem)">${hdash.counts.D}</span></div>
+          <div class="jbar" style="margin:8px 0"><span style="flex:${hdash.counts.D};background:var(--dem)"></span><span style="flex:${hdash.counts.I || 0};background:var(--ind)"></span><span style="flex:${hdash.counts.vacant || 0};background:var(--line-2)"></span><span style="flex:${hdash.counts.R};background:var(--rep)"></span></div>
+          <p class="muted small" style="margin:0">Republicans – Democrats${hdash.counts.vacant ? ` · ${hdash.counts.vacant} vacant` : ""} · 218 for a majority</p></a>` : ""}
       </aside></div>`;
 
     if (tick.length) startTicker(tick, news);
@@ -419,7 +441,9 @@
         st = zs;
       }
       if (!st) { err.textContent = "Enter your ZIP code or pick a state."; return; }
-      store.set("otr_state", st); done(st);
+      store.set("otr_state", st);
+      if (z) zipSeats(z).then((seats) => { store.set("otr_seats", seats ? seats.map((x) => x[0]).filter((x) => x.startsWith(st + "-")).join(",") : ""); done(st); });
+      else { store.set("otr_seats", ""); done(st); }
     });
   }
 
@@ -458,19 +482,118 @@
     show(0, false);
   }
 
-  function housePage() {
+  async function housePage() {
     nav("house");
-    app.innerHTML = `<p class="small"><a href="#/">← Congress</a></p>
-      <div class="dash-title"><h1>The House of Representatives</h1><p class="lede">All 435 voting members, coming soon, built the same way as the Senate pages.</p></div>
-      <section class="panel chamber-card soon" style="max-width:760px">
-        ${miniChamber(Array.from({ length: 435 }, () => ({ p: "X" })), HOUSE_SEATS, 2.6, "435", "House of Representatives")}</section>
-      <div class="prose" style="margin-top:20px"><h2>What's coming</h2><ul>
-        <li><b>Every representative's profile:</b> votes, attendance, party-line voting, campaign money and committees.</li>
-        <li><b>Promises and statements</b>, tracked and assessed the same way as for senators.</li>
-        <li><b>Find your representative</b> by ZIP code or address, alongside your two senators.</li>
-        <li><b>House results in the Elections page</b> and House votes on every Issues page.</li>
-        <li><b>Stock trades:</b> House disclosures come from a different system than the Senate's, which may make it possible to bring trades back.</li>
-      </ul><p><a href="#/senate">Explore the Senate in the meantime →</a></p></div>`;
+    const [hd, dash, series] = await Promise.all([get("data/house_index.json"), get("data/house_dashboard.json"), get("data/house_series.json").catch(() => null)]);
+    document.getElementById("updated").textContent = `Data updated ${new Date(hd.updated).toLocaleString()}.`;
+    const ms = hd.members, c = dash.counts;
+    const ui = housePage.ui || (housePage.ui = { q: "", sort: "state" });
+    const seats = ms.map((m) => ({ p: pc(m.caucus || m.party), st: m.state })).concat(Array.from({ length: c.vacant || 0 }, () => ({ p: "X" })));
+    const lead = c.R >= c.D ? ["R", "Republicans", c.R] : ["D", "Democrats", c.D];
+    let html = "";
+    for (let y = 0; y < 8; y++) for (let x = 0; x < 12; x++) {
+      const t = TILE.find((q) => q[1] === x && q[2] === y);
+      if (!t) { html += `<span></span>`; continue; }
+      const b = dash.by_state[t[0]] || { D: 0, R: 0, I: 0, seats: 0 };
+      html += `<a class="tile htile" href="#/state/${t[0]}" title="${esc(STATES[t[0]])}: ${b.R} R, ${b.D} D${b.I ? `, ${b.I} I` : ""}" aria-label="${esc(STATES[t[0]])}: ${b.R} Republicans, ${b.D} Democrats">
+        <span style="flex:${b.D};background:var(--dem)"></span><span style="flex:${b.I};background:var(--ind)"></span><span style="flex:${b.R};background:var(--rep)"></span><b>${t[0]}</b><small>${b.seats}</small></a>`;
+    }
+    app.innerHTML = `
+      <p class="small"><a href="#/">← Congress</a></p>
+      <div class="page"><div style="min-width:0">
+        <div class="h1row"><h1>The House</h1>${shareBtn("house/", "The House of Representatives on On the Record")}</div>
+        <div class="eyebrow">${lead[1]} hold the majority</div>
+        <div class="big"><span style="color:var(--rep)">${c.R}</span> <span style="color:var(--faint)">–</span> <span style="color:var(--dem)">${c.D}</span></div>
+        <div class="delta">Republicans – Democrats${c.I ? ` · ${c.I} independent` : ""}${c.vacant ? ` · <b>${c.vacant} vacant</b>` : ""} · 218 seats for a majority · ${hd.votes} roll-call votes this Congress</div>
+        <div class="jbar" role="img" aria-label="${c.D} Democrats, ${c.vacant} vacant, ${c.R} Republicans"><span style="flex:${c.D};background:var(--dem)"></span><span style="flex:${c.I || 0};background:var(--ind)"></span><span style="flex:${c.vacant || 0};background:var(--line-2)"></span><span style="flex:${c.R};background:var(--rep)"></span></div>
+        <section class="blk"><div class="sh"><h2>Find your representative</h2></div>
+          <form class="zip" id="hzip" autocomplete="off"><input id="hz" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="ZIP code" aria-label="ZIP code">
+            <select id="hst" class="zsel" aria-label="State"><option value="">or pick a state</option>${Object.keys(STATES).map((st) => `<option value="${st}">${esc(STATES[st])}</option>`).join("")}</select>
+            <select id="hdist" class="zsel" aria-label="District" hidden></select>
+            <button class="cta" type="submit" style="width:auto">Find</button><p class="ferr small" id="herr" role="alert"></p></form>
+          <div id="hres"></div></section>
+        <section class="blk"><div class="sh"><h2>Seats by state</h2><span class="muted small">Tap a state for its whole delegation</span></div>
+          <div class="tilemap htiles">${html}</div>
+          <div class="clegend"><span><i style="background:var(--dem)"></i>Democrat</span><span><i style="background:var(--rep)"></i>Republican</span><span style="color:var(--faint)">Number = seats</span></div></section>
+        <section class="blk" id="all"><div class="sh"><h2>All ${ms.length} representatives</h2></div>
+          <div class="controls">
+            <input id="hq" type="search" placeholder="Search by name, state, district (AZ-3) or committee" value="${esc(ui.q)}" aria-label="Search representatives">
+            <label class="ctl">Sort <select id="hso">${[["state", "State and district"], ["name", "Name"], ["attendance", "Lowest attendance"], ["unity_low", "Least party-line voting"], ["raised", "Most money raised"], ["bills", "Most bills sponsored"]]
+              .map(([v, l]) => `<option value="${v}" ${v === ui.sort ? "selected" : ""}>${l}</option>`).join("")}</select></label></div>
+          <div id="hlist"></div></section>
+      </div>
+      <aside class="side">
+        <div class="card">${miniChamber(seats, HOUSE_SEATS, 2.6, String(ms.length), "Seated members")}
+          <div class="clegend" style="justify-content:center"><span><i style="background:var(--dem)"></i>${c.D} D</span><span><i style="background:var(--rep)"></i>${c.R} R</span>${c.vacant ? `<span><i style="background:var(--line-2)"></i>${c.vacant} vacant</span>` : ""}</div></div>
+        <div class="card"><h4>About the House data</h4><p class="muted small" style="margin:0;line-height:1.6">Votes come from the House Clerk's official roll calls; bills from Congress.gov; campaign money from the FEC.
+          The six non-voting delegates (D.C., Puerto Rico and four territories) aren't included yet. Promises for representatives are being researched next.</p></div>
+      </aside></div>`;
+
+    const row = (m) => {
+      const ser = series && series.senators[m.bioguide];
+      if (ui.sort === "unity_low") return srow(m, ser ? ser.unity.slice(-26) : [], fmtPct(m.metrics.party_unity));
+      if (ui.sort === "raised") return srow(m, [], fmtMoney(m.metrics.raised));
+      if (ui.sort === "bills") return srow(m, [], m.metrics.bills_sponsored ?? "—");
+      return srow(m, ser ? ser.attendance.slice(-26) : [], fmtPct(m.metrics.attendance));
+    };
+    const render = () => {
+      const q = ui.q.toLowerCase().trim();
+      const list = ms.filter((m) => !q || m.name.toLowerCase().includes(q) || m.state.toLowerCase() === q || seatLabel(m).toLowerCase() === q.replace(/\s+/g, "")
+        || (STATES[m.state] || "").toLowerCase().includes(q) || m.committees.join(" ").toLowerCase().includes(q));
+      const so = {
+        state: (a, b) => a.state.localeCompare(b.state) || a.district - b.district,
+        name: (a, b) => a.last.localeCompare(b.last),
+        attendance: (a, b) => (a.metrics.attendance ?? 101) - (b.metrics.attendance ?? 101),
+        unity_low: (a, b) => (a.metrics.party_unity ?? 101) - (b.metrics.party_unity ?? 101),
+        raised: (a, b) => (b.metrics.raised ?? -1) - (a.metrics.raised ?? -1),
+        bills: (a, b) => (b.metrics.bills_sponsored ?? -1) - (a.metrics.bills_sponsored ?? -1),
+      };
+      const sorted = list.sort(so[ui.sort]);
+      const lim = housePage.lim || 60;
+      document.getElementById("hlist").innerHTML = (sorted.length ? sorted.slice(0, lim).map(row).join("") : `<div class="empty">No representatives match "${esc(ui.q)}".</div>`)
+        + (sorted.length > lim ? `<button class="btn more" id="hmore">Show more (${sorted.length - lim} left)</button>` : "");
+      const mb = document.getElementById("hmore"); if (mb) mb.onclick = () => { housePage.lim = lim + 60; render(); };
+    };
+    document.getElementById("hq").addEventListener("input", (e) => { ui.q = e.target.value; housePage.lim = 60; render(); });
+    document.getElementById("hso").addEventListener("change", (e) => { ui.sort = e.target.value; housePage.lim = 60; render(); });
+    render();
+
+    // Finder: ZIP code (Census district file), or state + district.
+    const res = document.getElementById("hres"), err = document.getElementById("herr");
+    const hz = document.getElementById("hz"), hst = document.getElementById("hst"), hdist = document.getElementById("hdist");
+    const showSeats = (list, note) => {
+      const reps = list.map(([seat, share]) => [ms.find((m) => seatLabel(m) === seat), seat, share]);
+      res.innerHTML = reps.map(([m, seat, share]) => m ? srow(m, [], fmtPct(m.metrics.attendance), `${PARTY_NAME[pc(m.party)]} · ${esc(seat)}${share != null && list.length > 1 ? ` · about ${share}% of this ZIP` : ""}`)
+        : `<div class="empty">${esc(seat)} is vacant right now.</div>`).join("") + (note ? `<p class="small muted" style="margin:10px 0 0">${note}</p>` : "");
+    };
+    hz.addEventListener("input", () => { err.textContent = ""; hz.value = hz.value.replace(/\D/g, ""); });
+    hst.addEventListener("change", () => {
+      const st = hst.value;
+      const total = st ? Math.max((dash.by_state[st] || { seats: 0 }).seats, ...ms.filter((m) => m.state === st).map((m) => m.district)) : 0;
+      hdist.hidden = !st || total <= 1;
+      hdist.innerHTML = `<option value="">Any district</option>` + Array.from({ length: total }, (_, i) => `<option value="${i + 1}">District ${i + 1}</option>`).join("");
+    });
+    document.getElementById("hzip").addEventListener("submit", async (e) => {
+      e.preventDefault(); err.textContent = "";
+      const z = hz.value.trim();
+      if (z) {
+        if (!/^\d{5}$/.test(z)) { err.textContent = "Enter a 5-digit ZIP code."; return; }
+        const list = await zipSeats(z);
+        if (!list) {
+          const st = zipToState(z);
+          if (!st) { err.textContent = "We couldn't match that ZIP code. Pick your state instead."; return; }
+          hst.value = st; hst.dispatchEvent(new Event("change"));
+          showSeats(ms.filter((m) => m.state === st).map((m) => [seatLabel(m), null]), `We don't have a district match for that ZIP code, so here is all of ${esc(STATES[st])}. <a href="https://www.house.gov/representatives/find-your-representative">Look up your street address on house.gov</a>`);
+          return;
+        }
+        store.set("otr_state", list[0][0].split("-")[0]); store.set("otr_seats", list.map((x) => x[0]).join(","));
+        showSeats(list, list.length > 1 ? `Your ZIP code crosses district lines. <a href="https://www.house.gov/representatives/find-your-representative">Check your street address on house.gov</a> to be sure.` : "");
+        return;
+      }
+      const st = hst.value; if (!st) { err.textContent = "Enter your ZIP code or pick a state."; return; }
+      const d = hdist.value;
+      showSeats(ms.filter((m) => m.state === st && (!d || String(m.district) === d)).map((m) => [seatLabel(m), null]));
+    });
   }
 
   function promisePanel(p) {
@@ -558,11 +681,12 @@
   }
 
   /* ---------- Senator profile ---------- */
-  async function profile(id, promiseId) {
-    nav("senate");
+  async function profile(id, promiseId, house) {
+    nav(house ? "house" : "senate");
     let s;
-    try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/senate">Back to all senators</a></div>`; return; }
-    const [news, series] = await Promise.all([get("data/news.json").catch(() => null), get("data/series.json").catch(() => null)]);
+    try { s = await get(house ? `data/reps/${id}.json` : `data/senators/${id}.json`); }
+    catch { app.innerHTML = house ? `<div class="empty">Representative not found. <a href="#/house">Back to the House</a></div>` : `<div class="empty">Senator not found. <a href="#/senate">Back to all senators</a></div>`; return; }
+    const [news, series] = await Promise.all([get("data/news.json").catch(() => null), get(house ? "data/house_series.json" : "data/series.json").catch(() => null)]);
     s._news = news;
     const m = s.metrics, p = pc(s.party), c = PC[p] || "var(--accent)";
     const ser = series && series.senators[id];
@@ -577,7 +701,7 @@
     app.innerHTML = `
       <div class="page" style="--c:${c}"><div style="min-width:0">
         <div class="who-head p-${p}">${photo(s)}<div><h1>${esc(s.name)}</h1>
-          <div class="sub">${PARTY_NAME[p] || esc(s.party)}${s.caucus && s.caucus !== s.party ? ` (caucuses with ${esc(s.caucus)}s)` : ""} · ${esc(STATES[s.state] || s.state)} · Senator since ${new Date(s.serving_since + "T12:00").getFullYear()}</div></div></div>
+          <div class="sub">${PARTY_NAME[p] || esc(s.party)}${s.caucus && s.caucus !== s.party ? ` (caucuses with ${esc(s.caucus)}s)` : ""} · ${esc(STATES[s.state] || s.state)}${house ? ` ${esc(distName(s))}` : ""} · ${house ? "Representative" : "Senator"} since ${new Date(s.serving_since + "T12:00").getFullYear()}</div></div></div>
         <div class="eyebrow" id="lbl"></div>
         <div class="big" id="num"></div>
         <div class="delta" id="dl"></div>
@@ -602,17 +726,17 @@
         <div class="card">
           <button type="button" class="cta" id="follow"></button>
           ${s.phone ? `<a class="cta ghost" style="margin-top:10px" href="tel:${esc(s.phone)}">Call their office</a>` : ""}
-          ${shareBtn(`s/${id}/`, `${s.name} (${p}-${s.state}) on On the Record`, "cta ghost sharecta")}
+          ${shareBtn(house ? `r/${id}/` : `s/${id}/`, `${s.name} (${p}-${house ? seatLabel(s) : s.state}) on On the Record`, "cta ghost sharecta")}
           <div style="margin-top:14px">
             ${s.phone ? `<div class="kv"><span>Phone</span><b>${esc(s.phone)}</b></div>` : ""}
-            <div class="kv"><span>Seat</span><b>${esc(s.rank ? s.rank[0].toUpperCase() + s.rank.slice(1) : "")} senator · Class ${esc(s.class)}</b></div>
+            <div class="kv"><span>Seat</span><b>${house ? `${esc(seatLabel(s))} · ${esc(distName(s))}` : `${esc(s.rank ? s.rank[0].toUpperCase() + s.rank.slice(1) : "")} senator · Class ${esc(s.class)}`}</b></div>
             <div class="kv"><span>In office since</span><b>${fmtDate(s.serving_since)}</b></div>
             <div class="kv"><span>Term ends</span><b>${fmtDate(s.term_end)}</b></div>
           </div>
           <p class="small" style="margin:12px 0 0">${[s.website && `<a href="${esc(s.website)}">Official site</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact form</a>`, s.x_handle && `<a href="https://x.com/${esc(s.x_handle)}">@${esc(s.x_handle)}</a>`].filter(Boolean).join(" · ")}</p>
         </div>
-        <div class="card"><h4>Committees</h4><div class="muted small" style="line-height:1.9">${(s.committees || []).map((x) => esc(x.name.replace("Senate Committee on ", "").replace("Committee on ", "").replace("Senate ", ""))).join("<br>") || "None listed"}</div></div>
-        <a class="card" href="#/state/${esc(s.state)}" style="color:var(--ink)"><h4>Compare with the other ${esc(STATES[s.state] || s.state)} senator</h4><p class="small" style="margin:0;color:var(--accent)">Side by side →</p></a>
+        <div class="card"><h4>Committees</h4><div class="muted small" style="line-height:1.9">${(s.committees || []).map((x) => esc(x.name.replace("Senate Committee on ", "").replace("House Committee on ", "").replace("Committee on ", "").replace("Senate ", ""))).join("<br>") || "None listed"}</div></div>
+        <a class="card" href="#/state/${esc(s.state)}" style="color:var(--ink)"><h4>${house ? `${esc(STATES[s.state] || s.state)}'s senators and House delegation` : `Compare with the other ${esc(STATES[s.state] || s.state)} senator`}</h4><p class="small" style="margin:0;color:var(--accent)">${house ? "See them all →" : "Side by side →"}</p></a>
       </aside></div>`;
 
     const fb = document.getElementById("follow");
@@ -642,6 +766,7 @@
       ui.metric = b.dataset.m; document.querySelectorAll("#pmetric button").forEach((x) => x.classList.toggle("on", x === b)); draw(); }));
     draw();
 
+    s._house = house;
     const tabs = [votesTab, billsTab, newsTab, promisesTab, statementsTab, moneyTab, tradesTab, committeesTab];
     const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); if (tabs[i].bind) tabs[i].bind(s); };
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => show(+b.dataset.tab)));
@@ -666,6 +791,7 @@
       <div id="vlist"></div>`;
   }
   votesTab.bind = (s) => {
+    if (!document.getElementById("vlist")) return;
     let n = 25;
     const draw = () => {
       document.getElementById("vlist").innerHTML = s.votes.slice(0, n).map(voteRow).join("")
@@ -676,6 +802,9 @@
   };
 
   function tradesTab(s) {
+    if (s._house) return `<div class="empty">Stock trades for representatives aren't loaded into this site yet.<br>
+      You can read ${esc(s.name)}'s filings on the House Clerk's official <a href="https://disclosures-clerk.house.gov/FinancialDisclosure">financial disclosure search</a>:
+      search the last name <b>${esc(s.last)}</b> and look for "Periodic Transaction Report" filings.</div>`;
     if (!TRADES_ENABLED) return `<div class="empty">Stock trades aren't loaded into this site yet.<br>
       In the meantime, you can read ${esc(s.name)}'s filings directly on the Senate's official
       <a href="${EFD}">financial disclosure search</a>: accept the terms, enter the last name <b>${esc(s.last)}</b>,
@@ -695,7 +824,7 @@
 
   function moneyTab(s) {
     const m = s.money;
-    if (!m) return `<div class="empty">Campaign finance data hasn't loaded for this senator yet.</div>`;
+    if (!m) return `<div class="empty">Campaign finance data hasn't loaded for ${s._house ? "this representative" : "this senator"} yet.${s._house ? " House money arrives a few hundred members at a time over the first days." : ""}</div>`;
     const rows = [["Total raised", m.receipts], ["From individuals", m.individual], ["From PACs and other committees", m.pacs], ["From party committees", m.party], ["Self-funded (incl. loans)", m.self_funded], ["Spent", m.disbursements], ["Cash on hand", m.cash_on_hand]];
     const sizes = m.sizes || [], stot = sizes.reduce((t, x) => t + (x.total || 0), 0);
     const SZC = ["#6ea3ff", "#8fb5ff", "#b6a6ff", "#e8c26e", "#f29b5c"];
@@ -986,7 +1115,20 @@
         ${row("Committees", (s) => s.committees.map((c) => esc(c.name.replace("Senate Committee on ", "").replace("Senate ", ""))).join(", ") || "—")}
         ${row("Contact", (s) => [s.phone && `<a href="tel:${esc(s.phone)}">${esc(s.phone)}</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact form</a>`].filter(Boolean).join("<br>") || "—")}
       </div>
+      <div id="hdel"></div>
       ${issues.issues.length ? `<h2>How they voted on major issues</h2><div class="grid issue-grid">${issues.issues.map((i) => `<a class="card issue-card" href="#/issue/${i.id}"><h3>${esc(i.title)}</h3><p class="muted small">${i.votes} key vote${i.votes === 1 ? "" : "s"} · see how ${esc(STATES[st] || st)}'s senators voted</p></a>`).join("")}</div>` : ""}`;
+    stateHouse(st);
+  }
+
+  async function stateHouse(st) {
+    const el = document.getElementById("hdel"); if (!el) return;
+    const [hd, hs] = await Promise.all([get("data/house_index.json").catch(() => null), get("data/house_series.json").catch(() => null)]);
+    if (!hd) return;
+    const reps = hd.members.filter((m) => m.state === st).sort((a, b) => a.district - b.district);
+    if (!reps.length) return;
+    const n = { D: 0, R: 0, I: 0 }; reps.forEach((m) => (n[pc(m.caucus || m.party)] = (n[pc(m.caucus || m.party)] || 0) + 1));
+    el.innerHTML = `<section class="blk"><div class="sh"><h2>${esc(STATES[st] || st)} in the House</h2><span class="muted small">${reps.length} ${reps.length === 1 ? "seat" : "seats"} · ${n.R} R · ${n.D} D${n.I ? ` · ${n.I} I` : ""}</span></div>
+      ${reps.map((m) => srow(m, hs && hs.senators[m.bioguide] ? hs.senators[m.bioguide].attendance.slice(-26) : [], fmtPct(m.metrics.attendance), `${PARTY_NAME[pc(m.party)]} · ${esc(distName(m))} · attendance`)).join("")}</section>`;
   }
 
   /* ---------- Issues ---------- */
@@ -1310,7 +1452,7 @@
     clearInterval(tickTimer);
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg, sub, subarg] = h.split("/");
-    const run = page === "s" && arg ? profile(arg, sub === "promise" ? subarg : null) : page === "votes" ? votes() : page === "elections" ? elections(arg)
+    const run = page === "s" && arg ? profile(arg, sub === "promise" ? subarg : null) : page === "r" && arg ? profile(arg, null, true) : page === "votes" ? votes() : page === "elections" ? elections(arg)
       : page === "state" && arg ? statePage(arg) : page === "senate" ? senatePage() : page === "house" ? housePage() : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "promises" ? promisesPage(arg) : page === "issue" && arg ? issuePage(arg)
       : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });

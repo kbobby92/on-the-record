@@ -553,3 +553,9 @@ details.race-money .cands { margin-top: 8px; }
 .item.focus { box-shadow: 0 0 0 2px var(--accent); }
 #toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px); background: var(--ink); color: #000; font-weight: 800; padding: 11px 20px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 50; }
 #toast.on { opacity: 1; transform: translate(-50%, 0); }
+/* House */
+.htile { flex-direction: row; }
+.htile b { place-items: center; padding-bottom: 8px; }
+.htile small { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center; color: rgba(255,255,255,.85); font: 600 .5rem Manrope, system-ui, sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,.45); }
+#hres .row { margin-top: 8px; }
+@media (max-width: 560px) { .htile small { font-size: .42rem; bottom: 1px; } .htile b { padding-bottom: 6px; } }

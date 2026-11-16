@@ -216,6 +216,7 @@ def main():
     build_elections(roster, now)
     build_promises_index(roster, promises, now)
     build_series(roster, by_bio, vote_list, majority, bloc, now)
+    build_house(now)
     build_issues(roster, vote_list, summaries, promises, statements, now, lobbying)
     build_dashboard(roster, index, promises, statements, now)
     print(f"Built {len(index)} senator files; {len(vote_list)} votes, {len(trades['reports'])} trade reports, "
@@ -226,7 +227,7 @@ def main():
 SUFFIXES = {"JR", "SR", "II", "III", "IV", "JR.", "SR."}
 
 
-def build_series(roster, by_bio, vote_list, majority, bloc, now, window=40):
+def build_series(roster, by_bio, vote_list, majority, bloc, now, window=40, out_name="series.json"):
     """data/series.json: for each senator, week by week, their attendance and party-line voting over their last
     `window` roll-call votes (a rolling average), for the charts on profiles and the sparklines in lists."""
     from datetime import timedelta
@@ -259,9 +260,104 @@ def build_series(roster, by_bio, vote_list, majority, bloc, now, window=40):
             U.append(round(100 * sum(u) / len(u), 1) if u else None)
             A.append(round(100 * sum(x[1] for x in h) / len(h), 1))
         out[bid] = {"unity": U, "attendance": A}
-    with open(D("series.json"), "w", encoding="utf-8") as f:
+    with open(D(out_name), "w", encoding="utf-8") as f:
         json.dump({"updated": now, "window": window, "weeks": [w.isoformat() for w in weeks], "senators": out}, f,
                   separators=(",", ":"))
+
+
+def build_house(now):
+    """The House: data/reps/<bioguide>.json, data/house_index.json, data/house_series.json,
+    data/house_votes_recent.json and data/house_dashboard.json."""
+    house = load(D("house.json"), None)
+    if not house:
+        return
+    roster = house["members"]
+    by_bio = {m["bioguide"]: m for m in roster}
+    hv = load(D("raw", "house_votes.json"), {"members": [], "votes": {}, "summaries": {}})
+    money = load(D("raw", "house_money.json"), {})
+    summaries = hv.get("summaries", {})
+    order = hv.get("members", [])
+    CODE = {"Y": "Y", "N": "N", "P": "P", "V": "NV", "O": "O"}
+    vote_list = []
+    for v in sorted(hv["votes"].values(), key=lambda v: (v["date"], v["session"], v["number"])):
+        pos = {order[i]: CODE[c] for i, c in enumerate(v.get("pos", "")) if c in CODE and i < len(order)}
+        vote_list.append(dict(v, positions=pos))
+
+    def bloc(m):
+        return m.get("caucus") or m["party"]
+    majority = {}
+    for v in vote_list:
+        tally = defaultdict(Counter)
+        for bio, pos in v["positions"].items():
+            if bio in by_bio and pos in ("Y", "N"):
+                tally[bloc(by_bio[bio])][pos] += 1
+        majority[v["id"]] = {p: (c.most_common(1)[0][0] if c["Y"] != c["N"] else None) for p, c in tally.items()}
+
+    os.makedirs(D("reps"), exist_ok=True)
+    index = []
+    for m in roster:
+        bid = m["bioguide"]
+        eligible = [v for v in vote_list if bid in v["positions"]]
+        cast = [v for v in eligible if v["positions"][bid] in ("Y", "N", "P", "O")]
+        with_party = against = 0
+        breaks = set()
+        for v in eligible:
+            pos, maj = v["positions"][bid], majority[v["id"]].get(bloc(m))
+            if pos in ("Y", "N") and maj:
+                if pos == maj:
+                    with_party += 1
+                else:
+                    against += 1; breaks.add(v["id"])
+        recent = []
+        for v in reversed(eligible[-150:]):
+            doc = v["document"]
+            recent.append({"id": v["id"], "date": v["date"], "question": v["question"],
+                           "title": v["title"] or doc.get("title"), "result": v["result"], "bill": doc.get("name"),
+                           "position": "Other" if v["positions"][bid] == "O" else v["positions"][bid],
+                           "broke_with_party": v["id"] in breaks, "source": v["source"],
+                           "summary": summaries.get(f'{v["congress"]}-{doc["type"]}-{doc["number"]}')})
+        b = load(D("raw", "house_bills", f"{bid}.json"), None)
+        metrics = {"votes_eligible": len(eligible), "attendance": pct(len(cast), len(eligible)),
+                   "party_unity": pct(with_party, with_party + against), "promises_tracked": 0,
+                   "promises_by_status": {k: 0 for k in STATUSES}, "follow_through": None, "promises_resolved": 0,
+                   "statements": 0}
+        mm = money.get(bid)
+        if mm:
+            metrics["raised"] = mm.get("receipts")
+        if b:
+            st = Counter(x["stage"] for x in b["sponsored"])
+            metrics.update(bills_sponsored=b["sponsored_total"], bills_cosponsored=b["cosponsored_total"],
+                           bills_law=st["law"], bills_passed=st["law"] + st["passed"] + st["vetoed"])
+        profile = dict(m, chamber="house", metrics=metrics, votes=recent, trades=[], paper_reports=[], money=mm,
+                       promises=[], statements=[], election=None, lobby_contribs=None, bills=bills_summary(b))
+        with open(D("reps", f"{bid}.json"), "w", encoding="utf-8") as f:
+            json.dump(profile, f, separators=(",", ":"))
+        index.append({k: m[k] for k in ("bioguide", "name", "last", "party", "caucus", "state", "district", "seat",
+                                         "next_election", "term_end", "photo", "serving_since")}
+                     | {"committees": [c["name"].replace("House Committee on ", "").replace("Committee on ", "") for c in m["committees"]],
+                        "metrics": metrics})
+    with open(D("house_index.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "members": index, "votes": len(vote_list)}, f, separators=(",", ":"))
+    with open(D("house_votes_recent.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "votes": [{"id": v["id"], "date": v["date"], "question": v["question"], "title": v["title"],
+                                              "result": v["result"], "bill": v["document"].get("name"), "counts": v["counts"],
+                                              "source": v["source"]} for v in reversed(vote_list[-40:])]}, f, separators=(",", ":"))
+    side = lambda m: "D" if (m.get("caucus") or m["party"]) == "Democrat" else "R" if (m.get("caucus") or m["party"]) == "Republican" else "I"
+    by_state = defaultdict(lambda: {"D": 0, "R": 0, "I": 0, "seats": 0})
+    for m in roster:
+        by_state[m["state"]][side(m)] += 1
+        by_state[m["state"]]["seats"] += 1
+    APPORTION = 435
+    counts = Counter(side(m) for m in roster)
+    with open(D("house_dashboard.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": now, "counts": {"D": counts["D"], "R": counts["R"], "I": counts["I"],
+                                              "vacant": APPORTION - len(roster)},
+                   "majority": 218, "by_state": by_state,
+                   "seats": sorted([{"b": m["bioguide"], "n": m["name"], "p": side(m), "st": m["state"], "d": m["district"],
+                                     "a": next((x["metrics"]["attendance"] for x in index if x["bioguide"] == m["bioguide"]), None)}
+                                    for m in roster], key=lambda x: (x["p"], x["st"], x["d"]))}, f, separators=(",", ":"))
+    build_series(roster, by_bio, vote_list, majority, bloc, now, out_name="house_series.json")
+    print(f"House: {len(index)} members, {len(vote_list)} votes")
 
 
 def bills_summary(b):

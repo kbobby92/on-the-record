@@ -154,12 +154,13 @@ def ipct(v):  # whole numbers on images, so a card only changes when a number me
     return "—" if v is None else f"{round(v)}%"
 
 # ---------- cards ----------
-def senator_card(s, full):
+def senator_card(s, full, house=False):
     m = s["metrics"]; p = s["party"][0]
-    im, dr = frame(f"Senator since {s['serving_since'][:4]}")
+    im, dr = frame(f"{'Representative' if house else 'Senator'} since {s['serving_since'][:4]}")
     circle_photo(im, s["bioguide"], p, initials(s["name"]), 70, 150, 300)
     x = 430
-    dr.text((x, 168), f"{PARTY_NAME.get(p, s['party'])} · {STATES.get(s['state'], s['state'])}", font=font(30, False), fill=MUTED)
+    where = STATES.get(s["state"], s["state"]) + (f" · {'District ' + str(s['district']) if s['district'] else 'At-large'}" if house else "")
+    dr.text((x, 168), f"{PARTY_NAME.get(p, s['party'])} · {where}", font=font(fit(dr, f"{PARTY_NAME.get(p, s['party'])} · {where}", 30, W - x - 70, False, 22), False), fill=MUTED)
     dr.text((x, 206), s["name"], font=font(fit(dr, s["name"], 66, W - x - 70)), fill=INK)
     kept = (m.get("promises_by_status") or {}).get("kept", 0)
     stats = [("Attendance", ipct(m.get("attendance"))), ("Votes with party", ipct(m.get("party_unity")))]
@@ -298,6 +299,17 @@ def main():
         page(f"s/{s['bioguide']}/", f"s/{s['bioguide']}", f"{s['name']} ({p}-{s['state']}) | On the Record",
              ". ".join([", ".join(bits)[0].upper() + ", ".join(bits)[1:], "Votes, promises and campaign money, from public records."]), img)
 
+    hidx = load(D("house_index.json"), {"members": []})
+    hdash = load(D("house_dashboard.json"), {})
+    for s in hidx["members"]:
+        m = s["metrics"]; p = s["party"][0]
+        img = save_img(senator_card(s, None, house=True), f"r-{s['bioguide']}.jpg"); keep.add(f"r-{s['bioguide']}.jpg")
+        bits = [f"Attendance {pct(m.get('attendance'))}", f"votes with own party {pct(m.get('party_unity'))}"]
+        if m.get("bills_sponsored") is not None:
+            bits.append(f"{m['bills_sponsored']} bills sponsored")
+        page(f"r/{s['bioguide']}/", f"r/{s['bioguide']}", f"{s['name']} ({p}-{s['seat']}) | On the Record",
+             ". ".join([", ".join(bits)[0].upper() + ", ".join(bits)[1:], "Votes, bills and campaign money, from public records."]), img)
+
     for pr in promises:
         s = by_bio.get(pr["bioguide"])
         if not s:
@@ -331,10 +343,12 @@ def main():
     cj = dash.get("count_jan") or {}
     flips = sum(1 for x in dash.get("january", []) if x.get("flip"))
     generic = [
-        ("home", "", "Skip the noise. Check the record.", "Votes, promises and money for every U.S. senator, from public records, each linked to its source."),
+        ("home", "", "Skip the noise. Check the record.", "Votes, promises and money for every member of Congress, from public records, each linked to its source."),
         ("senate", "senate", "All 100 senators, one place", "Attendance, party-line voting, promises, bills and campaign money for every senator."),
         ("promises", "promises", "Every promise, checked against the record", f"{len(promises)} promises tracked so far, each with the senator's own words and what they did since."),
         ("elections", "elections", "2026 Senate results", (f"Senate in January: {cj.get('D')} Democrats, {cj.get('R')} Republicans. {flips} seats change party." if cj else "Every race, called and counted.")),
+        ("house", "house", "All 435 House seats, one place",
+         (f"{hdash['counts']['R']} Republicans, {hdash['counts']['D']} Democrats. Find your representative and check their votes, bills and campaign money." if hdash.get("counts") else "Every representative's votes, bills and campaign money.")),
         ("issues", "issues", "The big fights in the Senate", "Key votes, how every senator voted, and what they promised and said."),
         ("news", "news", "Senate news, all in one place", "Headlines about senators from outlets across the spectrum, plus official actions."),
         ("about", "about", "How On the Record works", "Where the data comes from and how every number is calculated."),
@@ -351,7 +365,7 @@ def main():
     ip = os.path.join(ROOT, "index.html")
     html = open(ip, encoding="utf-8").read()
     tags = (f'<!-- og:start -->\n<meta property="og:type" content="website"><meta property="og:site_name" content="On the Record">\n'
-            f'<meta property="og:title" content="On the Record"><meta property="og:description" content="Votes, promises and money for every U.S. senator, from public records, each linked to its source.">\n'
+            f'<meta property="og:title" content="On the Record"><meta property="og:description" content="Votes, promises and money for every member of Congress, from public records, each linked to its source.">\n'
             f'<meta property="og:url" content="{SITE}"><meta property="og:image" content="{home_img}">\n'
             f'<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n'
             f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{home_img}">\n<!-- og:end -->')
@@ -364,7 +378,7 @@ def main():
     for f in os.listdir(OG):
         if f.endswith(".jpg") and f not in keep:
             os.remove(os.path.join(OG, f))
-    for d, valid in (("p", {pr["id"] for pr in promises}), ("s", set(by_bio)), ("state", set(states)),
+    for d, valid in (("p", {pr["id"] for pr in promises}), ("s", set(by_bio)), ("r", {m["bioguide"] for m in hidx["members"]}), ("state", set(states)),
                      ("elections", {r["state"] for r in elections.get("races", [])}), ("issue", {i["id"] for i in issues.get("issues", [])})):
         base = os.path.join(ROOT, d)
         if os.path.isdir(base):
