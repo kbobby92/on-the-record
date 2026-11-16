@@ -216,7 +216,7 @@
           "incumbent": true,
           "bioguide": "M001244",
           "candidate_id": "S6FL00640",
-          "votes": 4211455,
+          "votes": 4211733,
           "pct": 50.9
         },
         {
@@ -224,14 +224,14 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6FL00830",
-          "votes": 3974148,
+          "votes": 3975375,
           "pct": 48.0
         },
         {
           "name": "Neil Gillespie",
           "party": "IND",
           "incumbent": false,
-          "votes": 94665,
+          "votes": 94681,
           "pct": 1.1
         }
       ],
@@ -239,11 +239,11 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://townhall.com/news/dmitri-bolt/2026/11/03/florida-senate-race-n2685851",
-      "notes": "Special election. Source page embeds the DDHQ call post.",
-      "updated": "2026-11-10T23:58:19Z",
-      "results_as_of": "2026-11-10",
+      "notes": "Special election. Source page embeds the DDHQ call post. County official returns were due Nov. 16; the state canvassing commission is scheduled to certify on Nov. 17.",
+      "updated": "2026-11-16T23:58Z",
+      "results_as_of": "2026-11-16",
       "results_source": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-      "results_source_name": "Florida Division of Elections (unofficial results)",
+      "results_source_name": "Florida Division of Elections",
       "certify_by": "2026-11-17"
     },
     "GA": {
