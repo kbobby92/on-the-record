@@ -73,7 +73,8 @@ def main():
     acc = {}
     for r in rows:
         z, cd = (r.get(z_col) or "").strip(), (r.get(cd_col) or "").strip()
-        if len(z) != 5 or len(cd) != 4 or cd[:2] not in FIPS:
+        # "ZZ" districts are water or undefined areas; skip them.
+        if len(z) != 5 or len(cd) != 4 or cd[:2] not in FIPS or not cd[2:].isdigit():
             continue
         st, dist = FIPS[cd[:2]], int(cd[2:])
         if dist in (98, 99):  # delegates / not defined
