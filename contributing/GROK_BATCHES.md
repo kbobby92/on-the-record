@@ -114,6 +114,8 @@ important thing to capture now, before campaign websites come down. Add this lin
 These are senators-elect who won on November 3, 2026. Focus on CAMPAIGN PROMISES: their campaign websites,
 debate transcripts, candidate questionnaires and interviews with local news. Prefer specific, checkable pledges
 (a named bill, a number, a yes/no vote). Use the senator-elect's name and state as usual.
+For anything from a campaign website, also give an archive.org link to a saved copy (archive_url), so the promise
+survives after the site comes down.
 ```
 
 **Winners batch 1**
@@ -133,7 +135,7 @@ PEOPLE: Roy Cooper (NC), Chris Pappas (NH), Sherrod Brown (OH), Kevin Hern (OK),
 
 **Winners batch 4**
 ```
-PEOPLE: James Talarico (TX), Harriet Hageman (WY)
+PEOPLE: James Talarico (TX), Harriet Hageman (WY), Scott Colom (MS)
 ```
 
-Alaska and Mississippi weren't called yet when this list was made; they'll be added once they are.
+Alaska wasn't called yet when this list was last updated (Nov 15); it will be added once it is.
