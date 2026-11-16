@@ -12,8 +12,13 @@ from datetime import datetime, timedelta, timezone
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "data", "raw", "money.json")
-SENATORS = os.path.join(ROOT, "data", "senators.json")
+import sys
+HOUSE = "--house" in sys.argv
+OUT = os.path.join(ROOT, "data", "raw", "house_money.json" if HOUSE else "money.json")
+SENATORS = os.path.join(ROOT, "data", "house.json" if HOUSE else "senators.json")
+# The FEC allows about 1,000 requests an hour. The House (435 members) is refreshed in chunks: members whose
+# numbers are older than 3 days, stalest first, up to this many per run.
+HOUSE_PER_RUN = 160
 API = "https://api.open.fec.gov/v1"
 KEY = os.environ.get("FEC_API_KEY") or "DEMO_KEY"
 
@@ -32,7 +37,7 @@ def call(path, **params):
 
 def main():
     with open(SENATORS, encoding="utf-8") as f:
-        senators = json.load(f)["senators"]
+        senators = json.load(f)["members" if HOUSE else "senators"]
     store = {}
     if os.path.exists(OUT):
         with open(OUT, encoding="utf-8") as f:
@@ -40,8 +45,11 @@ def main():
     # Refresh the stalest records first so a rate-limited run still makes progress.
     senators.sort(key=lambda s: store.get(s["bioguide"], {}).get("fetched", ""))
     done = 0
+    if HOUSE:
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        senators = [s for s in senators if store.get(s["bioguide"], {}).get("fetched", "") < cutoff][:HOUSE_PER_RUN]
     for s in senators:
-        cand = next((c for c in s["fec"] if c.startswith("S")), None)
+        cand = next((c for c in s["fec"] if c.startswith("H" if HOUSE else "S")), None)
         if not cand:
             continue
         cycle = s["next_election"]
@@ -82,8 +90,11 @@ def main():
         time.sleep(0.5)
     detailed = 0
     week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
-    by_bio = {s["bioguide"]: s for s in senators}
+    with open(SENATORS, encoding="utf-8") as f:
+        by_bio = {s["bioguide"]: s for s in json.load(f)["members" if HOUSE else "senators"]}
     for bid in sorted(store, key=lambda b: store[b].get("details_fetched", "")):
+        if HOUSE and detailed >= HOUSE_PER_RUN // 2:
+            break
         m = store[bid]
         if m.get("details_fetched", "") > week_ago or bid not in by_bio:
             continue

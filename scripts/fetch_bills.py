@@ -137,5 +137,36 @@ def main():
     print(f"Bills: {len(members)} senators, {n} sponsored; {len(failed)} failed")
 
 
+def main_house():
+    """House: one small file per member (data/raw/house_bills/<bioguide>.json), rewritten only when it changes."""
+    if not KEY:
+        print("No CONGRESS_API_KEY; skipping House bills."); return
+    folder = D("raw", "house_bills"); os.makedirs(folder, exist_ok=True)
+    meta_path = os.path.join(folder, "_meta.json")
+    meta = json.load(open(meta_path, encoding="utf-8")) if os.path.exists(meta_path) else {}
+    age = datetime.now(timezone.utc) - datetime.fromisoformat(meta.get("updated", "2000-01-01T00:00+00:00"))
+    if age.total_seconds() < 20 * 3600 and "--force" not in sys.argv:
+        print(f"House bills fetched {age} ago; skipping."); return
+    roster = json.load(open(D("house.json"), encoding="utf-8"))["members"]
+    changed = failed = 0
+    for s in roster:
+        bio = s["bioguide"]
+        try:
+            sp, sp_n = fetch(bio, "sponsored", 1000)
+            co, co_n = fetch(bio, "cosponsored", 150)
+        except Exception as e:
+            failed += 1; print(f"  failed {bio}: {e}"); continue
+        doc = json.dumps({"sponsored": sp, "cosponsored": co, "sponsored_total": sp_n, "cosponsored_total": co_n,
+                          "capped": co_n >= 150}, separators=(",", ":"))
+        path = os.path.join(folder, f"{bio}.json")
+        if not os.path.exists(path) or open(path, encoding="utf-8").read() != doc:
+            open(path, "w", encoding="utf-8").write(doc); changed += 1
+    if failed > len(roster) // 2:
+        print(f"Too many House failures ({failed})"); return
+    json.dump({"updated": datetime.now(timezone.utc).isoformat(timespec="minutes"), "congress": CONGRESS},
+              open(meta_path, "w", encoding="utf-8"))
+    print(f"House bills: {len(roster)} members, {changed} changed, {failed} failed")
+
+
 if __name__ == "__main__":
-    main()
+    main_house() if "--house" in sys.argv else main()

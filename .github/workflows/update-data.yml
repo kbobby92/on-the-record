@@ -73,6 +73,34 @@ jobs:
           FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
         run: python scripts/fetch_candidates.py
 
+      - name: House roll-call votes
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 30
+        env:
+          CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+        run: python scripts/fetch_house_votes.py
+
+      - name: House campaign money (in chunks)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+        run: python scripts/fetch_money.py --house
+
+      - name: ZIP code to House district (once)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: python scripts/fetch_zip_districts.py
+
+      - name: House bills
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 40
+        env:
+          CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+        run: python scripts/fetch_bills.py --house
+
       - name: Sponsored and cosponsored bills
         if: github.event_name != 'push'
         continue-on-error: true
