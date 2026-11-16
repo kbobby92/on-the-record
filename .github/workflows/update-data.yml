@@ -92,11 +92,15 @@ jobs:
       - name: Build site data
         run: python scripts/build_site_data.py
 
+      - name: Share links and preview cards
+        continue-on-error: true
+        run: python scripts/build_share.py
+
       - name: Commit changes
         run: |
           git config user.name "on-the-record-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data inbox
+          git add -A
           git diff --cached --quiet && exit 0
           git commit -m "Data update $(date -u +%Y-%m-%d)"
           # Another run may have pushed meanwhile: rebuild on top of it rather than fail.

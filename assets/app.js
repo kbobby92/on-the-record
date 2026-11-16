@@ -89,6 +89,22 @@
     }
     return out;
   }
+  // ---- Share links: real addresses (s/<id>/, p/<id>/ ...) that show a preview card, then open the app.
+  const SHARE_BASE = location.origin + location.pathname.replace(/index\.html$/, "");
+  const shareBtn = (path, title, cls = "sharebtn") => `<button type="button" class="${cls}" data-share="${esc(path)}" data-title="${esc(title)}" aria-label="Share: ${esc(title)}">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13"/><path d="m7 8 5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button>`;
+  function toast(msg) {
+    let t = document.getElementById("toast");
+    if (!t) { t = document.createElement("div"); t.id = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("on"), 2200);
+  }
+  document.addEventListener("click", async (e) => {
+    const b = e.target.closest("[data-share]"); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    const url = SHARE_BASE + b.dataset.share, title = b.dataset.title;
+    if (navigator.share && matchMedia("(pointer: coarse)").matches) { try { await navigator.share({ title, url }); return; } catch (err) { if (err && err.name === "AbortError") return; } }
+    try { await navigator.clipboard.writeText(url); toast("Link copied"); } catch { prompt("Copy this link:", url); }
+  });
   const wkLabel = (iso) => `Week of ${new Date(iso + "T12:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`;
   // Header search: jump to a senator or state.
   get("data/index.json").then((d) => {
@@ -542,7 +558,7 @@
   }
 
   /* ---------- Senator profile ---------- */
-  async function profile(id) {
+  async function profile(id, promiseId) {
     nav("senate");
     let s;
     try { s = await get(`data/senators/${id}.json`); } catch { app.innerHTML = `<div class="empty">Senator not found. <a href="#/senate">Back to all senators</a></div>`; return; }
@@ -586,6 +602,7 @@
         <div class="card">
           <button type="button" class="cta" id="follow"></button>
           ${s.phone ? `<a class="cta ghost" style="margin-top:10px" href="tel:${esc(s.phone)}">Call their office</a>` : ""}
+          ${shareBtn(`s/${id}/`, `${s.name} (${p}-${s.state}) on On the Record`, "cta ghost sharecta")}
           <div style="margin-top:14px">
             ${s.phone ? `<div class="kv"><span>Phone</span><b>${esc(s.phone)}</b></div>` : ""}
             <div class="kv"><span>Seat</span><b>${esc(s.rank ? s.rank[0].toUpperCase() + s.rank.slice(1) : "")} senator · Class ${esc(s.class)}</b></div>
@@ -628,7 +645,11 @@
     const tabs = [votesTab, billsTab, newsTab, promisesTab, statementsTab, moneyTab, tradesTab, committeesTab];
     const show = (i) => { document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", +b.dataset.tab === i)); document.getElementById("tab").innerHTML = tabs[i](s); if (tabs[i].bind) tabs[i].bind(s); };
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => show(+b.dataset.tab)));
-    show(0);
+    if (promiseId) {
+      show(3);
+      const el = document.getElementById(`pr-${promiseId}`);
+      if (el) { el.classList.add("focus"); setTimeout(() => el.scrollIntoView({ block: "center", behavior: "smooth" }), 250); }
+    } else show(0);
   }
 
   const POS = { Y: "Yes", N: "No", P: "Present", NV: "Didn't vote" };
@@ -737,8 +758,8 @@
     const colors = { kept: "var(--good)", compromise: "var(--accent)", in_progress: "var(--accent-soft)", not_started: "var(--line)", stalled: "var(--muted)", broken: "var(--bad)" };
     return `<div class="bar">${Object.entries(by).filter(([, n]) => n).map(([k, n]) => `<span title="${STATUS_LABEL[k]}: ${n}" style="width:${(100 * n) / total}%;background:${colors[k]}"></span>`).join("")}</div>
       <p class="muted small">${Object.entries(by).filter(([, n]) => n).map(([k, n]) => `${STATUS_LABEL[k]}: ${n}`).join(" · ")}. Senators are judged on their own actions (votes, bills, public pressure), not on whether Congress as a whole passed something.</p>
-      ${s.promises.map((p) => `<div class="item">
-        <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> <span class="tag">${esc(p.topic)}</span> ${checkedBadge(p)}
+      ${s.promises.map((p) => `<div class="item" id="pr-${esc(p.id)}">
+        <span class="status ${esc(p.status)}">${STATUS_LABEL[p.status] || esc(p.status)}</span> <span class="tag">${esc(p.topic)}</span> ${checkedBadge(p)} ${shareBtn(`p/${p.id}/`, `Promise check: ${s.name}`)}
         <h3 style="margin-top:8px">${esc(p.promise)}</h3>
         <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)}${postedBy(p.source_url)} · <a href="${esc(p.source_url)}">source</a>${p.archive_url ? ` · <a href="${esc(p.archive_url)}">archived copy</a>` : ""} · ${reportLink(p, s)}</div></blockquote>
         ${p.assessment ? `<p class="small assess"><b>Why this status:</b> ${esc(p.assessment)}</p>` : ""}
@@ -888,7 +909,7 @@
             <p class="small" style="margin:6px 0 0"><a href="${esc(n.outside.source)}">FEC independent expenditures</a></p></details>` : ""}</div>`).join("");
     return `<div class="card race ${r.status}" id="race-${esc(r.state)}">
       <div class="race-top"><h3>${esc(STATES[r.state] || r.state)}</h3>
-        <span class="race-tags">${r.flip ? `<span class="fliptag" title="Seat changes party"><i class="p-${r.flip.from}"></i>→<i class="p-${r.flip.to}"></i> Flips</span>` : ""}<span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></span></div>
+        <span class="race-tags">${shareBtn(`elections/${r.state}/`, `2026 Senate race in ${STATES[r.state] || r.state}`, "sharebtn icon")}${r.flip ? `<span class="fliptag" title="Seat changes party"><i class="p-${r.flip.from}"></i>→<i class="p-${r.flip.to}"></i> Flips</span>` : ""}<span class="rstatus ${r.status}">${RACE_LABEL[r.status]}</span></span></div>
       <div class="muted small">${h ? `Seat held by <a href="#/s/${h.bioguide}">${esc(h.name)}</a> (${pc(h.party)})` : "Open seat"}</div>
       ${r.winner ? `<div class="called">Called for <b>${esc(r.winner)}</b> by ${esc(r.called_by)}${r.called_at ? `, ${fmtWhen(r.called_at)}` : ""}${R && R.margin != null ? ` · won by ${R.margin.toFixed(1)} pts` : ""} · <a href="${esc(r.source_url)}">source</a></div>` : ""}
       <div class="vrows">${resultRows}</div>
@@ -950,7 +971,7 @@
     const kept = (s) => { const b = s.metrics.promises_by_status || {}; return s.metrics.promises_tracked ? `${b.kept || 0} kept · ${b.in_progress || 0} in progress · ${b.broken || 0} broken<div class="muted small">of ${s.metrics.promises_tracked} tracked</div>` : `<span class="muted">None tracked yet</span>`; };
     app.innerHTML = `
       <p class="small"><a href="#/senate">← All senators</a></p>
-      <h1>${esc(STATES[st] || st)}'s senators</h1>
+      <div class="h1row"><h1>${esc(STATES[st] || st)}'s senators</h1>${shareBtn(`state/${st}/`, `${STATES[st] || st}'s senators, side by side`)}</div>
       <p class="lede">Side by side, from the public record. Tap a name for the full profile.</p>
       <div class="cmp">
         <div class="cmp-row cmp-head"><div class="cmp-lbl"></div>${full.map((s) => `<a class="cmp-who p-${pc(s.party)}" href="#/s/${s.bioguide}">${photo(s)}
@@ -1033,7 +1054,7 @@
         <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)}${postedBy(p.source_url)} · <a href="${esc(p.source_url)}">source</a></div></blockquote>
         ${(p.evidence || []).length ? `<ul class="small">${p.evidence.map((e) => `<li>${fmtDate(e.date)}: ${esc(e.description)} <a href="${esc(e.url)}">source</a></li>`).join("")}</ul>` : ""}
       </details>
-      <div class="pc-foot">${checkedBadge(p)}${p.specific ? "" : `<span class="tag">General pledge</span>`}</div>
+      <div class="pc-foot">${checkedBadge(p)}${p.specific ? "" : `<span class="tag">General pledge</span>`}${shareBtn(`p/${p.id}/`, `Promise check: ${p.senator}`)}</div>
     </article>`;
   }
   async function promisesPage(arg) {
@@ -1135,7 +1156,7 @@
     const ui2 = { st: store.get("otr_state") || "", all: false };
     app.innerHTML = `
       <p class="small"><a href="#/issues">← All issues</a></p>
-      <h1>${esc(d.title)}</h1>
+      <div class="h1row"><h1>${esc(d.title)}</h1>${shareBtn(`issue/${id}/`, d.title)}</div>
       <p class="lede">${esc(d.summary)}</p>
       ${d.bills.some((b) => b.summary) ? `<div class="item"><h3>What the bills do</h3>${d.bills.filter((b) => b.summary).map((b) => `<details class="sum"><summary>${esc(b.name)}</summary><p>${esc(b.summary.text)} ${b.summary.url ? `<a href="${esc(b.summary.url)}">Congress.gov</a>` : ""}</p></details>`).join("")}<p class="muted small" style="margin:8px 0 0">Summaries by the nonpartisan Congressional Research Service.</p></div>` : ""}
       ${lobbyBlock(d.lobbying)}
@@ -1288,8 +1309,8 @@
   function route() {
     clearInterval(tickTimer);
     const h = location.hash.replace(/^#\/?/, "");
-    const [page, arg] = h.split("/");
-    const run = page === "s" && arg ? profile(arg) : page === "votes" ? votes() : page === "elections" ? elections(arg)
+    const [page, arg, sub, subarg] = h.split("/");
+    const run = page === "s" && arg ? profile(arg, sub === "promise" ? subarg : null) : page === "votes" ? votes() : page === "elections" ? elections(arg)
       : page === "state" && arg ? statePage(arg) : page === "senate" ? senatePage() : page === "house" ? housePage() : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "promises" ? promisesPage(arg) : page === "issue" && arg ? issuePage(arg)
       : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });
