@@ -39,6 +39,23 @@ def download():
             data = z.read(next(n for n in z.namelist() if n.endswith(".txt")))
         print("Downloaded", url)
         return data.decode("utf-8-sig", errors="replace")
+    # Fall back to the per-state files and stitch them together.
+    base = "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_st{fips}.txt"
+    parts, header = [], None
+    for fips in FIPS:
+        try:
+            r = requests.get(base.format(fips=fips), timeout=60, headers={"User-Agent": "on-the-record open-data project"})
+        except requests.RequestException:
+            continue
+        if not r.ok:
+            continue
+        lines = r.content.decode("utf-8-sig", errors="replace").splitlines()
+        if lines:
+            header = header or lines[0]
+            parts += lines[1:]
+    if header and parts:
+        print(f"Downloaded {len(parts)} rows from the per-state files")
+        return "\n".join([header] + parts)
     return None
 
 
