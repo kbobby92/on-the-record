@@ -139,3 +139,58 @@ PEOPLE: James Talarico (TX), Harriet Hageman (WY), Scott Colom (MS)
 ```
 
 Alaska wasn't called yet when this list was last updated (Nov 15); it will be added once it is.
+
+
+## House
+
+Use `GROK_PROMPT_HOUSE.md` for these. Leadership first, then Arizona, then the members most in the news, with both parties in every batch.
+
+**House 1 (leadership)**
+```
+PEOPLE: Mike Johnson (LA-4), Hakeem Jeffries (NY-8), Steve Scalise (LA-1), Katherine Clark (MA-5), Tom Emmer (MN-6)
+```
+
+**House 2 (leadership and committee heads)**
+```
+PEOPLE: Pete Aguilar (CA-33), Lisa McClain (MI-9), Nancy Pelosi (CA-11), Jim Jordan (OH-4), Jamie Raskin (MD-8)
+```
+
+**House 3 (Arizona)**
+```
+PEOPLE: David Schweikert (AZ-1), Eli Crane (AZ-2), Yassamin Ansari (AZ-3), Greg Stanton (AZ-4), Andy Biggs (AZ-5)
+```
+
+**House 4 (Arizona, plus one)**
+```
+PEOPLE: Juan Ciscomani (AZ-6), Adelita Grijalva (AZ-7), Abe Hamadeh (AZ-8), Paul Gosar (AZ-9), Alexandria Ocasio-Cortez (NY-14)
+```
+
+**House 5**
+```
+PEOPLE: Chip Roy (TX-21), Ro Khanna (CA-17), Thomas Massie (KY-4), Ilhan Omar (MN-5), Elise Stefanik (NY-21)
+```
+
+**House 6**
+```
+PEOPLE: Byron Donalds (FL-19), Jasmine Crockett (TX-30), Lauren Boebert (CO-4), Rashida Tlaib (MI-12), Nancy Mace (SC-1)
+```
+
+**House 7 (swing seats and centrists)**
+```
+PEOPLE: Don Bacon (NE-2), Jared Golden (ME-2), Brian Fitzpatrick (PA-1), Josh Gottheimer (NJ-5), Mike Lawler (NY-17)
+```
+
+**House 8**
+```
+PEOPLE: Dan Crenshaw (TX-2), Jared Moskowitz (FL-23), Anna Paulina Luna (FL-13), Greg Casar (TX-35), James Comer (KY-1)
+```
+
+**House 9 (money and defense committees)**
+```
+PEOPLE: Tom Cole (OK-4), Rosa DeLauro (CT-3), Jodey Arrington (TX-19), Brendan Boyle (PA-2), Mike Rogers (AL-3)
+```
+
+**House 10 (committee heads)**
+```
+PEOPLE: Adam Smith (WA-9), Brian Mast (FL-21), Gregory Meeks (NY-5), Brett Guthrie (KY-2), Frank Pallone (NJ-6)
+```

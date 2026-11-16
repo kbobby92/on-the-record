@@ -1453,7 +1453,7 @@
     clearInterval(tickTimer);
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg, sub, subarg] = h.split("/");
-    const run = page === "s" && arg ? profile(arg, sub === "promise" ? subarg : null) : page === "r" && arg ? profile(arg, null, true) : page === "votes" ? votes() : page === "elections" ? elections(arg)
+    const run = page === "s" && arg ? profile(arg, sub === "promise" ? subarg : null) : page === "r" && arg ? profile(arg, sub === "promise" ? subarg : null, true) : page === "votes" ? votes() : page === "elections" ? elections(arg)
       : page === "state" && arg ? statePage(arg) : page === "senate" ? senatePage() : page === "house" ? housePage() : page === "news" ? newsPage() : page === "issues" ? issuesPage() : page === "promises" ? promisesPage(arg) : page === "issue" && arg ? issuePage(arg)
       : page === "about" ? about() : home();
     Promise.resolve(run).catch((e) => { console.error(e); app.innerHTML = `<div class="empty">Couldn't load the data. If you're viewing locally, run a small web server (see README).</div>`; });

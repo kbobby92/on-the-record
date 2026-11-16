@@ -84,9 +84,18 @@ def extract_json(text):
     return data
 
 
-def resolve(item, roster):
+NICK = {"mike": "michael", "abe": "abraham", "bill": "william", "bob": "robert", "jim": "james", "tom": "thomas",
+        "dan": "daniel", "dave": "david", "chris": "christopher", "nick": "nicholas", "rick": "richard", "dick": "richard",
+        "joe": "joseph", "tony": "anthony", "kate": "katherine", "liz": "elizabeth", "beth": "elizabeth", "pat": "patrick",
+        "andy": "andrew", "ben": "benjamin", "ed": "edward", "ted": "edward", "greg": "gregory", "jeff": "jeffrey",
+        "jerry": "gerald", "larry": "lawrence", "ron": "ronald", "sam": "samuel", "steve": "steven", "tim": "timothy"}
+
+
+def resolve(item, roster, strict=False):
+    """strict: the first name must match too (used for the 433-member House, where a last name
+    alone is often shared, e.g. Sherrod Brown vs. Shontel Brown in Ohio)."""
     st = (item.get("state") or "").upper().strip()
-    words = norm(item.get("senator")).split()
+    words = norm(item.get("senator") or item.get("member") or item.get("name")).split()
     if not words:
         return None
     exact = [s for s in roster if (not st or s["state"] == st) and norm(s["name"]) == " ".join(words)]
@@ -94,9 +103,9 @@ def resolve(item, roster):
         return exact[0]
     joined = f" {' '.join(words)} "
     cands = [s for s in roster if (not st or s["state"] == st) and f" {norm(s['last'])} " in joined]
-    if len(cands) == 1:
+    if len(cands) == 1 and not strict:
         return cands[0]
-    first = words[0]
+    first = NICK.get(words[0], words[0])
     for s in cands:
         if any(n and (n.startswith(first) or first.startswith(n))
                for n in (norm(s.get("first")), norm(s.get("nickname") or ""))):
@@ -130,7 +139,7 @@ def to_entry(item, s, existing):
     entry = {
         "id": f"{prefix}-{s['bioguide']}-{(max(nums) + 1 if nums else 1):03d}",
         "bioguide": s["bioguide"],
-        "senator": s["name"],
+        "senator": s["name"],  # the person's name (kept as "senator" for older files; may be a representative)
         "quote": item["quote"].strip(),
         "source_url": item["source_url"].strip(),
         "archive_url": item.get("archive_url") or "",
@@ -152,6 +161,7 @@ def to_entry(item, s, existing):
 def main():
     files = sys.argv[1:] or sorted(glob.glob(D("inbox", "*.json")))
     roster = load(D("data", "senators.json"), {"senators": []})["senators"]
+    house = load(D("data", "house.json"), {"members": []})["members"]
     promises = load(D("data", "promises.json"), {"promises": []})
     statements = load(D("data", "statements.json"), {"statements": []})
     incoming = load(D("data", "incoming.json"),
@@ -174,7 +184,7 @@ def main():
         if errs:
             rejected.append(f"{src}: {item.get('senator')} - {', '.join(errs)}")
             continue
-        s = resolve(item, roster)
+        s = resolve(item, roster) or resolve(item, house, strict=True)
         if not s:
             still_incoming.append(item)
             continue
@@ -197,7 +207,7 @@ def main():
             shutil.move(path, D("inbox", "processed", os.path.basename(path)))
 
     print(f"Imported {added['promise']} promises and {added['statement']} statements (unverified). "
-          f"{dupes} duplicates skipped. {len(still_incoming)} held for people not yet in the Senate.")
+          f"{dupes} duplicates skipped. {len(still_incoming)} held for people not yet in Congress.")
     if rejected:
         print(f"{len(rejected)} items rejected:\n  " + "\n  ".join(rejected))
 

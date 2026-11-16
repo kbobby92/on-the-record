@@ -293,6 +293,8 @@ def build_house(now):
                 tally[bloc(by_bio[bio])][pos] += 1
         majority[v["id"]] = {p: (c.most_common(1)[0][0] if c["Y"] != c["N"] else None) for p, c in tally.items()}
 
+    promises = load(D("promises.json"), {"promises": []})["promises"]
+    statements = load(D("statements.json"), {"statements": []})["statements"]
     os.makedirs(D("reps"), exist_ok=True)
     index = []
     for m in roster:
@@ -317,10 +319,15 @@ def build_house(now):
                            "broke_with_party": v["id"] in breaks, "source": v["source"],
                            "summary": summaries.get(f'{v["congress"]}-{doc["type"]}-{doc["number"]}')})
         b = load(D("raw", "house_bills", f"{bid}.json"), None)
+        mine = [p for p in promises if p.get("bioguide") == bid]
+        resolved = [p for p in mine if p.get("status") in RESOLVED]
+        said = sorted([x for x in statements if x.get("bioguide") == bid], key=lambda x: x.get("date", ""), reverse=True)
         metrics = {"votes_eligible": len(eligible), "attendance": pct(len(cast), len(eligible)),
-                   "party_unity": pct(with_party, with_party + against), "promises_tracked": 0,
-                   "promises_by_status": {k: 0 for k in STATUSES}, "follow_through": None, "promises_resolved": 0,
-                   "statements": 0}
+                   "party_unity": pct(with_party, with_party + against), "promises_tracked": len(mine),
+                   "promises_by_status": {k: sum(1 for p in mine if p.get("status") == k) for k in STATUSES},
+                   "follow_through": (round(100 * sum(RESOLVED[p["status"]] for p in resolved) / len(resolved), 1)
+                                      if len(resolved) >= MIN_RESOLVED_PROMISES else None),
+                   "promises_resolved": len(resolved), "statements": len(said)}
         mm = money.get(bid)
         if mm:
             metrics["raised"] = mm.get("receipts")
@@ -329,7 +336,7 @@ def build_house(now):
             metrics.update(bills_sponsored=b["sponsored_total"], bills_cosponsored=b["cosponsored_total"],
                            bills_law=st["law"], bills_passed=st["law"] + st["passed"] + st["vetoed"])
         profile = dict(m, chamber="house", metrics=metrics, votes=recent, trades=[], paper_reports=[], money=mm,
-                       promises=[], statements=[], election=None, lobby_contribs=None, bills=bills_summary(b))
+                       promises=mine, statements=said[:200], election=None, lobby_contribs=None, bills=bills_summary(b))
         with open(D("reps", f"{bid}.json"), "w", encoding="utf-8") as f:
             json.dump(profile, f, separators=(",", ":"))
         index.append({k: m[k] for k in ("bioguide", "name", "last", "party", "caucus", "state", "district", "seat",
