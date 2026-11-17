@@ -559,3 +559,17 @@ details.race-money .cands { margin-top: 8px; }
 .htile small { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center; color: rgba(255,255,255,.85); font: 600 .5rem Manrope, system-ui, sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,.45); }
 #hres .row { margin-top: 8px; }
 @media (max-width: 560px) { .htile small { font-size: .42rem; bottom: 1px; } .htile b { padding-bottom: 6px; } }
+
+/* Report an error */
+dialog.report { width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); color: var(--ink); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 22px; }
+dialog.report::backdrop { background: rgba(0,0,0,.7); }
+.report .r-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.report h2 { margin: 0; font-size: 1.25rem; }
+.report .r-x { background: none; border: 0; color: var(--muted); font-size: 1.1rem; cursor: pointer; padding: 6px; }
+.report .r-about { background: var(--surface-2); border-radius: 10px; padding: 9px 12px; margin-bottom: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.report .r-lbl { display: block; font-weight: 700; font-size: .86rem; margin: 12px 0 6px; }
+.report textarea, .report input { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--ink); border: 1px solid var(--line-2); border-radius: 12px; padding: 10px 12px; font: inherit; }
+.report textarea:focus, .report input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.report .r-act { display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px; }
+.pc-foot a[data-report] { margin-left: auto; }
+.pc-foot a[data-report] + .sharebtn { margin-left: 8px; } .pc-foot { align-items: center; }

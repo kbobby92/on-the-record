@@ -98,6 +98,58 @@
   const SHARE_BASE = location.origin + location.pathname.replace(/index\.html$/, "");
   const shareBtn = (path, title, cls = "sharebtn") => `<button type="button" class="${cls}" data-share="${esc(path)}" data-title="${esc(title)}" aria-label="Share: ${esc(title)}">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13"/><path d="m7 8 5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button>`;
+  /* ---------- Report an error ----------
+     Reports go to REPORT_ENDPOINT when it's set (a Formspree-style form URL that accepts a JSON POST,
+     so visitors don't need any account). Until then, "Send" opens a pre-filled GitHub issue. */
+  const REPORT_ENDPOINT = "";
+  function openReport(ctx = {}) {
+    let d = document.getElementById("report");
+    if (!d) { d = document.createElement("dialog"); d.id = "report"; d.className = "report"; document.body.appendChild(d); }
+    const about = ctx.id ? `${ctx.who ? `${ctx.who}: ` : ""}${ctx.q ? `“${ctx.q}”` : ""} (${ctx.id})` : `This page: ${document.title.replace(/ \| On the Record$/, "")}`;
+    d.innerHTML = `<form method="dialog" id="rform">
+      <div class="r-head"><h2>Report an error</h2><button type="button" class="r-x" id="rx" aria-label="Close">✕</button></div>
+      <p class="muted small" style="margin:0 0 14px">Spotted a wrong quote, a broken link, a wrong vote or a mislabeled promise? Tell us and we'll check it against the source and correct it.</p>
+      <div class="r-about small"><b>About:</b> ${esc(about)}</div>
+      <label class="r-lbl" for="rwhat">What's wrong?</label>
+      <textarea id="rwhat" rows="4" required placeholder="e.g. The quote doesn't match the video, or this vote was on a different bill."></textarea>
+      <label class="r-lbl" for="rsrc">Link to the correct source <span class="muted">(optional)</span></label>
+      <input id="rsrc" type="url" inputmode="url" placeholder="https://">
+      ${REPORT_ENDPOINT ? `<label class="r-lbl" for="rcontact">Your email, if you'd like a reply <span class="muted">(optional, never shown)</span></label>
+      <input id="rcontact" type="email" placeholder="you@example.com">` : ""}
+      <p class="ferr small" id="rerr" role="alert"></p>
+      <div class="r-act"><button type="button" class="cta ghost" id="rcancel" style="width:auto">Cancel</button><button type="submit" class="cta" style="width:auto">${REPORT_ENDPOINT ? "Send report" : "Continue to GitHub"}</button></div>
+      ${REPORT_ENDPOINT ? "" : `<p class="muted small" style="margin:10px 0 0">Reports are filed as public issues on the project's GitHub page, which needs a free GitHub account.</p>`}
+    </form>`;
+    const close = () => d.close();
+    d.querySelector("#rx").onclick = close; d.querySelector("#rcancel").onclick = close;
+    d.onclick = (e) => { if (e.target === d) close(); };
+    d.querySelector("#rform").onsubmit = async (e) => {
+      e.preventDefault();
+      const what = d.querySelector("#rwhat").value.trim(), src = d.querySelector("#rsrc").value.trim(), contact = (d.querySelector("#rcontact") || { value: "" }).value.trim();
+      const err = d.querySelector("#rerr");
+      if (what.length < 5) { err.textContent = "Please describe what's wrong."; return; }
+      const report = { about, entry: ctx.id || "", page: location.href, item_source: ctx.src || "", whats_wrong: what, correct_source: src };
+      if (REPORT_ENDPOINT) {
+        try {
+          const r = await fetch(REPORT_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ ...report, email: contact }) });
+          if (!r.ok) throw new Error(r.status);
+          close(); toast("Thanks. We'll check it against the source.");
+        } catch { err.textContent = "Couldn't send right now. Please try again in a minute."; }
+        return;
+      }
+      const title = encodeURIComponent(`Error report: ${ctx.id || about}`.slice(0, 120));
+      const body = encodeURIComponent(`**About:** ${about}\n**Page:** ${location.href}\n${ctx.src ? `**Item's source:** ${ctx.src}\n` : ""}\n**What's wrong:**\n${what}\n\n**Correct source:** ${src || "(none given)"}\n`);
+      window.open(`${REPO}/issues/new?labels=error-report&title=${title}&body=${body}`, "_blank", "noopener");
+      close();
+    };
+    d.showModal();
+    setTimeout(() => d.querySelector("#rwhat").focus(), 30);
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-report]"); if (!a) return;
+    e.preventDefault();
+    openReport(a.dataset.report ? { id: a.dataset.report, who: a.dataset.who, q: a.dataset.q, src: a.dataset.src } : {});
+  });
   function toast(msg) {
     let t = document.getElementById("toast");
     if (!t) { t = document.createElement("div"); t.id = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
@@ -735,6 +787,7 @@
             <div class="kv"><span>Term ends</span><b>${fmtDate(s.term_end)}</b></div>
           </div>
           <p class="small" style="margin:12px 0 0">${[s.website && `<a href="${esc(s.website)}">Official site</a>`, s.contact_form && `<a href="${esc(s.contact_form)}">Contact form</a>`, s.x_handle && `<a href="https://x.com/${esc(s.x_handle)}">@${esc(s.x_handle)}</a>`].filter(Boolean).join(" · ")}</p>
+          <p class="small" style="margin:8px 0 0"><a href="#" data-report="" class="muted">Report an error on this page</a></p>
         </div>
         <div class="card"><h4>Committees</h4><div class="muted small" style="line-height:1.9">${(s.committees || []).map((x) => esc(x.name.replace("Senate Committee on ", "").replace("House Committee on ", "").replace("Committee on ", "").replace("Senate ", ""))).join("<br>") || "None listed"}</div></div>
         <a class="card" href="#/state/${esc(s.state)}" style="color:var(--ink)"><h4>${house ? `${esc(STATES[s.state] || s.state)}'s senators and House delegation` : `Compare with the other ${esc(STATES[s.state] || s.state)} senator`}</h4><p class="small" style="margin:0;color:var(--accent)">${house ? "See them all →" : "Side by side →"}</p></a>
@@ -873,9 +926,7 @@
       : `<span class="tag unchecked" title="This quote hasn't been checked against its source yet. Open the source link to confirm it.">Not yet checked</span>`;
   }
   function reportLink(x, s) {
-    const title = encodeURIComponent(`Error report: ${x.id} (${s.name})`);
-    const body = encodeURIComponent(`Entry: ${x.id}\nSource: ${x.source_url}\n\nWhat's wrong (and a link to the correct source, if you have one):\n`);
-    return `<a href="${REPO}/issues/new?title=${title}&body=${body}">Report an error</a>`;
+    return `<a href="#" data-report="${esc(x.id)}" data-who="${esc(s.name)}" data-q="${esc(clip(x.promise || x.quote, 90))}" data-src="${esc(x.source_url || "")}">Report an error</a>`;
   }
   function postedBy(url) {
     const m = /^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status\//.exec(url || "");
@@ -1197,7 +1248,7 @@
         <blockquote>“${esc(p.quote)}”<div class="muted small">${fmtDate(p.source_date)}${postedBy(p.source_url)} · <a href="${esc(p.source_url)}">source</a></div></blockquote>
         ${(p.evidence || []).length ? `<ul class="small">${p.evidence.map((e) => `<li>${fmtDate(e.date)}: ${esc(e.description)} <a href="${esc(e.url)}">source</a></li>`).join("")}</ul>` : ""}
       </details>
-      <div class="pc-foot">${checkedBadge(p)}${p.specific ? "" : `<span class="tag">General pledge</span>`}${shareBtn(`p/${p.id}/`, `Promise check: ${p.senator}`)}</div>
+      <div class="pc-foot">${checkedBadge(p)}${p.specific ? "" : `<span class="tag">General pledge</span>`}<a class="small muted" href="#" data-report="${esc(p.id)}" data-who="${esc(p.senator)}" data-q="${esc(clip(p.promise || p.quote, 90))}" data-src="${esc(p.source_url || "")}">Report an error</a>${shareBtn(`p/${p.id}/`, `Promise check: ${p.senator}`)}</div>
     </article>`;
   }
   async function promisesPage(arg) {
@@ -1445,7 +1496,7 @@
         <li>Every promise status links to the votes or actions it's based on, with a short explanation.</li>
       </ul>
       <h2>Spot an error?</h2>
-      <p>Open an issue on the project's GitHub page with a link to the correct source.</p>
+      <p>Use <a href="#" data-report="">Report an error</a> (at the bottom of every page, and next to every quote). Include a link to the correct source if you have one. Every report is checked against the original record, and corrections are made in the open on the project's <a href="${REPO}">GitHub page</a>.</p>
     </div>`;
   }
 
