@@ -45,8 +45,8 @@
       "called_by": null,
       "called_at": null,
       "source_url": null,
-      "notes": "Not called; no listed outlet has projected a winner. Reporting on the Nov. 14 state update put Peltola just above 50% of first-choice votes, which would make ranked-choice tabulation unnecessary if that holds once ballots arriving by the Nov. 18 deadline are counted; the figures shown are older.",
-      "updated": "2026-11-15T23:55Z",
+      "notes": "Not called; no listed outlet has projected a winner (NBC News described Peltola as likely to win on Nov. 14 but did not project her). The state's Nov. 16 update put Peltola near 50% of first-choice votes; ballots arriving by the Nov. 18 deadline are still to be counted, and the figures shown are older.",
+      "updated": "2026-11-18T00:05Z",
       "results_as_of": "2026-11-13",
       "results_source": "https://www.newsweek.com/mary-peltola-path-winning-alaska-senate-race-outright-12709303",
       "results_source_name": "Associated Press via Newsweek",
@@ -377,23 +377,23 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IL00458",
-          "votes": 2571963,
-          "pct": 61.8
+          "votes": 2603766,
+          "pct": 62.0
         },
         {
           "name": "Don Tracy",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IL00615",
-          "votes": 1525328,
-          "pct": 36.6
+          "votes": 1528962,
+          "pct": 36.4
         },
         {
           "name": "Whitfield Harrington Jr.",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6IL00680",
-          "votes": 66032,
+          "votes": 66823,
           "pct": 1.6
         }
       ],
@@ -402,11 +402,11 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
       "notes": "NBC News also projected Stratton. Exact call time not reported.",
-      "updated": "2026-11-14T00:04:28Z",
-      "results_as_of": "2026-11-13",
+      "updated": "2026-11-18T00:05Z",
+      "results_as_of": "2026-11-17",
       "results_source": "https://www.nbcchicago.com/elections/who-won-illinois-live-election-results-and-winners-from-the-2026-midterm-election/4012160/",
       "results_source_name": "NBC News Decision Desk via NBC Chicago",
-      "counted_pct": 97.7
+      "counted_pct": 98.2
     },
     "KS": {
       "seat_holder": "M001198",
@@ -698,23 +698,23 @@
           "incumbent": true,
           "bioguide": "H001079",
           "candidate_id": "S8MS00261",
-          "votes": 469797,
-          "pct": 48.7
+          "votes": 471817,
+          "pct": 48.6
         },
         {
           "name": "Scott Colom",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MS00133",
-          "votes": 475478,
-          "pct": 49.2
+          "votes": 479404,
+          "pct": 49.3
         },
         {
           "name": "Ty Pinkins",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4MS00187",
-          "votes": 20340,
+          "votes": 20439,
           "pct": 2.1
         }
       ],
@@ -722,11 +722,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-11",
       "source_url": "https://www.wlox.com/2026/11/11/ap-projects-democrat-scott-colom-winner-highly-contested-mississippi-us-senate-seat/",
-      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. County results were due to the Secretary of State by Nov. 13, and the statewide result had not been certified as of the latest report.",
-      "updated": "2026-11-14T00:04:28Z",
-      "results_as_of": "2026-11-12T20:52-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/mississippi-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. The Secretary of State reported official results from all 82 counties on Nov. 13; statewide certification has not been reported.",
+      "updated": "2026-11-18T00:05Z",
+      "results_as_of": "2026-11-13T23:47-06:00",
+      "results_source": "https://www.wlox.com/2026/11/14/ms-secretary-state-releases-final-election-numbers/",
+      "results_source_name": "Mississippi Secretary of State via WLOX"
     },
     "MT": {
       "seat_holder": "D000618",
@@ -809,8 +809,8 @@
       "called_at": "2026-11-04T01:23Z",
       "source_url": "https://www.wbtv.com/2026/11/04/roy-cooper-wins-2026-us-senate-race-north-carolina-ap-projects/",
       "notes": "Decision Desk HQ also called it at the same time.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-14T19:09-05:00",
+      "updated": "2026-11-18T00:05Z",
+      "results_as_of": "2026-11-17T07:42-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/north-carolina-us-senate-general-election/results",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-24"
@@ -1070,8 +1070,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:36Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-kevin-hern-wins-election-to-u-s-senate-from-oklahoma/",
-      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. The State Election Board was scheduled to certify results on Nov. 10 and Hern is set to take office Nov. 30, but certification has not been confirmed on an official state page.",
-      "updated": "2026-11-14T00:04:28Z",
+      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. The State Election Board's general-election page is headed 'Official Results' but gives no certification date, so certification is not confirmed on an official state page.",
+      "updated": "2026-11-18T00:05Z",
       "results_as_of": "2026-11-13",
       "results_source": "https://ballotpedia.org/U.S._Senate,_Oklahoma_election,_2026",
       "results_source_name": "Ballotpedia (citing The New York Times)",
@@ -1231,8 +1231,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:02Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-mike-rounds-wins-reelection-to-u-s-senate-from-south-dakota/",
-      "notes": "The State Canvass and Certificate document found on the Secretary of State site covers the June primary; no general-election canvass was located this run, so the totals shown remain unofficial.",
-      "updated": "2026-11-15T23:55Z",
+      "notes": "The Secretary of State results site still labeled the general-election results unofficial on Nov. 17, and no general-election canvass certificate was found, so certification is not confirmed.",
+      "updated": "2026-11-18T00:05Z",
       "results_as_of": "2026-11-06T20:00-06:00",
       "results_source": "https://electionresults.sd.gov/resultsSW.aspx",
       "results_source_name": "South Dakota Secretary of State",
@@ -1385,7 +1385,7 @@
     },
     "WY": {
       "seat_holder": "L000571",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Harriet Hageman",
@@ -1407,12 +1407,13 @@
       "winner": "Harriet Hageman",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
-      "source_url": "https://www.ckom.com/2026/11/03/republican-harriet-hageman-wins-election-to-u-s-senate-from-wyoming/",
-      "notes": "The Secretary of State now labels the 2026 general results official and posts the State Canvassing Board certification; the certified figures could not be retrieved this run, so totals shown remain unofficial.",
-      "updated": "2026-11-15T00:05Z",
+      "source_url": "https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx",
+      "notes": "The State Canvassing Board certified the general election results on Nov. 10. The certified Senate figures could not be retrieved this run, so the totals shown remain unofficial Decision Desk HQ counts.",
+      "updated": "2026-11-18T00:05Z",
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/wyoming-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-11-10"
     }
   }
 }
