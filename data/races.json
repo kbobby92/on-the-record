@@ -5,15 +5,15 @@
   "races": {
     "AK": {
       "seat_holder": "S001198",
-      "status": "counting",
+      "status": "called",
       "nominees": [
         {
           "name": "Mary Peltola",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6AK00276",
-          "votes": 125157,
-          "pct": 49.2
+          "votes": 144302,
+          "pct": 50.1
         },
         {
           "name": "Dan Sullivan",
@@ -21,15 +21,15 @@
           "incumbent": true,
           "bioguide": "S001198",
           "candidate_id": "S4AK00214",
-          "votes": 119357,
-          "pct": 47.0
+          "votes": 131844,
+          "pct": 45.8
         },
         {
           "name": "Daniel J. Sullivan Jr.",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6AK00326",
-          "votes": 4199,
+          "votes": 4760,
           "pct": 1.7
         },
         {
@@ -37,21 +37,21 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S8AK00140",
-          "votes": 5490,
-          "pct": 2.2
+          "votes": 6105,
+          "pct": 2.1
         }
       ],
-      "winner": null,
-      "called_by": null,
-      "called_at": null,
-      "source_url": null,
-      "notes": "Not called; no listed outlet has projected a winner (NBC News described Peltola as likely to win on Nov. 14 but did not project her). The state's Nov. 16 update put Peltola near 50% of first-choice votes; ballots arriving by the Nov. 18 deadline are still to be counted, and the figures shown are older.",
-      "updated": "2026-11-18T00:05Z",
-      "results_as_of": "2026-11-13",
-      "results_source": "https://www.newsweek.com/mary-peltola-path-winning-alaska-senate-race-outright-12709303",
-      "results_source_name": "Associated Press via Newsweek",
+      "winner": "Mary Peltola",
+      "called_by": "Associated Press",
+      "called_at": "2026-11-18T03:19Z",
+      "source_url": "https://abcnews.com/Politics/democrat-mary-peltola-wins-alaska-senate-race-defeating/story?id=137983873",
+      "notes": "The AP projected Peltola the winner on the evening of Nov. 17 after a state update put her above 50% of first-choice votes, so no ranked-choice tabulation is expected. Results remain unofficial until state certification.",
+      "updated": "2026-11-18T23:55Z",
+      "results_as_of": "2026-11-17T17:46:56-09:00",
+      "results_source": "https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf",
+      "results_source_name": "Alaska Division of Elections (unofficial results)",
       "certify_by": "2026-11-25",
-      "counted_pct": 88
+      "counted_pct": 99
     },
     "AL": {
       "seat_holder": "T000278",
@@ -239,9 +239,9 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://townhall.com/news/dmitri-bolt/2026/11/03/florida-senate-race-n2685851",
-      "notes": "Special election. Source page embeds the DDHQ call post. County official returns were due Nov. 16; the state canvassing commission is scheduled to certify on Nov. 17.",
-      "updated": "2026-11-16T23:58Z",
-      "results_as_of": "2026-11-16",
+      "notes": "Special election. Source page embeds the DDHQ call post. News reports say the Elections Canvassing Commission met Nov. 17 to certify the general election, but no official state notice of certification was found, so the status is unchanged.",
+      "updated": "2026-11-18T23:55Z",
+      "results_as_of": "2026-11-18",
       "results_source": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
       "results_source_name": "Florida Division of Elections",
       "certify_by": "2026-11-17"
@@ -362,10 +362,10 @@
       "called_at": "2026-11-04T06:31Z",
       "source_url": "https://www.yahoo.com/news/politics/articles/republican-jim-risch-wins-reelection-063216005.html",
       "notes": "No Democratic nominee. Latah and Bannock counties added ballots left out of election-night reporting; officials said no outcomes changed. Figures are unofficial pending the state canvass.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-10",
-      "results_source": "https://www.spokesman.com/elections/2026/idaho-general-election-nov-3/results/",
-      "results_source_name": "Idaho Secretary of State via The Spokesman-Review",
+      "updated": "2026-11-18T23:55Z",
+      "results_as_of": "2026-11-12T17:23-07:00",
+      "results_source": "https://tallyidaho.com/elections/2026-general/results",
+      "results_source_name": "Idaho Secretary of State via Tally Idaho",
       "certify_by": "2026-11-24"
     },
     "IL": {
@@ -442,8 +442,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:24Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-adam-hamilton-wins-election-to-u-s-senate-from-kansas/",
-      "notes": "Decision Desk HQ also projected Hamilton. The Senate race is not among the contests in the state's close-race audit.",
-      "updated": "2026-11-15T23:55Z",
+      "notes": "Decision Desk HQ and CNN also projected Hamilton. All 105 counties completed their canvasses and post-election audits as of Nov. 17; the Senate race was not among the close-race audits, and state certification by the State Board of Canvassers is still pending.",
+      "updated": "2026-11-18T23:55Z",
       "results_as_of": "2026-11-13T12:36-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/kansas-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -482,10 +482,11 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.bloomberg.com/news/articles/2026-11-04/republican-barr-wins-kentucky-senate-race-ddhq-projects",
       "notes": "Exact call time not reported. All 120 counties have reported; the state still labels its results unofficial.",
-      "updated": "2026-11-15T00:05Z",
-      "results_as_of": "2026-11-14T18:43-05:00",
-      "results_source": "https://vrsws.sos.ky.gov/liveresults/Statewide",
-      "results_source_name": "Kentucky State Board of Elections (unofficial results)"
+      "updated": "2026-11-18T23:55Z",
+      "results_as_of": "2026-11-18T18:48-05:00",
+      "results_source": "https://vrsws.sos.ky.gov/liveresults?id=2",
+      "results_source_name": "Kentucky State Board of Elections (unofficial results)",
+      "certify_by": "2026-11-23"
     },
     "LA": {
       "seat_holder": "C001075",
@@ -1320,7 +1321,7 @@
           "incumbent": true,
           "bioguide": "W000805",
           "candidate_id": "S6VA00093",
-          "votes": 2251626,
+          "votes": 2251628,
           "pct": 61.6
         },
         {
@@ -1328,7 +1329,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S8VA00321",
-          "votes": 1393715,
+          "votes": 1393713,
           "pct": 38.1
         }
       ],
@@ -1337,8 +1338,8 @@
       "called_at": "2026-11-04T00:00Z",
       "source_url": "https://www.fox5dc.com/news/va-senate-election-mark-warner-fourth-term",
       "notes": "Also projected by DDHQ, NBC News and CNN.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-14",
+      "updated": "2026-11-18T23:55Z",
+      "results_as_of": "2026-11-17T21:22Z",
       "results_source": "https://cardinalnews.org/2026/11/03/live-2026-election-results/",
       "results_source_name": "Virginia Department of Elections unofficial results (via Cardinal News)",
       "certify_by": "2026-12-07"
