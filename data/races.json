@@ -94,7 +94,7 @@
           "party": "REP",
           "incumbent": true,
           "bioguide": "C001095",
-          "votes": 480968,
+          "votes": 481594,
           "pct": 54.2,
           "candidate_id": "S4AR00103"
         },
@@ -103,7 +103,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6AR00199",
-          "votes": 375910,
+          "votes": 377129,
           "pct": 42.4
         },
         {
@@ -111,7 +111,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6AR00223",
-          "votes": 30169,
+          "votes": 30216,
           "pct": 3.4
         }
       ],
@@ -120,8 +120,8 @@
       "called_at": "2026-11-04",
       "source_url": "https://foxnews.com/elections/2026/midterm-results/senate",
       "notes": "Exact call time not reported.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-10T17:33-05:00",
+      "updated": "2026-11-19T23:55Z",
+      "results_as_of": "2026-11-19T16:30-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/arkansas-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
     },
@@ -166,12 +166,13 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-john-hickenlooper-wins-reelection-to-u-s-senate-from-colorado/",
-      "notes": "CBS News also projected Hickenlooper. Unity Party and Approval Voting Party candidates were also on the ballot, each under 1%.",
-      "updated": "2026-11-11T23:59:36Z",
+      "notes": "CBS News also projected Hickenlooper; Unity Party and Approval Voting Party candidates were also on the ballot, each under 1%. The Secretary of State's deadline to certify statewide results is Nov. 30.",
+      "updated": "2026-11-19T23:55Z",
       "results_as_of": "2026-11-11T18:51-05:00",
       "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/colorado",
       "results_source_name": "Associated Press via Fox News",
-      "counted_pct": 98.09
+      "counted_pct": 98.09,
+      "certify_by": "2026-11-30"
     },
     "DE": {
       "seat_holder": "C001088",
@@ -497,7 +498,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6LA00664",
-          "votes": 746024,
+          "votes": 746476,
           "pct": 50.9
         },
         {
@@ -505,7 +506,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6LA00615",
-          "votes": 720222,
+          "votes": 720521,
           "pct": 49.1
         }
       ],
@@ -513,9 +514,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:31Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-julia-letlow-wins-election-to-u-s-senate-from-louisiana/",
-      "notes": "",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-10T18:53-05:00",
+      "notes": "Figures are unofficial pending the Secretary of State's official results.",
+      "updated": "2026-11-19T23:55Z",
+      "results_as_of": "2026-11-16T11:51-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/louisiana-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
     },
@@ -595,11 +596,12 @@
       "called_at": "2026-11-04T06:02Z",
       "source_url": "https://www.ckom.com/2026/11/04/democrat-troy-jackson-wins-election-to-u-s-senate-from-maine/",
       "notes": "Ranked-choice voting; Jackson won a first-round majority, so no further rounds. Collins conceded.",
-      "updated": "2026-11-11T23:59:36Z",
+      "updated": "2026-11-19T23:55Z",
       "results_as_of": "2026-11-11",
       "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/maine",
       "results_source_name": "Associated Press via Fox News",
-      "counted_pct": 97.4
+      "counted_pct": 97.4,
+      "certify_by": "2026-11-23"
     },
     "MI": {
       "seat_holder": "P000595",
@@ -723,11 +725,12 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-11",
       "source_url": "https://www.wlox.com/2026/11/11/ap-projects-democrat-scott-colom-winner-highly-contested-mississippi-us-senate-seat/",
-      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. The Secretary of State reported official results from all 82 counties on Nov. 13; statewide certification has not been reported.",
-      "updated": "2026-11-18T00:05Z",
+      "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. Counties reported official results by Nov. 13, and the Secretary of State must declare the winner by Dec. 3; statewide certification has not been reported.",
+      "updated": "2026-11-19T23:55Z",
       "results_as_of": "2026-11-13T23:47-06:00",
       "results_source": "https://www.wlox.com/2026/11/14/ms-secretary-state-releases-final-election-numbers/",
-      "results_source_name": "Mississippi Secretary of State via WLOX"
+      "results_source_name": "Mississippi Secretary of State via WLOX",
+      "certify_by": "2026-12-03"
     },
     "MT": {
       "seat_holder": "D000618",
@@ -993,7 +996,7 @@
           "incumbent": true,
           "bioguide": "H001104",
           "candidate_id": "S6OH00304",
-          "votes": 2078672,
+          "votes": 2081174,
           "pct": 45.2
         },
         {
@@ -1001,7 +1004,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6OH00163",
-          "votes": 2301918,
+          "votes": 2304213,
           "pct": 50.0
         },
         {
@@ -1009,7 +1012,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6OH00429",
-          "votes": 128333,
+          "votes": 128575,
           "pct": 2.8
         },
         {
@@ -1025,15 +1028,15 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:10Z",
       "source_url": "https://gvwire.com/2026/11/03/sherrod-brown-wins-ohio-senate-special-election-ap-says/",
-      "notes": "Special election. CBS News also projected Brown. Decision Desk HQ does not itemize Gregory Levy; his figure is the earlier Ballotpedia itemization and has not been updated.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-13T12:56-05:00",
+      "notes": "Special election; CBS News also projected Brown, and counties must finish the official canvass by Nov. 24. Gregory Levy's figure is an earlier Ballotpedia itemization, since Decision Desk HQ does not list him separately.",
+      "updated": "2026-11-19T23:55Z",
+      "results_as_of": "2026-11-18T12:18-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/ohio-us-senate-special-election-general",
       "results_source_name": "Decision Desk HQ"
     },
     "OK": {
       "seat_holder": "A000383",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Kevin Hern",
@@ -1070,9 +1073,9 @@
       "winner": "Kevin Hern",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:36Z",
-      "source_url": "https://www.ckom.com/2026/11/03/republican-kevin-hern-wins-election-to-u-s-senate-from-oklahoma/",
-      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. The State Election Board's general-election page is headed 'Official Results' but gives no certification date, so certification is not confirmed on an official state page.",
-      "updated": "2026-11-18T00:05Z",
+      "source_url": "https://oklahoma.gov/content/dam/ok/en/elections/election-results/2026-election-results/20261103-reporting-issues-review.pdf",
+      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. A State Election Board staff report dated Nov. 13 states that statewide results were officially certified on Nov. 10; the certified Senate figures could not be retrieved this run, so the totals shown remain unofficial.",
+      "updated": "2026-11-19T23:55Z",
       "results_as_of": "2026-11-13",
       "results_source": "https://ballotpedia.org/U.S._Senate,_Oklahoma_election,_2026",
       "results_source_name": "Ballotpedia (citing The New York Times)",
@@ -1265,9 +1268,9 @@
       "called_by": "NBC News",
       "called_at": "2026-11-04",
       "source_url": "https://www.wsmv.com/2026/11/04/hagerty-serve-second-us-senate-term-after-defeating-democrat-bradshaw/",
-      "notes": "Fox News and the Associated Press also projected Hagerty. Exact NBC call time not reported.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-12T14:34-05:00",
+      "notes": "Fox News and the Associated Press also projected Hagerty. Exact NBC call time not reported. County election commissions must certify results by November 23, after which the state certifies.",
+      "updated": "2026-11-19T23:55Z",
+      "results_as_of": "2026-11-17T14:47-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/tennessee-us-senate-general-election",
       "results_source_name": "Decision Desk HQ"
     },
