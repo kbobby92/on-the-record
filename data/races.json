@@ -166,8 +166,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-john-hickenlooper-wins-reelection-to-u-s-senate-from-colorado/",
-      "notes": "CBS News also projected Hickenlooper; Unity Party and Approval Voting Party candidates were also on the ballot, each under 1%. The Secretary of State's deadline to certify statewide results is Nov. 30.",
-      "updated": "2026-11-19T23:55Z",
+      "notes": "CBS News also projected Hickenlooper; Unity Party and Approval Voting Party candidates were also on the ballot, each under 1%. The statewide post-election risk-limiting audit was completed Nov. 19; county canvass boards must approve final tallies by Nov. 25, ahead of the Nov. 30 state certification deadline.",
+      "updated": "2026-11-20T23:55Z",
       "results_as_of": "2026-11-11T18:51-05:00",
       "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/colorado",
       "results_source_name": "Associated Press via Fox News",
@@ -200,8 +200,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-chris-coons-wins-reelection-to-u-s-senate-from-delaware/",
-      "notes": "Delaware's county boards of canvass were scheduled to certify results on Nov. 5; certified statewide figures could not be confirmed from the state results page.",
-      "updated": "2026-11-12T23:56:12Z",
+      "notes": "Delaware's results archive lists 2026 general election official results, but the state's results page still showed an unofficial header and the Senate figures could not be read from it, so certification is not confirmed.",
+      "updated": "2026-11-20T23:55Z",
       "results_as_of": "2026-11-05T16:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/delaware-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -289,7 +289,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IA00314",
-          "votes": 631422,
+          "votes": 631461,
           "pct": 46.4
         },
         {
@@ -297,7 +297,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IA00298",
-          "votes": 688567,
+          "votes": 688694,
           "pct": 50.6
         },
         {
@@ -305,7 +305,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6IA00181",
-          "votes": 42134,
+          "votes": 42142,
           "pct": 3.1
         }
       ],
@@ -313,9 +313,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:35Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-josh-turek-wins-election-to-u-s-senate-from-iowa/",
-      "notes": "",
-      "updated": "2026-11-14T00:04:28Z",
-      "results_as_of": "2026-11-12T13:18-05:00",
+      "notes": "The State Canvassing Board is expected to certify statewide results by Nov. 30.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-16T11:28-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/iowa-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-30"
@@ -378,23 +378,23 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IL00458",
-          "votes": 2603766,
-          "pct": 62.0
+          "votes": 2619963,
+          "pct": 62.1
         },
         {
           "name": "Don Tracy",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IL00615",
-          "votes": 1528962,
-          "pct": 36.4
+          "votes": 1533964,
+          "pct": 36.3
         },
         {
           "name": "Whitfield Harrington Jr.",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6IL00680",
-          "votes": 66823,
+          "votes": 67352,
           "pct": 1.6
         }
       ],
@@ -403,11 +403,11 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
       "notes": "NBC News also projected Stratton. Exact call time not reported.",
-      "updated": "2026-11-18T00:05Z",
-      "results_as_of": "2026-11-17",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20",
       "results_source": "https://www.nbcchicago.com/elections/who-won-illinois-live-election-results-and-winners-from-the-2026-midterm-election/4012160/",
       "results_source_name": "NBC News Decision Desk via NBC Chicago",
-      "counted_pct": 98.2
+      "counted_pct": 98.8
     },
     "KS": {
       "seat_holder": "M001198",
@@ -419,23 +419,23 @@
           "incumbent": true,
           "bioguide": "M001198",
           "candidate_id": "S0KS00315",
-          "votes": 506565,
-          "pct": 46.0
+          "votes": 511161,
+          "pct": 45.8
         },
         {
           "name": "Adam Hamilton",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6KS00312",
-          "votes": 562014,
-          "pct": 51.0
+          "votes": 571505,
+          "pct": 51.2
         },
         {
           "name": "David Graham",
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S2KS00154",
-          "votes": 33515,
+          "votes": 34030,
           "pct": 3.0
         }
       ],
@@ -444,8 +444,8 @@
       "called_at": "2026-11-04T04:24Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-adam-hamilton-wins-election-to-u-s-senate-from-kansas/",
       "notes": "Decision Desk HQ and CNN also projected Hamilton. All 105 counties completed their canvasses and post-election audits as of Nov. 17; the Senate race was not among the close-race audits, and state certification by the State Board of Canvassers is still pending.",
-      "updated": "2026-11-18T23:55Z",
-      "results_as_of": "2026-11-13T12:36-05:00",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-17T13:55-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/kansas-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-12-01"
@@ -530,23 +530,23 @@
           "incumbent": true,
           "bioguide": "M000133",
           "candidate_id": "S4MA00028",
-          "votes": 1653775,
-          "pct": 63.4
+          "votes": 1718276,
+          "pct": 63.7
         },
         {
           "name": "John Deaton",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6MA00304",
-          "votes": 838009,
-          "pct": 32.1
+          "votes": 855969,
+          "pct": 31.7
         },
         {
           "name": "Shiva Ayyadurai",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S8MA00268",
-          "votes": 59916,
+          "votes": 61085,
           "pct": 2.3
         },
         {
@@ -554,7 +554,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6MA00288",
-          "votes": 56667,
+          "votes": 59097,
           "pct": 2.2
         }
       ],
@@ -562,12 +562,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T01:01Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-edward-markey-wins-reelection-to-u-s-senate-from-massachusetts/",
-      "notes": "Joseph Tache was the Party for Socialism and Liberation nominee. Figures are from AP, which itemizes all four candidates.",
-      "updated": "2026-11-11T23:59:36Z",
-      "results_as_of": "2026-11-11",
-      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/massachusetts",
-      "results_source_name": "Associated Press via Fox News",
-      "counted_pct": 99.0
+      "notes": "Joseph Tache was the Party for Socialism and Liberation nominee. Figures are from the state's election statistics database; statewide certification by the governor and Governor's Council was expected around Dec. 2.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20",
+      "results_source": "https://electionstats.state.ma.us/elections/search/",
+      "results_source_name": "Massachusetts Secretary of the Commonwealth (PD43+ election statistics)"
     },
     "ME": {
       "seat_holder": "C001035",
@@ -636,8 +635,8 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T06:15Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117863335920296120",
-      "notes": "",
-      "updated": "2026-11-11T23:59:36Z",
+      "notes": "Under the state's schedule, county canvass boards were to certify by Nov. 17 and the Board of State Canvassers must certify by Nov. 23; results are official only after state certification.",
+      "updated": "2026-11-20T23:55Z",
       "results_as_of": "2026-11-10T16:46-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/michigan-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -652,7 +651,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MN00440",
-          "votes": 1521794,
+          "votes": 1521835,
           "pct": 53.7
         },
         {
@@ -660,14 +659,14 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6MN00556",
-          "votes": 1233555,
+          "votes": 1233592,
           "pct": 43.5
         },
         {
           "name": "Marisa Simonetti",
           "party": "IND",
           "incumbent": false,
-          "votes": 41583,
+          "votes": 41589,
           "pct": 1.5
         },
         {
@@ -675,7 +674,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6MN00572",
-          "votes": 32491,
+          "votes": 32500,
           "pct": 1.1
         }
       ],
@@ -683,11 +682,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:07Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-peggy-flanagan-wins-election-to-u-s-senate-from-minnesota/",
-      "notes": "CBS News also projected Flanagan. All precincts have reported; the State Canvassing Board meets Nov. 19.",
-      "updated": "2026-11-15T00:05Z",
-      "results_as_of": "2026-11-13T13:38-06:00",
-      "results_source": "https://electionresults.sos.mn.gov/Results/Index?ErsElectionId=201&officeInElectionIdList=38485&officeInElectionIdList=-1&scenario=USSenate&electionDate=11%2F03%2F2026%2000%3A00%3A00",
-      "results_source_name": "Minnesota Secretary of State (unofficial results)",
+      "notes": "CBS News also projected Flanagan. The State Canvassing Board was scheduled to certify results on Nov. 19, but certification could not be confirmed from the state's results pages.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20",
+      "results_source": "https://www.sos.mn.gov/elections-voting/election-results/2026/2026-general-election-results/",
+      "results_source_name": "Minnesota Secretary of State",
       "certify_by": "2026-11-19",
       "counted_pct": 100
     },
@@ -741,7 +740,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6MT00295",
-          "votes": 235580,
+          "votes": 235693,
           "pct": 48.2
         },
         {
@@ -749,7 +748,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MT00253",
-          "votes": 59960,
+          "votes": 59984,
           "pct": 12.3
         },
         {
@@ -757,7 +756,7 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6MT00287",
-          "votes": 184563,
+          "votes": 184574,
           "pct": 37.7
         },
         {
@@ -765,7 +764,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6MT00261",
-          "votes": 9016,
+          "votes": 9018,
           "pct": 1.8
         }
       ],
@@ -773,12 +772,12 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04",
       "source_url": "https://www.aol.com/articles/gop-alme-wins-montana-senate-061635000.html",
-      "notes": "Sen. Steve Daines did not seek reelection. Bodnar conceded. AP had not called the race as of early Nov. 4. Exact call time not reported.",
-      "updated": "2026-11-15T00:05Z",
-      "results_as_of": "2026-11-14T16:45:24-07:00",
-      "results_source": "https://electionresults.mt.gov/ResultsSW.aspx",
+      "notes": "Sen. Steve Daines did not seek reelection. Bodnar conceded. AP had not called the race as of early Nov. 4. Exact call time not reported. Results remain unofficial pending the state canvass.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20T09:40:17-07:00",
+      "results_source": "https://electionresults.mt.gov/resultsSW.aspx?type=FED",
       "results_source_name": "Montana Secretary of State",
-      "counted_pct": 99.7
+      "counted_pct": 99.9
     },
     "NC": {
       "seat_holder": "T000476",
@@ -829,22 +828,22 @@
           "incumbent": true,
           "bioguide": "R000618",
           "candidate_id": "S6NE00129",
-          "votes": 381045,
-          "pct": 49.9
+          "votes": 382374,
+          "pct": 49.8
         },
         {
           "name": "Dan Osborn",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4NE00207",
-          "votes": 336296,
-          "pct": 44.1
+          "votes": 338731,
+          "pct": 44.2
         },
         {
           "name": "Robin Richards",
           "party": "OTH",
           "incumbent": false,
-          "votes": 19886,
+          "votes": 20044,
           "pct": 2.6
         },
         {
@@ -852,7 +851,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6NE00152",
-          "votes": 16547,
+          "votes": 16735,
           "pct": 2.2
         },
         {
@@ -860,7 +859,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6NE00202",
-          "votes": 9222,
+          "votes": 9277,
           "pct": 1.2
         }
       ],
@@ -868,12 +867,13 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T08:27Z",
       "source_url": "https://www.kjct8.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
-      "notes": "No Democratic nominee. CBS News and NBC News also projected Ricketts; the state still labels its count unofficial.",
-      "updated": "2026-11-15T00:05Z",
-      "results_as_of": "2026-11-14",
-      "results_source": "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
+      "notes": "No Democratic nominee. CBS News and NBC News also projected Ricketts; the state still labels its count unofficial, and the Board of State Canvassers meets Nov. 30 to certify results.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20",
+      "results_source": "https://electionresults.nebraska.gov/resultsSW.aspx",
       "results_source_name": "Nebraska Secretary of State (unofficial results)",
-      "certify_by": "2026-11-30"
+      "certify_by": "2026-11-30",
+      "counted_pct": 100.0
     },
     "NH": {
       "seat_holder": "S001181",
@@ -892,7 +892,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6NH00208",
-          "votes": 268682,
+          "votes": 268712,
           "pct": 42.2
         },
         {
@@ -908,11 +908,12 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117784016719954261",
-      "notes": "Decision Desk HQ revised its totals downward on Nov. 10.",
-      "updated": "2026-11-11T23:59:36Z",
-      "results_as_of": "2026-11-10T15:19-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/new-hampshire-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "notes": "Figures are AP counts; state certification had not been reported as of Nov. 20.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20T18:53-05:00",
+      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/new-hampshire",
+      "results_source_name": "Associated Press via Fox News",
+      "counted_pct": 99.0
     },
     "NJ": {
       "seat_holder": "B001288",
@@ -948,10 +949,11 @@
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-cory-booker-wins-reelection-to-u-s-senate-from-new-jersey/",
       "notes": "ABC News also projected Booker.",
-      "updated": "2026-11-15T23:55Z",
+      "updated": "2026-11-20T23:55Z",
       "results_as_of": "2026-11-13T12:48-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/new-jersey-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ"
+      "results_source_name": "Decision Desk HQ",
+      "certify_by": "2026-12-03"
     },
     "NM": {
       "seat_holder": "L000570",
@@ -1219,7 +1221,7 @@
           "incumbent": true,
           "bioguide": "R000605",
           "candidate_id": "S4SD00049",
-          "votes": 184589,
+          "votes": 184590,
           "pct": 60.5
         },
         {
@@ -1235,9 +1237,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:02Z",
       "source_url": "https://www.ckom.com/2026/11/03/republican-mike-rounds-wins-reelection-to-u-s-senate-from-south-dakota/",
-      "notes": "The Secretary of State results site still labeled the general-election results unofficial on Nov. 17, and no general-election canvass certificate was found, so certification is not confirmed.",
-      "updated": "2026-11-18T00:05Z",
-      "results_as_of": "2026-11-06T20:00-06:00",
+      "notes": "The Secretary of State results site still labeled the general-election results unofficial on Nov. 20, and no general-election canvass certificate was found, so certification is not confirmed.",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20",
       "results_source": "https://electionresults.sd.gov/resultsSW.aspx",
       "results_source_name": "South Dakota Secretary of State",
       "certify_by": "2026-11-10"
@@ -1332,7 +1334,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S8VA00321",
-          "votes": 1393713,
+          "votes": 1393710,
           "pct": 38.1
         }
       ],
@@ -1341,8 +1343,8 @@
       "called_at": "2026-11-04T00:00Z",
       "source_url": "https://www.fox5dc.com/news/va-senate-election-mark-warner-fourth-term",
       "notes": "Also projected by DDHQ, NBC News and CNN.",
-      "updated": "2026-11-18T23:55Z",
-      "results_as_of": "2026-11-17T21:22Z",
+      "updated": "2026-11-20T23:55Z",
+      "results_as_of": "2026-11-20T13:11:58Z",
       "results_source": "https://cardinalnews.org/2026/11/03/live-2026-election-results/",
       "results_source_name": "Virginia Department of Elections unofficial results (via Cardinal News)",
       "certify_by": "2026-12-07"
