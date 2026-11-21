@@ -12,7 +12,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6AK00276",
-          "votes": 144302,
+          "votes": 144486,
           "pct": 50.1
         },
         {
@@ -21,7 +21,7 @@
           "incumbent": true,
           "bioguide": "S001198",
           "candidate_id": "S4AK00214",
-          "votes": 131844,
+          "votes": 131965,
           "pct": 45.8
         },
         {
@@ -29,7 +29,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6AK00326",
-          "votes": 4760,
+          "votes": 4765,
           "pct": 1.7
         },
         {
@@ -45,11 +45,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-18T03:19Z",
       "source_url": "https://abcnews.com/Politics/democrat-mary-peltola-wins-alaska-senate-race-defeating/story?id=137983873",
-      "notes": "The AP projected Peltola the winner on the evening of Nov. 17 after a state update put her above 50% of first-choice votes, so no ranked-choice tabulation is expected. Results remain unofficial until state certification.",
-      "updated": "2026-11-18T23:55Z",
-      "results_as_of": "2026-11-17T17:46:56-09:00",
-      "results_source": "https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf",
-      "results_source_name": "Alaska Division of Elections (unofficial results)",
+      "notes": "The AP projected Peltola the winner on Nov. 17. The Division of Elections finished its final count on Nov. 18 with Peltola above 50% of first-choice votes; state certification is scheduled for Nov. 25.",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-18",
+      "results_source": "https://foxnews.com/elections/2026/midterm-results/state/alaska",
+      "results_source_name": "Associated Press via Fox News",
       "certify_by": "2026-11-25",
       "counted_pct": 99
     },
@@ -256,7 +256,7 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "O000174",
-          "votes": 2468986,
+          "votes": 2469060,
           "pct": 59.0,
           "candidate_id": "S8GA00180"
         },
@@ -264,7 +264,7 @@
           "name": "Mike Collins",
           "party": "REP",
           "incumbent": false,
-          "votes": 1713656,
+          "votes": 1713673,
           "pct": 41.0,
           "candidate_id": "S6GA00390"
         }
@@ -273,10 +273,10 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T00:18Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117773436718137533",
-      "notes": "CBS News also projected Ossoff.",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-12T19:55-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/georgia-us-senate-general-election/results",
+      "notes": "CBS News also projected Ossoff. News reports say the Secretary of State certified the results on Nov. 20 after a risk-limiting audit; an official state certification page was not retrieved, so the status is unchanged.",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-20T16:54-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/georgia-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-20"
     },
@@ -595,10 +595,10 @@
       "called_at": "2026-11-04T06:02Z",
       "source_url": "https://www.ckom.com/2026/11/04/democrat-troy-jackson-wins-election-to-u-s-senate-from-maine/",
       "notes": "Ranked-choice voting; Jackson won a first-round majority, so no further rounds. Collins conceded.",
-      "updated": "2026-11-19T23:55Z",
-      "results_as_of": "2026-11-11",
-      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/maine",
-      "results_source_name": "Associated Press via Fox News",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-17",
+      "results_source": "https://www.poliwave.com/us/live/midterms-2026/senate/maine",
+      "results_source_name": "Associated Press via Poliwave",
       "counted_pct": 97.4,
       "certify_by": "2026-11-23"
     },
@@ -644,7 +644,7 @@
     },
     "MN": {
       "seat_holder": "S001203",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Peggy Flanagan",
@@ -681,10 +681,10 @@
       "winner": "Peggy Flanagan",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T05:07Z",
-      "source_url": "https://www.cjme.com/2026/11/03/democrat-peggy-flanagan-wins-election-to-u-s-senate-from-minnesota/",
-      "notes": "CBS News also projected Flanagan. The State Canvassing Board was scheduled to certify results on Nov. 19, but certification could not be confirmed from the state's results pages.",
-      "updated": "2026-11-20T23:55Z",
-      "results_as_of": "2026-11-20",
+      "source_url": "https://www.sos.mn.gov/about-the-office/news-room/state-canvassing-board-certifies-results-of-the-2026-general-election/",
+      "notes": "CBS News also projected Flanagan. The State Canvassing Board certified the results on Nov. 19, per the Secretary of State.",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-21",
       "results_source": "https://www.sos.mn.gov/elections-voting/election-results/2026/2026-general-election-results/",
       "results_source_name": "Minnesota Secretary of State",
       "certify_by": "2026-11-19",
@@ -925,22 +925,22 @@
           "incumbent": true,
           "bioguide": "B001288",
           "candidate_id": "S4NJ00185",
-          "votes": 1852897,
-          "pct": 62.5
+          "votes": 1873463,
+          "pct": 62.6
         },
         {
           "name": "Justin Murphy",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S4NJ00532",
-          "votes": 1031733,
-          "pct": 34.8
+          "votes": 1038585,
+          "pct": 34.7
         },
         {
           "name": "Veronica Fernandez",
           "party": "IND",
           "incumbent": false,
-          "votes": 49420,
+          "votes": 50185,
           "pct": 1.7
         }
       ],
@@ -948,9 +948,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T01:00Z",
       "source_url": "https://www.cjme.com/2026/11/03/democrat-cory-booker-wins-reelection-to-u-s-senate-from-new-jersey/",
-      "notes": "ABC News also projected Booker.",
-      "updated": "2026-11-20T23:55Z",
-      "results_as_of": "2026-11-13T12:48-05:00",
+      "notes": "ABC News also projected Booker. A Socialist Workers Party candidate was also on the ballot with under 1%.",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-20T16:23-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/new-jersey-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-12-03"
@@ -965,7 +965,7 @@
           "incumbent": true,
           "bioguide": "L000570",
           "candidate_id": "S0NM00058",
-          "votes": 458963,
+          "votes": 459052,
           "pct": 63.3
         },
         {
@@ -973,7 +973,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6NM01186",
-          "votes": 266507,
+          "votes": 266524,
           "pct": 36.7
         }
       ],
@@ -981,12 +981,13 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-ben-lujan-wins-reelection-to-u-s-senate-from-new-mexico/",
-      "notes": "",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-12T11:07-07:00",
+      "notes": "All precincts have reported; the Secretary of State still labels the figures unofficial pending the State Canvassing Board.",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-20T16:02-07:00",
       "results_source": "https://electionresults.sos.nm.gov/resultsSW.aspx?type=FED&map=CTY",
       "results_source_name": "New Mexico Secretary of State (unofficial results)",
-      "certify_by": "2026-11-24"
+      "certify_by": "2026-11-24",
+      "counted_pct": 100
     },
     "OH": {
       "seat_holder": "H001104",
@@ -1398,7 +1399,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6WY00209",
-          "votes": 122157,
+          "votes": 122160,
           "pct": 65.2
         },
         {
@@ -1406,7 +1407,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6WY00217",
-          "votes": 65097,
+          "votes": 65103,
           "pct": 34.8
         }
       ],
@@ -1414,9 +1415,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx",
-      "notes": "The State Canvassing Board certified the general election results on Nov. 10. The certified Senate figures could not be retrieved this run, so the totals shown remain unofficial Decision Desk HQ counts.",
-      "updated": "2026-11-18T00:05Z",
-      "results_as_of": "2026-11-05T16:55-05:00",
+      "notes": "The State Canvassing Board certified the general election results on Nov. 10. The official certified Senate figures could not be opened this run, so totals shown are Decision Desk HQ counts, which exclude write-ins.",
+      "updated": "2026-11-21T23:30Z",
+      "results_as_of": "2026-11-19T16:07-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/wyoming-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-10"
