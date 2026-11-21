@@ -13,7 +13,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4AK00099/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -89,7 +89,7 @@
    "pct": 23.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:22+00:00"
  },
  "S001198": {
   "candidate_id": "S4AK00214",
@@ -131,83 +131,83 @@
   ],
   "committee_id": "C00570994",
   "source": "https://www.fec.gov/data/candidate/S4AK00214/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 1194143.56
+    "total": 1252138.53
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 234744.91
+    "total": 307358.42
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 596903.91
+    "total": 750079.26
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1716443.26
+    "total": 1975792.15
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 5544351.2
+    "total": 6468918.23
    }
   ],
   "states": [
    {
     "state": "AK",
-    "total": 1310246.9
-   },
-   {
-    "state": "FL",
-    "total": 901919.06
+    "total": 1594289.57
    },
    {
     "state": "CA",
-    "total": 900844.66
+    "total": 1065835.04
+   },
+   {
+    "state": "FL",
+    "total": 1044960.39
    },
    {
     "state": "TX",
-    "total": 794868.8
+    "total": 1012044.56
    },
    {
     "state": "NY",
-    "total": 724194.33
+    "total": 823371.79
    },
    {
     "state": "OH",
-    "total": 473583.5
+    "total": 512957.11
    },
    {
     "state": "VA",
-    "total": 436999.74
+    "total": 479057.91
    },
    {
     "state": "IL",
-    "total": 365738.72
+    "total": 379932.46
    },
    {
     "state": "DC",
-    "total": 260357.34
+    "total": 286526.46
    },
    {
     "state": "WA",
-    "total": 251887.95
+    "total": 268163.95
    }
   ],
   "in_state": {
-   "total": 1310246.9,
-   "itemized": 8277799.98,
-   "pct": 15.8
+   "total": 1594289.57,
+   "itemized": 9745499.73,
+   "pct": 16.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "B001319": {
   "candidate_id": "S2AL00145",
@@ -223,83 +223,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2AL00145/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 2610876.92
+    "total": 2664852.39
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 76433.51
+    "total": 80097.71
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 334293.21
+    "total": 342475.23
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 547566.02
+    "total": 553548.06
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1778748.72
+    "total": 1814248.72
    }
   ],
   "states": [
    {
     "state": "AL",
-    "total": 1548988.97
+    "total": 1569589.8
    },
    {
     "state": "VA",
-    "total": 239850.24
+    "total": 251278.7
    },
    {
     "state": "FL",
-    "total": 199345.16
+    "total": 207222.41
    },
    {
     "state": "TX",
-    "total": 178478.56
+    "total": 189014.81
    },
    {
     "state": "CA",
-    "total": 127762.3
-   },
-   {
-    "state": "DC",
-    "total": 97974.05
+    "total": 139235.58
    },
    {
     "state": "NY",
-    "total": 92955.57
+    "total": 112583.31
+   },
+   {
+    "state": "DC",
+    "total": 98974.05
    },
    {
     "state": "MD",
-    "total": 65184.43
+    "total": 67254.93
    },
    {
     "state": "CT",
-    "total": 54184.43
+    "total": 54294.2
    },
    {
     "state": "GA",
-    "total": 50044.71
+    "total": 51795.25
    }
   ],
   "in_state": {
-   "total": 1548988.97,
-   "itemized": 3156920.81,
-   "pct": 49.1
+   "total": 1569589.8,
+   "itemized": 3264224.54,
+   "pct": 48.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "T000278": {
   "candidate_id": "S0AL00230",
@@ -351,7 +351,7 @@
   ],
   "committee_id": "C00701672",
   "source": "https://www.fec.gov/data/candidate/S0AL00230/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -427,7 +427,7 @@
    "pct": 52.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "B001236": {
   "candidate_id": "S0AR00150",
@@ -443,7 +443,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0AR00150/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -519,7 +519,7 @@
    "pct": 11.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "C001095": {
   "candidate_id": "S4AR00103",
@@ -532,86 +532,112 @@
   "pacs": 1628000.0,
   "party": 62000.0,
   "self_funded": 0,
-  "top_employers": [],
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 104884.25,
+    "count": 277
+   },
+   {
+    "employer": "GOLDMAN SACHS",
+    "total": 97500.0,
+    "count": 34
+   },
+   {
+    "employer": "SELF",
+    "total": 90308.2,
+    "count": 72
+   },
+   {
+    "employer": "STEPHENS INC.",
+    "total": 42308.0,
+    "count": 25
+   },
+   {
+    "employer": "ANTHROPIC",
+    "total": 42000.0,
+    "count": 12
+   }
+  ],
   "committee_id": "C00499988",
   "source": "https://www.fec.gov/data/candidate/S4AR00103/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 4503339.8
+    "total": 4585758.1
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 514975.55
+    "total": 549583.86
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 644178.23
+    "total": 685410.73
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1288410.21
+    "total": 1330410.21
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 5987466.95
+    "total": 6257358.7
    }
   ],
   "states": [
    {
+    "state": "AR",
+    "total": 1389552.91
+   },
+   {
     "state": "FL",
-    "total": 1328484.36
+    "total": 1364793.5
    },
    {
     "state": "CA",
-    "total": 1312354.6
-   },
-   {
-    "state": "AR",
-    "total": 1282859.05
+    "total": 1362404.17
    },
    {
     "state": "NY",
-    "total": 978534.09
+    "total": 1015875.66
    },
    {
     "state": "TX",
-    "total": 858436.29
+    "total": 876859.89
    },
    {
     "state": "VA",
-    "total": 602984.6
+    "total": 634030.77
    },
    {
     "state": "IL",
-    "total": 257149.22
+    "total": 291013.05
    },
    {
     "state": "NJ",
-    "total": 238231.05
+    "total": 258364.36
    },
    {
     "state": "MA",
-    "total": 210095.32
+    "total": 215046.4
    },
    {
     "state": "NV",
-    "total": 209659.07
+    "total": 210134.07
    }
   ],
   "in_state": {
-   "total": 1282859.05,
-   "itemized": 9796212.55,
-   "pct": 13.1
+   "total": 1389552.91,
+   "itemized": 10266363.41,
+   "pct": 13.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "G000574": {
   "candidate_id": "S4AZ00139",
@@ -627,83 +653,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4AZ00139/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 2616475.54
+    "total": 2751201.6
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 147917.5
+    "total": 173332.5
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 149731.55
+    "total": 170481.55
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 259002.14
+    "total": 290802.14
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 859200.0
+    "total": 934000.0
    }
   ],
   "states": [
    {
     "state": "AZ",
-    "total": 600788.52
+    "total": 701878.0
    },
    {
     "state": "CA",
-    "total": 377412.79
+    "total": 419307.03
    },
    {
     "state": "NY",
-    "total": 241326.83
-   },
-   {
-    "state": "DC",
-    "total": 82621.0
-   },
-   {
-    "state": "IL",
-    "total": 77450.5
-   },
-   {
-    "state": "VA",
-    "total": 75632.18
+    "total": 254426.78
    },
    {
     "state": "FL",
-    "total": 70397.5
+    "total": 98678.75
+   },
+   {
+    "state": "DC",
+    "total": 92631.0
+   },
+   {
+    "state": "IL",
+    "total": 92537.5
+   },
+   {
+    "state": "VA",
+    "total": 80030.86
    },
    {
     "state": "CT",
-    "total": 58772.5
+    "total": 62567.5
    },
    {
     "state": "TX",
-    "total": 52682.17
+    "total": 60400.18
    },
    {
     "state": "MA",
-    "total": 45724.9
+    "total": 49729.35
    }
   ],
   "in_state": {
-   "total": 600788.52,
-   "itemized": 2096501.78,
-   "pct": 28.7
+   "total": 701878.0,
+   "itemized": 2383992.84,
+   "pct": 29.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "K000377": {
   "candidate_id": "S0AZ00350",
@@ -719,7 +745,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0AZ00350/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -795,7 +821,7 @@
    "pct": 21.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "P000145": {
   "candidate_id": "S2CA00955",
@@ -811,17 +837,17 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2CA00955/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 843714.35
+    "total": 857308.91
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 55077.0
+    "total": 55827.0
    },
    {
     "size": 500,
@@ -831,34 +857,34 @@
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 196029.5
+    "total": 198029.5
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 776667.0
+    "total": 794667.0
    }
   ],
   "states": [
    {
     "state": "CA",
-    "total": 960505.85
+    "total": 989392.16
    },
    {
     "state": "NY",
-    "total": 51495.0
+    "total": 51580.0
    },
    {
     "state": "FL",
-    "total": 48700.0
+    "total": 50700.0
    },
    {
     "state": "MA",
-    "total": 29375.0
+    "total": 29480.0
    },
    {
     "state": "TX",
-    "total": 17257.0
+    "total": 19379.0
    },
    {
     "state": "DC",
@@ -874,7 +900,7 @@
    },
    {
     "state": "PA",
-    "total": 11125.0
+    "total": 11500.0
    },
    {
     "state": "OK",
@@ -882,12 +908,12 @@
    }
   ],
   "in_state": {
-   "total": 960505.85,
-   "itemized": 1237702.85,
-   "pct": 77.6
+   "total": 989392.16,
+   "itemized": 1272047.41,
+   "pct": 77.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "S001150": {
   "candidate_id": "S4CA00555",
@@ -903,83 +929,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4CA00555/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 6236504.93
+    "total": 6542881.49
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 519003.37
+    "total": 607176.37
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 311780.49
+    "total": 374946.54
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 374526.57
+    "total": 479559.9
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 920748.96
+    "total": 1188617.25
    }
   ],
   "states": [
    {
     "state": "CA",
-    "total": 1880404.16
+    "total": 2369645.46
    },
    {
     "state": "NY",
-    "total": 217628.06
-   },
-   {
-    "state": "FL",
-    "total": 102088.09
+    "total": 247936.82
    },
    {
     "state": "WA",
-    "total": 100942.2
+    "total": 138455.03
    },
    {
     "state": "MA",
-    "total": 97655.64
+    "total": 125497.16
+   },
+   {
+    "state": "FL",
+    "total": 121220.09
    },
    {
     "state": "TX",
-    "total": 68594.86
+    "total": 90246.64
    },
    {
     "state": "IL",
-    "total": 63972.17
+    "total": 78365.17
    },
    {
     "state": "VA",
-    "total": 58238.5
+    "total": 70263.0
    },
    {
     "state": "CO",
-    "total": 51889.96
+    "total": 64496.24
    },
    {
     "state": "MD",
-    "total": 48729.29
+    "total": 62102.69
    }
   ],
   "in_state": {
-   "total": 1880404.16,
-   "itemized": 3346119.85,
-   "pct": 56.2
+   "total": 2369645.46,
+   "itemized": 4176737.08,
+   "pct": 56.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "B001267": {
   "candidate_id": "S0CO00211",
@@ -995,7 +1021,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0CO00211/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -1071,7 +1097,7 @@
    "pct": 51.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "H000273": {
   "candidate_id": "S0CO00575",
@@ -1128,83 +1154,83 @@
   ],
   "committee_id": "C00716720",
   "source": "https://www.fec.gov/data/candidate/S0CO00575/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 3056906.69
+    "total": 3221778.52
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 300671.46
+    "total": 370158.46
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 620789.6
+    "total": 706239.6
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1130840.99
+    "total": 1244828.78
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 4169326.88
+    "total": 4489876.88
    }
   ],
   "states": [
    {
     "state": "CO",
-    "total": 2395775.73
+    "total": 2732824.74
    },
    {
     "state": "CA",
-    "total": 811990.07
+    "total": 887877.49
    },
    {
     "state": "NY",
-    "total": 775552.56
+    "total": 822929.82
    },
    {
     "state": "TX",
-    "total": 370574.4
+    "total": 403231.9
    },
    {
     "state": "MA",
-    "total": 299796.54
+    "total": 317503.88
    },
    {
     "state": "IL",
-    "total": 274765.08
+    "total": 291480.5
    },
    {
     "state": "FL",
-    "total": 240492.52
+    "total": 259771.52
    },
    {
     "state": "DC",
-    "total": 206942.94
+    "total": 237194.96
    },
    {
     "state": "MD",
-    "total": 163099.5
+    "total": 178462.5
    },
    {
     "state": "VA",
-    "total": 156658.18
+    "total": 164495.18
    }
   ],
   "in_state": {
-   "total": 2395775.73,
-   "itemized": 7009386.77,
-   "pct": 34.2
+   "total": 2732824.74,
+   "itemized": 7763733.39,
+   "pct": 35.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "B001277": {
   "candidate_id": "S0CT00177",
@@ -1220,66 +1246,66 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0CT00177/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 217194.32
+    "total": 222119.82
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 12500.0
+    "total": 14300.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 22782.0
+    "total": 25232.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 81211.0
+    "total": 103611.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 378100.0
+    "total": 465950.0
    }
   ],
   "states": [
    {
     "state": "CT",
-    "total": 219377.5
+    "total": 254230.5
    },
    {
     "state": "CA",
-    "total": 68368.0
+    "total": 93358.0
    },
    {
     "state": "DC",
-    "total": 47000.0
+    "total": 62000.0
    },
    {
     "state": "VA",
     "total": 42800.0
    },
    {
-    "state": "MD",
-    "total": 30650.0
-   },
-   {
     "state": "FL",
-    "total": 26625.0
-   },
-   {
-    "state": "MA",
-    "total": 19750.0
+    "total": 33755.0
    },
    {
     "state": "NY",
-    "total": 16385.0
+    "total": 33482.5
+   },
+   {
+    "state": "MD",
+    "total": 31150.0
+   },
+   {
+    "state": "MA",
+    "total": 20750.0
    },
    {
     "state": "WA",
@@ -1287,16 +1313,16 @@
    },
    {
     "state": "TX",
-    "total": 11150.0
+    "total": 12150.0
    }
   ],
   "in_state": {
-   "total": 219377.5,
-   "itemized": 541774.5,
-   "pct": 40.5
+   "total": 254230.5,
+   "itemized": 661200.0,
+   "pct": 38.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "M001169": {
   "candidate_id": "S2CT00132",
@@ -1312,83 +1338,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2CT00132/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 10707685.05
+    "total": 11131951.83
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 737501.33
+    "total": 785550.34
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 593771.0
+    "total": 627621.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 495018.0
+    "total": 522018.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 287000.0
+    "total": 301000.0
    }
   ],
   "states": [
    {
     "state": "CT",
-    "total": 1442989.45
+    "total": 1658069.82
    },
    {
     "state": "CA",
-    "total": 584371.9
+    "total": 649002.39
    },
    {
     "state": "NY",
-    "total": 448184.29
+    "total": 484881.16
    },
    {
     "state": "MA",
-    "total": 249258.53
+    "total": 272899.72
    },
    {
     "state": "FL",
-    "total": 169017.8
+    "total": 187223.59
    },
    {
     "state": "IL",
-    "total": 123177.81
-   },
-   {
-    "state": "MD",
-    "total": 107960.14
-   },
-   {
-    "state": "VA",
-    "total": 107711.15
-   },
-   {
-    "state": "PA",
-    "total": 107530.97
+    "total": 136585.49
    },
    {
     "state": "TX",
-    "total": 106974.0
+    "total": 122153.62
+   },
+   {
+    "state": "PA",
+    "total": 120594.79
+   },
+   {
+    "state": "MD",
+    "total": 119315.41
+   },
+   {
+    "state": "VA",
+    "total": 117398.8
    }
   ],
   "in_state": {
-   "total": 1442989.45,
-   "itemized": 4557854.73,
-   "pct": 31.7
+   "total": 1658069.82,
+   "itemized": 5105020.52,
+   "pct": 32.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:09+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "B001303": {
   "candidate_id": "S4DE00060",
@@ -1404,83 +1430,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4DE00060/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 293569.78
+    "total": 310351.75
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 17250.0
+    "total": 19550.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 25400.0
+    "total": 28400.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 58040.0
+    "total": 70540.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 223760.0
+    "total": 291660.0
    }
   ],
   "states": [
    {
     "state": "DE",
-    "total": 76478.96
+    "total": 87706.93
    },
    {
     "state": "NY",
-    "total": 75075.0
+    "total": 86560.0
    },
    {
     "state": "CA",
-    "total": 43105.84
+    "total": 78409.84
    },
    {
     "state": "FL",
-    "total": 24560.0
+    "total": 33135.0
    },
    {
     "state": "GA",
-    "total": 21050.0
+    "total": 21300.0
    },
    {
     "state": "MA",
-    "total": 16025.0
+    "total": 18301.0
+   },
+   {
+    "state": "PA",
+    "total": 15734.5
    },
    {
     "state": "TX",
-    "total": 13480.0
-   },
-   {
-    "state": "MI",
-    "total": 9985.0
-   },
-   {
-    "state": "TN",
-    "total": 9500.0
+    "total": 14604.0
    },
    {
     "state": "DC",
-    "total": 9400.0
+    "total": 13545.0
+   },
+   {
+    "state": "IL",
+    "total": 12550.0
    }
   ],
   "in_state": {
-   "total": 76478.96,
-   "itemized": 386186.8,
-   "pct": 19.8
+   "total": 87706.93,
+   "itemized": 488668.77,
+   "pct": 17.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:10+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "C001088": {
   "candidate_id": "S0DE00092",
@@ -1537,7 +1563,7 @@
   ],
   "committee_id": "C00475392",
   "source": "https://www.fec.gov/data/candidate/S0DE00092/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -1613,7 +1639,7 @@
    "pct": 10.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:10+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "M001244": {
   "candidate_id": "S6FL00640",
@@ -1629,83 +1655,16 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6FL00640/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
-  "sizes": [
-   {
-    "size": 0,
-    "label": "$200 and under",
-    "total": 2657528.07
-   },
-   {
-    "size": 200,
-    "label": "$200.01\u2013$499",
-    "total": 259626.58
-   },
-   {
-    "size": 500,
-    "label": "$500\u2013$999",
-    "total": 466358.02
-   },
-   {
-    "size": 1000,
-    "label": "$1,000\u2013$1,999",
-    "total": 1098801.25
-   },
-   {
-    "size": 2000,
-    "label": "$2,000 and over",
-    "total": 5547377.43
-   }
-  ],
-  "states": [
-   {
-    "state": "FL",
-    "total": 4738549.89
-   },
-   {
-    "state": "CA",
-    "total": 377090.04
-   },
-   {
-    "state": "VA",
-    "total": 343997.2
-   },
-   {
-    "state": "NY",
-    "total": 328074.13
-   },
-   {
-    "state": "TX",
-    "total": 265463.39
-   },
-   {
-    "state": "IL",
-    "total": 197360.53
-   },
-   {
-    "state": "CO",
-    "total": 152139.8
-   },
-   {
-    "state": "DC",
-    "total": 133346.49
-   },
-   {
-    "state": "GA",
-    "total": 123101.64
-   },
-   {
-    "state": "PA",
-    "total": 87816.02
-   }
-  ],
+  "fetched": "2026-11-21T19:18+00:00",
+  "sizes": [],
+  "states": [],
   "in_state": {
-   "total": 4738549.89,
-   "itemized": 7954786.88,
-   "pct": 59.6
+   "total": 0,
+   "itemized": 0,
+   "pct": null
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:10+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "S001217": {
   "candidate_id": "S8FL00273",
@@ -1721,12 +1680,12 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8FL00273/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 368765.32
+    "total": 377646.14
    },
    {
     "size": 200,
@@ -1736,7 +1695,7 @@
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 47806.36
+    "total": 48306.36
    },
    {
     "size": 1000,
@@ -1746,45 +1705,45 @@
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 489547.03
+    "total": 505047.03
    }
   ],
   "states": [
    {
     "state": "FL",
-    "total": 540899.0
+    "total": 558585.77
    },
    {
     "state": "TX",
-    "total": 45538.6
+    "total": 46769.06
    },
    {
     "state": "CA",
-    "total": 32856.17
+    "total": 33725.93
    },
    {
     "state": "VA",
-    "total": 31549.0
+    "total": 31659.0
    },
    {
     "state": "MA",
-    "total": 29677.77
+    "total": 29752.02
    },
    {
     "state": "MO",
-    "total": 16749.25
+    "total": 16941.25
    },
    {
     "state": "IL",
-    "total": 15542.1
+    "total": 16177.1
    },
    {
     "state": "PA",
-    "total": 14376.37
+    "total": 14781.07
    },
    {
     "state": "NY",
-    "total": 14201.2
+    "total": 14375.2
    },
    {
     "state": "DC",
@@ -1792,12 +1751,12 @@
    }
   ],
   "in_state": {
-   "total": 540899.0,
-   "itemized": 891299.85,
-   "pct": 60.7
+   "total": 558585.77,
+   "itemized": 916180.67,
+   "pct": 61.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:10+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "O000174": {
   "candidate_id": "S8GA00180",
@@ -1849,7 +1808,7 @@
   ],
   "committee_id": "C00718866",
   "source": "https://www.fec.gov/data/candidate/S8GA00180/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -1925,7 +1884,7 @@
    "pct": 17.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:10+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "W000790": {
   "candidate_id": "S0GA00559",
@@ -1941,83 +1900,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0GA00559/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 5885372.24
+    "total": 6041239.67
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 195920.46
+    "total": 241492.46
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 171113.5
+    "total": 214063.5
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 259690.04
+    "total": 297940.04
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 872930.5
+    "total": 930130.5
    }
   ],
   "states": [
    {
     "state": "GA",
-    "total": 841724.11
+    "total": 897065.39
    },
    {
     "state": "CA",
-    "total": 797321.25
+    "total": 847101.84
    },
    {
     "state": "NY",
-    "total": 333811.62
+    "total": 364015.14
    },
    {
     "state": "MA",
-    "total": 153297.09
-   },
-   {
-    "state": "TX",
-    "total": 135363.73
+    "total": 172915.05
    },
    {
     "state": "FL",
-    "total": 134212.89
+    "total": 152290.88
+   },
+   {
+    "state": "TX",
+    "total": 148755.39
    },
    {
     "state": "IL",
-    "total": 130975.15
+    "total": 137384.14
    },
    {
     "state": "WA",
-    "total": 126837.84
+    "total": 134189.37
    },
    {
     "state": "MD",
-    "total": 109589.75
+    "total": 120663.11
    },
    {
     "state": "VA",
-    "total": 102382.58
+    "total": 113090.14
    }
   ],
   "in_state": {
-   "total": 841724.11,
-   "itemized": 3966748.53,
-   "pct": 21.2
+   "total": 897065.39,
+   "itemized": 4306587.96,
+   "pct": 20.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:23+00:00"
  },
  "H001042": {
   "candidate_id": "S2HI00106",
@@ -2033,7 +1992,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2HI00106/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2109,7 +2068,7 @@
    "pct": 76.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:24+00:00"
  },
  "S001194": {
   "candidate_id": "S4HI00136",
@@ -2125,7 +2084,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4HI00136/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2201,7 +2160,7 @@
    "pct": 29.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:24+00:00"
  },
  "E000295": {
   "candidate_id": "S4IA00129",
@@ -2253,7 +2212,7 @@
   ],
   "committee_id": "C00546788",
   "source": "https://www.fec.gov/data/candidate/S4IA00129/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2329,7 +2288,7 @@
    "pct": 16.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "G000386": {
   "candidate_id": "S0IA00028",
@@ -2345,7 +2304,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0IA00028/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2421,7 +2380,7 @@
    "pct": 26.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "C000880": {
   "candidate_id": "S8ID00027",
@@ -2437,7 +2396,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8ID00027/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:24+00:00",
+  "fetched": "2026-11-21T19:18+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2513,7 +2472,7 @@
    "pct": 3.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "R000584": {
   "candidate_id": "S8ID00092",
@@ -2565,7 +2524,7 @@
   ],
   "committee_id": "C00440362",
   "source": "https://www.fec.gov/data/candidate/S8ID00092/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2649,7 +2608,7 @@
    "to_candidates": 40000.0,
    "source": "https://www.fec.gov/data/committee/C00772442/?cycle=2026"
   },
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "D000622": {
   "candidate_id": "S6IL00292",
@@ -2665,83 +2624,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6IL00292/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 7293476.16
+    "total": 7514061.65
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 445709.98
+    "total": 494430.98
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 394011.77
+    "total": 427861.77
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 543784.47
+    "total": 581784.47
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 862135.37
+    "total": 889135.37
    }
   ],
   "states": [
    {
     "state": "IL",
-    "total": 1464528.6
+    "total": 1599220.98
    },
    {
     "state": "CA",
-    "total": 436383.9
+    "total": 477741.3
    },
    {
     "state": "NY",
-    "total": 339641.11
+    "total": 355169.25
    },
    {
     "state": "VA",
-    "total": 141975.71
+    "total": 156583.96
    },
    {
     "state": "FL",
-    "total": 117509.89
+    "total": 127894.72
    },
    {
     "state": "MA",
-    "total": 109357.31
-   },
-   {
-    "state": "MD",
-    "total": 97893.45
+    "total": 118757.79
    },
    {
     "state": "WA",
-    "total": 93689.48
+    "total": 103358.22
+   },
+   {
+    "state": "MD",
+    "total": 101700.45
    },
    {
     "state": "TX",
-    "total": 86210.16
+    "total": 97391.67
    },
    {
-    "state": "DC",
-    "total": 85081.47
+    "state": "MO",
+    "total": 91636.45
    }
   ],
   "in_state": {
-   "total": 1464528.6,
-   "itemized": 3979148.39,
+   "total": 1599220.98,
+   "itemized": 4347304.88,
    "pct": 36.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "D000563": {
   "candidate_id": "S6IL00151",
@@ -2798,7 +2757,7 @@
   ],
   "committee_id": "C00148999",
   "source": "https://www.fec.gov/data/candidate/S6IL00151/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -2874,7 +2833,7 @@
    "pct": 79.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "B001299": {
   "candidate_id": "S4IN00196",
@@ -2890,83 +2849,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4IN00196/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 497329.19
+    "total": 601042.76
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 88154.53
+    "total": 107558.08
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 74645.26
+    "total": 86045.26
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 203857.7
+    "total": 230357.7
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 792588.4
+    "total": 827589.4
    }
   ],
   "states": [
    {
     "state": "IN",
-    "total": 326513.15
+    "total": 379255.85
    },
    {
     "state": "NY",
-    "total": 184364.45
+    "total": 187760.12
    },
    {
     "state": "CA",
-    "total": 132023.15
+    "total": 149426.07
    },
    {
     "state": "FL",
-    "total": 115171.38
+    "total": 127373.16
    },
    {
     "state": "TX",
-    "total": 76602.1
+    "total": 92698.6
    },
    {
     "state": "VA",
-    "total": 74808.86
+    "total": 86786.11
    },
    {
     "state": "DC",
-    "total": 57933.32
+    "total": 63118.92
    },
    {
     "state": "IL",
-    "total": 35639.3
-   },
-   {
-    "state": "MD",
-    "total": 32772.59
+    "total": 42049.31
    },
    {
     "state": "AZ",
-    "total": 32338.08
+    "total": 37313.78
+   },
+   {
+    "state": "MD",
+    "total": 36952.76
    }
   ],
   "in_state": {
-   "total": 326513.15,
-   "itemized": 1393847.18,
-   "pct": 23.4
+   "total": 379255.85,
+   "itemized": 1589865.3,
+   "pct": 23.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "Y000064": {
   "candidate_id": "S6IN00191",
@@ -2982,7 +2941,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6IN00191/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -3066,7 +3025,7 @@
    "to_candidates": 139000.0,
    "source": "https://www.fec.gov/data/committee/C00687343/?cycle=2026"
   },
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "M001198": {
   "candidate_id": "S0KS00315",
@@ -3103,7 +3062,7 @@
   ],
   "committee_id": "C00576173",
   "source": "https://www.fec.gov/data/candidate/S0KS00315/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -3187,7 +3146,7 @@
    "to_candidates": 494341.97,
    "source": "https://www.fec.gov/data/committee/C00632323/?cycle=2026"
   },
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "M000934": {
   "candidate_id": "S0KS00091",
@@ -3203,7 +3162,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0KS00091/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -3279,7 +3238,7 @@
    "pct": 35.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "M000355": {
   "candidate_id": "S2KY00012",
@@ -3371,7 +3330,7 @@
    "pct": 5.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "P000603": {
   "candidate_id": "S0KY00156",
@@ -3387,7 +3346,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0KY00156/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -3463,7 +3422,7 @@
    "pct": 9.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:11+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "C001075": {
   "candidate_id": "S4LA00107",
@@ -3510,83 +3469,83 @@
   ],
   "committee_id": "C00543983",
   "source": "https://www.fec.gov/data/candidate/S4LA00107/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 410355.18
+    "total": 384698.94
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 244844.71
+    "total": 223819.34
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 732914.0
+    "total": 661249.63
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1907419.6
+    "total": 1509412.68
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 7419316.2
+    "total": 6315482.26
    }
   ],
   "states": [
    {
     "state": "LA",
-    "total": 2813384.03
+    "total": 2182868.72
    },
    {
     "state": "NY",
-    "total": 1206270.78
+    "total": 992043.08
    },
    {
     "state": "TX",
-    "total": 1030975.53
+    "total": 869281.0
    },
    {
     "state": "CA",
-    "total": 907351.49
+    "total": 789392.94
    },
    {
     "state": "FL",
-    "total": 551059.44
+    "total": 491012.84
    },
    {
     "state": "VA",
-    "total": 480349.61
+    "total": 432204.1
    },
    {
     "state": "MA",
-    "total": 347115.95
+    "total": 300196.97
    },
    {
     "state": "DC",
-    "total": 329433.29
+    "total": 294183.29
    },
    {
     "state": "IL",
-    "total": 328511.03
+    "total": 292714.43
    },
    {
     "state": "CT",
-    "total": 251955.4
+    "total": 206955.4
    }
   ],
   "in_state": {
-   "total": 2813384.03,
-   "itemized": 10448499.2,
-   "pct": 26.9
+   "total": 2182868.72,
+   "itemized": 8828312.36,
+   "pct": 24.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "K000393": {
   "candidate_id": "S4LA00065",
@@ -3602,7 +3561,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4LA00065/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -3678,7 +3637,7 @@
    "pct": 20.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "M000133": {
   "candidate_id": "S4MA00028",
@@ -3715,83 +3674,83 @@
   ],
   "committee_id": "C00196774",
   "source": "https://www.fec.gov/data/candidate/S4MA00028/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 1880646.29
+    "total": 1921318.02
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 324192.04
+    "total": 348729.04
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 674493.0
+    "total": 704032.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1212700.11
+    "total": 1277150.11
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2894918.16
+    "total": 3011518.16
    }
   ],
   "states": [
    {
     "state": "MA",
-    "total": 2702565.25
+    "total": 2833313.86
    },
    {
     "state": "CA",
-    "total": 936269.51
+    "total": 960274.01
    },
    {
     "state": "DC",
-    "total": 416844.59
+    "total": 440775.29
    },
    {
     "state": "NY",
-    "total": 409013.0
+    "total": 422505.0
    },
    {
     "state": "MD",
-    "total": 283581.48
+    "total": 300186.48
    },
    {
     "state": "VA",
-    "total": 159290.0
+    "total": 171981.9
    },
    {
     "state": "IL",
-    "total": 135523.37
+    "total": 142270.37
    },
    {
     "state": "FL",
-    "total": 118790.0
+    "total": 126135.0
    },
    {
     "state": "TX",
-    "total": 95488.0
+    "total": 106848.0
    },
    {
     "state": "WA",
-    "total": 72093.0
+    "total": 77832.52
    }
   ],
   "in_state": {
-   "total": 2702565.25,
-   "itemized": 5755090.26,
+   "total": 2833313.86,
+   "itemized": 6030887.99,
    "pct": 47.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "W000817": {
   "candidate_id": "S2MA00170",
@@ -3807,12 +3766,12 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2MA00170/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 4087035.11
+    "total": 4086885.11
    },
    {
     "size": 200,
@@ -3883,7 +3842,7 @@
    "pct": 26.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "A000382": {
   "candidate_id": "S4MD00327",
@@ -3899,7 +3858,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4MD00327/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -3975,7 +3934,7 @@
    "pct": 48.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "V000128": {
   "candidate_id": "S6MD03441",
@@ -3991,12 +3950,12 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6MD03441/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 272188.63
+    "total": 271738.63
    },
    {
     "size": 200,
@@ -4067,7 +4026,7 @@
    "pct": 35.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "C001035": {
   "candidate_id": "S6ME00159",
@@ -4114,83 +4073,83 @@
   ],
   "committee_id": "C00314575",
   "source": "https://www.fec.gov/data/candidate/S6ME00159/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 3239231.85
+    "total": 3671329.05
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 438992.26
+    "total": 692114.54
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 1102626.81
+    "total": 1504538.76
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 2666280.52
+    "total": 3436766.49
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 9402932.54
+    "total": 11218963.09
    }
   ],
   "states": [
    {
     "state": "FL",
-    "total": 1921894.94
+    "total": 2320111.51
    },
    {
     "state": "CA",
-    "total": 1611721.15
+    "total": 1934378.82
    },
    {
     "state": "NY",
-    "total": 1484616.98
+    "total": 1771521.31
    },
    {
     "state": "TX",
-    "total": 1022671.42
+    "total": 1393166.7
    },
    {
     "state": "ME",
-    "total": 956609.81
+    "total": 1368833.24
    },
    {
     "state": "MA",
-    "total": 745191.68
+    "total": 915036.97
    },
    {
     "state": "VA",
-    "total": 671759.47
-   },
-   {
-    "state": "IL",
-    "total": 463845.01
+    "total": 860122.18
    },
    {
     "state": "NJ",
-    "total": 388907.8
+    "total": 550428.81
    },
    {
-    "state": "MD",
-    "total": 361251.28
+    "state": "IL",
+    "total": 544138.31
+   },
+   {
+    "state": "AL",
+    "total": 455583.92
    }
   ],
   "in_state": {
-   "total": 956609.81,
-   "itemized": 14134246.4,
-   "pct": 6.8
+   "total": 1368833.24,
+   "itemized": 17807894.35,
+   "pct": 7.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:25+00:00"
  },
  "K000383": {
   "candidate_id": "S2ME00109",
@@ -4206,7 +4165,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2ME00109/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -4216,12 +4175,12 @@
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 250.0
+    "total": 500.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 500.0
+    "total": 1000.0
    },
    {
     "size": 1000,
@@ -4231,13 +4190,13 @@
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 16500.0
+    "total": 18500.0
    }
   ],
   "states": [
    {
     "state": "TX",
-    "total": 10500.0
+    "total": 11000.0
    },
    {
     "state": "AR",
@@ -4252,6 +4211,10 @@
     "total": 2500.0
    },
    {
+    "state": "NY",
+    "total": 2000.0
+   },
+   {
     "state": "CA",
     "total": 1000.0
    },
@@ -4260,17 +4223,21 @@
     "total": 1000.0
    },
    {
+    "state": "VA",
+    "total": 250.0
+   },
+   {
     "state": "MA",
     "total": 150.0
    }
   ],
   "in_state": {
    "total": 2510.0,
-   "itemized": 21160.0,
-   "pct": 11.9
+   "itemized": 23910.0,
+   "pct": 10.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "P000595": {
   "candidate_id": "S4MI00355",
@@ -4327,7 +4294,7 @@
   ],
   "committee_id": "C00437889",
   "source": "https://www.fec.gov/data/candidate/S4MI00355/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -4403,7 +4370,7 @@
    "pct": 38.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "S001208": {
   "candidate_id": "S4MI00470",
@@ -4419,83 +4386,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4MI00470/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 4122076.77
+    "total": 4356372.21
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 282077.71
+    "total": 330393.71
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 272567.0
+    "total": 318967.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 285431.0
+    "total": 321081.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 294825.0
+    "total": 319325.0
    }
   ],
   "states": [
    {
     "state": "MI",
-    "total": 790985.27
+    "total": 993792.18
    },
    {
     "state": "CA",
-    "total": 270993.42
+    "total": 302142.29
    },
    {
     "state": "NY",
-    "total": 193124.91
+    "total": 212391.41
    },
    {
     "state": "FL",
-    "total": 68416.5
+    "total": 78048.0
    },
    {
     "state": "MA",
-    "total": 64067.25
+    "total": 76681.72
    },
    {
     "state": "IL",
-    "total": 59898.5
+    "total": 69448.5
    },
    {
     "state": "MD",
-    "total": 51816.5
+    "total": 61486.0
    },
    {
     "state": "VA",
-    "total": 51111.0
+    "total": 59010.0
    },
    {
     "state": "PA",
-    "total": 35898.79
+    "total": 44454.79
    },
    {
     "state": "TX",
-    "total": 35678.0
+    "total": 40923.69
    }
   ],
   "in_state": {
-   "total": 790985.27,
-   "itemized": 1955157.39,
-   "pct": 40.5
+   "total": 993792.18,
+   "itemized": 2344318.83,
+   "pct": 42.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "K000367": {
   "candidate_id": "S6MN00267",
@@ -4511,7 +4478,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6MN00267/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -4587,7 +4554,7 @@
    "pct": 36.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "S001203": {
   "candidate_id": "S8MN00578",
@@ -4600,41 +4567,10 @@
   "pacs": 492249.0,
   "party": 0.0,
   "self_funded": 0,
-  "top_employers": [
-   {
-    "employer": "SELF",
-    "total": 3945.0,
-    "count": 48
-   },
-   {
-    "employer": "ALBRIGHT STONEBRIDGE GROUP LLC",
-    "total": 1000.0,
-    "count": 1
-   },
-   {
-    "employer": "EDINA REALTY, INC.",
-    "total": 500.0,
-    "count": 1
-   },
-   {
-    "employer": "MAYO CLINIC",
-    "total": 160.0,
-    "count": 7
-   },
-   {
-    "employer": "MISSISSIPPI STATE UNIV",
-    "total": 75.0,
-    "count": 2
-   },
-   {
-    "employer": "STATE OF MINNESOTA",
-    "total": 70.0,
-    "count": 3
-   }
-  ],
+  "top_employers": [],
   "committee_id": "C00663781",
   "source": "https://www.fec.gov/data/candidate/S8MN00578/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -4710,7 +4646,7 @@
    "pct": 47.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "H001089": {
   "candidate_id": "S8MO00160",
@@ -4726,7 +4662,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8MO00160/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:25+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -4802,7 +4738,7 @@
    "pct": 29.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "S001227": {
   "candidate_id": "S2MO00544",
@@ -4818,88 +4754,88 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2MO00544/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 2440129.44
+    "total": 2667283.01
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 128060.37
+    "total": 150878.47
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 157429.6
+    "total": 180520.79
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 454206.07
+    "total": 509157.04
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2076224.82
+    "total": 2441624.1
    }
   ],
   "states": [
    {
     "state": "MO",
-    "total": 1701493.36
+    "total": 1921821.12
    },
    {
     "state": "FL",
-    "total": 306451.92
+    "total": 351554.92
    },
    {
     "state": "TX",
-    "total": 251251.92
+    "total": 314012.79
    },
    {
     "state": "CA",
-    "total": 156648.25
-   },
-   {
-    "state": "IL",
-    "total": 155805.72
-   },
-   {
-    "state": "VA",
-    "total": 147630.5
+    "total": 231518.46
    },
    {
     "state": "NY",
-    "total": 141370.01
+    "total": 193581.21
    },
    {
-    "state": "DC",
-    "total": 75600.09
+    "state": "VA",
+    "total": 188059.85
+   },
+   {
+    "state": "IL",
+    "total": 172844.5
    },
    {
     "state": "CT",
-    "total": 72733.12
+    "total": 85055.56
    },
    {
-    "state": "GA",
-    "total": 62790.34
+    "state": "DC",
+    "total": 80100.09
+   },
+   {
+    "state": "KS",
+    "total": 67970.26
    }
   ],
   "in_state": {
-   "total": 1701493.36,
-   "itemized": 3799881.59,
-   "pct": 44.8
+   "total": 1921821.12,
+   "itemized": 4493294.7,
+   "pct": 42.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "H001079": {
   "candidate_id": "S8MS00261",
   "cycle": 2026,
-  "period": "2021-01-01 to 2026-10-14",
+  "period": "2021-01-01 to 2026-11-20",
   "receipts": 6279659.29,
   "disbursements": 5045478.02,
   "cash_on_hand": 1395723.78,
@@ -4941,7 +4877,7 @@
   ],
   "committee_id": "C00675348",
   "source": "https://www.fec.gov/data/candidate/S8MS00261/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:19+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5017,7 +4953,7 @@
    "pct": 45.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "W000437": {
   "candidate_id": "S8MS00196",
@@ -5033,7 +4969,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8MS00196/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5109,7 +5045,7 @@
    "pct": 25.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:12+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "D000618": {
   "candidate_id": "S2MT00096",
@@ -5146,7 +5082,7 @@
   ],
   "committee_id": "C00491357",
   "source": "https://www.fec.gov/data/candidate/S2MT00096/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5222,7 +5158,7 @@
    "pct": 12.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "S001232": {
   "candidate_id": "S4MT00183",
@@ -5238,83 +5174,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4MT00183/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 471825.95
+    "total": 490687.08
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 39864.57
+    "total": 47776.47
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 96073.88
+    "total": 116007.45
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 343721.19
+    "total": 444312.21
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1006355.14
+    "total": 1297355.14
    }
   ],
   "states": [
    {
     "state": "CA",
-    "total": 275557.03
+    "total": 343738.51
    },
    {
     "state": "MT",
-    "total": 216540.21
+    "total": 237366.81
    },
    {
     "state": "KS",
-    "total": 151784.93
-   },
-   {
-    "state": "VA",
-    "total": 116461.87
+    "total": 154286.43
    },
    {
     "state": "TX",
-    "total": 107151.58
+    "total": 145816.57
    },
    {
     "state": "FL",
-    "total": 106373.87
+    "total": 136078.06
    },
    {
-    "state": "MO",
-    "total": 71933.89
-   },
-   {
-    "state": "MN",
-    "total": 54539.27
+    "state": "VA",
+    "total": 134960.42
    },
    {
     "state": "DC",
-    "total": 54298.95
+    "total": 80848.95
    },
    {
-    "state": "AZ",
-    "total": 52200.54
+    "state": "MO",
+    "total": 77536.77
+   },
+   {
+    "state": "CO",
+    "total": 76790.05
+   },
+   {
+    "state": "MN",
+    "total": 72891.77
    }
   ],
   "in_state": {
-   "total": 216540.21,
-   "itemized": 1655636.73,
-   "pct": 13.1
+   "total": 237366.81,
+   "itemized": 2093934.35,
+   "pct": 11.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "B001305": {
   "candidate_id": "S2NC00505",
@@ -5330,7 +5266,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2NC00505/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5406,7 +5342,7 @@
    "pct": 39.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "T000476": {
   "candidate_id": "S4NC00162",
@@ -5453,7 +5389,7 @@
   ],
   "committee_id": "C00545772",
   "source": "https://www.fec.gov/data/candidate/S4NC00162/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5529,7 +5465,7 @@
    "pct": 30.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "C001096": {
   "candidate_id": "S8ND00120",
@@ -5545,7 +5481,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8ND00120/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5621,7 +5557,7 @@
    "pct": 3.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "H001061": {
   "candidate_id": "S0ND00093",
@@ -5637,7 +5573,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0ND00093/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5713,7 +5649,7 @@
    "pct": 40.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "F000463": {
   "candidate_id": "S2NE00094",
@@ -5729,7 +5665,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2NE00094/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:26+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
@@ -5805,7 +5741,7 @@
    "pct": 31.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "R000618": {
   "candidate_id": "S6NE00129",
@@ -5857,83 +5793,83 @@
   ],
   "committee_id": "C00832436",
   "source": "https://www.fec.gov/data/candidate/S6NE00129/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:20+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 352555.05
+    "total": 375473.82
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 33748.61
+    "total": 44867.73
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 126455.68
+    "total": 224084.71
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 433542.67
+    "total": 543027.07
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 3343923.28
+    "total": 4001905.92
    }
   ],
   "states": [
    {
     "state": "NE",
-    "total": 1472608.68
-   },
-   {
-    "state": "NY",
-    "total": 257902.44
+    "total": 1786762.98
    },
    {
     "state": "IL",
-    "total": 248262.2
+    "total": 304724.66
+   },
+   {
+    "state": "NY",
+    "total": 303792.44
    },
    {
     "state": "TX",
-    "total": 227212.59
+    "total": 288645.3
    },
    {
     "state": "CA",
-    "total": 205486.01
+    "total": 258068.05
    },
    {
     "state": "FL",
-    "total": 182607.95
-   },
-   {
-    "state": "AZ",
-    "total": 125473.22
+    "total": 224339.78
    },
    {
     "state": "VA",
-    "total": 116280.17
+    "total": 140019.84
+   },
+   {
+    "state": "AZ",
+    "total": 133253.22
    },
    {
     "state": "MI",
-    "total": 106250.0
+    "total": 124250.0
    },
    {
-    "state": "CT",
-    "total": 105632.25
+    "state": "MO",
+    "total": 123066.12
    }
   ],
   "in_state": {
-   "total": 1472608.68,
-   "itemized": 3967574.79,
-   "pct": 37.1
+   "total": 1786762.98,
+   "itemized": 4866708.75,
+   "pct": 36.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "H001076": {
   "candidate_id": "S6NH00091",
@@ -5949,83 +5885,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6NH00091/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 2464809.5
+    "total": 2566579.58
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 213495.0
+    "total": 242489.24
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 285360.0
+    "total": 310613.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 494629.0
+    "total": 529129.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 795445.41
+    "total": 897745.41
    }
   ],
   "states": [
    {
     "state": "NH",
-    "total": 366785.11
+    "total": 413205.85
    },
    {
     "state": "MA",
-    "total": 252417.49
-   },
-   {
-    "state": "CA",
-    "total": 221962.15
+    "total": 283407.23
    },
    {
     "state": "NY",
-    "total": 218362.2
+    "total": 271603.7
+   },
+   {
+    "state": "CA",
+    "total": 263699.14
    },
    {
     "state": "DC",
-    "total": 216215.0
+    "total": 227340.0
    },
    {
     "state": "VA",
-    "total": 141372.5
+    "total": 148753.75
    },
    {
     "state": "MD",
-    "total": 116436.4
+    "total": 127763.9
    },
    {
     "state": "FL",
-    "total": 83938.34
+    "total": 98562.34
    },
    {
     "state": "TX",
-    "total": 66353.67
+    "total": 76676.37
    },
    {
     "state": "WA",
-    "total": 52149.5
+    "total": 55259.0
    }
   ],
   "in_state": {
-   "total": 366785.11,
-   "itemized": 2383182.26,
+   "total": 413205.85,
+   "itemized": 2675999.58,
    "pct": 15.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "S001181": {
   "candidate_id": "S0NH00219",
@@ -6082,7 +6018,7 @@
   ],
   "committee_id": "C00457325",
   "source": "https://www.fec.gov/data/candidate/S0NH00219/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -6158,7 +6094,7 @@
    "pct": 23.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:26+00:00"
  },
  "B001288": {
   "candidate_id": "S4NJ00185",
@@ -6205,83 +6141,83 @@
   ],
   "committee_id": "C00540500",
   "source": "https://www.fec.gov/data/candidate/S4NJ00185/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 17627072.61
+    "total": 18011709.63
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 1834510.04
+    "total": 1926277.04
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 2426528.93
+    "total": 2540474.93
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 3550400.85
+    "total": 3714620.43
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 9449757.41
+    "total": 9850007.41
    }
   ],
   "states": [
    {
     "state": "CA",
-    "total": 5130133.54
+    "total": 5271180.8
    },
    {
     "state": "NJ",
-    "total": 3740473.92
+    "total": 3998597.01
    },
    {
     "state": "NY",
-    "total": 2966978.53
+    "total": 3164228.54
    },
    {
     "state": "TX",
-    "total": 1038276.74
+    "total": 1085748.0
    },
    {
     "state": "IL",
-    "total": 959503.73
+    "total": 978846.73
    },
    {
     "state": "FL",
-    "total": 805139.69
+    "total": 843422.69
    },
    {
     "state": "MA",
-    "total": 562624.19
-   },
-   {
-    "state": "MD",
-    "total": 455756.31
+    "total": 593503.45
    },
    {
     "state": "PA",
-    "total": 455084.51
+    "total": 484291.37
+   },
+   {
+    "state": "MD",
+    "total": 476092.81
    },
    {
     "state": "DC",
-    "total": 424359.9
+    "total": 435756.9
    }
   ],
   "in_state": {
-   "total": 3740473.92,
-   "itemized": 20624475.53,
-   "pct": 18.1
+   "total": 3998597.01,
+   "itemized": 21779295.13,
+   "pct": 18.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "K000394": {
   "candidate_id": "S4NJ00466",
@@ -6297,32 +6233,32 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4NJ00466/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 561711.47
+    "total": 592356.3
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 60059.17
+    "total": 70309.17
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 95838.99
+    "total": 113588.99
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 233958.5
+    "total": 267258.5
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 653850.0
+    "total": 735050.0
    }
   ],
   "states": [
@@ -6373,7 +6309,7 @@
    "pct": 30.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "H001046": {
   "candidate_id": "S2NM00088",
@@ -6389,7 +6325,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2NM00088/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -6465,7 +6401,7 @@
    "pct": 23.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "L000570": {
   "candidate_id": "S0NM00058",
@@ -6522,7 +6458,7 @@
   ],
   "committee_id": "C00443689",
   "source": "https://www.fec.gov/data/candidate/S0NM00058/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -6598,7 +6534,7 @@
    "pct": 19.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "C001113": {
   "candidate_id": "S6NV00200",
@@ -6614,83 +6550,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6NV00200/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 3189157.67
+    "total": 3261904.12
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 208362.5
+    "total": 229562.5
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 219934.52
+    "total": 238434.52
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 334194.0
+    "total": 362194.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 653522.0
+    "total": 727022.0
    }
   ],
   "states": [
    {
     "state": "CA",
-    "total": 437301.36
+    "total": 476955.79
    },
    {
     "state": "NV",
-    "total": 298681.26
+    "total": 342372.04
    },
    {
     "state": "NY",
-    "total": 252326.37
+    "total": 288663.99
    },
    {
     "state": "FL",
-    "total": 108892.36
+    "total": 123375.79
    },
    {
     "state": "MD",
-    "total": 107815.76
+    "total": 112342.76
    },
    {
     "state": "TX",
-    "total": 106246.88
+    "total": 111664.59
    },
    {
     "state": "MA",
-    "total": 89879.03
+    "total": 96683.42
    },
    {
     "state": "IL",
-    "total": 84773.5
+    "total": 86977.71
    },
    {
     "state": "DC",
-    "total": 72184.6
+    "total": 76654.6
    },
    {
     "state": "VA",
-    "total": 66604.76
+    "total": 69923.51
    }
   ],
   "in_state": {
-   "total": 298681.26,
-   "itemized": 2341729.64,
-   "pct": 12.8
+   "total": 342372.04,
+   "itemized": 2555676.09,
+   "pct": 13.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "R000608": {
   "candidate_id": "S8NV00156",
@@ -6706,32 +6642,32 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8NV00156/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 821968.52
+    "total": 871882.48
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 65325.0
+    "total": 80063.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 41050.0
+    "total": 51050.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 67550.0
+    "total": 88050.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 134000.0
+    "total": 198900.0
    }
   ],
   "states": [
@@ -6782,7 +6718,7 @@
    "pct": 19.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "G000555": {
   "candidate_id": "S0NY00410",
@@ -6798,7 +6734,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0NY00410/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -6874,7 +6810,7 @@
    "pct": 57.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "S000148": {
   "candidate_id": "S8NY00082",
@@ -6890,83 +6826,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8NY00082/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 2340422.99
+    "total": 2370977.5
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 168136.34
+    "total": 172086.34
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 93350.5
+    "total": 96450.5
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 130450.0
+    "total": 134950.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 254369.0
+    "total": 273369.0
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 365044.87
+    "total": 379763.37
    },
    {
     "state": "CA",
-    "total": 218297.49
+    "total": 224462.49
    },
    {
     "state": "FL",
-    "total": 54530.68
-   },
-   {
-    "state": "MD",
-    "total": 46005.5
+    "total": 59561.18
    },
    {
     "state": "DC",
-    "total": 46000.5
-   },
-   {
-    "state": "MA",
-    "total": 45984.99
-   },
-   {
-    "state": "TX",
-    "total": 45844.83
+    "total": 49300.5
    },
    {
     "state": "WA",
-    "total": 45813.35
+    "total": 48653.85
+   },
+   {
+    "state": "MA",
+    "total": 47960.49
+   },
+   {
+    "state": "TX",
+    "total": 46750.33
+   },
+   {
+    "state": "MD",
+    "total": 46605.0
+   },
+   {
+    "state": "VA",
+    "total": 44466.59
    },
    {
     "state": "CO",
-    "total": 39316.34
-   },
-   {
-    "state": "IL",
-    "total": 37498.83
+    "total": 39743.84
    }
   ],
   "in_state": {
-   "total": 365044.87,
-   "itemized": 1325478.63,
-   "pct": 27.5
+   "total": 379763.37,
+   "itemized": 1386583.14,
+   "pct": 27.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "H001104": {
   "candidate_id": "S6OH00304",
@@ -7018,83 +6954,83 @@
   ],
   "committee_id": "C00896019",
   "source": "https://www.fec.gov/data/candidate/S6OH00304/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 3410156.25
+    "total": 3898744.59
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 195417.09
+    "total": 406861.03
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 554511.51
+    "total": 855575.31
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1672297.9
+    "total": 2324050.15
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 7617200.41
+    "total": 9763603.04
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 5734019.39
+    "total": 7389744.85
    },
    {
     "state": "FL",
-    "total": 997834.63
+    "total": 1290135.93
    },
    {
     "state": "CA",
-    "total": 442449.92
-   },
-   {
-    "state": "NY",
-    "total": 417146.03
+    "total": 671534.43
    },
    {
     "state": "TX",
-    "total": 365251.54
+    "total": 599331.1
+   },
+   {
+    "state": "NY",
+    "total": 561431.32
    },
    {
     "state": "VA",
-    "total": 287480.65
-   },
-   {
-    "state": "TN",
-    "total": 215763.32
-   },
-   {
-    "state": "MI",
-    "total": 179633.66
+    "total": 366470.43
    },
    {
     "state": "IL",
-    "total": 152304.9
+    "total": 275522.79
    },
    {
-    "state": "PA",
-    "total": 151058.62
+    "state": "TN",
+    "total": 260929.69
+   },
+   {
+    "state": "AL",
+    "total": 247307.32
+   },
+   {
+    "state": "MI",
+    "total": 198218.74
    }
   ],
   "in_state": {
-   "total": 5734019.39,
-   "itemized": 10533984.04,
-   "pct": 54.4
+   "total": 7389744.85,
+   "itemized": 14333235.0,
+   "pct": 51.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "M001242": {
   "candidate_id": "S4OH00192",
@@ -7110,83 +7046,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4OH00192/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 647953.26
+    "total": 752593.74
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 66070.49
+    "total": 80191.49
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 195628.27
+    "total": 214118.78
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 442322.71
+    "total": 488404.85
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2513835.4
+    "total": 2898295.69
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 1203403.25
+    "total": 1347537.06
    },
    {
     "state": "FL",
-    "total": 475960.3
-   },
-   {
-    "state": "TX",
-    "total": 239523.85
+    "total": 539333.99
    },
    {
     "state": "CA",
-    "total": 187014.57
+    "total": 294191.43
+   },
+   {
+    "state": "TX",
+    "total": 276029.45
    },
    {
     "state": "NY",
-    "total": 177167.13
+    "total": 181419.71
    },
    {
     "state": "MA",
-    "total": 121921.56
+    "total": 128051.56
    },
    {
     "state": "VA",
-    "total": 87585.84
+    "total": 115961.15
    },
    {
     "state": "DC",
-    "total": 72218.56
+    "total": 81318.56
    },
    {
-    "state": "CT",
-    "total": 59919.25
+    "state": "IL",
+    "total": 76656.16
    },
    {
     "state": "PA",
-    "total": 59232.12
+    "total": 70000.03
    }
   ],
   "in_state": {
-   "total": 1203403.25,
-   "itemized": 3459066.42,
-   "pct": 34.8
+   "total": 1347537.06,
+   "itemized": 4026860.84,
+   "pct": 33.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:13+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "L000575": {
   "candidate_id": "S4OK00232",
@@ -7202,54 +7138,54 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4OK00232/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 59629.2
+    "total": 60489.2
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 19240.5
+    "total": 20590.5
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 64420.51
+    "total": 66920.51
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 169491.02
+    "total": 174491.02
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 606847.21
+    "total": 697347.21
    }
   ],
   "states": [
    {
     "state": "OK",
-    "total": 278336.01
-   },
-   {
-    "state": "CA",
-    "total": 98875.0
-   },
-   {
-    "state": "NY",
-    "total": 85250.0
+    "total": 310046.01
    },
    {
     "state": "TX",
-    "total": 84722.21
+    "total": 116222.21
+   },
+   {
+    "state": "CA",
+    "total": 101375.0
+   },
+   {
+    "state": "NY",
+    "total": 94250.0
    },
    {
     "state": "VA",
-    "total": 58750.0
+    "total": 62750.0
    },
    {
     "state": "FL",
@@ -7261,24 +7197,24 @@
    },
    {
     "state": "CO",
-    "total": 28750.0
+    "total": 31250.0
    },
    {
     "state": "DC",
-    "total": 21750.0
+    "total": 22750.0
    },
    {
     "state": "AZ",
-    "total": 19500.0
+    "total": 22000.0
    }
   ],
   "in_state": {
-   "total": 278336.01,
-   "itemized": 873849.24,
-   "pct": 31.9
+   "total": 310046.01,
+   "itemized": 974059.24,
+   "pct": 31.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:14+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "M001176": {
   "candidate_id": "S8OR00207",
@@ -7335,83 +7271,83 @@
   ],
   "committee_id": "C00437277",
   "source": "https://www.fec.gov/data/candidate/S8OR00207/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 4146249.87
+    "total": 4313895.97
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 455479.23
+    "total": 502051.23
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 474489.08
+    "total": 512089.08
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 656866.93
+    "total": 702485.93
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1175231.41
+    "total": 1239812.41
    }
   ],
   "states": [
    {
     "state": "OR",
-    "total": 3007369.64
+    "total": 3279005.76
    },
    {
     "state": "CA",
-    "total": 289263.16
+    "total": 303700.66
    },
    {
     "state": "WA",
-    "total": 135664.25
+    "total": 143943.25
    },
    {
     "state": "NY",
-    "total": 131494.72
-   },
-   {
-    "state": "IL",
-    "total": 89691.0
+    "total": 139229.72
    },
    {
     "state": "DC",
-    "total": 89404.0
+    "total": 92771.5
+   },
+   {
+    "state": "IL",
+    "total": 92356.0
    },
    {
     "state": "TX",
-    "total": 74444.24
+    "total": 76279.24
    },
    {
     "state": "VA",
-    "total": 56018.14
+    "total": 62898.14
    },
    {
     "state": "MA",
-    "total": 48456.21
+    "total": 51067.21
    },
    {
     "state": "MD",
-    "total": 43000.0
+    "total": 46226.0
    }
   ],
   "in_state": {
-   "total": 3007369.64,
-   "itemized": 4319893.46,
-   "pct": 69.6
+   "total": 3279005.76,
+   "itemized": 4681911.56,
+   "pct": 70.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:14+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "W000779": {
   "candidate_id": "S6OR00110",
@@ -7427,7 +7363,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6OR00110/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -7503,7 +7439,7 @@
    "pct": 39.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:14+00:00"
+  "details_fetched": "2026-11-21T19:27+00:00"
  },
  "F000479": {
   "candidate_id": "S6PA00274",
@@ -7519,7 +7455,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6PA00274/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -7595,7 +7531,7 @@
    "pct": 27.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:14+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "M001243": {
   "candidate_id": "S2PA00661",
@@ -7611,46 +7547,46 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2PA00661/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 1828223.03
+    "total": 1831073.03
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 189567.2
+    "total": 190241.3
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 227779.09
+    "total": 231279.09
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 741164.0
+    "total": 768575.6
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2379202.77
+    "total": 2454502.77
    }
   ],
   "states": [
    {
     "state": "PA",
-    "total": 2101521.97
+    "total": 2168887.67
    },
    {
     "state": "CA",
-    "total": 468496.71
+    "total": 487996.71
    },
    {
     "state": "FL",
-    "total": 297871.43
+    "total": 305871.43
    },
    {
     "state": "NY",
@@ -7658,19 +7594,19 @@
    },
    {
     "state": "TX",
-    "total": 204815.01
+    "total": 205185.01
    },
    {
     "state": "VA",
-    "total": 158219.96
+    "total": 165419.96
    },
    {
     "state": "DC",
-    "total": 112479.24
+    "total": 112679.24
    },
    {
     "state": "NJ",
-    "total": 104642.53
+    "total": 108242.53
    },
    {
     "state": "IL",
@@ -7682,12 +7618,12 @@
    }
   ],
   "in_state": {
-   "total": 2101521.97,
-   "itemized": 4390651.5,
-   "pct": 47.9
+   "total": 2168887.67,
+   "itemized": 4500387.2,
+   "pct": 48.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:14+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "R000122": {
   "candidate_id": "S6RI00163",
@@ -7744,7 +7680,7 @@
   ],
   "committee_id": "C00238907",
   "source": "https://www.fec.gov/data/candidate/S6RI00163/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -7820,7 +7756,7 @@
    "pct": 34.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "W000802": {
   "candidate_id": "S6RI00221",
@@ -7836,7 +7772,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6RI00221/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -7912,7 +7848,7 @@
    "pct": 39.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "S001184": {
   "candidate_id": "S4SC00240",
@@ -7928,83 +7864,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4SC00240/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 14246842.81
+    "total": 14908645.13
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 940974.29
+    "total": 964834.17
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 789749.03
+    "total": 808134.55
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1206419.14
+    "total": 1234320.55
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 6541655.86
+    "total": 6661171.77
    }
   ],
   "states": [
    {
     "state": "SC",
-    "total": 2758425.36
+    "total": 2786252.7
    },
    {
     "state": "CA",
-    "total": 1702238.98
+    "total": 1782213.77
    },
    {
     "state": "TX",
-    "total": 1395999.79
+    "total": 1514470.07
    },
    {
     "state": "FL",
-    "total": 1238204.33
+    "total": 1339834.71
    },
    {
     "state": "NY",
-    "total": 874547.1
+    "total": 894715.97
    },
    {
     "state": "TN",
-    "total": 646580.54
+    "total": 660467.16
    },
    {
     "state": "VA",
-    "total": 455231.32
+    "total": 487203.31
    },
    {
     "state": "NC",
-    "total": 412063.77
-   },
-   {
-    "state": "CO",
-    "total": 393401.56
+    "total": 434962.26
    },
    {
     "state": "GA",
-    "total": 392621.01
+    "total": 429675.24
+   },
+   {
+    "state": "CO",
+    "total": 406116.82
    }
   ],
   "in_state": {
-   "total": 2758425.36,
-   "itemized": 15102222.58,
-   "pct": 18.3
+   "total": 2786252.7,
+   "itemized": 15953687.62,
+   "pct": 17.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "R000605": {
   "candidate_id": "S4SD00049",
@@ -8056,7 +7992,7 @@
   ],
   "committee_id": "C00532465",
   "source": "https://www.fec.gov/data/candidate/S4SD00049/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:27+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -8132,7 +8068,7 @@
    "pct": 10.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "T000250": {
   "candidate_id": "S2SD00068",
@@ -8148,7 +8084,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2SD00068/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -8224,7 +8160,7 @@
    "pct": 20.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "B001243": {
   "candidate_id": "S8TN00337",
@@ -8240,7 +8176,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8TN00337/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
@@ -8316,7 +8252,7 @@
    "pct": 10.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "H000601": {
   "candidate_id": "S0TN00169",
@@ -8329,86 +8265,112 @@
   "pacs": 3210449.2,
   "party": 63000.0,
   "self_funded": 0,
-  "top_employers": [],
+  "top_employers": [
+   {
+    "employer": "NULL",
+    "total": 94684.93,
+    "count": 258
+   },
+   {
+    "employer": "CAPITAL GROUP",
+    "total": 70000.0,
+    "count": 29
+   },
+   {
+    "employer": "KKR",
+    "total": 59329.34,
+    "count": 18
+   },
+   {
+    "employer": "FEDEX",
+    "total": 42000.0,
+    "count": 12
+   },
+   {
+    "employer": "UCOR",
+    "total": 40041.02,
+    "count": 26
+   }
+  ],
   "committee_id": "C00718627",
   "source": "https://www.fec.gov/data/candidate/S0TN00169/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:21+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 4695204.86
+    "total": 4830480.0
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 323540.86
+    "total": 338128.6
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 443997.62
+    "total": 476862.48
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1506654.32
+    "total": 1667422.88
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 6518749.88
+    "total": 6878295.98
    }
   ],
   "states": [
    {
     "state": "TN",
-    "total": 3955065.24
+    "total": 4309044.99
    },
    {
     "state": "CA",
-    "total": 810331.41
+    "total": 833909.23
    },
    {
     "state": "NY",
-    "total": 774339.3
+    "total": 800238.31
    },
    {
     "state": "FL",
-    "total": 731186.1
+    "total": 771333.05
    },
    {
     "state": "TX",
-    "total": 586127.45
+    "total": 623603.39
    },
    {
     "state": "VA",
-    "total": 529286.67
+    "total": 565421.44
    },
    {
     "state": "DC",
-    "total": 348854.16
-   },
-   {
-    "state": "AL",
-    "total": 233489.82
+    "total": 361578.0
    },
    {
     "state": "NJ",
-    "total": 230616.93
+    "total": 236851.64
+   },
+   {
+    "state": "AL",
+    "total": 236664.0
    },
    {
     "state": "IL",
-    "total": 213925.96
+    "total": 234190.28
    }
   ],
   "in_state": {
-   "total": 3955065.24,
-   "itemized": 10525346.33,
-   "pct": 37.6
+   "total": 4309044.99,
+   "itemized": 11228388.73,
+   "pct": 38.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "C001056": {
   "candidate_id": "S2TX00106",
@@ -8450,17 +8412,17 @@
   ],
   "committee_id": "C00369033",
   "source": "https://www.fec.gov/data/candidate/S2TX00106/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 1388858.88
+    "total": 1388917.81
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 388902.22
+    "total": 389130.79
    },
    {
     "size": 500,
@@ -8481,7 +8443,7 @@
   "states": [
    {
     "state": "TX",
-    "total": 8058453.5
+    "total": 8058682.07
    },
    {
     "state": "NY",
@@ -8521,12 +8483,12 @@
    }
   ],
   "in_state": {
-   "total": 8058453.5,
-   "itemized": 12900061.64,
+   "total": 8058682.07,
+   "itemized": 12900349.14,
    "pct": 62.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "C001098": {
   "candidate_id": "S2TX00312",
@@ -8542,83 +8504,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2TX00312/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 7864475.52
+    "total": 8457042.81
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 344977.67
+    "total": 454803.17
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 397210.65
+    "total": 478760.65
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 489095.72
+    "total": 571841.72
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1992000.0
+    "total": 2333330.84
    }
   ],
   "states": [
    {
     "state": "TX",
-    "total": 2309338.28
+    "total": 2819347.19
    },
    {
     "state": "CA",
-    "total": 618129.39
+    "total": 727018.64
    },
    {
     "state": "FL",
-    "total": 513214.64
+    "total": 583899.37
    },
    {
     "state": "VA",
-    "total": 307815.19
+    "total": 357488.74
    },
    {
     "state": "NY",
-    "total": 271501.1
+    "total": 315150.0
    },
    {
     "state": "DC",
-    "total": 143761.64
-   },
-   {
-    "state": "CO",
-    "total": 124630.0
-   },
-   {
-    "state": "GA",
-    "total": 120252.33
+    "total": 161891.39
    },
    {
     "state": "PA",
-    "total": 114815.96
+    "total": 144206.46
+   },
+   {
+    "state": "CO",
+    "total": 138848.8
+   },
+   {
+    "state": "GA",
+    "total": 136316.76
    },
    {
     "state": "AZ",
-    "total": 101544.25
+    "total": 119094.07
    }
   ],
   "in_state": {
-   "total": 2309338.28,
-   "itemized": 6266225.53,
-   "pct": 36.9
+   "total": 2819347.19,
+   "itemized": 7474245.16,
+   "pct": 37.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "C001114": {
   "candidate_id": "S4UT00282",
@@ -8634,7 +8596,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4UT00282/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -8710,7 +8672,7 @@
    "pct": 14.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "L000577": {
   "candidate_id": "S0UT00165",
@@ -8726,7 +8688,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0UT00165/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -8802,7 +8764,7 @@
    "pct": 10.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "K000384": {
   "candidate_id": "S2VA00142",
@@ -8818,32 +8780,32 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2VA00142/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 203984.69
+    "total": 221821.98
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 16955.0
+    "total": 22047.05
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 21850.0
+    "total": 28917.66
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 94305.0
+    "total": 138755.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 166550.0
+    "total": 212400.0
    }
   ],
   "states": [
@@ -8894,7 +8856,7 @@
    "pct": 41.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "W000805": {
   "candidate_id": "S6VA00093",
@@ -8946,83 +8908,83 @@
   ],
   "committee_id": "C00438713",
   "source": "https://www.fec.gov/data/candidate/S6VA00093/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 5703118.05
+    "total": 6020532.73
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 687943.09
+    "total": 780015.09
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 1371470.56
+    "total": 1506579.56
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 3378648.08
+    "total": 3633098.08
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 10741301.5
+    "total": 11342764.0
    }
   ],
   "states": [
    {
     "state": "VA",
-    "total": 6560807.51
+    "total": 7392711.72
    },
    {
     "state": "NY",
-    "total": 2285152.77
+    "total": 2366094.77
    },
    {
     "state": "CA",
-    "total": 1893135.47
+    "total": 1949710.47
    },
    {
     "state": "DC",
-    "total": 1396611.14
+    "total": 1483805.14
    },
    {
     "state": "MD",
-    "total": 1036561.72
+    "total": 1109089.22
    },
    {
     "state": "FL",
-    "total": 782896.07
+    "total": 836704.07
    },
    {
     "state": "MA",
-    "total": 542836.63
+    "total": 596462.13
    },
    {
     "state": "TX",
-    "total": 540137.76
+    "total": 556432.73
    },
    {
     "state": "CT",
-    "total": 409047.9
+    "total": 414496.9
    },
    {
     "state": "IL",
-    "total": 364728.0
+    "total": 379370.0
    }
   ],
   "in_state": {
-   "total": 6560807.51,
-   "itemized": 18036843.3,
-   "pct": 36.4
+   "total": 7392711.72,
+   "itemized": 19437351.48,
+   "pct": 38.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "S000033": {
   "candidate_id": "S4VT00033",
@@ -9038,83 +9000,83 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4VT00033/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 21481474.35
+    "total": 22188944.05
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 876226.38
+    "total": 907260.68
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 965619.54
+    "total": 989057.54
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 615182.0
+    "total": 633682.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 243493.0
+    "total": 248993.0
    }
   ],
   "states": [
    {
     "state": "CA",
-    "total": 1497285.08
+    "total": 1669987.72
    },
    {
     "state": "NY",
-    "total": 524162.77
+    "total": 589058.45
    },
    {
     "state": "MA",
-    "total": 466284.06
+    "total": 516309.64
    },
    {
     "state": "WA",
-    "total": 398510.23
+    "total": 449003.8
    },
    {
     "state": "FL",
-    "total": 230820.55
+    "total": 255730.85
    },
    {
     "state": "OR",
-    "total": 214768.95
+    "total": 244812.17
    },
    {
     "state": "IL",
-    "total": 203156.07
+    "total": 228991.44
    },
    {
     "state": "VT",
-    "total": 200507.69
+    "total": 226068.2
    },
    {
     "state": "TX",
-    "total": 193572.71
+    "total": 217852.12
    },
    {
-    "state": "CO",
-    "total": 183625.1
+    "state": "PA",
+    "total": 207396.39
    }
   ],
   "in_state": {
-   "total": 200507.69,
-   "itemized": 6505715.83,
+   "total": 226068.2,
+   "itemized": 7291657.83,
    "pct": 3.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "W000800": {
   "candidate_id": "S2VT00235",
@@ -9130,7 +9092,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2VT00235/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9206,7 +9168,7 @@
    "pct": 20.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "C000127": {
   "candidate_id": "S8WA00194",
@@ -9222,7 +9184,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S8WA00194/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9298,7 +9260,7 @@
    "pct": 64.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "M001111": {
   "candidate_id": "S2WA00189",
@@ -9314,7 +9276,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2WA00189/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9390,7 +9352,7 @@
    "pct": 76.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:28+00:00"
  },
  "B001230": {
   "candidate_id": "S2WI00219",
@@ -9406,7 +9368,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S2WI00219/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9482,7 +9444,7 @@
    "pct": 58.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:29+00:00"
  },
  "J000293": {
   "candidate_id": "S0WI00197",
@@ -9498,7 +9460,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S0WI00197/?cycle=2028&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9574,7 +9536,7 @@
    "pct": 23.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:15+00:00"
+  "details_fetched": "2026-11-21T19:29+00:00"
  },
  "C001047": {
   "candidate_id": "S4WV00159",
@@ -9616,58 +9578,58 @@
   ],
   "committee_id": "C00539825",
   "source": "https://www.fec.gov/data/candidate/S4WV00159/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 237793.64
+    "total": 262293.09
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 42640.61
+    "total": 51584.73
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 236943.83
+    "total": 265302.33
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 714127.36
+    "total": 761027.36
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2259323.44
+    "total": 2427925.98
    }
   ],
   "states": [
    {
     "state": "WV",
-    "total": 656271.02
+    "total": 696513.52
    },
    {
     "state": "NY",
-    "total": 304294.52
+    "total": 317034.52
    },
    {
     "state": "CA",
-    "total": 268509.61
-   },
-   {
-    "state": "VA",
-    "total": 250664.13
+    "total": 285614.85
    },
    {
     "state": "FL",
-    "total": 243967.43
+    "total": 276420.66
+   },
+   {
+    "state": "VA",
+    "total": 271797.7
    },
    {
     "state": "TX",
-    "total": 172425.02
+    "total": 188687.13
    },
    {
     "state": "CO",
@@ -9675,24 +9637,24 @@
    },
    {
     "state": "DC",
-    "total": 128089.33
+    "total": 141179.45
    },
    {
     "state": "MD",
-    "total": 121038.1
+    "total": 127385.6
    },
    {
     "state": "OK",
-    "total": 105459.42
+    "total": 109322.1
    }
   ],
   "in_state": {
-   "total": 656271.02,
-   "itemized": 3292693.12,
-   "pct": 19.9
+   "total": 696513.52,
+   "itemized": 3569997.73,
+   "pct": 19.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:16+00:00"
+  "details_fetched": "2026-11-21T19:29+00:00"
  },
  "J000312": {
   "candidate_id": "S4WV00332",
@@ -9708,7 +9670,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S4WV00332/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9784,7 +9746,7 @@
    "pct": 1.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:16+00:00"
+  "details_fetched": "2026-11-21T19:29+00:00"
  },
  "B001261": {
   "candidate_id": "S6WY00068",
@@ -9800,7 +9762,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/S6WY00068/?cycle=2030&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9876,7 +9838,7 @@
    "pct": 10.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:16+00:00"
+  "details_fetched": "2026-11-21T19:29+00:00"
  },
  "L000571": {
   "candidate_id": "S0WY00137",
@@ -9923,7 +9885,7 @@
   ],
   "committee_id": "C00443580",
   "source": "https://www.fec.gov/data/candidate/S0WY00137/?cycle=2026&election_full=true",
-  "fetched": "2026-11-20T20:28+00:00",
+  "fetched": "2026-11-21T19:22+00:00",
   "sizes": [
    {
     "size": 0,
@@ -9999,6 +9961,6 @@
    "pct": 13.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-14T18:16+00:00"
+  "details_fetched": "2026-11-21T19:29+00:00"
  }
 }

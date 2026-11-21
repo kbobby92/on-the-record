@@ -20020,7 +20020,7 @@
   ],
   "committee_id": "C00867218",
   "source": "https://www.fec.gov/data/candidate/H4IN08249/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:56+00:00",
+  "fetched": "2026-11-21T19:29+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20148,7 +20148,7 @@
   ],
   "committee_id": "C00800649",
   "source": "https://www.fec.gov/data/candidate/H6IN09143/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:56+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20244,12 +20244,12 @@
     "count": 12
    },
    {
-    "employer": "WINTER LIVESTOCK",
+    "employer": "VENTURE CORPORATION",
     "total": 14000.0,
     "count": 4
    },
    {
-    "employer": "VENTURE CORPORATION",
+    "employer": "WINTER LIVESTOCK",
     "total": 14000.0,
     "count": 4
    },
@@ -20269,14 +20269,14 @@
     "count": 4
    },
    {
-    "employer": "VALLEY FEEDS MILL",
-    "total": 7000.0,
-    "count": 2
+    "employer": "COLT ENERGY, INC.",
+    "total": 7500.0,
+    "count": 3
    }
   ],
   "committee_id": "C00460659",
   "source": "https://www.fec.gov/data/candidate/H0KS01123/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:56+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20404,7 +20404,7 @@
   ],
   "committee_id": "C00877373",
   "source": "https://www.fec.gov/data/candidate/H4KS02164/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:56+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20537,7 +20537,7 @@
   ],
   "committee_id": "C00670034",
   "source": "https://www.fec.gov/data/candidate/H8KS03155/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:56+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20665,7 +20665,7 @@
   ],
   "committee_id": "C00632067",
   "source": "https://www.fec.gov/data/candidate/H8KS04112/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:56+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20798,7 +20798,7 @@
   ],
   "committee_id": "C00588764",
   "source": "https://www.fec.gov/data/candidate/H6KY01110/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -20889,6 +20889,11 @@
   "self_funded": 0,
   "top_employers": [
    {
+    "employer": "ANTHROPIC",
+    "total": 63000.0,
+    "count": 18
+   },
+   {
     "employer": "ATT",
     "total": 59500.0,
     "count": 37
@@ -20899,39 +20904,34 @@
     "count": 16
    },
    {
+    "employer": "T-MOBILE",
+    "total": 40299.82,
+    "count": 18
+   },
+   {
+    "employer": "NYCBS",
+    "total": 39643.57,
+    "count": 41
+   },
+   {
     "employer": "COMCAST",
     "total": 28102.54,
     "count": 20
    },
    {
-    "employer": "NYCBS",
-    "total": 23500.0,
-    "count": 22
+    "employer": "ELEVANCE HEALTH",
+    "total": 22865.3,
+    "count": 16
    },
    {
     "employer": "NULL",
     "total": 22250.0,
     "count": 10
-   },
-   {
-    "employer": "BOARDWALK",
-    "total": 21000.0,
-    "count": 9
-   },
-   {
-    "employer": "ANDREESSEN HOROWITZ",
-    "total": 21000.0,
-    "count": 6
-   },
-   {
-    "employer": "PIKEVILLE MEDICAL CENTER",
-    "total": 19800.0,
-    "count": 18
    }
   ],
   "committee_id": "C00445023",
   "source": "https://www.fec.gov/data/candidate/H8KY02031/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21049,7 +21049,7 @@
   ],
   "committee_id": "C00791392",
   "source": "https://www.fec.gov/data/candidate/H2KY03206/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21172,7 +21172,7 @@
   ],
   "committee_id": "C00509729",
   "source": "https://www.fec.gov/data/candidate/H2KY04121/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21300,7 +21300,7 @@
   ],
   "committee_id": "C00116632",
   "source": "https://www.fec.gov/data/candidate/H0KY05015/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21392,33 +21392,28 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 1122874.24,
-    "count": 1086
+    "total": 1478312.81,
+    "count": 1405
    },
    {
     "employer": "SELF",
-    "total": 84650.32,
-    "count": 630
+    "total": 93856.76,
+    "count": 736
+   },
+   {
+    "employer": "BLACKSTONE",
+    "total": 77537.89,
+    "count": 25
    },
    {
     "employer": "PNC",
     "total": 50000.0,
     "count": 16
-   },
-   {
-    "employer": "BLACKSTONE",
-    "total": 47435.35,
-    "count": 15
-   },
-   {
-    "employer": "MORGAN STANLEY",
-    "total": 46619.16,
-    "count": 19
    }
   ],
   "committee_id": "C00467571",
   "source": "https://www.fec.gov/data/candidate/H0KY06104/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -21465,16 +21460,11 @@
     "employer": "S-3 GROUP",
     "total": 28600.0,
     "count": 20
-   },
-   {
-    "employer": "CORNERSTONE GOVERNMENT AFFAIRS",
-    "total": 27000.0,
-    "count": 19
    }
   ],
   "committee_id": "C00394957",
   "source": "https://www.fec.gov/data/candidate/H0LA01087/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21607,7 +21597,7 @@
   ],
   "committee_id": "C00763649",
   "source": "https://www.fec.gov/data/candidate/H2LA02149/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21708,34 +21698,34 @@
     "count": 8
    },
    {
+    "employer": "SELF",
+    "total": 8440.0,
+    "count": 12
+   },
+   {
     "employer": "VERSABAR, INC.",
     "total": 7191.0,
     "count": 3
    },
    {
-    "employer": "CENTRAL MANAGEMENT COMPANY LLC",
+    "employer": "PREMIER POLICY SOLUTIONS",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "D&T CRAWFISH",
+    "employer": "METAL SHARK",
     "total": 7000.0,
-    "count": 2
+    "count": 3
    },
    {
-    "employer": "BOLSU PCF LLC",
-    "total": 7000.0,
-    "count": 8
-   },
-   {
-    "employer": "ORIGIN BANK",
+    "employer": "BALDWIN READY MIX CONCRETE",
     "total": 7000.0,
     "count": 2
    }
   ],
   "committee_id": "C00617662",
   "source": "https://www.fec.gov/data/candidate/H6LA03148/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21827,18 +21817,18 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 314109.43,
-    "count": 2905
+    "total": 389229.92,
+    "count": 3526
    },
    {
     "employer": "NULL",
-    "total": 239136.03,
-    "count": 1221
+    "total": 265567.29,
+    "count": 1250
    },
    {
     "employer": "ENTREPRENEUR",
-    "total": 112557.27,
-    "count": 2639
+    "total": 130383.22,
+    "count": 3005
    },
    {
     "employer": "MILLER STRATEGIES",
@@ -21848,7 +21838,7 @@
   ],
   "committee_id": "C00608695",
   "source": "https://www.fec.gov/data/candidate/H6LA04138/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -21971,7 +21961,7 @@
   ],
   "committee_id": "C00766428",
   "source": "https://www.fec.gov/data/candidate/H2LA05126/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22097,14 +22087,14 @@
     "count": 2
    },
    {
-    "employer": "E. P. BREAUX ELECTRICAL",
+    "employer": "MORGAN & MORGAN LAND PREPARATION LLC",
     "total": 6600.0,
     "count": 2
    }
   ],
   "committee_id": "C00868513",
   "source": "https://www.fec.gov/data/candidate/H4LA06211/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22232,7 +22222,7 @@
   ],
   "committee_id": "C00226522",
   "source": "https://www.fec.gov/data/candidate/H8MA02041/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22360,7 +22350,7 @@
   ],
   "committee_id": "C00285171",
   "source": "https://www.fec.gov/data/candidate/H4MA03022/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:57+00:00",
+  "fetched": "2026-11-21T19:30+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22452,8 +22442,8 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 37720.0,
-    "count": 74
+    "total": 38165.0,
+    "count": 81
    },
    {
     "employer": "MARKLEY GROUP",
@@ -22461,14 +22451,14 @@
     "count": 5
    },
    {
+    "employer": "COREWEAVE",
+    "total": 9900.0,
+    "count": 4
+   },
+   {
     "employer": "BENCHMARK SENIOR LIVING",
     "total": 8000.0,
     "count": 18
-   },
-   {
-    "employer": "RED+BLUE STRATEGIES",
-    "total": 8000.0,
-    "count": 4
    },
    {
     "employer": "KEYSER PUBLIC STRATEGIES",
@@ -22476,14 +22466,14 @@
     "count": 6
    },
    {
-    "employer": "ESSEX POWER SERVICES INC.",
-    "total": 7000.0,
-    "count": 2
+    "employer": "RED+BLUE STRATEGIES",
+    "total": 8000.0,
+    "count": 4
    }
   ],
   "committee_id": "C00655647",
   "source": "https://www.fec.gov/data/candidate/H8MA03106/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22579,6 +22569,11 @@
     "count": 20
    },
    {
+    "employer": "BLACKSTONE",
+    "total": 25000.0,
+    "count": 9
+   },
+   {
     "employer": "KKR",
     "total": 20500.0,
     "count": 11
@@ -22604,19 +22599,14 @@
     "count": 8
    },
    {
-    "employer": "FLAGSHIP PIONEERING",
-    "total": 17110.46,
-    "count": 19
-   },
-   {
-    "employer": "BLACKSTONE",
-    "total": 16500.0,
-    "count": 6
+    "employer": "JANE STREET CAPITAL",
+    "total": 17500.0,
+    "count": 5
    }
   ],
   "committee_id": "C00721449",
   "source": "https://www.fec.gov/data/candidate/H0MA04192/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22737,19 +22727,19 @@
     "count": 8
    },
    {
-    "employer": "ELI LILLY AND COMPANY",
+    "employer": "INVARIANT LLC",
     "total": 22500.0,
     "count": 14
    },
    {
-    "employer": "INVARIANT LLC",
-    "total": 21500.0,
-    "count": 13
+    "employer": "ELI LILLY AND COMPANY",
+    "total": 22500.0,
+    "count": 14
    }
   ],
   "committee_id": "C00541888",
   "source": "https://www.fec.gov/data/candidate/H4MA05084/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [
    {
     "size": 0,
@@ -22872,7 +22862,7 @@
   ],
   "committee_id": "C00547240",
   "source": "https://www.fec.gov/data/candidate/H4MA06090/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -22911,7 +22901,22 @@
     "count": 3
    },
    {
+    "employer": "ARIEL INVESTMENTS",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
     "employer": "VINSON & ELKINS LLP",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "EGERIA ENTERPRISES",
+    "total": 7000.0,
+    "count": 2
+   },
+   {
+    "employer": "JORDAN REAL ESTATE INVESTMENTS",
     "total": 7000.0,
     "count": 2
    },
@@ -22919,26 +22924,11 @@
     "employer": "METROPOLITAN BOSTON HOUSING PARTNERSHI",
     "total": 7000.0,
     "count": 6
-   },
-   {
-    "employer": "ARIEL INVESTMENTS",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "SHOWCASE COMMERCE",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "UNIVERSITY OF CALIFORNIA SAN FRANCISCO",
-    "total": 7000.0,
-    "count": 2
    }
   ],
   "committee_id": "C00667741",
   "source": "https://www.fec.gov/data/candidate/H8MA07032/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23066,7 +23056,7 @@
   ],
   "committee_id": "C00366948",
   "source": "https://www.fec.gov/data/candidate/H2MA09072/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23189,7 +23179,7 @@
   ],
   "committee_id": "C00479063",
   "source": "https://www.fec.gov/data/candidate/H0MA10082/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:31+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23313,7 +23303,7 @@
   ],
   "committee_id": "C00435974",
   "source": "https://www.fec.gov/data/candidate/H8MD01094/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23441,7 +23431,7 @@
   ],
   "committee_id": "C00867747",
   "source": "https://www.fec.gov/data/candidate/H4MD02232/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23569,7 +23559,7 @@
   ],
   "committee_id": "C00855353",
   "source": "https://www.fec.gov/data/candidate/H4MD03156/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23661,7 +23651,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/H2MD04315/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -23710,24 +23700,24 @@
     "count": 1
    },
    {
-    "employer": "SR CM, LLC",
+    "employer": "STEPTOE & JOHNSON LLP",
     "total": 3000.0,
     "count": 1
    },
    {
-    "employer": "TIMIOS NATIONAL CORPORATION",
+    "employer": "G. S. PROCTOR AND ASSOCIATES",
     "total": 3000.0,
-    "count": 2
+    "count": 1
    },
    {
-    "employer": "MOAG AND COMPANY",
+    "employer": "SR CM, LLC",
     "total": 3000.0,
     "count": 1
    }
   ],
   "committee_id": "C00140715",
   "source": "https://www.fec.gov/data/candidate/H2MD05155/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23855,7 +23845,7 @@
   ],
   "committee_id": "C00854471",
   "source": "https://www.fec.gov/data/candidate/H4MD06340/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -23988,7 +23978,7 @@
   ],
   "committee_id": "C00726372",
   "source": "https://www.fec.gov/data/candidate/H6MD07020/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24080,13 +24070,13 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 28971.06,
-    "count": 54
+    "total": 29221.06,
+    "count": 55
    },
    {
     "employer": "AMERICAN UNIVERSITY",
-    "total": 17775.0,
-    "count": 56
+    "total": 18105.0,
+    "count": 71
    },
    {
     "employer": "ROM-RYMER AND ASSOCIATES",
@@ -24095,28 +24085,28 @@
    },
    {
     "employer": "GEORGETOWN UNIVERSITY",
-    "total": 8248.7,
-    "count": 41
+    "total": 9948.7,
+    "count": 51
    },
    {
-    "employer": "INTRAFI",
-    "total": 7000.0,
-    "count": 2
+    "employer": "SULLIVAN & CROMWELL",
+    "total": 8250.0,
+    "count": 4
    },
    {
-    "employer": "STAND UP AMERICA",
-    "total": 7000.0,
-    "count": 2
+    "employer": "JOHNS HOPKINS UNIVERSITY",
+    "total": 7135.0,
+    "count": 43
    },
    {
-    "employer": "ARNOLD VENTURES",
+    "employer": "ANALYSIS GROUP",
     "total": 7000.0,
     "count": 2
    }
   ],
   "committee_id": "C00575126",
   "source": "https://www.fec.gov/data/candidate/H6MD08457/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24249,7 +24239,7 @@
   ],
   "committee_id": "C00433391",
   "source": "https://www.fec.gov/data/candidate/H8ME01120/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24360,24 +24350,24 @@
     "count": 2
    },
    {
-    "employer": "FORTRESS INVESTMENT GROUP",
+    "employer": "XN LP",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "THE KIMPTON BUCHANAN",
+    "employer": "JUST CREATIVE PARTNERS",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "GREYLOCK PARTNERS",
+    "employer": "MEDLEY PARTNERS LLC",
     "total": 7000.0,
     "count": 2
    }
   ],
   "committee_id": "C00653816",
   "source": "https://www.fec.gov/data/candidate/H8ME02185/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24505,7 +24495,7 @@
   ],
   "committee_id": "C00614214",
   "source": "https://www.fec.gov/data/candidate/H6MI01226/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:58+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24638,7 +24628,7 @@
   ],
   "committee_id": "C00561530",
   "source": "https://www.fec.gov/data/candidate/H4MI04126/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24771,7 +24761,7 @@
   ],
   "committee_id": "C00711317",
   "source": "https://www.fec.gov/data/candidate/H0MI03316/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -24889,7 +24879,7 @@
   ],
   "committee_id": "C00459297",
   "source": "https://www.fec.gov/data/candidate/H0MI02094/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25022,7 +25012,7 @@
   ],
   "committee_id": "C00390724",
   "source": "https://www.fec.gov/data/candidate/H4MI07103/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25140,7 +25130,7 @@
   ],
   "committee_id": "C00558213",
   "source": "https://www.fec.gov/data/candidate/H4MI12079/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25263,7 +25253,7 @@
   ],
   "committee_id": "C00793976",
   "source": "https://www.fec.gov/data/candidate/H2MI07123/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25352,51 +25342,10 @@
   "pacs": 1887158.45,
   "party": 5107.29,
   "self_funded": 0,
-  "top_employers": [
-   {
-    "employer": "UNIVERSITY OF MICHIGAN",
-    "total": 18010.0,
-    "count": 23
-   },
-   {
-    "employer": "NULL",
-    "total": 17500.0,
-    "count": 10
-   },
-   {
-    "employer": "HARVARD UNIVERSITY",
-    "total": 17155.0,
-    "count": 11
-   },
-   {
-    "employer": "BCBSM",
-    "total": 16100.0,
-    "count": 9
-   },
-   {
-    "employer": "SORENSEN GROSS",
-    "total": 14000.0,
-    "count": 5
-   },
-   {
-    "employer": "CENTERVIEW PARTNERS",
-    "total": 14000.0,
-    "count": 4
-   },
-   {
-    "employer": "BGR GROUP",
-    "total": 12750.0,
-    "count": 12
-   },
-   {
-    "employer": "DOW",
-    "total": 11312.42,
-    "count": 9
-   }
-  ],
+  "top_employers": [],
   "committee_id": "C00864207",
   "source": "https://www.fec.gov/data/candidate/H4MI08218/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:32+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25488,8 +25437,8 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 94986.05,
-    "count": 195
+    "total": 105089.9,
+    "count": 259
    },
    {
     "employer": "CIENA HEALTHCARE",
@@ -25517,14 +25466,14 @@
     "count": 4
    },
    {
-    "employer": "BREEZE SMOKE",
+    "employer": "WINKLEVOSS CAPITAL MANAGEMENT",
     "total": 14000.0,
     "count": 4
    }
   ],
   "committee_id": "C00726042",
   "source": "https://www.fec.gov/data/candidate/H0MI10287/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25652,7 +25601,7 @@
   ],
   "committee_id": "C00803502",
   "source": "https://www.fec.gov/data/candidate/H2MI10150/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25785,7 +25734,7 @@
   ],
   "committee_id": "C00638650",
   "source": "https://www.fec.gov/data/candidate/H8MI11254/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -25913,7 +25862,7 @@
   ],
   "committee_id": "C00668608",
   "source": "https://www.fec.gov/data/candidate/H8MI13250/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26031,7 +25980,7 @@
   ],
   "committee_id": "C00798132",
   "source": "https://www.fec.gov/data/candidate/H2MI13204/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26164,7 +26113,7 @@
   ],
   "committee_id": "C00807743",
   "source": "https://www.fec.gov/data/candidate/H2MN01223/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26297,7 +26246,7 @@
   ],
   "committee_id": "C00575209",
   "source": "https://www.fec.gov/data/candidate/H6MN02131/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26425,7 +26374,7 @@
   ],
   "committee_id": "C00856062",
   "source": "https://www.fec.gov/data/candidate/H4MN03118/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26553,7 +26502,7 @@
   ],
   "committee_id": "C00354688",
   "source": "https://www.fec.gov/data/candidate/H0MN04049/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26681,7 +26630,7 @@
   ],
   "committee_id": "C00680934",
   "source": "https://www.fec.gov/data/candidate/H8MN05239/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26773,13 +26722,13 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 153232.32,
-    "count": 208
+    "total": 183087.32,
+    "count": 302
    },
    {
     "employer": "SELF",
-    "total": 76928.6,
-    "count": 1188
+    "total": 84358.04,
+    "count": 1253
    },
    {
     "employer": "MARQUIS MANAGEMENT",
@@ -26799,7 +26748,7 @@
   ],
   "committee_id": "C00545749",
   "source": "https://www.fec.gov/data/candidate/H4MN06087/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -26895,44 +26844,44 @@
     "count": 10
    },
    {
+    "employer": "ELLINGSON COMPANIES",
+    "total": 7500.0,
+    "count": 2
+   },
+   {
     "employer": "KING CAPITAL",
     "total": 7287.11,
     "count": 3
    },
    {
-    "employer": "STARKEY HEARING TECHNOLOGIES",
+    "employer": "AMES CONSTRUCTION",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "ULINE",
+    "employer": "WINTHROP & WEINSTINE",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "ROSEN'S DIVERSIFIED INC.",
+    "employer": "ATS",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "KING CAPITAL CORP",
+    "employer": "FELTL  CO",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "DUCHOSSOIS CAPITAL MANAGEMENT",
+    "employer": "NORTHERN CAPITAL INSURANCE",
     "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "FAGEN INC.",
-    "total": 7000.0,
-    "count": 2
+    "count": 4
    }
   ],
   "committee_id": "C00717959",
   "source": "https://www.fec.gov/data/candidate/H0MN07091/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27060,7 +27009,7 @@
   ],
   "committee_id": "C00650697",
   "source": "https://www.fec.gov/data/candidate/H8MN08043/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27193,7 +27142,7 @@
   ],
   "committee_id": "C00842336",
   "source": "https://www.fec.gov/data/candidate/H4MO01134/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T17:59+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27311,7 +27260,7 @@
   ],
   "committee_id": "C00495846",
   "source": "https://www.fec.gov/data/candidate/H2MO02102/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27402,9 +27351,14 @@
   "self_funded": 0,
   "top_employers": [
    {
+    "employer": "PATRIOT MACHINE INC",
+    "total": 21500.0,
+    "count": 7
+   },
+   {
     "employer": "SELF",
-    "total": 16218.53,
-    "count": 23
+    "total": 19726.71,
+    "count": 27
    },
    {
     "employer": "GREY IRIS HOLDINGS",
@@ -27412,34 +27366,29 @@
     "count": 3
    },
    {
-    "employer": "PATRIOT MACHINE INC",
-    "total": 7500.0,
-    "count": 4
-   },
-   {
-    "employer": "HUNTER ENGINEERING CO.",
-    "total": 7000.0,
-    "count": 5
-   },
-   {
-    "employer": "O'BRIEN INDUSTRIAL HOLDINGS",
+    "employer": "PHELPS HEALTH",
     "total": 7000.0,
     "count": 3
    },
    {
-    "employer": "WINDBER HOSPITAL",
+    "employer": "LANDMARK III LLC",
     "total": 7000.0,
-    "count": 4
+    "count": 2
    },
    {
-    "employer": "BECK, LENOX, AND STOLZER",
+    "employer": "JERRY KELLY HEATING AND AC",
     "total": 7000.0,
     "count": 3
+   },
+   {
+    "employer": "PATRIOT MACHINE",
+    "total": 7000.0,
+    "count": 2
    }
   ],
   "committee_id": "C00870238",
   "source": "https://www.fec.gov/data/candidate/H8MO09146/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27521,10 +27470,10 @@
   "candidate_id": "H2MO04207",
   "cycle": 2026,
   "period": "2025-01-01 to 2026-10-14",
-  "receipts": 1599365.96,
-  "disbursements": 1066227.38,
-  "cash_on_hand": 757046.88,
-  "individual": 847415.2,
+  "receipts": 1592030.96,
+  "disbursements": 1067784.38,
+  "cash_on_hand": 748154.88,
+  "individual": 839080.2,
   "pacs": 699810.91,
   "party": 0.0,
   "self_funded": 0,
@@ -27572,7 +27521,7 @@
   ],
   "committee_id": "C00792598",
   "source": "https://www.fec.gov/data/candidate/H2MO04207/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27705,7 +27654,7 @@
   ],
   "committee_id": "C00395848",
   "source": "https://www.fec.gov/data/candidate/H4MO05234/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:33+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27833,7 +27782,7 @@
   ],
   "committee_id": "C00359034",
   "source": "https://www.fec.gov/data/candidate/H0MO06073/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -27966,7 +27915,7 @@
   ],
   "committee_id": "C00788414",
   "source": "https://www.fec.gov/data/candidate/H2MO07143/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28057,19 +28006,19 @@
   "self_funded": 0,
   "top_employers": [
    {
+    "employer": "SELF",
+    "total": 75549.33,
+    "count": 162
+   },
+   {
     "employer": "RYAN LLC",
     "total": 53200.0,
     "count": 37
    },
    {
-    "employer": "SELF",
-    "total": 49606.74,
-    "count": 123
-   },
-   {
     "employer": "TRIBE",
-    "total": 39350.0,
-    "count": 16
+    "total": 45350.0,
+    "count": 18
    },
    {
     "employer": "HERZOG",
@@ -28077,24 +28026,19 @@
     "count": 11
    },
    {
+    "employer": "KKR",
+    "total": 34500.0,
+    "count": 15
+   },
+   {
     "employer": "NORTHWESTERN MUTUAL",
     "total": 29541.02,
     "count": 26
-   },
-   {
-    "employer": "KPS CAPITAL PARTNERS",
-    "total": 26900.0,
-    "count": 9
-   },
-   {
-    "employer": "GOOGLE",
-    "total": 26250.0,
-    "count": 11
    }
   ],
   "committee_id": "C00541862",
   "source": "https://www.fec.gov/data/candidate/H4MO08162/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28222,7 +28166,7 @@
   ],
   "committee_id": "C00573980",
   "source": "https://www.fec.gov/data/candidate/H6MS01131/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28355,7 +28299,7 @@
   ],
   "committee_id": "C00279851",
   "source": "https://www.fec.gov/data/candidate/H4MS02068/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28488,7 +28432,7 @@
   ],
   "committee_id": "C00665752",
   "source": "https://www.fec.gov/data/candidate/H8MS03125/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28611,7 +28555,7 @@
   ],
   "committee_id": "C00776393",
   "source": "https://www.fec.gov/data/candidate/H2MS04258/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28703,7 +28647,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/H4MT01041/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -28772,7 +28716,7 @@
   ],
   "committee_id": "C00855288",
   "source": "https://www.fec.gov/data/candidate/H4MT02098/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:34+00:00",
   "sizes": [
    {
     "size": 0,
@@ -28905,7 +28849,7 @@
   ],
   "committee_id": "C00795211",
   "source": "https://www.fec.gov/data/candidate/H2NC02287/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29038,7 +28982,7 @@
   ],
   "committee_id": "C00729277",
   "source": "https://www.fec.gov/data/candidate/H0NC02125/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29156,7 +29100,7 @@
   ],
   "committee_id": "C00697649",
   "source": "https://www.fec.gov/data/candidate/H0NC03172/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29272,24 +29216,24 @@
     "count": 1
    },
    {
-    "employer": "FCR INC.",
-    "total": 3500.0,
-    "count": 1
-   },
-   {
-    "employer": "STACEY MINDICH PRODUCTIONS LLC",
-    "total": 3500.0,
-    "count": 1
-   },
-   {
     "employer": "JACOBS INVESTMENT COMPANY LLC",
+    "total": 3500.0,
+    "count": 1
+   },
+   {
+    "employer": "MARKETING ASSOCIATES",
+    "total": 3500.0,
+    "count": 1
+   },
+   {
+    "employer": "FCR INC.",
     "total": 3500.0,
     "count": 1
    }
   ],
   "committee_id": "C00794727",
   "source": "https://www.fec.gov/data/candidate/H2NC06114/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:00+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29417,7 +29361,7 @@
   ],
   "committee_id": "C00386748",
   "source": "https://www.fec.gov/data/candidate/H4NC05146/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:01+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29540,7 +29484,7 @@
   ],
   "committee_id": "C00860064",
   "source": "https://www.fec.gov/data/candidate/H4NC06177/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:01+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29658,7 +29602,7 @@
   ],
   "committee_id": "C00501643",
   "source": "https://www.fec.gov/data/candidate/H2NC07096/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:01+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29791,7 +29735,7 @@
   ],
   "committee_id": "C00850404",
   "source": "https://www.fec.gov/data/candidate/H6NC09200/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:01+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -29880,41 +29824,10 @@
   "pacs": 2001397.28,
   "party": 0.0,
   "self_funded": 0,
-  "top_employers": [
-   {
-    "employer": "NULL",
-    "total": 75587.0,
-    "count": 57
-   },
-   {
-    "employer": "AT&T",
-    "total": 52400.0,
-    "count": 37
-   },
-   {
-    "employer": "ACN",
-    "total": 28000.0,
-    "count": 9
-   },
-   {
-    "employer": "COMCAST",
-    "total": 25000.0,
-    "count": 12
-   },
-   {
-    "employer": "CHARTER COMMUNICATIONS",
-    "total": 20500.0,
-    "count": 13
-   },
-   {
-    "employer": "ENTRAVISION",
-    "total": 17200.0,
-    "count": 9
-   }
-  ],
+  "top_employers": [],
   "committee_id": "C00504522",
   "source": "https://www.fec.gov/data/candidate/H2NC08185/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:01+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30042,7 +29955,7 @@
   ],
   "committee_id": "C00802298",
   "source": "https://www.fec.gov/data/candidate/H2NC13243/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30175,7 +30088,7 @@
   ],
   "committee_id": "C00796433",
   "source": "https://www.fec.gov/data/candidate/H2NC14050/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30271,6 +30184,11 @@
     "count": 3
    },
    {
+    "employer": "C.W. WILLIAMS COMMUNITY HEALTH CENTER",
+    "total": 4025.0,
+    "count": 3
+   },
+   {
     "employer": "FEDERAL STREET STRATEGIES",
     "total": 3500.0,
     "count": 3
@@ -30281,24 +30199,24 @@
     "count": 4
    },
    {
+    "employer": "NORTH CAROLINA A&T STATE UNIVERSITY",
+    "total": 3200.0,
+    "count": 3
+   },
+   {
+    "employer": "WELLS FARGO",
+    "total": 3075.0,
+    "count": 3
+   },
+   {
     "employer": "D. WILSON AGENCY",
     "total": 3000.0,
-    "count": 1
-   },
-   {
-    "employer": "C.W. WILLIAMS COMMUNITY HEALTH CENTER",
-    "total": 2525.0,
-    "count": 2
-   },
-   {
-    "employer": "MAYFIELD MEMORIAL MISSIONARY BAPTIST C",
-    "total": 2360.0,
     "count": 1
    }
   ],
   "committee_id": "C00546358",
   "source": "https://www.fec.gov/data/candidate/H4NC12100/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30421,7 +30339,7 @@
   ],
   "committee_id": "C00855361",
   "source": "https://www.fec.gov/data/candidate/H4NC13116/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30549,7 +30467,7 @@
   ],
   "committee_id": "C00856005",
   "source": "https://www.fec.gov/data/candidate/H4NC14015/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30677,7 +30595,7 @@
   ],
   "committee_id": "C00869370",
   "source": "https://www.fec.gov/data/candidate/H4ND00061/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30810,7 +30728,7 @@
   ],
   "committee_id": "C00801241",
   "source": "https://www.fec.gov/data/candidate/H2NE01118/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -30933,7 +30851,7 @@
   ],
   "committee_id": "C00575167",
   "source": "https://www.fec.gov/data/candidate/H6NE02125/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31056,7 +30974,7 @@
   ],
   "committee_id": "C00412890",
   "source": "https://www.fec.gov/data/candidate/H6NE03115/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31147,29 +31065,29 @@
   "self_funded": 0,
   "top_employers": [
    {
+    "employer": "ANTHROPIC",
+    "total": 53900.0,
+    "count": 17
+   },
+   {
     "employer": "SELF",
     "total": 50300.0,
     "count": 41
    },
    {
-    "employer": "GENTEX CORPORATION",
-    "total": 26000.0,
-    "count": 9
+    "employer": "JANE STREET CAPITAL",
+    "total": 28000.0,
+    "count": 8
    },
    {
     "employer": "CORNERSTONE GOVERNMENT AFFAIRS",
-    "total": 22850.0,
-    "count": 34
-   },
-   {
-    "employer": "LIEFF CABRASER HEIMANN & BERNSTEIN, LL",
-    "total": 21100.0,
-    "count": 12
+    "total": 26850.0,
+    "count": 36
    }
   ],
   "committee_id": "C00660464",
   "source": "https://www.fec.gov/data/candidate/H8NH01210/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -31235,7 +31153,7 @@
   ],
   "committee_id": "C00878454",
   "source": "https://www.fec.gov/data/candidate/H4NH02399/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:35+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31363,7 +31281,7 @@
   ],
   "committee_id": "C00558320",
   "source": "https://www.fec.gov/data/candidate/H4NJ01084/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31491,7 +31409,7 @@
   ],
   "committee_id": "C00661868",
   "source": "https://www.fec.gov/data/candidate/H8NJ02166/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31624,7 +31542,7 @@
   ],
   "committee_id": "C00859496",
   "source": "https://www.fec.gov/data/candidate/H4NJ03080/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31716,8 +31634,8 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 50850.0,
-    "count": 54
+    "total": 60250.0,
+    "count": 67
    },
    {
     "employer": "DREXEL LIQUOR STORE, INC.",
@@ -31725,17 +31643,17 @@
     "count": 4
    },
    {
-    "employer": "ZAIS GROUP, LLC",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
     "employer": "HACKENSACK MERIDIAN HEALTH",
     "total": 7000.0,
     "count": 2
    },
    {
-    "employer": "EQUINOX PARTNERS",
+    "employer": "CHRISTIAN ALLIANCE FOR RIGHTEOUSNESS",
+    "total": 7000.0,
+    "count": 3
+   },
+   {
+    "employer": "ZAIS GROUP, LLC",
     "total": 7000.0,
     "count": 2
    },
@@ -31745,19 +31663,19 @@
     "count": 2
    },
    {
-    "employer": "HILL & COMPANY",
-    "total": 6600.0,
-    "count": 2
+    "employer": "CYPRECO INDUSTRIES",
+    "total": 7000.0,
+    "count": 4
    },
    {
-    "employer": "FORDHAM UNIVERSITY",
-    "total": 5500.0,
+    "employer": "EQUINOX PARTNERS",
+    "total": 7000.0,
     "count": 2
    }
   ],
   "committee_id": "C00096412",
   "source": "https://www.fec.gov/data/candidate/H8NJ04014/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -31858,22 +31776,22 @@
     "count": 17
    },
    {
+    "employer": "BLACKROCK",
+    "total": 32500.0,
+    "count": 11
+   },
+   {
     "employer": "APOLLO GLOBAL MANAGEMENT",
     "total": 29000.0,
     "count": 9
    },
    {
-    "employer": "BLACKROCK",
-    "total": 24500.0,
-    "count": 8
-   },
-   {
-    "employer": "SNOW PARTNERS",
+    "employer": "BAIN CAPITAL",
     "total": 21000.0,
     "count": 6
    },
    {
-    "employer": "BAIN CAPITAL",
+    "employer": "SNOW PARTNERS",
     "total": 21000.0,
     "count": 6
    },
@@ -31885,7 +31803,7 @@
   ],
   "committee_id": "C00573949",
   "source": "https://www.fec.gov/data/candidate/H6NJ05171/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32018,7 +31936,7 @@
   ],
   "committee_id": "C00226928",
   "source": "https://www.fec.gov/data/candidate/H8NJ03073/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32136,7 +32054,7 @@
   ],
   "committee_id": "C00703058",
   "source": "https://www.fec.gov/data/candidate/H0NJ07261/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32221,10 +32139,10 @@
   "receipts": 2236501.68,
   "disbursements": 1790787.41,
   "cash_on_hand": 722399.83,
-  "individual": 1251801.33,
+  "individual": 1251432.85,
   "pacs": 886109.23,
   "party": 0.0,
-  "self_funded": 0,
+  "self_funded": 368.48,
   "top_employers": [
    {
     "employer": "SELF",
@@ -32259,7 +32177,7 @@
   ],
   "committee_id": "C00799767",
   "source": "https://www.fec.gov/data/candidate/H2NJ08232/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:02+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32351,8 +32269,8 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 25455.83,
-    "count": 40
+    "total": 30912.83,
+    "count": 60
    },
    {
     "employer": "BOB CIASULLI AUTO GROUP",
@@ -32377,7 +32295,7 @@
   ],
   "committee_id": "C00887547",
   "source": "https://www.fec.gov/data/candidate/H4NJ09194/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32500,7 +32418,7 @@
   ],
   "committee_id": "C00878603",
   "source": "https://www.fec.gov/data/candidate/H4NJ10176/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32623,7 +32541,7 @@
   ],
   "committee_id": "C00927681",
   "source": "https://www.fec.gov/data/candidate/H6NJ11286/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32715,7 +32633,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/H4NJ12149/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -32789,7 +32707,7 @@
   ],
   "committee_id": "C00765099",
   "source": "https://www.fec.gov/data/candidate/H2NM01144/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -32917,7 +32835,7 @@
   ],
   "committee_id": "C00789404",
   "source": "https://www.fec.gov/data/candidate/H2NM02191/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33030,7 +32948,7 @@
   ],
   "committee_id": "C00704049",
   "source": "https://www.fec.gov/data/candidate/H0NM03102/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33158,7 +33076,7 @@
   ],
   "committee_id": "C00499467",
   "source": "https://www.fec.gov/data/candidate/H8NV03036/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33294,7 +33212,7 @@
   ],
   "committee_id": "C00496760",
   "source": "https://www.fec.gov/data/candidate/H2NV02395/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33417,7 +33335,7 @@
   ],
   "committee_id": "C00655613",
   "source": "https://www.fec.gov/data/candidate/H6NV04020/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:36+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33550,7 +33468,7 @@
   ],
   "committee_id": "C00668228",
   "source": "https://www.fec.gov/data/candidate/H2NV04011/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33642,8 +33560,8 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 89889.77,
-    "count": 100
+    "total": 105110.01,
+    "count": 122
    },
    {
     "employer": "ATTORNEY",
@@ -33661,14 +33579,14 @@
     "count": 7
    },
    {
-    "employer": "JANE STREET",
+    "employer": "NEW MOUNTAIN CAPITAL",
     "total": 14000.0,
-    "count": 6
+    "count": 4
    }
   ],
   "committee_id": "C00806018",
   "source": "https://www.fec.gov/data/candidate/H2NY01190/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33760,8 +33678,13 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 32947.8,
-    "count": 51
+    "total": 34781.13,
+    "count": 53
+   },
+   {
+    "employer": "SOUTHWEST AIRLINES",
+    "total": 28500.0,
+    "count": 18
    },
    {
     "employer": "BLACKSTONE",
@@ -33769,24 +33692,19 @@
     "count": 13
    },
    {
-    "employer": "SOUTHWEST AIRLINES",
-    "total": 21000.0,
-    "count": 15
-   },
-   {
     "employer": "ANDREESSEN HOROWITZ",
     "total": 20000.0,
-    "count": 6
-   },
-   {
-    "employer": "APOLLO",
-    "total": 17000.0,
     "count": 6
    },
    {
     "employer": "MICROSOFT",
     "total": 16000.0,
     "count": 13
+   },
+   {
+    "employer": "WINKLEVOSS CAPITAL MANAGEMENT",
+    "total": 14000.0,
+    "count": 4
    },
    {
     "employer": "ARNOLD VENTURES",
@@ -33796,7 +33714,7 @@
   ],
   "committee_id": "C00729954",
   "source": "https://www.fec.gov/data/candidate/H0NY02234/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [
    {
     "size": 0,
@@ -33924,7 +33842,7 @@
   ],
   "committee_id": "C00607200",
   "source": "https://www.fec.gov/data/candidate/H6NY03247/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34016,7 +33934,7 @@
   "top_employers": [],
   "committee_id": null,
   "source": "https://www.fec.gov/data/candidate/H4NY04158/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [],
   "states": [],
   "in_state": {
@@ -34082,7 +34000,7 @@
   ],
   "committee_id": "C00430991",
   "source": "https://www.fec.gov/data/candidate/H8NY06048/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34174,13 +34092,13 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 57805.0,
-    "count": 66
+    "total": 59805.0,
+    "count": 68
    },
    {
     "employer": "NULL",
-    "total": 35600.0,
-    "count": 28
+    "total": 37100.0,
+    "count": 30
    },
    {
     "employer": "ANTHROPIC",
@@ -34210,7 +34128,7 @@
   ],
   "committee_id": "C00516666",
   "source": "https://www.fec.gov/data/candidate/H2NY06116/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:37+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34338,7 +34256,7 @@
   ],
   "committee_id": "C00271312",
   "source": "https://www.fec.gov/data/candidate/H2NY00010/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34430,13 +34348,13 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 102090.0,
-    "count": 52
+    "total": 132690.0,
+    "count": 67
    },
    {
     "employer": "CAPITAL GROUP",
-    "total": 62680.0,
-    "count": 42
+    "total": 62740.0,
+    "count": 45
    },
    {
     "employer": "BLACKSTONE",
@@ -34444,14 +34362,19 @@
     "count": 12
    },
    {
+    "employer": "MARQUIS MANAGEMENT, LLC",
+    "total": 40000.0,
+    "count": 13
+   },
+   {
+    "employer": "BGR GROUP",
+    "total": 37500.0,
+    "count": 17
+   },
+   {
     "employer": "THEGROUP",
     "total": 31500.0,
     "count": 9
-   },
-   {
-    "employer": "MARQUIS MANAGEMENT, LLC",
-    "total": 25000.0,
-    "count": 8
    },
    {
     "employer": "SELF",
@@ -34461,7 +34384,7 @@
   ],
   "committee_id": "C00503052",
   "source": "https://www.fec.gov/data/candidate/H2NY10092/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34552,12 +34475,12 @@
   "self_funded": 0,
   "top_employers": [
    {
-    "employer": "ANTHROPIC",
+    "employer": "KALSHI",
     "total": 14000.0,
     "count": 4
    },
    {
-    "employer": "KALSHI",
+    "employer": "ANTHROPIC",
     "total": 14000.0,
     "count": 4
    },
@@ -34572,7 +34495,7 @@
     "count": 5
    },
    {
-    "employer": "XYZ VENTURE CAPITAL",
+    "employer": "THE AUGUST COMPANY",
     "total": 7000.0,
     "count": 2
    },
@@ -34587,14 +34510,14 @@
     "count": 2
    },
    {
-    "employer": "THE AUGUST COMPANY",
+    "employer": "XYZ VENTURE CAPITAL",
     "total": 7000.0,
     "count": 2
    }
   ],
   "committee_id": "C00415331",
   "source": "https://www.fec.gov/data/candidate/H4NY11138/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:03+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34727,7 +34650,7 @@
   ],
   "committee_id": "C00816660",
   "source": "https://www.fec.gov/data/candidate/H2NY10308/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:04+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34850,7 +34773,7 @@
   ],
   "committee_id": "C00694778",
   "source": "https://www.fec.gov/data/candidate/H0NY11078/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:04+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -34983,7 +34906,7 @@
   ],
   "committee_id": "C00290825",
   "source": "https://www.fec.gov/data/candidate/H2NY17071/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35084,7 +35007,7 @@
    {
     "employer": "SELF",
     "total": 139350.0,
-    "count": 107
+    "count": 109
    },
    {
     "employer": "NEWYORK-PRESBYTERIAN",
@@ -35098,8 +35021,8 @@
    },
    {
     "employer": "NULL",
-    "total": 16020.0,
-    "count": 19
+    "total": 16620.0,
+    "count": 20
    },
    {
     "employer": "SESSA CAPITAL",
@@ -35109,7 +35032,7 @@
   ],
   "committee_id": "C00701953",
   "source": "https://www.fec.gov/data/candidate/H2NY13096/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35201,43 +35124,43 @@
   "top_employers": [
    {
     "employer": "GOOGLE",
-    "total": 43263.5,
-    "count": 707
+    "total": 48949.25,
+    "count": 885
    },
    {
     "employer": "MICROSOFT",
-    "total": 17985.75,
-    "count": 344
+    "total": 20109.0,
+    "count": 420
    },
    {
     "employer": "APPLE",
-    "total": 13824.0,
-    "count": 174
-   },
-   {
-    "employer": "NVIDIA CORPORATION",
-    "total": 12042.5,
-    "count": 78
+    "total": 14163.13,
+    "count": 188
    },
    {
     "employer": "AMAZON",
-    "total": 11583.75,
-    "count": 251
+    "total": 12803.75,
+    "count": 306
+   },
+   {
+    "employer": "NYU",
+    "total": 12695.0,
+    "count": 153
+   },
+   {
+    "employer": "NVIDIA CORPORATION",
+    "total": 12555.0,
+    "count": 88
    },
    {
     "employer": "COLUMBIA UNIVERSITY",
-    "total": 9608.13,
-    "count": 271
-   },
-   {
-    "employer": "META",
-    "total": 9395.0,
-    "count": 116
+    "total": 11685.39,
+    "count": 364
    }
   ],
   "committee_id": "C00639591",
   "source": "https://www.fec.gov/data/candidate/H8NY15148/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35355,7 +35278,7 @@
   ],
   "committee_id": "C00699744",
   "source": "https://www.fec.gov/data/candidate/H0NY15160/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35483,7 +35406,7 @@
   ],
   "committee_id": "C00859041",
   "source": "https://www.fec.gov/data/candidate/H4NY16087/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35611,7 +35534,7 @@
   ],
   "committee_id": "C00815415",
   "source": "https://www.fec.gov/data/candidate/H2NY17162/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35707,14 +35630,14 @@
     "count": 16
    },
    {
+    "employer": "ANTHROPIC",
+    "total": 27000.0,
+    "count": 11
+   },
+   {
     "employer": "POWER ROGERS LLP",
     "total": 24000.0,
     "count": 9
-   },
-   {
-    "employer": "ANTHROPIC",
-    "total": 23500.0,
-    "count": 10
    },
    {
     "employer": "ANDURIL INDUSTRIES",
@@ -35727,14 +35650,14 @@
     "count": 9
    },
    {
-    "employer": "PAUL WEISS LLP",
-    "total": 17500.0,
-    "count": 6
-   },
-   {
     "employer": "SHIFT5",
     "total": 17500.0,
     "count": 15
+   },
+   {
+    "employer": "PAUL WEISS LLP",
+    "total": 17500.0,
+    "count": 6
    },
    {
     "employer": "INSIGHT PARTNERS",
@@ -35744,7 +35667,7 @@
   ],
   "committee_id": "C00815290",
   "source": "https://www.fec.gov/data/candidate/H8NY19223/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -35880,7 +35803,7 @@
   ],
   "committee_id": "C00793760",
   "source": "https://www.fec.gov/data/candidate/H8NY22177/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36013,7 +35936,7 @@
   ],
   "committee_id": "C00450049",
   "source": "https://www.fec.gov/data/candidate/H8NY21203/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36105,8 +36028,8 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 164910.26,
-    "count": 1089
+    "total": 164910.76,
+    "count": 1090
    },
    {
     "employer": "SELF",
@@ -36119,19 +36042,19 @@
     "count": 4
    },
    {
-    "employer": "CORCORAN PARTNERS",
-    "total": 14000.0,
-    "count": 4
-   },
-   {
     "employer": "BLUE OWL CAPITAL",
     "total": 14000.0,
     "count": 6
+   },
+   {
+    "employer": "CORCORAN PARTNERS",
+    "total": 14000.0,
+    "count": 4
    }
   ],
   "committee_id": "C00547893",
   "source": "https://www.fec.gov/data/candidate/H4NY21079/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36264,7 +36187,7 @@
   ],
   "committee_id": "C00845461",
   "source": "https://www.fec.gov/data/candidate/H4NY22085/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36400,7 +36323,7 @@
   ],
   "committee_id": "C00817932",
   "source": "https://www.fec.gov/data/candidate/H2NY23228/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36492,13 +36415,18 @@
   "top_employers": [
    {
     "employer": "NULL",
-    "total": 60041.3,
-    "count": 100
+    "total": 64251.3,
+    "count": 118
    },
    {
     "employer": "SELF",
-    "total": 27820.06,
-    "count": 363
+    "total": 30768.71,
+    "count": 432
+   },
+   {
+    "employer": "DUCHOSSOIS CAPITAL MANAGEMENT",
+    "total": 14000.0,
+    "count": 4
    },
    {
     "employer": "BLUFF POINT ASSOC.",
@@ -36516,11 +36444,6 @@
     "count": 4
    },
    {
-    "employer": "DUCHOSSOIS CAPITAL MANAGEMENT",
-    "total": 14000.0,
-    "count": 4
-   },
-   {
     "employer": "ADVANTAGE CAPITAL",
     "total": 13300.0,
     "count": 9
@@ -36528,7 +36451,7 @@
   ],
   "committee_id": "C00632828",
   "source": "https://www.fec.gov/data/candidate/H4NY22051/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36639,11 +36562,6 @@
     "count": 3
    },
    {
-    "employer": "EOPTIC",
-    "total": 10500.0,
-    "count": 3
-   },
-   {
     "employer": "CONSTELLATION BRANDS",
     "total": 10500.0,
     "count": 3
@@ -36654,6 +36572,11 @@
     "count": 4
    },
    {
+    "employer": "EOPTIC",
+    "total": 10500.0,
+    "count": 3
+   },
+   {
     "employer": "ROCHESTER REGIONAL HEALTH",
     "total": 9250.0,
     "count": 11
@@ -36661,7 +36584,7 @@
   ],
   "committee_id": "C00675108",
   "source": "https://www.fec.gov/data/candidate/H8NY25105/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36777,19 +36700,19 @@
     "count": 5
    },
    {
+    "employer": "MARK CERRONE, INC.",
+    "total": 12000.0,
+    "count": 3
+   },
+   {
     "employer": "AUBURN COMMUNITY HOSPITAL",
     "total": 11600.0,
     "count": 4
-   },
-   {
-    "employer": "HODGSON RUSS, LLP",
-    "total": 11351.76,
-    "count": 10
    }
   ],
   "committee_id": "C00856526",
   "source": "https://www.fec.gov/data/candidate/H4NY26078/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -36917,7 +36840,7 @@
   ],
   "committee_id": "C00800276",
   "source": "https://www.fec.gov/data/candidate/H2OH01194/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:38+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37009,8 +36932,8 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 36253.87,
-    "count": 107
+    "total": 33003.87,
+    "count": 104
    },
    {
     "employer": "WINKLEVOSS CAPITAL MANAGEMENT",
@@ -37033,24 +36956,24 @@
     "count": 5
    },
    {
+    "employer": "NULL",
+    "total": 12250.0,
+    "count": 9
+   },
+   {
     "employer": "AMERICAN FINANCIAL",
     "total": 11500.0,
     "count": 5
    },
    {
-    "employer": "NULL",
-    "total": 11250.0,
-    "count": 8
-   },
-   {
     "employer": "TWINS BUICK GMC",
-    "total": 8000.0,
-    "count": 6
+    "total": 10500.0,
+    "count": 7
    }
   ],
   "committee_id": "C00860213",
   "source": "https://www.fec.gov/data/candidate/H4OH02248/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37183,7 +37106,7 @@
   ],
   "committee_id": "C00507368",
   "source": "https://www.fec.gov/data/candidate/H2OH03125/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37311,7 +37234,7 @@
   ],
   "committee_id": "C00416594",
   "source": "https://www.fec.gov/data/candidate/H6OH04082/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37402,19 +37325,19 @@
   "self_funded": 0,
   "top_employers": [
    {
-    "employer": "NA",
-    "total": 40050.0,
-    "count": 54
+    "employer": "SELF",
+    "total": 41150.0,
+    "count": 42
    },
    {
-    "employer": "SELF",
-    "total": 34500.0,
-    "count": 33
+    "employer": "NA",
+    "total": 40800.0,
+    "count": 56
    },
    {
     "employer": "MISSION STRATEGIES",
-    "total": 20250.0,
-    "count": 17
+    "total": 21000.0,
+    "count": 18
    },
    {
     "employer": "RW BECKETT",
@@ -37422,29 +37345,29 @@
     "count": 6
    },
    {
+    "employer": "NULL",
+    "total": 9612.5,
+    "count": 16
+   },
+   {
+    "employer": "BLOCK COMMUNICATIONS, INC.",
+    "total": 8000.0,
+    "count": 3
+   },
+   {
     "employer": "ANDREESSEN HOROWITZ",
     "total": 8000.0,
     "count": 3
    },
    {
-    "employer": "ARNOLD VENTURES",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "PARKER STEEL",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "BARD MANUFACTURING CO",
+    "employer": "COOPER FARMS HATCHERY",
     "total": 7000.0,
     "count": 2
    }
   ],
   "committee_id": "C00438697",
   "source": "https://www.fec.gov/data/candidate/H8OH05036/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37577,7 +37500,7 @@
   ],
   "committee_id": "C00858415",
   "source": "https://www.fec.gov/data/candidate/H4OH06165/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:05+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37705,7 +37628,7 @@
   ],
   "committee_id": "C00770818",
   "source": "https://www.fec.gov/data/candidate/H2OH16051/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37833,7 +37756,7 @@
   ],
   "committee_id": "C00600718",
   "source": "https://www.fec.gov/data/candidate/H6OH08315/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -37925,13 +37848,13 @@
   "top_employers": [
    {
     "employer": "NO EMPLOYER",
-    "total": 139674.19,
-    "count": 94
+    "total": 159971.75,
+    "count": 110
    },
    {
     "employer": "SELF",
-    "total": 97271.96,
-    "count": 188
+    "total": 145195.45,
+    "count": 297
    },
    {
     "employer": "INSIGHT PARTNERS",
@@ -37939,19 +37862,14 @@
     "count": 6
    },
    {
-    "employer": "BESSEMER VENTURE PARTNERS",
-    "total": 14000.0,
-    "count": 4
-   },
-   {
-    "employer": "DE SHAW & CO",
+    "employer": "VIPO US",
     "total": 14000.0,
     "count": 4
    }
   ],
   "committee_id": "C00154625",
   "source": "https://www.fec.gov/data/candidate/H2OH09031/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38084,7 +38002,7 @@
   ],
   "committee_id": "C00373001",
   "source": "https://www.fec.gov/data/candidate/H2OH03067/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38212,7 +38130,7 @@
   ],
   "committee_id": "C00764381",
   "source": "https://www.fec.gov/data/candidate/H2OH11169/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38335,7 +38253,7 @@
   ],
   "committee_id": "C00662650",
   "source": "https://www.fec.gov/data/candidate/H8OH12180/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38424,51 +38342,10 @@
   "pacs": 1261004.24,
   "party": 7194.43,
   "self_funded": 0,
-  "top_employers": [
-   {
-    "employer": "JANE STREET",
-    "total": 10500.0,
-    "count": 3
-   },
-   {
-    "employer": "BERKSHIRE PARTNERS",
-    "total": 8333.33,
-    "count": 3
-   },
-   {
-    "employer": "BGR GROUP",
-    "total": 8250.0,
-    "count": 10
-   },
-   {
-    "employer": "CAPITAL GROUP",
-    "total": 7500.0,
-    "count": 3
-   },
-   {
-    "employer": "CALIFORNIA INSTITUTE OF THE ARTS",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "GIVE FORWARD FOUNDATION",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "COOL EFFECT",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "INTRAFI",
-    "total": 7000.0,
-    "count": 2
-   }
-  ],
+  "top_employers": [],
   "committee_id": "C00801274",
   "source": "https://www.fec.gov/data/candidate/H2OH13264/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38560,13 +38437,13 @@
   "top_employers": [
    {
     "employer": "SELF",
-    "total": 24630.0,
-    "count": 14
+    "total": 28130.0,
+    "count": 15
    },
    {
     "employer": "NULL",
-    "total": 21442.5,
-    "count": 11
+    "total": 26442.5,
+    "count": 14
    },
    {
     "employer": "K & D",
@@ -38574,22 +38451,22 @@
     "count": 4
    },
    {
+    "employer": "NA",
+    "total": 9500.0,
+    "count": 5
+   },
+   {
+    "employer": "LNE GROUP",
+    "total": 7500.0,
+    "count": 5
+   },
+   {
     "employer": "HOLLAND  KNIGHT",
     "total": 7300.0,
     "count": 4
    },
    {
-    "employer": "BLACKSTONE",
-    "total": 7000.0,
-    "count": 2
-   },
-   {
-    "employer": "TRIMBLE",
-    "total": 7000.0,
-    "count": 3
-   },
-   {
-    "employer": "ARROW INTERNATIONAL",
+    "employer": "ANDURIL INDUSTRIES, INC.",
     "total": 7000.0,
     "count": 2
    },
@@ -38601,7 +38478,7 @@
   ],
   "committee_id": "C00527457",
   "source": "https://www.fec.gov/data/candidate/H2OH14064/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38693,8 +38570,8 @@
   "top_employers": [
    {
     "employer": "GAMECHANGE SOLAR",
-    "total": 36600.0,
-    "count": 18
+    "total": 43600.0,
+    "count": 21
    },
    {
     "employer": "CARESOURCE",
@@ -38717,24 +38594,24 @@
     "count": 10
    },
    {
+    "employer": "HASLAM SPORTS GROUP",
+    "total": 14000.0,
+    "count": 4
+   },
+   {
     "employer": "KIMBALL MIDWEST",
     "total": 14000.0,
     "count": 6
    },
    {
-    "employer": "ROSEBUD MINING CO.",
+    "employer": "BLACKSTONE",
     "total": 14000.0,
-    "count": 4
-   },
-   {
-    "employer": "AMERICAN FINANCIAL CORP.",
-    "total": 14000.0,
-    "count": 4
+    "count": 7
    }
   ],
   "committee_id": "C00779603",
   "source": "https://www.fec.gov/data/candidate/H2OH15228/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:39+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38857,7 +38734,7 @@
   ],
   "committee_id": "C00636092",
   "source": "https://www.fec.gov/data/candidate/H8OK01157/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:41+00:00",
   "sizes": [
    {
     "size": 0,
@@ -38948,12 +38825,12 @@
   "self_funded": 0,
   "top_employers": [
    {
-    "employer": "PALM BEACH COMPUTER CONSULTANTS",
-    "total": 3500.0,
-    "count": 1
+    "employer": "CHANT HEALTHCARE",
+    "total": 4000.0,
+    "count": 16
    },
    {
-    "employer": "LEVINSON LAW PC",
+    "employer": "ARNOLD VENTURES",
     "total": 3500.0,
     "count": 1
    },
@@ -38963,29 +38840,29 @@
     "count": 1
    },
    {
-    "employer": "REVO FINANCIAL",
-    "total": 3500.0,
-    "count": 1
-   },
-   {
-    "employer": "ARNOLD VENTURES",
-    "total": 3500.0,
-    "count": 1
-   },
-   {
     "employer": "EFFECTIVE THERAPEUTIC TEACHING LEARNIN",
     "total": 3500.0,
     "count": 1
    },
    {
-    "employer": "TRINITY STRATEGIC WEALTH",
-    "total": 3300.0,
+    "employer": "LEVINSON LAW PC",
+    "total": 3500.0,
+    "count": 1
+   },
+   {
+    "employer": "REVO FINANCIAL",
+    "total": 3500.0,
+    "count": 1
+   },
+   {
+    "employer": "PALM BEACH COMPUTER CONSULTANTS",
+    "total": 3500.0,
     "count": 1
    }
   ],
   "committee_id": "C00812974",
   "source": "https://www.fec.gov/data/candidate/H2OK02315/?cycle=2026&election_full=true",
-  "fetched": "2026-11-16T18:06+00:00",
+  "fetched": "2026-11-21T19:41+00:00",
   "sizes": [
    {
     "size": 0,
