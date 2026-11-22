@@ -1094,7 +1094,7 @@
           "incumbent": true,
           "bioguide": "M001176",
           "candidate_id": "S8OR00207",
-          "votes": 1138894,
+          "votes": 1143907,
           "pct": 58.1
         },
         {
@@ -1102,14 +1102,14 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6OR05218",
-          "votes": 757034,
+          "votes": 759135,
           "pct": 38.6
         },
         {
           "name": "Chris Henry",
           "party": "GRE",
           "incumbent": false,
-          "votes": 44208,
+          "votes": 44433,
           "pct": 2.3
         },
         {
@@ -1117,7 +1117,7 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S0OR00378",
-          "votes": 20095,
+          "votes": 20180,
           "pct": 1.0
         }
       ],
@@ -1125,9 +1125,9 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-jeff-merkley-wins-reelection-to-u-s-senate-from-oregon/",
-      "notes": "Decision Desk HQ also projected Merkley. Percentages include write-ins; mail ballots are still being counted.",
-      "updated": "2026-11-15T00:05Z",
-      "results_as_of": "2026-11-14T11:45-08:00",
+      "notes": "Decision Desk HQ also projected Merkley. Percentages include write-ins; results remain unofficial until state certification.",
+      "updated": "2026-11-23T00:05Z",
+      "results_as_of": "2026-11-22T14:45-08:00",
       "results_source": "https://results.oregonvotes.gov/resultsSW.aspx?type=FED&map=CTY",
       "results_source_name": "Oregon Secretary of State (unofficial results)",
       "certify_by": "2026-12-10"
