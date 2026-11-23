@@ -378,7 +378,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IL00458",
-          "votes": 2619963,
+          "votes": 2620386,
           "pct": 62.1
         },
         {
@@ -386,7 +386,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IL00615",
-          "votes": 1533964,
+          "votes": 1534193,
           "pct": 36.3
         },
         {
@@ -394,7 +394,7 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6IL00680",
-          "votes": 67352,
+          "votes": 67369,
           "pct": 1.6
         }
       ],
@@ -403,8 +403,8 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
       "notes": "NBC News also projected Stratton. Exact call time not reported.",
-      "updated": "2026-11-20T23:55Z",
-      "results_as_of": "2026-11-20",
+      "updated": "2026-11-24T00:30Z",
+      "results_as_of": "2026-11-23",
       "results_source": "https://www.nbcchicago.com/elections/who-won-illinois-live-election-results-and-winners-from-the-2026-midterm-election/4012160/",
       "results_source_name": "NBC News Decision Desk via NBC Chicago",
       "counted_pct": 98.8
@@ -594,8 +594,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T06:02Z",
       "source_url": "https://www.ckom.com/2026/11/04/democrat-troy-jackson-wins-election-to-u-s-senate-from-maine/",
-      "notes": "Ranked-choice voting; Jackson won a first-round majority, so no further rounds. Collins conceded.",
-      "updated": "2026-11-21T23:30Z",
+      "notes": "Ranked-choice voting; Jackson won a first-round majority, so no further rounds. News reports say the Secretary of State certified the results on Nov. 23; an official state page with the certified figures was not found this run.",
+      "updated": "2026-11-24T00:30Z",
       "results_as_of": "2026-11-17",
       "results_source": "https://www.poliwave.com/us/live/midterms-2026/senate/maine",
       "results_source_name": "Associated Press via Poliwave",
@@ -635,8 +635,8 @@
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T06:15Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117863335920296120",
-      "notes": "Under the state's schedule, county canvass boards were to certify by Nov. 17 and the Board of State Canvassers must certify by Nov. 23; results are official only after state certification.",
-      "updated": "2026-11-20T23:55Z",
+      "notes": "News reports say the Board of State Canvassers voted to certify the results on Nov. 23; an official state page with the certified figures was not found this run, so status stays called.",
+      "updated": "2026-11-24T00:30Z",
       "results_as_of": "2026-11-10T16:46-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/michigan-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -828,7 +828,7 @@
           "incumbent": true,
           "bioguide": "R000618",
           "candidate_id": "S6NE00129",
-          "votes": 382374,
+          "votes": 382400,
           "pct": 49.8
         },
         {
@@ -836,14 +836,14 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4NE00207",
-          "votes": 338731,
+          "votes": 338740,
           "pct": 44.2
         },
         {
           "name": "Robin Richards",
           "party": "OTH",
           "incumbent": false,
-          "votes": 20044,
+          "votes": 20047,
           "pct": 2.6
         },
         {
@@ -851,7 +851,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6NE00152",
-          "votes": 16735,
+          "votes": 16737,
           "pct": 2.2
         },
         {
@@ -868,9 +868,9 @@
       "called_at": "2026-11-04T08:27Z",
       "source_url": "https://www.kjct8.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
       "notes": "No Democratic nominee. CBS News and NBC News also projected Ricketts; the state still labels its count unofficial, and the Board of State Canvassers meets Nov. 30 to certify results.",
-      "updated": "2026-11-20T23:55Z",
-      "results_as_of": "2026-11-20",
-      "results_source": "https://electionresults.nebraska.gov/resultsSW.aspx",
+      "updated": "2026-11-24T00:30Z",
+      "results_as_of": "2026-11-23",
+      "results_source": "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
       "results_source_name": "Nebraska Secretary of State (unofficial results)",
       "certify_by": "2026-11-30",
       "counted_pct": 100.0
