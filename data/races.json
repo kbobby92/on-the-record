@@ -12,7 +12,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6AK00276",
-          "votes": 144486,
+          "votes": 144583,
           "pct": 50.1
         },
         {
@@ -21,7 +21,7 @@
           "incumbent": true,
           "bioguide": "S001198",
           "candidate_id": "S4AK00214",
-          "votes": 131965,
+          "votes": 132022,
           "pct": 45.8
         },
         {
@@ -29,7 +29,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6AK00326",
-          "votes": 4765,
+          "votes": 4767,
           "pct": 1.7
         },
         {
@@ -37,7 +37,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S8AK00140",
-          "votes": 6105,
+          "votes": 6107,
           "pct": 2.1
         }
       ],
@@ -45,45 +45,46 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-18T03:19Z",
       "source_url": "https://abcnews.com/Politics/democrat-mary-peltola-wins-alaska-senate-race-defeating/story?id=137983873",
-      "notes": "The AP projected Peltola the winner on Nov. 17. The Division of Elections finished its final count on Nov. 18 with Peltola above 50% of first-choice votes; state certification is scheduled for Nov. 25.",
-      "updated": "2026-11-21T23:30Z",
-      "results_as_of": "2026-11-18",
-      "results_source": "https://foxnews.com/elections/2026/midterm-results/state/alaska",
-      "results_source_name": "Associated Press via Fox News",
+      "notes": "The AP projected Peltola the winner on Nov. 17. The Division of Elections still labels the results unofficial and plans to certify on Nov. 25.",
+      "updated": "2026-11-24T23:57Z",
+      "results_as_of": "2026-11-23T10:54-09:00",
+      "results_source": "https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf",
+      "results_source_name": "Alaska Division of Elections",
       "certify_by": "2026-11-25",
-      "counted_pct": 99
+      "counted_pct": 100
     },
     "AL": {
       "seat_holder": "T000278",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Barry Moore",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6AL00476",
-          "votes": 917914,
-          "pct": 54.8
+          "votes": 918207,
+          "pct": 54.7
         },
         {
           "name": "Everett Wess",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6AL00518",
-          "votes": 758480,
+          "votes": 759018,
           "pct": 45.2
         }
       ],
       "winner": "Barry Moore",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:17Z",
-      "source_url": "https://www.ckom.com/2026/11/03/republican-barry-moore-wins-election-to-u-s-senate-from-alabama/",
-      "notes": "",
-      "updated": "2026-11-15T23:55Z",
-      "results_as_of": "2026-11-12T13:05-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/alabama-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
-      "certify_by": "2026-11-25"
+      "source_url": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "notes": "The State Canvassing Board certified the general election results on Nov. 23, per the Secretary of State. The certified Senate figures could not be retrieved, so the counts shown are AP's.",
+      "updated": "2026-11-24T23:57Z",
+      "results_as_of": "2026-11-24",
+      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/alabama",
+      "results_source_name": "Associated Press via Fox News",
+      "certify_by": "2026-11-25",
+      "counted_pct": 100
     },
     "AR": {
       "seat_holder": "C001095",
@@ -135,7 +136,7 @@
           "incumbent": true,
           "bioguide": "H000273",
           "candidate_id": "S0CO00575",
-          "votes": 1613608,
+          "votes": 1629507,
           "pct": 60.5
         },
         {
@@ -143,7 +144,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6CO00507",
-          "votes": 935147,
+          "votes": 942089,
           "pct": 35.0
         },
         {
@@ -151,14 +152,14 @@
           "party": "FWD",
           "incumbent": false,
           "candidate_id": "S6CO00549",
-          "votes": 70186,
+          "votes": 70794,
           "pct": 2.6
         },
         {
           "name": "Blake Huber",
           "party": "LIB",
           "incumbent": false,
-          "votes": 32656,
+          "votes": 33136,
           "pct": 1.2
         }
       ],
@@ -167,11 +168,11 @@
       "called_at": "2026-11-04T02:00Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-john-hickenlooper-wins-reelection-to-u-s-senate-from-colorado/",
       "notes": "CBS News also projected Hickenlooper; Unity Party and Approval Voting Party candidates were also on the ballot, each under 1%. The statewide post-election risk-limiting audit was completed Nov. 19; county canvass boards must approve final tallies by Nov. 25, ahead of the Nov. 30 state certification deadline.",
-      "updated": "2026-11-20T23:55Z",
-      "results_as_of": "2026-11-11T18:51-05:00",
+      "updated": "2026-11-24T23:57Z",
+      "results_as_of": "2026-11-24",
       "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/colorado",
       "results_source_name": "Associated Press via Fox News",
-      "counted_pct": 98.09,
+      "counted_pct": 99,
       "certify_by": "2026-11-30"
     },
     "DE": {
@@ -313,8 +314,8 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:35Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-josh-turek-wins-election-to-u-s-senate-from-iowa/",
-      "notes": "The State Canvassing Board is expected to certify statewide results by Nov. 30.",
-      "updated": "2026-11-20T23:55Z",
+      "notes": "News reports say the State Board of Canvass certified the results on Nov. 24; no official state certification page was found this run, so the status is unchanged.",
+      "updated": "2026-11-24T23:57Z",
       "results_as_of": "2026-11-16T11:28-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/iowa-us-senate-general-election",
       "results_source_name": "Decision Desk HQ",
@@ -562,11 +563,12 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T01:01Z",
       "source_url": "https://www.ckom.com/2026/11/03/democrat-edward-markey-wins-reelection-to-u-s-senate-from-massachusetts/",
-      "notes": "Joseph Tache was the Party for Socialism and Liberation nominee. Figures are from the state's election statistics database; statewide certification by the governor and Governor's Council was expected around Dec. 2.",
-      "updated": "2026-11-20T23:55Z",
+      "notes": "Joseph Tache was the Party for Socialism and Liberation nominee. Figures are from the state's election statistics database; statewide certification is scheduled for Dec. 1.",
+      "updated": "2026-11-24T23:57Z",
       "results_as_of": "2026-11-20",
       "results_source": "https://electionstats.state.ma.us/elections/search/",
-      "results_source_name": "Massachusetts Secretary of the Commonwealth (PD43+ election statistics)"
+      "results_source_name": "Massachusetts Secretary of the Commonwealth (PD43+ election statistics)",
+      "certify_by": "2026-12-01"
     },
     "ME": {
       "seat_holder": "C001035",
@@ -604,14 +606,14 @@
     },
     "MI": {
       "seat_holder": "P000595",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Mike Rogers",
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S4MI00595",
-          "votes": 2181112,
+          "votes": 2181111,
           "pct": 45.5
         },
         {
@@ -619,7 +621,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MI00418",
-          "votes": 2520889,
+          "votes": 2520895,
           "pct": 52.5
         },
         {
@@ -627,20 +629,21 @@
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6MI00442",
-          "votes": 49743,
+          "votes": 49707,
           "pct": 1.0
         }
       ],
       "winner": "Abdul El-Sayed",
       "called_by": "Decision Desk HQ",
       "called_at": "2026-11-04T06:15Z",
-      "source_url": "https://x.com/DecisionDeskHQ/status/2117863335920296120",
-      "notes": "News reports say the Board of State Canvassers voted to certify the results on Nov. 23; an official state page with the certified figures was not found this run, so status stays called.",
-      "updated": "2026-11-24T00:30Z",
-      "results_as_of": "2026-11-10T16:46-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/michigan-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
-      "certify_by": "2026-11-23"
+      "source_url": "https://www.michigan.gov/sos/resources/news/2026/11/23/michigan-board-of-state-canvassers-certifies-record-breaking-2026-general-election",
+      "notes": "The Board of State Canvassers certified the general election on Nov. 23, per the Secretary of State. The official canvass figures were not retrieved, so the counts shown are AP's.",
+      "updated": "2026-11-24T23:57Z",
+      "results_as_of": "2026-11-24T14:08-05:00",
+      "results_source": "https://www.poliwave.com/us/live/midterms-2026/senate/michigan",
+      "results_source_name": "Associated Press via Poliwave",
+      "certify_by": "2026-11-23",
+      "counted_pct": 99
     },
     "MN": {
       "seat_holder": "S001203",
@@ -700,23 +703,23 @@
           "incumbent": true,
           "bioguide": "H001079",
           "candidate_id": "S8MS00261",
-          "votes": 471817,
-          "pct": 48.6
+          "votes": 472122,
+          "pct": 48.5
         },
         {
           "name": "Scott Colom",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6MS00133",
-          "votes": 479404,
-          "pct": 49.3
+          "votes": 480153,
+          "pct": 49.4
         },
         {
           "name": "Ty Pinkins",
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4MS00187",
-          "votes": 20439,
+          "votes": 20469,
           "pct": 2.1
         }
       ],
@@ -725,10 +728,10 @@
       "called_at": "2026-11-11",
       "source_url": "https://www.wlox.com/2026/11/11/ap-projects-democrat-scott-colom-winner-highly-contested-mississippi-us-senate-seat/",
       "notes": "AP projected Colom the winner on Nov. 11, after CNN's projection that afternoon; Hyde-Smith conceded the same day. Counties reported official results by Nov. 13, and the Secretary of State must declare the winner by Dec. 3; statewide certification has not been reported.",
-      "updated": "2026-11-19T23:55Z",
-      "results_as_of": "2026-11-13T23:47-06:00",
-      "results_source": "https://www.wlox.com/2026/11/14/ms-secretary-state-releases-final-election-numbers/",
-      "results_source_name": "Mississippi Secretary of State via WLOX",
+      "updated": "2026-11-24T23:57Z",
+      "results_as_of": "2026-11-20T16:57-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/mississippi-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-12-03"
     },
     "MT": {
@@ -773,15 +776,16 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.aol.com/articles/gop-alme-wins-montana-senate-061635000.html",
       "notes": "Sen. Steve Daines did not seek reelection. Bodnar conceded. AP had not called the race as of early Nov. 4. Exact call time not reported. Results remain unofficial pending the state canvass.",
-      "updated": "2026-11-20T23:55Z",
+      "updated": "2026-11-24T23:57Z",
       "results_as_of": "2026-11-20T09:40:17-07:00",
       "results_source": "https://electionresults.mt.gov/resultsSW.aspx?type=FED",
       "results_source_name": "Montana Secretary of State",
-      "counted_pct": 99.9
+      "counted_pct": 99.9,
+      "certify_by": "2026-11-30"
     },
     "NC": {
       "seat_holder": "T000476",
-      "status": "called",
+      "status": "certified",
       "nominees": [
         {
           "name": "Roy Cooper",
@@ -810,10 +814,10 @@
       "winner": "Roy Cooper",
       "called_by": "Associated Press",
       "called_at": "2026-11-04T01:23Z",
-      "source_url": "https://www.wbtv.com/2026/11/04/roy-cooper-wins-2026-us-senate-race-north-carolina-ap-projects/",
-      "notes": "Decision Desk HQ also called it at the same time.",
-      "updated": "2026-11-18T00:05Z",
-      "results_as_of": "2026-11-17T07:42-05:00",
+      "source_url": "https://www.ncsbe.gov/news/press-releases/2026/11/24/state-board-unanimously-certifies-midterm-elections",
+      "notes": "The State Board of Elections voted unanimously on Nov. 24 to certify the general election; the two contests held for recounts did not include the Senate race. Official canvass figures were not retrieved, so the counts shown are DDHQ's.",
+      "updated": "2026-11-24T23:57Z",
+      "results_as_of": "2026-11-24T08:26-05:00",
       "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/north-carolina-us-senate-general-election/results",
       "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-24"
