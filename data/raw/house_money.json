@@ -29961,78 +29961,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 498519.07
+    "total": 530465.86
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 20372.5
+    "total": 36802.5
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 87700.0
+    "total": 107550.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 232455.08
+    "total": 304705.08
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1088263.94
+    "total": 1238893.94
    }
   ],
   "states": [
    {
     "state": "NC",
-    "total": 798530.58
+    "total": 936500.18
    },
    {
     "state": "TX",
-    "total": 140176.59
+    "total": 148577.82
    },
    {
     "state": "VA",
-    "total": 100300.0
+    "total": 113978.17
    },
    {
     "state": "FL",
-    "total": 86524.9
-   },
-   {
-    "state": "DC",
-    "total": 49750.0
+    "total": 100238.89
    },
    {
     "state": "NY",
-    "total": 36169.99
+    "total": 65730.09
+   },
+   {
+    "state": "DC",
+    "total": 57000.0
    },
    {
     "state": "CA",
-    "total": 32997.46
+    "total": 55599.59
    },
    {
     "state": "OH",
-    "total": 31435.15
+    "total": 31690.65
+   },
+   {
+    "state": "MD",
+    "total": 26604.0
    },
    {
     "state": "CT",
-    "total": 24528.0
-   },
-   {
-    "state": "SC",
-    "total": 20454.22
+    "total": 25577.55
    }
   ],
   "in_state": {
-   "total": 798530.58,
-   "itemized": 1462479.32,
-   "pct": 54.6
+   "total": 936500.18,
+   "itemized": 1753586.11,
+   "pct": 53.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "H001101": {
   "candidate_id": "H2NC13243",
@@ -30160,7 +30160,7 @@
    "pct": 46.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "E000246": {
   "candidate_id": "H2NC14050",
@@ -30293,7 +30293,7 @@
    "pct": 51.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "A000370": {
   "candidate_id": "H4NC12100",
@@ -30350,22 +30350,22 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 24055.06
+    "total": 27501.56
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 10150.0
+    "total": 11550.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 12850.0
+    "total": 14950.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 35200.0
+    "total": 44200.0
    },
    {
     "size": 2000,
@@ -30376,7 +30376,7 @@
   "states": [
    {
     "state": "NC",
-    "total": 60985.0
+    "total": 74205.0
    },
    {
     "state": "TN",
@@ -30400,7 +30400,7 @@
    },
    {
     "state": "MT",
-    "total": 1500.0
+    "total": 1800.0
    },
    {
     "state": "CA",
@@ -30412,16 +30412,16 @@
    },
    {
     "state": "GA",
-    "total": 75.0
+    "total": 112.5
    }
   ],
   "in_state": {
-   "total": 60985.0,
-   "itemized": 82310.0,
-   "pct": 74.1
+   "total": 74205.0,
+   "itemized": 95867.5,
+   "pct": 77.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "K000405": {
   "candidate_id": "H4NC13116",
@@ -30544,7 +30544,7 @@
    "pct": 77.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "M001236": {
   "candidate_id": "H4NC14015",
@@ -30672,7 +30672,7 @@
    "pct": 81.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "F000482": {
   "candidate_id": "H4ND00061",
@@ -30800,7 +30800,7 @@
    "pct": 67.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:39+00:00"
  },
  "F000474": {
   "candidate_id": "H2NE01118",
@@ -30933,7 +30933,7 @@
    "pct": 64.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "B001298": {
   "candidate_id": "H6NE02125",
@@ -31056,7 +31056,7 @@
    "pct": 19.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "S001172": {
   "candidate_id": "H6NE03115",
@@ -31179,7 +31179,7 @@
    "pct": 52.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "P000614": {
   "candidate_id": "H8NH01210",
@@ -31225,7 +31225,7 @@
    "pct": null
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "G000604": {
   "candidate_id": "H4NH02399",
@@ -31287,78 +31287,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 631570.2
+    "total": 658116.96
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 117781.16
+    "total": 154355.77
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 302727.42
+    "total": 347081.51
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 619500.22
+    "total": 710880.22
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2460840.1
+    "total": 2662990.1
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 772231.79
+    "total": 832397.06
    },
    {
     "state": "NH",
-    "total": 633831.92
+    "total": 764808.65
    },
    {
     "state": "CA",
-    "total": 428216.51
+    "total": 477281.51
    },
    {
     "state": "MA",
-    "total": 418825.14
+    "total": 466248.96
    },
    {
     "state": "DC",
-    "total": 260949.37
+    "total": 274034.02
    },
    {
     "state": "MD",
-    "total": 239716.65
+    "total": 250049.12
    },
    {
     "state": "CT",
-    "total": 147076.62
+    "total": 163371.62
    },
    {
     "state": "FL",
-    "total": 124533.55
+    "total": 141934.58
    },
    {
     "state": "IL",
-    "total": 124025.0
+    "total": 126225.0
    },
    {
     "state": "NJ",
-    "total": 77002.02
+    "total": 84252.02
    }
   ],
   "in_state": {
-   "total": 633831.92,
-   "itemized": 3540218.02,
-   "pct": 17.9
+   "total": 764808.65,
+   "itemized": 3941223.48,
+   "pct": 19.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "N000188": {
   "candidate_id": "H4NJ01084",
@@ -31486,7 +31486,7 @@
    "pct": 56.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "V000133": {
   "candidate_id": "H8NJ02166",
@@ -31614,7 +31614,7 @@
    "pct": 77.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "C001136": {
   "candidate_id": "H4NJ03080",
@@ -31747,7 +31747,7 @@
    "pct": 68.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:04+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "S000522": {
   "candidate_id": "H8NJ04014",
@@ -31809,78 +31809,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 134275.1
+    "total": 142923.1
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 21399.98
+    "total": 26749.98
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 40833.33
+    "total": 46833.33
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 54433.33
+    "total": 72933.33
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 139400.0
+    "total": 191900.0
    }
   ],
   "states": [
    {
     "state": "NJ",
-    "total": 181529.98
+    "total": 239772.98
    },
    {
     "state": "VA",
-    "total": 17850.0
-   },
-   {
-    "state": "PA",
-    "total": 15700.0
+    "total": 23900.0
    },
    {
     "state": "NY",
-    "total": 13500.0
+    "total": 22000.0
    },
    {
-    "state": "TX",
-    "total": 11300.0
+    "state": "PA",
+    "total": 16350.0
    },
    {
     "state": "MD",
-    "total": 9790.0
+    "total": 13990.0
+   },
+   {
+    "state": "TX",
+    "total": 11649.0
    },
    {
     "state": "CT",
-    "total": 7250.0
+    "total": 7251.0
    },
    {
     "state": "OT",
     "total": 6500.0
    },
    {
-    "state": "DC",
-    "total": 4250.0
+    "state": "WA",
+    "total": 5900.0
    },
    {
-    "state": "DE",
-    "total": 3800.0
+    "state": "DC",
+    "total": 5250.0
    }
   ],
   "in_state": {
-   "total": 181529.98,
-   "itemized": 278749.98,
-   "pct": 65.1
+   "total": 239772.98,
+   "itemized": 369747.98,
+   "pct": 64.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "G000583": {
   "candidate_id": "H6NJ05171",
@@ -31937,78 +31937,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 41647.61
+    "total": 47630.61
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 20930.0
+    "total": 24630.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 130585.71
+    "total": 140585.71
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 562106.12
+    "total": 592006.12
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2587453.41
+    "total": 2871328.41
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 870971.83
+    "total": 976966.83
    },
    {
     "state": "NJ",
-    "total": 623820.0
+    "total": 713658.0
    },
    {
     "state": "CA",
-    "total": 492998.42
+    "total": 523873.42
    },
    {
     "state": "FL",
-    "total": 271810.0
+    "total": 282560.0
    },
    {
     "state": "IL",
-    "total": 128150.0
-   },
-   {
-    "state": "MA",
-    "total": 127500.0
-   },
-   {
-    "state": "CT",
-    "total": 125650.0
+    "total": 142750.0
    },
    {
     "state": "TX",
-    "total": 124550.0
+    "total": 128550.0
    },
    {
-    "state": "PA",
-    "total": 68385.0
+    "state": "MA",
+    "total": 127900.0
+   },
+   {
+    "state": "CT",
+    "total": 126050.0
    },
    {
     "state": "MD",
-    "total": 66550.0
+    "total": 84066.0
+   },
+   {
+    "state": "PA",
+    "total": 81065.0
    }
   ],
   "in_state": {
-   "total": 623820.0,
-   "itemized": 3315567.25,
-   "pct": 18.8
+   "total": 713658.0,
+   "itemized": 3649025.25,
+   "pct": 19.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "P000034": {
   "candidate_id": "H8NJ03073",
@@ -32141,7 +32141,7 @@
    "pct": 33.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "K000398": {
   "candidate_id": "H0NJ07261",
@@ -32259,7 +32259,7 @@
    "pct": 32.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "M001226": {
   "candidate_id": "H2NJ08232",
@@ -32382,7 +32382,7 @@
    "pct": 40.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "P000621": {
   "candidate_id": "H4NJ09194",
@@ -32429,78 +32429,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 290354.17
+    "total": 298786.78
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 100433.7
+    "total": 121422.53
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 213557.7
+    "total": 234407.7
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 324459.55
+    "total": 368706.14
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 702278.75
+    "total": 772918.66
    }
   ],
   "states": [
    {
     "state": "NJ",
-    "total": 411968.13
+    "total": 483379.22
    },
    {
     "state": "NY",
-    "total": 212185.8
+    "total": 230994.13
    },
    {
     "state": "CA",
-    "total": 203782.35
+    "total": 221777.35
    },
    {
     "state": "MA",
-    "total": 120824.69
+    "total": 133048.66
    },
    {
     "state": "DC",
-    "total": 92906.67
+    "total": 101215.05
    },
    {
     "state": "MD",
-    "total": 50262.72
+    "total": 55475.49
    },
    {
     "state": "TX",
-    "total": 41741.66
+    "total": 47241.66
    },
    {
     "state": "FL",
-    "total": 34736.32
+    "total": 35594.01
    },
    {
     "state": "VA",
-    "total": 25488.08
+    "total": 33369.66
    },
    {
     "state": "PA",
-    "total": 24487.5
+    "total": 24902.5
    }
   ],
   "in_state": {
-   "total": 411968.13,
-   "itemized": 1370307.8,
-   "pct": 30.1
+   "total": 483379.22,
+   "itemized": 1535465.74,
+   "pct": 31.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "M001229": {
   "candidate_id": "H4NJ10176",
@@ -32623,7 +32623,7 @@
    "pct": 37.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "M001246": {
   "candidate_id": "H6NJ11286",
@@ -32746,7 +32746,7 @@
    "pct": 46.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "W000822": {
   "candidate_id": "H4NJ12149",
@@ -32779,7 +32779,7 @@
    "to_candidates": 323964.38,
    "source": "https://www.fec.gov/data/committee/C00558437/?cycle=2026"
   },
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:40+00:00"
  },
  "S001218": {
   "candidate_id": "H2NM01144",
@@ -32841,78 +32841,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 756911.25
+    "total": 815029.83
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 90889.66
+    "total": 118946.66
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 119925.09
+    "total": 139325.09
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 127600.0
+    "total": 156850.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 165898.0
+    "total": 191398.0
    }
   ],
   "states": [
    {
     "state": "NM",
-    "total": 439515.1
+    "total": 544618.08
    },
    {
     "state": "CA",
-    "total": 50479.5
-   },
-   {
-    "state": "TX",
-    "total": 24572.0
+    "total": 60014.5
    },
    {
     "state": "DC",
-    "total": 20095.0
+    "total": 30760.0
+   },
+   {
+    "state": "TX",
+    "total": 27396.0
    },
    {
     "state": "WA",
-    "total": 13900.0
+    "total": 22961.6
    },
    {
     "state": "AZ",
-    "total": 12487.5
-   },
-   {
-    "state": "MD",
-    "total": 11325.0
-   },
-   {
-    "state": "OK",
-    "total": 9900.0
+    "total": 19422.5
    },
    {
     "state": "VA",
-    "total": 9696.88
+    "total": 12271.88
+   },
+   {
+    "state": "MD",
+    "total": 11870.0
    },
    {
     "state": "FL",
-    "total": 9564.5
+    "total": 10400.0
+   },
+   {
+    "state": "OK",
+    "total": 10000.0
    }
   ],
   "in_state": {
-   "total": 439515.1,
-   "itemized": 669894.26,
+   "total": 544618.08,
+   "itemized": 830219.84,
    "pct": 65.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "V000136": {
   "candidate_id": "H2NM02191",
@@ -33040,7 +33040,7 @@
    "pct": 32.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:05+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "L000273": {
   "candidate_id": "H0NM03102",
@@ -33082,45 +33082,45 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 197532.63
+    "total": 214413.14
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 48741.68
+    "total": 57466.68
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 83225.0
+    "total": 96225.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 202720.21
+    "total": 248470.21
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 522266.67
+    "total": 638066.67
    }
   ],
   "states": [
    {
     "state": "NM",
-    "total": 541765.69
+    "total": 668347.92
    },
    {
     "state": "CA",
-    "total": 101705.0
-   },
-   {
-    "state": "NY",
-    "total": 36875.0
+    "total": 125595.0
    },
    {
     "state": "TX",
-    "total": 33850.0
+    "total": 41450.0
+   },
+   {
+    "state": "NY",
+    "total": 40575.0
    },
    {
     "state": "OK",
@@ -33128,32 +33128,32 @@
    },
    {
     "state": "WA",
-    "total": 24158.33
+    "total": 32445.11
+   },
+   {
+    "state": "DC",
+    "total": 25950.0
    },
    {
     "state": "MA",
     "total": 22875.0
    },
    {
-    "state": "DC",
-    "total": 18800.0
-   },
-   {
     "state": "AZ",
-    "total": 16797.5
+    "total": 16922.5
    },
    {
     "state": "MI",
-    "total": 11500.0
+    "total": 15000.0
    }
   ],
   "in_state": {
-   "total": 541765.69,
-   "itemized": 919514.52,
-   "pct": 58.9
+   "total": 668347.92,
+   "itemized": 1119670.03,
+   "pct": 59.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "T000468": {
   "candidate_id": "H8NV03036",
@@ -33289,7 +33289,7 @@
    "to_candidates": 63500.0,
    "source": "https://www.fec.gov/data/committee/C00450577/?cycle=2026"
   },
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "A000369": {
   "candidate_id": "H2NV02395",
@@ -33417,7 +33417,7 @@
    "pct": 66.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "L000590": {
   "candidate_id": "H6NV04020",
@@ -33469,7 +33469,7 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 347578.4
+    "total": 347378.4
    },
    {
     "size": 200,
@@ -33540,7 +33540,7 @@
    "pct": 23.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "H001066": {
   "candidate_id": "H2NV04011",
@@ -33673,7 +33673,7 @@
    "pct": 23.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "L000598": {
   "candidate_id": "H2NY01190",
@@ -33720,78 +33720,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 154980.51
+    "total": 162737.18
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 78835.76
+    "total": 94278.35
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 217248.66
+    "total": 254007.31
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 599867.65
+    "total": 672290.18
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1845528.25
+    "total": 2067755.2
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 1037735.97
+    "total": 1187313.15
    },
    {
     "state": "FL",
-    "total": 458280.86
+    "total": 499344.9
    },
    {
     "state": "TX",
-    "total": 256971.83
+    "total": 303830.35
    },
    {
     "state": "CA",
-    "total": 161992.56
+    "total": 171449.76
    },
    {
     "state": "VA",
-    "total": 79578.25
+    "total": 85913.25
    },
    {
     "state": "IL",
-    "total": 63771.18
+    "total": 74666.53
    },
    {
     "state": "LA",
-    "total": 62338.78
+    "total": 73641.41
+   },
+   {
+    "state": "DC",
+    "total": 63230.0
    },
    {
     "state": "MA",
     "total": 56263.44
    },
    {
-    "state": "DC",
-    "total": 52980.0
-   },
-   {
     "state": "MN",
-    "total": 51639.69
+    "total": 53794.87
    }
   ],
   "in_state": {
-   "total": 1037735.97,
-   "itemized": 2762943.47,
-   "pct": 37.6
+   "total": 1187313.15,
+   "itemized": 3117550.86,
+   "pct": 38.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "G000597": {
   "candidate_id": "H0NY02234",
@@ -33848,53 +33848,53 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 28269.3
+    "total": 28973.54
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 19275.83
+    "total": 20384.17
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 224244.45
+    "total": 229124.34
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 396466.67
+    "total": 424811.67
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 991389.77
+    "total": 1039258.74
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 716589.52
+    "total": 740830.43
    },
    {
     "state": "FL",
-    "total": 121284.55
+    "total": 126859.55
    },
    {
     "state": "CA",
-    "total": 116021.21
+    "total": 123321.21
    },
    {
     "state": "VA",
-    "total": 93468.5
+    "total": 103668.5
    },
    {
     "state": "DC",
-    "total": 91700.0
+    "total": 99200.0
    },
    {
     "state": "TX",
-    "total": 84082.34
+    "total": 98545.24
    },
    {
     "state": "IL",
@@ -33902,24 +33902,24 @@
    },
    {
     "state": "MD",
-    "total": 45017.5
+    "total": 47517.5
    },
    {
     "state": "CT",
-    "total": 40611.5
+    "total": 41611.5
    },
    {
     "state": "NJ",
-    "total": 39600.5
+    "total": 40017.17
    }
   ],
   "in_state": {
-   "total": 716589.52,
-   "itemized": 1653767.57,
-   "pct": 43.3
+   "total": 740830.43,
+   "itemized": 1736674.01,
+   "pct": 42.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "S001201": {
   "candidate_id": "H6NY03247",
@@ -33976,78 +33976,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 362367.1
+    "total": 392481.72
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 83265.32
+    "total": 118241.99
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 318122.2
+    "total": 415305.2
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 856738.95
+    "total": 1083774.67
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2337171.14
+    "total": 3019337.01
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 2067030.93
+    "total": 2739185.83
    },
    {
     "state": "CA",
-    "total": 398787.56
+    "total": 446682.93
    },
    {
     "state": "FL",
-    "total": 234843.75
+    "total": 276547.75
    },
    {
     "state": "MA",
-    "total": 185900.2
+    "total": 210057.53
    },
    {
     "state": "CT",
-    "total": 108940.41
-   },
-   {
-    "state": "IL",
-    "total": 85792.5
+    "total": 123741.91
    },
    {
     "state": "NJ",
-    "total": 79583.33
+    "total": 108291.33
    },
    {
-    "state": "TX",
-    "total": 63416.66
+    "state": "IL",
+    "total": 95103.22
    },
    {
     "state": "DC",
-    "total": 61070.6
+    "total": 88774.44
+   },
+   {
+    "state": "TX",
+    "total": 81798.44
    },
    {
     "state": "VA",
-    "total": 38368.1
+    "total": 60549.68
    }
   ],
   "in_state": {
-   "total": 2067030.93,
-   "itemized": 3644939.15,
-   "pct": 56.7
+   "total": 2739185.83,
+   "itemized": 4716415.03,
+   "pct": 58.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "G000602": {
   "candidate_id": "H4NY04158",
@@ -34072,7 +34072,7 @@
    "pct": null
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "M001137": {
   "candidate_id": "H8NY06048",
@@ -34205,7 +34205,7 @@
    "pct": 57.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "M001188": {
   "candidate_id": "H2NY06116",
@@ -34262,33 +34262,37 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 26426.43
+    "total": 26771.43
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 44710.0
+    "total": 45210.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 242225.5
+    "total": 245725.5
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 287747.57
+    "total": 296747.57
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 866758.66
+    "total": 879008.66
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 1004188.16
+    "total": 1022388.16
+   },
+   {
+    "state": "CA",
+    "total": 70975.0
    },
    {
     "state": "CT",
@@ -34299,16 +34303,12 @@
     "total": 70100.0
    },
    {
-    "state": "CA",
-    "total": 67600.0
-   },
-   {
     "state": "MD",
     "total": 46015.6
    },
    {
     "state": "FL",
-    "total": 31210.0
+    "total": 32210.0
    },
    {
     "state": "DC",
@@ -34328,12 +34328,12 @@
    }
   ],
   "in_state": {
-   "total": 1004188.16,
-   "itemized": 1444692.33,
+   "total": 1022388.16,
+   "itemized": 1470287.33,
    "pct": 69.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "V000081": {
   "candidate_id": "H2NY00010",
@@ -34461,7 +34461,7 @@
    "pct": 68.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "J000294": {
   "candidate_id": "H2NY10092",
@@ -34544,52 +34544,52 @@
   "states": [
    {
     "state": "NY",
-    "total": 1187227.65
+    "total": 1340935.95
    },
    {
     "state": "CA",
-    "total": 973692.3
+    "total": 1147109.35
    },
    {
     "state": "TX",
-    "total": 322341.18
-   },
-   {
-    "state": "DC",
-    "total": 259520.42
+    "total": 374179.82
    },
    {
     "state": "FL",
-    "total": 251414.39
+    "total": 328309.9
+   },
+   {
+    "state": "DC",
+    "total": 323882.92
    },
    {
     "state": "MD",
-    "total": 248819.7
+    "total": 306377.6
    },
    {
     "state": "MA",
-    "total": 219781.36
+    "total": 260616.56
    },
    {
     "state": "IL",
-    "total": 182980.96
+    "total": 226562.36
    },
    {
     "state": "VA",
-    "total": 178854.45
+    "total": 216432.75
    },
    {
-    "state": "WA",
-    "total": 154311.4
+    "state": "PA",
+    "total": 188178.95
    }
   ],
   "in_state": {
-   "total": 1187227.65,
-   "itemized": 5486097.45,
-   "pct": 21.6
+   "total": 1340935.95,
+   "itemized": 6654837.12,
+   "pct": 20.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "C001067": {
   "candidate_id": "H4NY11138",
@@ -34685,15 +34685,15 @@
    },
    {
     "state": "DC",
-    "total": 58520.0
-   },
-   {
-    "state": "FL",
-    "total": 22500.0
+    "total": 61020.0
    },
    {
     "state": "MD",
     "total": 21400.0
+   },
+   {
+    "state": "FL",
+    "total": 20000.0
    },
    {
     "state": "CO",
@@ -34722,7 +34722,7 @@
    "pct": 32.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "G000599": {
   "candidate_id": "H2NY10308",
@@ -34855,7 +34855,7 @@
    "pct": 58.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:41+00:00"
  },
  "M000317": {
   "candidate_id": "H0NY11078",
@@ -34907,7 +34907,7 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 349389.67
+    "total": 349311.58
    },
    {
     "size": 200,
@@ -34978,7 +34978,7 @@
    "pct": 49.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "N000002": {
   "candidate_id": "H2NY17071",
@@ -35119,7 +35119,7 @@
    "to_candidates": 0.0,
    "source": "https://www.fec.gov/data/committee/C00363317/?cycle=2026"
   },
-  "details_fetched": "2026-11-17T21:06+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "E000297": {
   "candidate_id": "H2NY13096",
@@ -35166,45 +35166,45 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 41338.11
+    "total": 41563.11
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 73090.02
+    "total": 74490.02
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 228895.5
+    "total": 233995.5
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 553876.57
+    "total": 564376.57
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1437719.54
+    "total": 1462719.54
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 1291931.93
+    "total": 1313006.93
    },
    {
     "state": "CA",
-    "total": 196384.67
+    "total": 199884.67
    },
    {
     "state": "FL",
-    "total": 178270.0
+    "total": 183270.0
    },
    {
     "state": "NJ",
-    "total": 158275.99
+    "total": 165925.99
    },
    {
     "state": "CT",
@@ -35212,11 +35212,11 @@
    },
    {
     "state": "MA",
-    "total": 60500.0
+    "total": 63500.0
    },
    {
     "state": "PR",
-    "total": 47928.07
+    "total": 49428.07
    },
    {
     "state": "IL",
@@ -35232,12 +35232,12 @@
    }
   ],
   "in_state": {
-   "total": 1291931.93,
-   "itemized": 2301432.57,
-   "pct": 56.1
+   "total": 1313006.93,
+   "itemized": 2343657.57,
+   "pct": 56.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "O000172": {
   "candidate_id": "H8NY15148",
@@ -35320,52 +35320,52 @@
   "states": [
    {
     "state": "CA",
-    "total": 2503579.14
+    "total": 3018761.99
    },
    {
     "state": "NY",
-    "total": 1306573.94
+    "total": 1564703.93
    },
    {
     "state": "WA",
-    "total": 575979.48
+    "total": 690231.32
    },
    {
     "state": "MA",
-    "total": 527597.33
+    "total": 637568.33
    },
    {
     "state": "TX",
-    "total": 445696.02
+    "total": 535467.4
    },
    {
     "state": "FL",
-    "total": 404619.48
+    "total": 498530.86
    },
    {
     "state": "OR",
-    "total": 330520.56
+    "total": 398463.61
    },
    {
     "state": "IL",
-    "total": 319394.36
+    "total": 385223.25
    },
    {
     "state": "PA",
-    "total": 302713.81
+    "total": 367874.85
    },
    {
     "state": "CO",
-    "total": 274019.13
+    "total": 329834.97
    }
   ],
   "in_state": {
-   "total": 1306573.94,
-   "itemized": 10466240.27,
-   "pct": 12.5
+   "total": 1564703.93,
+   "itemized": 12655602.48,
+   "pct": 12.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "T000486": {
   "candidate_id": "H0NY15160",
@@ -35483,7 +35483,7 @@
    "pct": 54.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "L000606": {
   "candidate_id": "H4NY16087",
@@ -35611,7 +35611,7 @@
    "pct": 84.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "L000599": {
   "candidate_id": "H2NY17162",
@@ -35668,78 +35668,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 670149.95
+    "total": 719399.01
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 168928.22
+    "total": 236581.69
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 466830.34
+    "total": 572325.16
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 1123759.45
+    "total": 1349757.08
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 4077921.79
+    "total": 4963242.62
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 2349798.57
+    "total": 3063165.19
    },
    {
     "state": "FL",
-    "total": 828421.88
+    "total": 929737.02
    },
    {
     "state": "TX",
-    "total": 554588.04
+    "total": 615318.29
    },
    {
     "state": "CA",
-    "total": 418249.34
+    "total": 515337.53
    },
    {
     "state": "NJ",
-    "total": 246888.73
+    "total": 319615.33
    },
    {
     "state": "IL",
-    "total": 165216.12
+    "total": 192823.15
    },
    {
     "state": "CT",
-    "total": 131006.88
+    "total": 154830.04
    },
    {
     "state": "VA",
-    "total": 117784.43
+    "total": 140898.97
    },
    {
     "state": "CO",
-    "total": 95819.59
+    "total": 124627.48
    },
    {
-    "state": "LA",
-    "total": 92490.1
+    "state": "MA",
+    "total": 96990.44
    }
   ],
   "in_state": {
-   "total": 2349798.57,
-   "itemized": 5974792.25,
-   "pct": 39.3
+   "total": 3063165.19,
+   "itemized": 7308508.06,
+   "pct": 41.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "R000579": {
   "candidate_id": "H8NY19223",
@@ -35827,49 +35827,49 @@
   "states": [
    {
     "state": "NY",
-    "total": 2559542.77
+    "total": 2782695.1
    },
    {
     "state": "CA",
-    "total": 363331.0
+    "total": 432061.0
    },
    {
     "state": "MA",
-    "total": 197073.12
-   },
-   {
-    "state": "IL",
-    "total": 118540.0
+    "total": 214403.84
    },
    {
     "state": "CT",
-    "total": 116624.5
+    "total": 123209.5
+   },
+   {
+    "state": "IL",
+    "total": 119590.0
    },
    {
     "state": "DC",
-    "total": 87706.37
+    "total": 97456.37
    },
    {
     "state": "VA",
-    "total": 76380.0
+    "total": 90540.0
    },
    {
     "state": "FL",
-    "total": 69565.1
+    "total": 71790.1
    },
    {
     "state": "MD",
-    "total": 53474.25
+    "total": 60099.25
    },
    {
     "state": "WA",
-    "total": 37000.0
+    "total": 47500.0
    }
   ],
   "in_state": {
-   "total": 2559542.77,
-   "itemized": 3904891.16,
-   "pct": 65.5
+   "total": 2782695.1,
+   "itemized": 4286809.21,
+   "pct": 64.9
   },
   "leadership_pac": {
    "name": "PATRIOT PAC",
@@ -35880,7 +35880,7 @@
    "to_candidates": 323940.3,
    "source": "https://www.fec.gov/data/committee/C00832576/?cycle=2026"
   },
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "R000622": {
   "candidate_id": "H8NY22177",
@@ -36008,7 +36008,7 @@
    "pct": 49.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "T000469": {
   "candidate_id": "H8NY21203",
@@ -36141,7 +36141,7 @@
    "pct": 79.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "S001196": {
   "candidate_id": "H4NY21079",
@@ -36188,7 +36188,7 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 2779213.24
+    "total": 2779108.56
    },
    {
     "size": 200,
@@ -36214,7 +36214,7 @@
   "states": [
    {
     "state": "NY",
-    "total": 1177969.75
+    "total": 1177970.25
    },
    {
     "state": "FL",
@@ -36222,7 +36222,7 @@
    },
    {
     "state": "CA",
-    "total": 223838.18
+    "total": 223733.0
    },
    {
     "state": "TX",
@@ -36254,12 +36254,12 @@
    }
   ],
   "in_state": {
-   "total": 1177969.75,
-   "itemized": 3237888.01,
+   "total": 1177970.25,
+   "itemized": 3237783.33,
    "pct": 36.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:07+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "M001231": {
   "candidate_id": "H4NY22085",
@@ -36321,75 +36321,75 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 541803.71
+    "total": 597599.02
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 168741.58
+    "total": 210720.67
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 253665.01
+    "total": 296626.01
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 309728.89
+    "total": 370689.76
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 603260.06
+    "total": 666760.06
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 1073520.87
+    "total": 1304511.27
    },
    {
     "state": "CA",
-    "total": 88839.5
+    "total": 98634.5
    },
    {
     "state": "MA",
-    "total": 81437.68
+    "total": 86123.55
    },
    {
     "state": "FL",
-    "total": 46478.08
+    "total": 49393.08
    },
    {
     "state": "DC",
-    "total": 33453.25
+    "total": 36203.25
    },
    {
     "state": "TX",
-    "total": 27916.66
+    "total": 31541.66
    },
    {
     "state": "NJ",
-    "total": 25284.0
+    "total": 26317.0
    },
    {
     "state": "MD",
-    "total": 16850.0
+    "total": 18100.0
    },
    {
     "state": "VA",
-    "total": 15772.0
+    "total": 17544.0
    },
    {
     "state": "CT",
-    "total": 15750.0
+    "total": 16500.0
    }
   ],
   "in_state": {
-   "total": 1073520.87,
-   "itemized": 1495183.38,
-   "pct": 71.8
+   "total": 1304511.27,
+   "itemized": 1760379.65,
+   "pct": 74.1
   },
   "leadership_pac": {
    "name": "PATRIOT PAC",
@@ -36400,7 +36400,7 @@
    "to_candidates": 323940.3,
    "source": "https://www.fec.gov/data/committee/C00832576/?cycle=2026"
   },
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "L000600": {
   "candidate_id": "H2NY23228",
@@ -36528,7 +36528,7 @@
    "pct": 74.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "T000478": {
   "candidate_id": "H4NY22051",
@@ -36585,78 +36585,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 504555.81
+    "total": 532054.3
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 18406.05
+    "total": 24301.37
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 76577.02
+    "total": 87410.36
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 222450.0
+    "total": 237950.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 762218.33
+    "total": 784718.33
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 484063.76
+    "total": 515454.63
    },
    {
     "state": "FL",
-    "total": 187034.01
-   },
-   {
-    "state": "TX",
-    "total": 69964.0
+    "total": 197654.03
    },
    {
     "state": "CA",
-    "total": 67775.05
+    "total": 76353.1
+   },
+   {
+    "state": "TX",
+    "total": 75630.19
    },
    {
     "state": "VA",
-    "total": 59233.66
+    "total": 64417.96
    },
    {
     "state": "IL",
-    "total": 43011.27
+    "total": 44372.99
    },
    {
     "state": "CT",
-    "total": 42237.01
-   },
-   {
-    "state": "DC",
-    "total": 30500.0
+    "total": 42735.09
    },
    {
     "state": "MD",
-    "total": 29715.7
+    "total": 33923.79
+   },
+   {
+    "state": "DC",
+    "total": 33000.0
    },
    {
     "state": "NC",
-    "total": 24438.23
+    "total": 25129.13
    }
   ],
   "in_state": {
-   "total": 484063.76,
-   "itemized": 1257921.3,
+   "total": 515454.63,
+   "itemized": 1340148.45,
    "pct": 38.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:42+00:00"
  },
  "M001206": {
   "candidate_id": "H8NY25105",
@@ -36748,7 +36748,7 @@
    },
    {
     "state": "DC",
-    "total": 63400.0
+    "total": 64400.0
    },
    {
     "state": "VA",
@@ -36760,7 +36760,7 @@
    },
    {
     "state": "MD",
-    "total": 23000.0
+    "total": 22000.0
    },
    {
     "state": "FL",
@@ -36789,7 +36789,7 @@
    "pct": 76.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "K000402": {
   "candidate_id": "H4NY26078",
@@ -36846,78 +36846,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 84153.74
+    "total": 86365.99
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 40578.75
+    "total": 48592.35
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 122413.78
+    "total": 137038.24
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 420441.83
+    "total": 472636.83
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1046867.48
+    "total": 1187981.73
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 1429456.65
+    "total": 1605389.71
    },
    {
     "state": "NJ",
-    "total": 42527.5
+    "total": 45527.5
    },
    {
     "state": "CA",
     "total": 35820.75
    },
    {
-    "state": "MD",
-    "total": 26250.0
+    "state": "FL",
+    "total": 32192.0
    },
    {
     "state": "DC",
-    "total": 24570.75
+    "total": 26829.75
    },
    {
-    "state": "FL",
-    "total": 24070.5
+    "state": "MD",
+    "total": 26500.0
    },
    {
     "state": "CT",
-    "total": 19855.75
+    "total": 23355.75
    },
    {
     "state": "RI",
     "total": 11600.0
    },
    {
-    "state": "ZZ",
-    "total": 9500.0
+    "state": "PA",
+    "total": 9785.25
    },
    {
-    "state": "AZ",
-    "total": 7000.0
+    "state": "ZZ",
+    "total": 9500.0
    }
   ],
   "in_state": {
-   "total": 1429456.65,
-   "itemized": 1652569.65,
-   "pct": 86.5
+   "total": 1605389.71,
+   "itemized": 1870729.21,
+   "pct": 85.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "L000601": {
   "candidate_id": "H2OH01194",
@@ -36974,78 +36974,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 392718.59
+    "total": 421786.83
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 124338.48
+    "total": 169825.64
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 306954.22
+    "total": 399914.71
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 623302.09
+    "total": 740898.68
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 2290960.85
+    "total": 2633719.51
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 821344.17
+    "total": 1031174.72
    },
    {
     "state": "NY",
-    "total": 778137.28
+    "total": 891027.0
    },
    {
     "state": "CA",
-    "total": 443052.82
+    "total": 550902.82
    },
    {
     "state": "MA",
-    "total": 185090.71
-   },
-   {
-    "state": "IL",
-    "total": 151133.57
+    "total": 201161.42
    },
    {
     "state": "MD",
-    "total": 148816.32
+    "total": 176647.28
+   },
+   {
+    "state": "IL",
+    "total": 169444.29
    },
    {
     "state": "FL",
-    "total": 131394.22
+    "total": 146827.56
    },
    {
     "state": "CT",
-    "total": 118766.94
+    "total": 119266.94
    },
    {
     "state": "DC",
-    "total": 97734.06
+    "total": 106636.61
    },
    {
     "state": "TX",
-    "total": 75323.33
+    "total": 88123.33
    }
   ],
   "in_state": {
-   "total": 821344.17,
-   "itemized": 3405233.98,
-   "pct": 24.1
+   "total": 1031174.72,
+   "itemized": 4033105.12,
+   "pct": 25.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "T000490": {
   "candidate_id": "H4OH02248",
@@ -37112,17 +37112,17 @@
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 48575.71
+    "total": 48993.67
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 68296.04
+    "total": 68878.08
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 180630.91
+    "total": 179630.91
    },
    {
     "size": 2000,
@@ -37157,7 +37157,7 @@
    },
    {
     "state": "VA",
-    "total": 22062.22
+    "total": 22562.22
    },
    {
     "state": "GA",
@@ -37178,7 +37178,7 @@
    "pct": 63.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "B001281": {
   "candidate_id": "H2OH03125",
@@ -37311,7 +37311,7 @@
    "pct": 51.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "J000289": {
   "candidate_id": "H6OH04082",
@@ -37439,7 +37439,7 @@
    "pct": 18.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "L000566": {
   "candidate_id": "H8OH05036",
@@ -37501,49 +37501,49 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 45105.06
+    "total": 46270.06
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 24675.0
+    "total": 28225.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 61500.0
+    "total": 75250.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 207276.0
+    "total": 242776.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 302300.0
+    "total": 339300.0
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 387125.0
+    "total": 461705.0
    },
    {
     "state": "VA",
-    "total": 48750.0
+    "total": 56000.0
    },
    {
     "state": "TX",
     "total": 37800.0
    },
    {
-    "state": "CA",
-    "total": 26605.0
+    "state": "DC",
+    "total": 30250.0
    },
    {
-    "state": "DC",
-    "total": 24750.0
+    "state": "CA",
+    "total": 26650.0
    },
    {
     "state": "NY",
@@ -37558,21 +37558,21 @@
     "total": 8364.0
    },
    {
-    "state": "NC",
-    "total": 7105.0
+    "state": "MD",
+    "total": 7500.0
    },
    {
-    "state": "NV",
-    "total": 7000.0
+    "state": "NC",
+    "total": 7150.0
    }
   ],
   "in_state": {
-   "total": 387125.0,
-   "itemized": 602336.0,
-   "pct": 64.3
+   "total": 461705.0,
+   "itemized": 693301.0,
+   "pct": 66.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "R000619": {
   "candidate_id": "H4OH06165",
@@ -37705,7 +37705,7 @@
    "pct": 62.6
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "M001222": {
   "candidate_id": "H2OH16051",
@@ -37833,7 +37833,7 @@
    "pct": 29.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "D000626": {
   "candidate_id": "H6OH08315",
@@ -37961,7 +37961,7 @@
    "pct": 63.7
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "K000009": {
   "candidate_id": "H2OH09031",
@@ -38003,78 +38003,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 786573.74
+    "total": 855143.26
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 156803.17
+    "total": 216470.8
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 216113.16
+    "total": 316539.5
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 345522.69
+    "total": 511640.89
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 1856765.25
+    "total": 2239296.82
    }
   ],
   "states": [
    {
     "state": "NY",
-    "total": 760440.01
+    "total": 867872.18
    },
    {
     "state": "OH",
-    "total": 581232.96
+    "total": 815778.92
    },
    {
     "state": "CA",
-    "total": 379223.09
+    "total": 519973.75
    },
    {
     "state": "MA",
-    "total": 176557.84
+    "total": 227366.39
    },
    {
     "state": "IL",
-    "total": 111391.67
-   },
-   {
-    "state": "CT",
-    "total": 81680.12
+    "total": 128522.39
    },
    {
     "state": "MD",
-    "total": 75758.75
-   },
-   {
-    "state": "TX",
-    "total": 66591.66
+    "total": 104458.3
    },
    {
     "state": "DC",
-    "total": 62834.58
+    "total": 88033.52
    },
    {
-    "state": "WA",
-    "total": 54308.14
+    "state": "CT",
+    "total": 85014.21
+   },
+   {
+    "state": "TX",
+    "total": 81356.66
+   },
+   {
+    "state": "VA",
+    "total": 72404.71
    }
   ],
   "in_state": {
-   "total": 581232.96,
-   "itemized": 2695079.1,
-   "pct": 21.6
+   "total": 815778.92,
+   "itemized": 3472392.36,
+   "pct": 23.5
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "T000463": {
   "candidate_id": "H2OH03067",
@@ -38207,7 +38207,7 @@
    "pct": 69.8
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "B001313": {
   "candidate_id": "H2OH11169",
@@ -38335,7 +38335,7 @@
    "pct": 68.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "B001306": {
   "candidate_id": "H8OH12180",
@@ -38458,7 +38458,7 @@
    "pct": 72.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:08+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "S001223": {
   "candidate_id": "H2OH13264",
@@ -38515,78 +38515,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 637083.87
+    "total": 677375.73
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 159652.21
+    "total": 194358.16
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 223301.01
+    "total": 274672.01
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 326210.24
+    "total": 395821.17
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 865069.09
+    "total": 1060960.75
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 584132.55
+    "total": 746040.24
    },
    {
     "state": "CA",
-    "total": 345631.83
+    "total": 449577.39
    },
    {
     "state": "NY",
-    "total": 160890.01
+    "total": 207162.28
    },
    {
     "state": "MA",
-    "total": 135721.62
+    "total": 162811.06
    },
    {
     "state": "IL",
-    "total": 85382.0
+    "total": 88127.72
    },
    {
     "state": "MD",
-    "total": 56043.2
-   },
-   {
-    "state": "DC",
-    "total": 35717.99
+    "total": 59639.3
    },
    {
     "state": "TX",
-    "total": 35576.66
+    "total": 46076.66
+   },
+   {
+    "state": "DC",
+    "total": 44872.14
    },
    {
     "state": "CO",
-    "total": 32846.15
+    "total": 32875.0
    },
    {
     "state": "WA",
-    "total": 28051.58
+    "total": 30426.7
    }
   ],
   "in_state": {
-   "total": 584132.55,
-   "itemized": 1664847.76,
-   "pct": 35.1
+   "total": 746040.24,
+   "itemized": 2056719.16,
+   "pct": 36.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "J000295": {
   "candidate_id": "H2OH14064",
@@ -38648,61 +38648,61 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 27286.38
+    "total": 27911.38
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 4080.0
+    "total": 4580.0
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 47250.0
+    "total": 49250.0
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 84000.0
+    "total": 110500.0
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 246700.0
+    "total": 292100.0
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 164815.0
-   },
-   {
-    "state": "DC",
-    "total": 38100.0
-   },
-   {
-    "state": "FL",
-    "total": 29300.0
-   },
-   {
-    "state": "VA",
-    "total": 28000.0
+    "total": 195340.0
    },
    {
     "state": "NY",
-    "total": 23000.0
+    "total": 46500.0
+   },
+   {
+    "state": "FL",
+    "total": 40800.0
+   },
+   {
+    "state": "DC",
+    "total": 39100.0
+   },
+   {
+    "state": "VA",
+    "total": 30000.0
+   },
+   {
+    "state": "CT",
+    "total": 21500.0
+   },
+   {
+    "state": "CA",
+    "total": 21300.0
    },
    {
     "state": "MD",
     "total": 21000.0
-   },
-   {
-    "state": "CT",
-    "total": 19500.0
-   },
-   {
-    "state": "CA",
-    "total": 18300.0
    },
    {
     "state": "SC",
@@ -38714,12 +38714,12 @@
    }
   ],
   "in_state": {
-   "total": 164815.0,
-   "itemized": 385815.0,
-   "pct": 42.7
+   "total": 195340.0,
+   "itemized": 460840.0,
+   "pct": 42.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "C001126": {
   "candidate_id": "H2OH15228",
@@ -38781,78 +38781,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 121780.9
+    "total": 134053.5
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 26432.51
+    "total": 36438.9
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 216513.77
+    "total": 282741.77
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 431407.52
+    "total": 503265.58
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 944589.98
+    "total": 1154164.35
    }
   ],
   "states": [
    {
     "state": "OH",
-    "total": 764686.46
+    "total": 925984.72
    },
    {
     "state": "VA",
-    "total": 106100.11
-   },
-   {
-    "state": "PA",
-    "total": 67415.0
+    "total": 127247.47
    },
    {
     "state": "CA",
-    "total": 65925.29
+    "total": 87446.65
    },
    {
-    "state": "FL",
-    "total": 61924.12
+    "state": "PA",
+    "total": 73813.89
    },
    {
     "state": "DC",
-    "total": 59191.12
+    "total": 69941.12
    },
    {
-    "state": "NY",
-    "total": 41885.25
+    "state": "FL",
+    "total": 69216.34
    },
    {
     "state": "TX",
-    "total": 38300.0
+    "total": 62261.92
+   },
+   {
+    "state": "NY",
+    "total": 57490.25
+   },
+   {
+    "state": "MI",
+    "total": 41036.81
    },
    {
     "state": "CT",
-    "total": 29201.0
-   },
-   {
-    "state": "MD",
-    "total": 26550.0
+    "total": 33201.0
    }
   ],
   "in_state": {
-   "total": 764686.46,
-   "itemized": 1630076.58,
-   "pct": 46.9
+   "total": 925984.72,
+   "itemized": 2000016.0,
+   "pct": 46.3
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "H001082": {
   "candidate_id": "H8OK01157",
@@ -38975,7 +38975,7 @@
    "pct": 19.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "B001317": {
   "candidate_id": "H2OK02315",
@@ -39058,7 +39058,7 @@
   "states": [
    {
     "state": "OK",
-    "total": 69082.0
+    "total": 77332.0
    },
    {
     "state": "NY",
@@ -39070,7 +39070,7 @@
    },
    {
     "state": "FL",
-    "total": 3750.0
+    "total": 4250.0
    },
    {
     "state": "PA",
@@ -39086,12 +39086,12 @@
    }
   ],
   "in_state": {
-   "total": 69082.0,
-   "itemized": 104657.0,
-   "pct": 66.0
+   "total": 77332.0,
+   "itemized": 113407.0,
+   "pct": 68.2
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:43+00:00"
  },
  "L000491": {
   "candidate_id": "H4OK06056",
@@ -39224,7 +39224,7 @@
    "pct": 62.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:44+00:00"
  },
  "C001053": {
   "candidate_id": "H2OK04055",
@@ -39357,7 +39357,7 @@
    "pct": 30.4
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:44+00:00"
  },
  "B000740": {
   "candidate_id": "H0OK05205",
@@ -39414,78 +39414,78 @@
    {
     "size": 0,
     "label": "$200 and under",
-    "total": 77562.7
+    "total": 84714.38
    },
    {
     "size": 200,
     "label": "$200.01\u2013$499",
-    "total": 21603.02
+    "total": 23717.27
    },
    {
     "size": 500,
     "label": "$500\u2013$999",
-    "total": 82037.65
+    "total": 93124.67
    },
    {
     "size": 1000,
     "label": "$1,000\u2013$1,999",
-    "total": 210287.14
+    "total": 246869.18
    },
    {
     "size": 2000,
     "label": "$2,000 and over",
-    "total": 640608.61
+    "total": 749795.73
    }
   ],
   "states": [
    {
     "state": "OK",
-    "total": 610836.88
-   },
-   {
-    "state": "VA",
-    "total": 81645.83
+    "total": 690239.32
    },
    {
     "state": "TX",
-    "total": 79633.07
+    "total": 104440.27
+   },
+   {
+    "state": "VA",
+    "total": 93305.43
    },
    {
     "state": "CA",
-    "total": 37833.66
-   },
-   {
-    "state": "NY",
-    "total": 28100.72
+    "total": 43775.51
    },
    {
     "state": "DC",
-    "total": 26311.53
+    "total": 36357.53
+   },
+   {
+    "state": "NY",
+    "total": 29204.82
    },
    {
     "state": "MD",
-    "total": 19234.23
+    "total": 24734.23
+   },
+   {
+    "state": "FL",
+    "total": 18736.98
    },
    {
     "state": "IL",
-    "total": 17583.32
+    "total": 18130.49
    },
    {
     "state": "CT",
     "total": 14000.0
-   },
-   {
-    "state": "WA",
-    "total": 8550.0
    }
   ],
   "in_state": {
-   "total": 610836.88,
-   "itemized": 966999.49,
-   "pct": 63.2
+   "total": 690239.32,
+   "itemized": 1133121.6,
+   "pct": 60.9
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:09+00:00"
+  "details_fetched": "2026-11-26T21:44+00:00"
  },
  "B001278": {
   "candidate_id": "H2OR01133",
@@ -39603,7 +39603,7 @@
    "pct": 78.1
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:10+00:00"
+  "details_fetched": "2026-11-26T21:44+00:00"
  },
  "B000668": {
   "candidate_id": "H0OR02127",
@@ -39681,7 +39681,7 @@
   "states": [
    {
     "state": "OR",
-    "total": 273389.64
+    "total": 274389.64
    },
    {
     "state": "CA",
@@ -39701,7 +39701,7 @@
    },
    {
     "state": "MD",
-    "total": 11000.0
+    "total": 10000.0
    },
    {
     "state": "NV",
@@ -39721,12 +39721,12 @@
    }
   ],
   "in_state": {
-   "total": 273389.64,
+   "total": 274389.64,
    "itemized": 403280.64,
-   "pct": 67.8
+   "pct": 68.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:10+00:00"
+  "details_fetched": "2026-11-26T21:44+00:00"
  },
  "D000635": {
   "candidate_id": "H4OR03192",
@@ -39854,7 +39854,7 @@
    "pct": 75.0
   },
   "leadership_pac": null,
-  "details_fetched": "2026-11-17T21:10+00:00"
+  "details_fetched": "2026-11-26T21:44+00:00"
  },
  "H001094": {
   "candidate_id": "H2OR04095",
