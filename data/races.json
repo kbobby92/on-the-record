@@ -257,7 +257,7 @@
           "party": "DEM",
           "incumbent": true,
           "bioguide": "O000174",
-          "votes": 2469060,
+          "votes": 2469059,
           "pct": 59.0,
           "candidate_id": "S8GA00180"
         },
@@ -275,11 +275,12 @@
       "called_at": "2026-11-04T00:18Z",
       "source_url": "https://x.com/DecisionDeskHQ/status/2117773436718137533",
       "notes": "CBS News also projected Ossoff. News reports and a post on the Secretary of State's official X account say the results were certified on Nov. 20 after a risk-limiting audit; no certification page on sos.ga.gov was found, so the status is unchanged.",
-      "updated": "2026-11-25T23:53Z",
-      "results_as_of": "2026-11-20T16:54-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/georgia-us-senate-general-election",
-      "results_source_name": "Decision Desk HQ",
-      "certify_by": "2026-11-20"
+      "updated": "2026-11-26T23:56Z",
+      "results_as_of": "2026-11-26T18:48-05:00",
+      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/georgia",
+      "results_source_name": "Associated Press via Fox News",
+      "certify_by": "2026-11-20",
+      "counted_pct": 100
     },
     "IA": {
       "seat_holder": "E000295",
@@ -379,7 +380,7 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6IL00458",
-          "votes": 2620386,
+          "votes": 2620547,
           "pct": 62.1
         },
         {
@@ -387,7 +388,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6IL00615",
-          "votes": 1534193,
+          "votes": 1534262,
           "pct": 36.3
         },
         {
@@ -395,7 +396,7 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6IL00680",
-          "votes": 67369,
+          "votes": 67375,
           "pct": 1.6
         }
       ],
@@ -404,10 +405,10 @@
       "called_at": "2026-11-04",
       "source_url": "https://www.fox32chicago.com/news/stratton-wins-us-senate-race",
       "notes": "NBC News also projected Stratton. Exact call time not reported.",
-      "updated": "2026-11-24T00:30Z",
-      "results_as_of": "2026-11-23",
-      "results_source": "https://www.nbcchicago.com/elections/who-won-illinois-live-election-results-and-winners-from-the-2026-midterm-election/4012160/",
-      "results_source_name": "NBC News Decision Desk via NBC Chicago",
+      "updated": "2026-11-26T23:56Z",
+      "results_as_of": "2026-11-26T18:53-05:00",
+      "results_source": "https://www.foxnews.com/elections/2026/midterm-results/state/illinois",
+      "results_source_name": "Associated Press via Fox News",
       "counted_pct": 98.8
     },
     "KS": {
@@ -832,7 +833,7 @@
           "incumbent": true,
           "bioguide": "R000618",
           "candidate_id": "S6NE00129",
-          "votes": 382400,
+          "votes": 382401,
           "pct": 49.8
         },
         {
@@ -840,14 +841,14 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S4NE00207",
-          "votes": 338740,
+          "votes": 338741,
           "pct": 44.2
         },
         {
           "name": "Robin Richards",
           "party": "OTH",
           "incumbent": false,
-          "votes": 20047,
+          "votes": 20045,
           "pct": 2.6
         },
         {
@@ -863,7 +864,7 @@
           "party": "OTH",
           "incumbent": false,
           "candidate_id": "S6NE00202",
-          "votes": 9277,
+          "votes": 9278,
           "pct": 1.2
         }
       ],
@@ -872,12 +873,12 @@
       "called_at": "2026-11-04T08:27Z",
       "source_url": "https://www.kjct8.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
       "notes": "No Democratic nominee. CBS News and NBC News also projected Ricketts; the state still labels its count unofficial, and the Board of State Canvassers meets Nov. 30 to certify results.",
-      "updated": "2026-11-24T00:30Z",
-      "results_as_of": "2026-11-23",
+      "updated": "2026-11-26T23:56Z",
+      "results_as_of": "2026-11-26",
       "results_source": "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
       "results_source_name": "Nebraska Secretary of State (unofficial results)",
       "certify_by": "2026-11-30",
-      "counted_pct": 100.0
+      "counted_pct": 100
     },
     "NH": {
       "seat_holder": "S001181",
@@ -1003,23 +1004,23 @@
           "incumbent": true,
           "bioguide": "H001104",
           "candidate_id": "S6OH00304",
-          "votes": 2081174,
-          "pct": 45.2
+          "votes": 2094366,
+          "pct": 45.0
         },
         {
           "name": "Sherrod Brown",
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6OH00163",
-          "votes": 2304213,
-          "pct": 50.0
+          "votes": 2334442,
+          "pct": 50.2
         },
         {
           "name": "William Redpath",
           "party": "LIB",
           "incumbent": false,
           "candidate_id": "S6OH00429",
-          "votes": 128575,
+          "votes": 129906,
           "pct": 2.8
         },
         {
@@ -1027,7 +1028,7 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6OH00395",
-          "votes": 94509,
+          "votes": 95468,
           "pct": 2.1
         }
       ],
@@ -1035,11 +1036,12 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T04:10Z",
       "source_url": "https://gvwire.com/2026/11/03/sherrod-brown-wins-ohio-senate-special-election-ap-says/",
-      "notes": "Special election; CBS News also projected Brown, and counties must finish the official canvass by Nov. 24. Gregory Levy's figure is an earlier Ballotpedia itemization, since Decision Desk HQ does not list him separately.",
-      "updated": "2026-11-19T23:55Z",
-      "results_as_of": "2026-11-18T12:18-05:00",
-      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/ohio-us-senate-special-election-general",
-      "results_source_name": "Decision Desk HQ"
+      "notes": "Special election; CBS News also projected Brown. Counties had to finish the official canvass by Nov. 24; statewide certification by the Secretary of State has not been confirmed.",
+      "updated": "2026-11-26T23:56Z",
+      "results_as_of": "2026-11-24T19:06-05:00",
+      "results_source": "https://www.poliwave.com/us/live/midterms-2026/senate/ohio",
+      "results_source_name": "Associated Press via Poliwave (unofficial)",
+      "counted_pct": 99
     },
     "OK": {
       "seat_holder": "A000383",
@@ -1050,7 +1052,7 @@
           "party": "REP",
           "incumbent": false,
           "candidate_id": "S6OK04247",
-          "votes": 639510,
+          "votes": 639860,
           "pct": 57.2
         },
         {
@@ -1058,14 +1060,14 @@
           "party": "DEM",
           "incumbent": false,
           "candidate_id": "S6OK04163",
-          "votes": 439109,
+          "votes": 439522,
           "pct": 39.3
         },
         {
           "name": "Curtis Stinnett",
           "party": "IND",
           "incumbent": false,
-          "votes": 14622,
+          "votes": 14635,
           "pct": 1.3
         },
         {
@@ -1073,7 +1075,7 @@
           "party": "IND",
           "incumbent": false,
           "candidate_id": "S6OK04205",
-          "votes": 14492,
+          "votes": 14504,
           "pct": 1.3
         }
       ],
@@ -1081,11 +1083,11 @@
       "called_by": "Associated Press",
       "called_at": "2026-11-04T02:36Z",
       "source_url": "https://oklahoma.gov/content/dam/ok/en/elections/election-results/2026-election-results/20261103-reporting-issues-review.pdf",
-      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. A State Election Board staff report dated Nov. 13 states that statewide results were officially certified on Nov. 10; the certified Senate figures could not be retrieved this run, so the totals shown remain unofficial.",
-      "updated": "2026-11-19T23:55Z",
-      "results_as_of": "2026-11-13",
-      "results_source": "https://ballotpedia.org/U.S._Senate,_Oklahoma_election,_2026",
-      "results_source_name": "Ballotpedia (citing The New York Times)",
+      "notes": "Appointed Sen. Alan Armstrong was not on the ballot. The State Election Board's results page is headed official results (staff report: certified Nov. 10). Meinhardt's figure is from Poliwave, as DDHQ does not list him; Libertarian Sevier White also ran, under 1%.",
+      "updated": "2026-11-26T23:56Z",
+      "results_as_of": "2026-11-12T19:56-05:00",
+      "results_source": "https://votes.decisiondeskhq.com/races/2026-11-03/oklahoma-us-senate-general-election",
+      "results_source_name": "Decision Desk HQ",
       "certify_by": "2026-11-10"
     },
     "OR": {
